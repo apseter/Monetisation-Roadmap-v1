@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0"><title>I1.1 — Profile Optimization & Bio Engineering</title>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;700&family=Sora:wght@400;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#0c0612;--card:#140e1e;--card2:#1c1429;--border:#2a1f3d;--t1:#f4f0fa;--t2:#c4bdd4;--t3:#8a7fa0;--pink:#e84393;--pink-bg:#e8439310;--violet:#6c5ce7;--violet-bg:#6c5ce710;--orange:#fdcb6e;--orange-bg:#fdcb6e10;--green:#00b894;--green-bg:#00b89410;--red:#ff7675;--grad:linear-gradient(135deg,#e84393,#6c5ce7,#00b894)}
+*{margin:0;padding:0;box-sizing:border-box}
+body{background:var(--bg);color:var(--t2);font-family:'DM Sans',sans-serif;line-height:1.65;-webkit-font-smoothing:antialiased}
+.hdr{position:relative;padding:40px 24px 32px;text-align:center;overflow:hidden}
+.hdr::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 70% 50% at 50% 0%,#e8439308,transparent),radial-gradient(ellipse 50% 40% at 25% 80%,#6c5ce706,transparent)}
+.hdr>*{position:relative}
+.tag{font-size:10px;font-family:'JetBrains Mono',monospace;text-transform:uppercase;letter-spacing:.25em;margin-bottom:8px;background:var(--grad);-webkit-background-clip:text;-webkit-text-fill-color:transparent}
+h1{font-family:'Sora',sans-serif;font-size:clamp(22px,4vw,32px);font-weight:800;color:var(--t1);line-height:1.15;margin-bottom:4px}
+.sub{font-size:13px;color:var(--t3);max-width:620px;margin:0 auto}
+.ct{max-width:900px;margin:0 auto;padding:20px 16px}
+.sec{background:var(--card);border:1px solid var(--border);border-radius:12px;margin-bottom:14px;overflow:hidden}
+.sec-h{padding:14px 20px;border-bottom:1px solid var(--border);display:flex;align-items:center;gap:10px;flex-wrap:wrap}
+.sec-h h2{font-family:'Sora',sans-serif;font-size:14px;font-weight:700;color:var(--t1)}
+.num{font-size:9px;font-family:'JetBrains Mono',monospace;padding:3px 10px;border-radius:20px;font-weight:700}
+.np{background:var(--pink-bg);color:var(--pink)}.nv{background:var(--violet-bg);color:var(--violet)}.ng{background:var(--green-bg);color:var(--green)}.no{background:var(--orange-bg);color:var(--orange)}.nr{background:#ff767510;color:var(--red)}
+.sec-b{padding:16px 20px}
+.d{font-size:12px;color:var(--t3);line-height:1.65;margin-bottom:10px}.d strong{color:var(--t1)}
+.tbl{width:100%;border-collapse:collapse;margin:12px 0;font-size:11px}
+.tbl th{background:var(--card2);color:var(--t3);padding:9px 10px;text-align:left;font-family:'JetBrains Mono',monospace;font-size:9px;text-transform:uppercase;letter-spacing:.04em;border:1px solid var(--border)}
+.tbl td{padding:9px 10px;border:1px solid var(--border);color:var(--t2);vertical-align:top}.tbl tr:nth-child(even) td{background:#0c061288}
+.g{color:var(--green);font-weight:600}.pk{color:var(--pink);font-weight:600}.v{color:var(--violet);font-weight:600}
+.callout{padding:16px;border-radius:8px;font-size:12px;line-height:1.65;margin:12px 0}
+.co-p{background:var(--pink-bg);border:1px solid #e8439322;color:#fab1d0}
+.co-v{background:var(--violet-bg);border:1px solid #6c5ce722;color:#b8b0e8}
+.co-g{background:var(--green-bg);border:1px solid #00b89422;color:#7ee8d0}
+.co-o{background:var(--orange-bg);border:1px solid #fdcb6e22;color:#fde6a8}
+.co-r{background:#ff767508;border:1px solid #ff767522;color:#ffb0ae}
+.callout strong{color:var(--t1)}
+.bio-mock{background:#000;border:1px solid #333;border-radius:16px;padding:20px;max-width:360px;margin:12px auto;font-family:-apple-system,sans-serif}
+.bio-avatar{width:72px;height:72px;border-radius:50%;background:linear-gradient(135deg,#d97706,#0a0a0a);border:2px solid #d97706;margin-bottom:10px;display:flex;align-items:center;justify-content:center;font-size:24px;font-weight:800;color:#fafaf9;font-family:'Sora',sans-serif}
+.bio-name{font-size:14px;font-weight:700;color:#fff}
+.bio-handle{font-size:12px;color:#888;margin-bottom:6px}
+.bio-cat{font-size:11px;color:#666;margin-bottom:6px}
+.bio-text{font-size:12px;color:#ddd;line-height:1.45;margin-bottom:8px;white-space:pre-line}
+.bio-link{font-size:11px;color:#58a6ff;text-decoration:none}
+.bio-stats{display:flex;gap:24px;margin:12px 0;font-size:12px;text-align:center}
+.bio-stat-num{font-weight:700;color:#fff}
+.bio-stat-label{font-size:10px;color:#888}
+.bio-btn{background:#3b82f6;color:#fff;border:none;border-radius:8px;padding:8px 0;width:100%;font-size:13px;font-weight:600;margin-top:8px;cursor:pointer}
+.pillar{display:flex;align-items:flex-start;gap:8px;padding:9px 12px;background:var(--green-bg);border:1px solid #00b89418;border-radius:6px;margin-bottom:5px}
+.pillar span:first-child{color:var(--green);font-size:11px;font-family:'JetBrains Mono',monospace;min-width:16px;flex-shrink:0;padding-top:1px}
+.pillar span:last-child{font-size:11px;color:var(--t2);line-height:1.5}
+.highlight-row{display:flex;gap:12px;flex-wrap:wrap;justify-content:center;margin:12px 0}
+.highlight-circle{width:56px;text-align:center}
+.highlight-circle .circle{width:56px;height:56px;border-radius:50%;border:2px solid #444;background:#1a1a1a;display:flex;align-items:center;justify-content:center;font-size:20px;margin-bottom:4px}
+.highlight-circle .label{font-size:9px;color:#888;font-family:'JetBrains Mono',monospace}
+.foot{text-align:center;padding:30px 20px;font-size:10px;color:#4a3f60;font-family:'JetBrains Mono',monospace;border-top:1px solid var(--border);margin-top:30px}
+</style></head><body>
+
+<div class="hdr">
+<div class="tag">I1.1 — Profile Optimization & Bio Engineering</div>
+<h1>The Forgotten Front — Instagram Setup</h1>
+<div class="sub">Account type · Username & name field SEO · Bio formula · Link-in-bio strategy · Profile picture · Category · Highlight covers · Copy-paste ready</div>
+</div>
+<div class="ct">
+
+<!-- STEP 1: ACCOUNT TYPE -->
+<div class="sec"><div class="sec-h"><span class="num np">STEP 1</span><h2>Switch to Professional Creator Account</h2></div><div class="sec-b">
+
+<div class="d"><strong>This is non-negotiable. Only Professional accounts get access to monetization tools, analytics, contact buttons, and content indexing by Google.</strong></div>
+
+<table class="tbl">
+<tr><th>Step</th><th>Action</th></tr>
+<tr><td>1</td><td>Open Instagram → Settings → Account → Switch to Professional Account</td></tr>
+<tr><td>2</td><td>Choose <strong>"Creator"</strong> (not Business). Creator accounts unlock Reels bonuses, subscriptions, badges, and the creator marketplace. Business accounts have fewer monetization tools.</td></tr>
+<tr><td>3</td><td>Select category: <strong>"Education"</strong> — this is the most accurate for educational military history content. It appears under your name and signals your niche to both users and the algorithm.</td></tr>
+<tr><td>4</td><td>Turn on <strong>Professional Dashboard</strong> → ensure Insights is active.</td></tr>
+<tr><td>5</td><td>Go to Settings → Privacy → confirm account is <strong>Public</strong> (private accounts cannot be indexed or monetized).</td></tr>
+<tr><td>6</td><td>Settings → Privacy → search → ensure <strong>"Allow search engines to index your profile"</strong> is ON. This lets Google show your posts in search results — doubling your discovery surface.</td></tr>
+</table>
+
+<div class="callout co-r"><strong>Pakistan eligibility note:</strong> Some Instagram monetization features (Subscriptions, Bonuses, Ad Revenue) are currently limited to specific countries (US, UK, Canada, Japan, South Korea, and others). Pakistan may not be eligible for all in-app monetization features yet. However, brand partnerships, affiliate links, and cross-platform revenue (driving YouTube/KDP sales) work from ANY country. These are your primary Instagram revenue streams initially. Monitor Instagram's monetization eligibility page for expansion to more regions.</div>
+</div></div>
+
+<!-- STEP 2: USERNAME & NAME FIELD -->
+<div class="sec"><div class="sec-h"><span class="num nv">STEP 2</span><h2>Username & Name Field — Instagram SEO Foundation</h2></div><div class="sec-b">
+
+<div class="d"><strong>In 2026, Instagram's search algorithm weights the Name field and Username more heavily than any other profile element. This is where you win or lose discoverability.</strong></div>
+
+<table class="tbl">
+<tr><th>Field</th><th>What to Enter</th><th>Why</th></tr>
+<tr><td><strong>Username (@handle)</strong></td><td class="pk">@theforgottenfront</td><td>Consistent with YouTube (@TheForgottenFront), TikTok, and Twitter/X. Must be identical across all platforms for brand recognition. Lowercase, no dots or underscores.</td></tr>
+<tr><td><strong>Name field</strong></td><td class="v">The Forgotten Front | Military History</td><td>Instagram's search indexes this field with keyword weighting. "Military History" is the #1 keyword your audience searches for. Anyone searching "military history" on Instagram will find you because it's IN your name field. The pipe character "|" cleanly separates brand name from keyword.</td></tr>
+</table>
+
+<div class="callout co-v"><strong>Why "Military History" in the name field matters:</strong> Instagram's 2026 "topic cluster" system uses your name field as a primary signal to categorize your account. When someone searches "military history" on Instagram, accounts with that phrase in their name field appear first. Your username alone ("theforgottenfront") tells the algorithm nothing about your topic — the name field does that work. Think of it like Google SEO: your username is the domain name, your name field is the page title.</div>
+
+<div class="d" style="margin-top:10px"><strong>Alternative name field options (pick one):</strong></div>
+<table class="tbl">
+<tr><th>Option</th><th>Pros</th><th>Cons</th></tr>
+<tr><td>The Forgotten Front | Military History</td><td class="g">Best keyword match. Broad discovery.</td><td>Doesn't specify the "forgotten" angle</td></tr>
+<tr><td>The Forgotten Front | Untold War Stories</td><td>More unique, matches brand promise</td><td>"Untold war stories" is searched less than "military history"</td></tr>
+<tr><td>The Forgotten Front | History They Buried</td><td>Provocative, curiosity-driven</td><td>Less keyword-searchable</td></tr>
+</table>
+<div class="d"><strong>Recommendation: Option 1.</strong> Maximize search discovery first. You can refine the name field after reaching 5K followers when organic discovery matters less than algorithmic recommendation.</div>
+</div></div>
+
+<!-- STEP 3: BIO -->
+<div class="sec"><div class="sec-h"><span class="num np">STEP 3</span><h2>Bio — 150 Characters That Convert Visitors to Followers</h2></div><div class="sec-b">
+
+<div class="d"><strong>Your bio answers 3 questions in under 2 seconds: What is this page? Why should I follow? What do I do next?</strong></div>
+
+<div class="d"><strong>The bio formula:</strong></div>
+<table class="tbl">
+<tr><th>Line</th><th>Purpose</th><th>Formula</th></tr>
+<tr><td><strong>Line 1</strong></td><td>What you do + niche keyword</td><td>[Topic descriptor] + [unique angle]</td></tr>
+<tr><td><strong>Line 2</strong></td><td>Credibility or hook</td><td>[Emotional promise] or [content format]</td></tr>
+<tr><td><strong>Line 3</strong></td><td>Call-to-action</td><td>[Arrow/emoji] + [specific CTA directing to link]</td></tr>
+</table>
+
+<div class="d" style="margin-top:12px"><strong>Your bio (copy-paste ready):</strong></div>
+
+<div class="callout co-p" style="font-size:14px;font-weight:500;line-height:1.6;color:var(--t1);white-space:pre-line">The military stories history tried to bury.
+Forgotten soldiers. Secret operations. Dark chapters.
+📺 Full documentaries ↓</div>
+
+<div class="d" style="margin-top:8px"><strong>Character count: 117/150.</strong> Leaves room for seasonal additions.</div>
+
+<div class="d"><strong>Alternative bios (pick the one that resonates):</strong></div>
+
+<table class="tbl">
+<tr><th>Version</th><th>Bio Text</th><th>Chars</th><th>Strength</th></tr>
+<tr><td>A (recommended)</td><td>The military stories history tried to bury.<br>Forgotten soldiers. Secret operations. Dark chapters.<br>📺 Full documentaries ↓</td><td>117</td><td class="g">Matches sign-off, emotional, clear CTA</td></tr>
+<tr><td>B</td><td>The battles they never taught you.<br>WW2 · Espionage · South Asian Military History<br>📺 Watch the full stories ↓</td><td>119</td><td>Names content pillars directly — helps algorithm</td></tr>
+<tr><td>C</td><td>2.5 million soldiers fought. The world forgot.<br>We tell their stories.<br>📺 Full docs on YouTube ↓</td><td>98</td><td>Hook-first approach — curiosity gap in bio itself</td></tr>
+</table>
+
+<div class="callout co-o"><strong>Bio SEO tips:</strong> Instagram's algorithm reads your bio for topic keywords. Include terms your audience would search: "military," "history," "soldiers," "WW2," "war." Your bio text doesn't need hashtags — the algorithm reads the words themselves. Avoid: emoji spam, "follow for follow," generic phrases like "content creator." Every word should either describe your niche or give a reason to follow.</div>
+</div></div>
+
+<!-- STEP 4: PROFILE PICTURE -->
+<div class="sec"><div class="sec-h"><span class="num nv">STEP 4</span><h2>Profile Picture — Brand Recognition at 32 Pixels</h2></div><div class="sec-b">
+
+<table class="tbl">
+<tr><th>Specification</th><th>Requirement</th></tr>
+<tr><td><strong>Image</strong></td><td>The Forgotten Front logo from Y1.3 — Logo Concept #2 (the badge/emblem). The same one used on YouTube.</td></tr>
+<tr><td><strong>Size</strong></td><td>320 × 320px minimum. Instagram crops to circle — ensure the logo is centered with padding inside the circle crop.</td></tr>
+<tr><td><strong>Background</strong></td><td>Dark (#0A0A0A or #1C1917) — matches your brand's dark aesthetic and stands out against Instagram's white/light UI.</td></tr>
+<tr><td><strong>Visibility test</strong></td><td>Your profile pic appears at ~32px in comments and story rings. At that size, only a bold shape or letter is visible. Your emblem logo works. A detailed photograph would not.</td></tr>
+<tr><td><strong>Cross-platform consistency</strong></td><td>Must be IDENTICAL to your YouTube, TikTok, and Twitter/X profile picture. Brand recognition across platforms is how viewers connect your accounts.</td></tr>
+</table>
+
+<div class="d" style="margin-top:8px"><strong>If you haven't created the logo yet:</strong> Open Canva → 320×320px → dark background (#0A0A0A) → "TFF" in Oswald Bold, amber (#D97706), centered → thin amber border circle. This takes 5 minutes and works as a placeholder until you refine the branding.</div>
+</div></div>
+
+<!-- STEP 5: LINK IN BIO -->
+<div class="sec"><div class="sec-h"><span class="num ng">STEP 5</span><h2>Link-in-Bio Strategy — Your Revenue Hub</h2></div><div class="sec-b">
+
+<div class="d"><strong>Instagram allows up to 5 links in your bio. But more links = more decision fatigue = fewer clicks. Start with 1 primary link, expand to 3 maximum.</strong></div>
+
+<table class="tbl">
+<tr><th>Stage</th><th>Link Strategy</th><th>When</th></tr>
+<tr><td><strong>Launch (Month 1)</strong></td><td>Single direct link to your YouTube channel: <code>youtube.com/@TheForgottenFront?sub_confirmation=1</code> — the sub_confirmation parameter auto-opens the subscribe popup. Maximum conversion.</td><td>Day 1 until you have KDP books live</td></tr>
+<tr><td><strong>Growth (Month 2+)</strong></td><td>Switch to a link-in-bio tool (free options below). Include: 1) YouTube channel, 2) Latest video, 3) KDP books on Amazon.</td><td>Once your first KDP book is published</td></tr>
+<tr><td><strong>Monetization (Month 4+)</strong></td><td>Full link hub: 1) Latest YouTube video, 2) KDP book collection, 3) Affiliate book recommendations, 4) "About The Forgotten Front" page.</td><td>Once you have multiple revenue streams</td></tr>
+</table>
+
+<div class="d" style="margin-top:10px"><strong>Free link-in-bio tools:</strong></div>
+<table class="tbl">
+<tr><th>Tool</th><th>Free Tier</th><th>Best For</th></tr>
+<tr><td><strong>Linktree</strong></td><td>Unlimited links, basic analytics, basic themes</td><td>Quick setup, most recognized. <code>linktr.ee/theforgottenfront</code></td></tr>
+<tr><td><strong>Hopp (by Wix)</strong></td><td>Unlimited links, customizable design</td><td>More design control, cleaner UI</td></tr>
+<tr><td><strong>Beacons</strong></td><td>Unlimited links + email collection + media kit</td><td>Best for creators — includes built-in media kit for brand deals</td></tr>
+<tr><td><strong>Stan Store</strong></td><td>Free tier with link page</td><td>If you eventually sell digital products</td></tr>
+</table>
+
+<div class="callout co-g"><strong>Recommendation: Start with Beacons.</strong> It includes a free media kit generator (which you'll need for brand partnerships in I3.1) and email collection (which builds a direct audience you own). Customize the page colors to match your brand: dark background (#0A0A0A), amber accents (#D97706), Oswald font if available.</div>
+</div></div>
+
+<!-- STEP 6: CONTACT & ACTION BUTTONS -->
+<div class="sec"><div class="sec-h"><span class="num no">STEP 6</span><h2>Contact Buttons & Action Settings</h2></div><div class="sec-b">
+
+<table class="tbl">
+<tr><th>Setting</th><th>Action</th><th>Why</th></tr>
+<tr><td><strong>Email button</strong></td><td>Add a dedicated email: <code><a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="97e3fff2f1f8e5f0f8e3e3f2f9f1e5f8f9e3d7f0faf6fefbb9f4f8fa">[email&#160;protected]</a></code> (create a new Gmail specifically for this)</td><td>Brands looking for sponsorship partnerships will contact you here. 68% of Instagram users prefer to contact businesses through the platform — give them a way.</td></tr>
+<tr><td><strong>Category display</strong></td><td>Set to visible: "Education"</td><td>Appears below your name. Instantly tells visitors and the algorithm what type of content you create.</td></tr>
+<tr><td><strong>Action button</strong></td><td>Not needed yet — add "Book" or "Shop" button when you have a product/service to link</td><td>Don't add buttons that lead nowhere. Empty actions hurt credibility.</td></tr>
+<tr><td><strong>Threads badge</strong></td><td>Optional — create a Threads account to claim the handle but don't invest time there yet</td><td>Protects the @theforgottenfront handle on Meta's newest platform. Low effort to claim.</td></tr>
+</table>
+</div></div>
+
+<!-- STEP 7: STORY HIGHLIGHTS -->
+<div class="sec"><div class="sec-h"><span class="num nv">STEP 7</span><h2>Story Highlights — Your Evergreen Content Library</h2></div><div class="sec-b">
+
+<div class="d"><strong>Highlights are the permanent Stories circles below your bio. They serve as a mini-website navigation — visitors browse them to decide whether to follow. Set up 5 highlights with branded covers.</strong></div>
+
+<div class="highlight-row">
+<div class="highlight-circle"><div class="circle">📖</div><div class="label">ABOUT</div></div>
+<div class="highlight-circle"><div class="circle">🎬</div><div class="label">LATEST</div></div>
+<div class="highlight-circle"><div class="circle">💡</div><div class="label">FACTS</div></div>
+<div class="highlight-circle"><div class="circle">🔍</div><div class="label">RESEARCH</div></div>
+<div class="highlight-circle"><div class="circle">📚</div><div class="label">BOOKS</div></div>
+</div>
+
+<table class="tbl">
+<tr><th>Highlight</th><th>Content</th><th>When to Create</th></tr>
+<tr><td><strong>ABOUT</strong></td><td>3-5 Stories: "What is The Forgotten Front?", your mission statement, what content to expect, upload schedule ("New stories every Tue & Thu"). This is your "channel trailer" for Instagram.</td><td>Day 1 — create before first post</td></tr>
+<tr><td><strong>LATEST</strong></td><td>Pinned Stories linking to your most recent YouTube video. Update weekly with each new upload. Always keep the most current video here.</td><td>After Video #1 published</td></tr>
+<tr><td><strong>FACTS</strong></td><td>Best "did you know?" fact cards from your content. Saveable, shareable. These drive follower growth from profile visits.</td><td>After 10+ fact-style Stories posted</td></tr>
+<tr><td><strong>RESEARCH</strong></td><td>Behind-the-scenes: archival photos you discovered, research process, "I just found this incredible photo from 1943..." content. Humanizes the brand.</td><td>Week 2+</td></tr>
+<tr><td><strong>BOOKS</strong></td><td>Your KDP book reveals, interior page previews, "I wrote this for new dads" Stories. Links to Amazon listings.</td><td>After KDP Book 1 published</td></tr>
+</table>
+
+<div class="d" style="margin-top:10px"><strong>Highlight cover design (Canva — 5 minutes):</strong></div>
+<table class="tbl">
+<tr><th>Spec</th><th>Details</th></tr>
+<tr><td>Size</td><td>1080 × 1920px (Story dimensions), but only the center circle is visible</td></tr>
+<tr><td>Background</td><td>Dark (#0A0A0A) — matches your brand aesthetic</td></tr>
+<tr><td>Icon</td><td>Simple amber (#D97706) line icon centered — use Canva's "Icons" search. Minimalist.</td></tr>
+<tr><td>Text</td><td>Optional: highlight name in small Oswald text below the icon. Most accounts use icon-only for cleaner look.</td></tr>
+<tr><td>Consistency</td><td>ALL 5 covers use the same dark background + amber icon style. Cohesive grid = professional first impression.</td></tr>
+</table>
+</div></div>
+
+<!-- FULL PROFILE MOCKUP -->
+<div class="sec"><div class="sec-h"><span class="num np">PREVIEW</span><h2>Complete Profile Mockup</h2></div><div class="sec-b">
+
+<div class="d"><strong>This is exactly how your profile will look when a new visitor lands on it:</strong></div>
+
+<div class="bio-mock">
+<div class="bio-avatar">TFF</div>
+<div class="bio-name">The Forgotten Front | Military History</div>
+<div class="bio-handle">@theforgottenfront</div>
+<div class="bio-cat">Education</div>
+<div class="bio-stats">
+<div><div class="bio-stat-num">—</div><div class="bio-stat-label">posts</div></div>
+<div><div class="bio-stat-num">—</div><div class="bio-stat-label">followers</div></div>
+<div><div class="bio-stat-num">—</div><div class="bio-stat-label">following</div></div>
+</div>
+<div class="bio-text">The military stories history tried to bury.
+Forgotten soldiers. Secret operations. Dark chapters.
+📺 Full documentaries ↓</div>
+<div><a class="bio-link" href="#">linktr.ee/theforgottenfront</a></div>
+<button class="bio-btn">Follow</button>
+<div style="display:flex;gap:8px;justify-content:center;margin-top:16px">
+<div style="width:40px;height:40px;border-radius:50%;border:2px solid #444;background:#1a1a1a;display:flex;align-items:center;justify-content:center;font-size:14px">📖</div>
+<div style="width:40px;height:40px;border-radius:50%;border:2px solid #444;background:#1a1a1a;display:flex;align-items:center;justify-content:center;font-size:14px">🎬</div>
+<div style="width:40px;height:40px;border-radius:50%;border:2px solid #444;background:#1a1a1a;display:flex;align-items:center;justify-content:center;font-size:14px">💡</div>
+<div style="width:40px;height:40px;border-radius:50%;border:2px solid #444;background:#1a1a1a;display:flex;align-items:center;justify-content:center;font-size:14px">🔍</div>
+<div style="width:40px;height:40px;border-radius:50%;border:2px solid #444;background:#1a1a1a;display:flex;align-items:center;justify-content:center;font-size:14px">📚</div>
+</div>
+<div style="font-size:8px;color:#555;text-align:center;margin-top:8px;font-family:'JetBrains Mono',monospace">ABOUT · LATEST · FACTS · RESEARCH · BOOKS</div>
+</div>
+</div></div>
+
+<!-- SETUP CHECKLIST -->
+<div class="sec"><div class="sec-h"><span class="num ng">CHECKLIST</span><h2>Profile Setup Checklist — Complete Before First Post</h2></div><div class="sec-b">
+
+<table class="tbl">
+<tr><th>☐</th><th>Task</th><th>Time</th></tr>
+<tr><td>☐</td><td>Switch to Professional Creator account</td><td>1 min</td></tr>
+<tr><td>☐</td><td>Set category to "Education"</td><td>30 sec</td></tr>
+<tr><td>☐</td><td>Set username: @theforgottenfront</td><td>30 sec</td></tr>
+<tr><td>☐</td><td>Set name field: "The Forgotten Front | Military History"</td><td>30 sec</td></tr>
+<tr><td>☐</td><td>Write bio (copy from Version A above)</td><td>1 min</td></tr>
+<tr><td>☐</td><td>Upload profile picture (TFF logo, 320×320px)</td><td>2 min</td></tr>
+<tr><td>☐</td><td>Create <a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="21554944474e53464e5555444f47534e4f5561464c40484d0f424e4c">[email&#160;protected]</a> and add as contact email</td><td>3 min</td></tr>
+<tr><td>☐</td><td>Add link in bio (YouTube channel with sub_confirmation link to start)</td><td>1 min</td></tr>
+<tr><td>☐</td><td>Ensure account is Public</td><td>30 sec</td></tr>
+<tr><td>☐</td><td>Enable search engine indexing in Privacy settings</td><td>30 sec</td></tr>
+<tr><td>☐</td><td>Create 5 highlight cover images in Canva (dark bg + amber icons)</td><td>10 min</td></tr>
+<tr><td>☐</td><td>Create "ABOUT" highlight with 3-5 intro Stories</td><td>10 min</td></tr>
+<tr><td>☐</td><td>Claim @theforgottenfront on Threads (optional, 2 min)</td><td>2 min</td></tr>
+<tr><td colspan="2" style="font-weight:700;color:var(--pink)">TOTAL SETUP TIME</td><td style="font-weight:700;color:var(--pink)">~33 min</td></tr>
+</table>
+</div></div>
+
+<!-- COMMON MISTAKES -->
+<div class="sec"><div class="sec-h"><span class="num nr">AVOID</span><h2>7 Profile Mistakes That Kill Growth</h2></div><div class="sec-b">
+
+<table class="tbl">
+<tr><th>#</th><th>Mistake</th><th>Why It Hurts</th><th>What to Do Instead</th></tr>
+<tr><td>1</td><td class="pk">Name field has no keywords</td><td>Instagram can't categorize your account. You don't appear in topic searches.</td><td>Include your primary niche keyword: "Military History"</td></tr>
+<tr><td>2</td><td class="pk">Bio full of emojis, no substance</td><td>Visitors can't tell what your page is about in 2 seconds. They leave.</td><td>Lead with what you do. Emojis are seasoning, not the meal.</td></tr>
+<tr><td>3</td><td class="pk">Private account</td><td>Cannot be indexed by Google. Cannot be recommended by algorithm. Cannot be monetized.</td><td>Must be Public. No exceptions.</td></tr>
+<tr><td>4</td><td>Business account instead of Creator</td><td>Misses Creator-specific monetization: Reels bonuses, subscriptions, badges, creator marketplace.</td><td>Switch to Creator account type.</td></tr>
+<tr><td>5</td><td>Different username than YouTube</td><td>Viewers who find you on one platform can't find you on others. Brand fragmentation.</td><td>@theforgottenfront everywhere. Identical.</td></tr>
+<tr><td>6</td><td>No link in bio</td><td>The ONLY place you can put a clickable URL. Zero traffic to YouTube/KDP without it.</td><td>Add from day 1. YouTube channel link minimum.</td></tr>
+<tr><td>7</td><td>No highlights or default highlights</td><td>Empty highlight row looks like an abandoned account. Default Story thumbnails look amateur.</td><td>Create branded covers + "ABOUT" highlight before first post.</td></tr>
+</table>
+</div></div>
+
+<!-- PROFILE MAINTENANCE -->
+<div class="sec"><div class="sec-h"><span class="num no">MAINTAIN</span><h2>Profile Maintenance Schedule</h2></div><div class="sec-b">
+
+<table class="tbl">
+<tr><th>Frequency</th><th>Action</th><th>Why</th></tr>
+<tr><td><strong>Weekly</strong></td><td>Update "LATEST" highlight with newest YouTube video link Story</td><td>Keeps your profile current. Stale highlights signal an inactive account.</td></tr>
+<tr><td><strong>Monthly</strong></td><td>Review bio — update if you've hit a milestone ("10K subscribers on YouTube" adds credibility) or launched a new KDP book</td><td>Bio should reflect your current status. Instagram's algorithm re-indexes updated bios.</td></tr>
+<tr><td><strong>Every 3 months</strong></td><td>Audit name field keywords — check if search terms have shifted. Test a new keyword for 2 weeks and monitor profile visit changes in Insights.</td><td>Search behavior evolves. Your name field should evolve with it.</td></tr>
+<tr><td><strong>Seasonal</strong></td><td>Add seasonal CTA to bio (e.g., "🎁 Gift books for history lovers ↓" in Nov-Dec for KDP holiday sales push)</td><td>Seasonal bios convert better because they match buyer intent.</td></tr>
+</table>
+</div></div>
+
+<!-- DELIVERABLES -->
+<div class="sec"><div class="sec-h"><h2>📦 I1.1 Deliverables</h2></div><div class="sec-b">
+<div style="display:grid;gap:5px">
+<div class="pillar"><span>✅</span><span>Professional Creator account setup guide with monetization-ready settings and Google indexing enabled</span></div>
+<div class="pillar"><span>✅</span><span>Username (@theforgottenfront) and SEO-optimized name field ("The Forgotten Front | Military History") with 3 alternatives analyzed</span></div>
+<div class="pillar"><span>✅</span><span>3 copy-paste bio versions with character counts, formula breakdown, and recommendation</span></div>
+<div class="pillar"><span>✅</span><span>Profile picture specifications matching YouTube brand (320×320px, dark background, TFF logo)</span></div>
+<div class="pillar"><span>✅</span><span>Link-in-bio strategy across 3 growth stages: direct YouTube link → Linktree/Beacons → full revenue hub</span></div>
+<div class="pillar"><span>✅</span><span>4 free link-in-bio tools compared (Linktree, Hopp, Beacons, Stan Store) with recommendation (Beacons)</span></div>
+<div class="pillar"><span>✅</span><span>Contact button setup with dedicated email + category display configuration</span></div>
+<div class="pillar"><span>✅</span><span>5 Story Highlights mapped (About, Latest, Facts, Research, Books) with Canva cover design specs</span></div>
+<div class="pillar"><span>✅</span><span>Complete profile mockup showing exactly how the finished profile looks</span></div>
+<div class="pillar"><span>✅</span><span>13-point setup checklist — total time: ~33 minutes to a fully optimized profile</span></div>
+<div class="pillar"><span>✅</span><span>7 common profile mistakes with fixes + ongoing maintenance schedule</span></div>
+<div class="pillar"><span>✅</span><span>Pakistan eligibility note for monetization features with workaround strategies</span></div>
+</div>
+
+<div class="callout co-g" style="margin-top:14px"><strong>I1.1 COMPLETE.</strong> Your Instagram profile can be set up in 33 minutes using this guide. Next up: I1.2 (Visual Identity & Feed Aesthetic) — designing your grid layout, Reel covers, and carousel templates so y

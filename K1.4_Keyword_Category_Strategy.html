@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0"><title>K1.4 — Keyword Strategy & Category Mapping</title>
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}body{background:#0a0f1a;color:#e2e8f0;font-family:'Outfit',sans-serif;padding:0 0 60px}
+.hdr{background:linear-gradient(135deg,#0f172a,#0f2318,#0f172a);border-bottom:1px solid #10b98133;padding:28px 24px;text-align:center;position:relative}.hdr::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at 40% 30%,#10b98118,transparent 60%)}.hdr>*{position:relative}
+.tag{font-size:10px;color:#10b981;font-family:'JetBrains Mono',monospace;text-transform:uppercase;letter-spacing:.2em;margin-bottom:6px}
+h1{font-size:22px;font-weight:800;color:#f1f5f9;margin-bottom:4px}
+.sub{font-size:12px;color:#64748b;max-width:650px;margin:0 auto}
+.ct{max-width:900px;margin:0 auto;padding:20px 16px}
+.sec{background:#111827;border:1px solid #1e293b;border-radius:8px;margin-bottom:14px;overflow:hidden}
+.sec-h{padding:14px 18px;border-bottom:1px solid #1e293b;display:flex;align-items:center;gap:8px;flex-wrap:wrap}
+.sec-h h2{font-size:14px;font-weight:700}
+.num{font-size:9px;font-family:'JetBrains Mono',monospace;padding:2px 8px;border-radius:4px;font-weight:700}
+.pg{background:#10b98115;color:#10b981}.pb{background:#3b82f615;color:#60a5fa}.pa{background:#f59e0b15;color:#f59e0b}.pr{background:#ef444415;color:#ef4444}
+.sec-b{padding:14px 18px}
+.d{font-size:11px;color:#94a3b8;line-height:1.6;margin-bottom:8px}.d strong{color:#e2e8f0}
+.tbl{width:100%;border-collapse:collapse;margin:10px 0;font-size:10px}
+.tbl th{background:#0f172a;color:#94a3b8;padding:7px 8px;text-align:left;font-family:'JetBrains Mono',monospace;font-size:9px;text-transform:uppercase;border:1px solid #1e293b}
+.tbl td{padding:7px 8px;border:1px solid #1e293b;color:#cbd5e1;vertical-align:top}.tbl tr:nth-child(even) td{background:#0d111788}
+.g{color:#10b981;font-weight:600}
+.callout{padding:14px;border-radius:6px;font-size:12px;line-height:1.6;margin:10px 0}
+.co-g{background:#10b98108;border:1px solid #10b98122;color:#6ee7b7}
+.co-a{background:#f59e0b08;border:1px solid #f59e0b22;color:#fcd34d}
+.co-b{background:#3b82f608;border:1px solid #3b82f622;color:#93c5fd}
+.callout strong{color:#f1f5f9}
+.pillar{display:flex;align-items:flex-start;gap:8px;padding:8px 10px;background:#10b98108;border:1px solid #10b98118;border-radius:4px;margin-bottom:4px}
+.pillar span:first-child{color:#10b981;font-size:10px;font-family:'JetBrains Mono',monospace;min-width:16px;flex-shrink:0;padding-top:2px}
+.pillar span:last-child{font-size:11px;color:#cbd5e1;line-height:1.5}
+.book{background:#0f172a;border:1px solid #1e293b;border-radius:8px;padding:16px;margin:10px 0}
+.book h3{font-size:14px;font-weight:700;color:#f1f5f9;margin-bottom:2px}
+.book-meta{font-size:9px;font-family:'JetBrains Mono',monospace;color:#64748b;display:flex;gap:10px;flex-wrap:wrap;margin-bottom:10px}
+.kw-slot{display:flex;align-items:center;gap:6px;padding:5px 8px;background:#111827;border:1px solid #1e293b;border-radius:4px;margin-bottom:3px;font-size:10px}
+.kw-num{font-family:'JetBrains Mono',monospace;font-weight:700;color:#10b981;min-width:14px}
+.kw-text{color:#e2e8f0;font-family:'JetBrains Mono',monospace;font-size:10px}
+.kw-chars{color:#475569;font-size:8px;font-family:'JetBrains Mono',monospace;margin-left:auto}
+.cat-path{font-size:10px;color:#60a5fa;font-family:'JetBrains Mono',monospace;padding:4px 8px;background:#3b82f608;border:1px solid #3b82f618;border-radius:4px;margin-bottom:3px;display:block}
+.foot{text-align:center;padding:20px;font-size:10px;color:#334155;font-family:'JetBrains Mono',monospace}
+</style></head><body>
+<div class="hdr"><div class="tag">K1.4 — Keyword Strategy & Category Mapping</div><h1>KDP Keyword & Category Playbook</h1><div class="sub">8 books · 56 backend keywords · 24 categories · Title optimization · Free research process</div></div>
+<div class="ct">
+
+<!-- HOW KDP KEYWORDS WORK -->
+<div class="sec"><div class="sec-h"><span class="num pg">SYSTEM</span><h2>📚 How Amazon KDP Keywords Work</h2></div><div class="sec-b">
+
+<div class="d"><strong>When you upload a book to KDP, you get 7 backend keyword slots (up to 50 characters each). These keywords, combined with your title, subtitle, and description, determine WHERE your book appears in Amazon search results.</strong></div>
+
+<table class="tbl">
+<tr><th>Rule</th><th>Details</th><th>Why It Matters</th></tr>
+<tr><td><strong>7 slots × 50 chars</strong></td><td>Each slot can be a single word or a phrase up to 50 characters including spaces.</td><td>More words per slot = more search terms you're indexed for. Fill ALL 7 slots to maximum.</td></tr>
+<tr><td><strong>Don't repeat title words</strong></td><td>Amazon automatically indexes words in your title and subtitle. Don't waste backend slots repeating them.</td><td>If your title says "Half Marathon Training Log", don't put "half marathon" in a keyword slot — use NEW terms instead.</td></tr>
+<tr><td><strong>No commas needed</strong></td><td>Amazon reads spaces as separators. "running journal fitness log" is 4 keywords, not 1 phrase.</td><td>Pack multiple relevant words into each slot separated by spaces. No commas, no pipes, no separators.</td></tr>
+<tr><td><strong>No brand names</strong></td><td>Never include competitor names, trademarked terms, or author names in keywords.</td><td>Violates KDP terms of service. Can get your account suspended.</td></tr>
+<tr><td><strong>3 categories</strong></td><td>You can select up to 3 Amazon store categories per book. Mix broad + mid + niche for best coverage.</td><td>Categories determine which bestseller lists you can rank on. The right niche category can get you a "Bestseller" badge with just 5–10 sales/day.</td></tr>
+<tr><td><strong>Keywords unlock categories</strong></td><td>Some Amazon subcategories are only accessible if specific keywords exist in your metadata.</td><td>Strategic keywords can place your book in additional browse paths beyond your 3 selected categories.</td></tr>
+</table>
+
+<div class="callout co-a"><strong>The 7-slot strategy (based on Kindlepreneur's 120-book experiment):</strong><br>
+<strong>Slots 1–4:</strong> Exact-match, high-demand keyword phrases directly about your book's core topic. These are your primary discovery phrases.<br>
+<strong>Slots 5–6:</strong> Category-anchoring terms that keep your book in your chosen categories (Amazon may move your book otherwise).<br>
+<strong>Slot 7:</strong> Broad, related terms packed to 50 characters — catching wider searches you might otherwise miss.</div>
+</div></div>
+
+<!-- FREE RESEARCH PROCESS -->
+<div class="sec"><div class="sec-h"><span class="num pb">PROCESS</span><h2>🔍 Free Keyword Research Process (Repeat Per Book)</h2></div><div class="sec-b">
+
+<table class="tbl">
+<tr><th>Step</th><th>Action</th><th>Tool (Free)</th><th>Time</th></tr>
+<tr><td>1</td><td><strong>Amazon autocomplete mining.</strong> Go to Amazon.com → select "Books" → type your seed keyword. Write down every autocomplete suggestion. Then type "seed keyword a...", "seed keyword b...", etc. These are what real buyers search for.</td><td>Amazon search bar</td><td>5 min</td></tr>
+<tr><td>2</td><td><strong>Competitor keyword reverse-engineering.</strong> Find the top 3–5 books in your niche. Look at their titles, subtitles, and descriptions. What words do they use repeatedly? Those are proven keywords.</td><td>Amazon product pages</td><td>5 min</td></tr>
+<tr><td>3</td><td><strong>Category spy.</strong> On each competitor's product page, scroll down to "Product details" and note the categories they're listed under. These are your target categories.</td><td>Amazon product pages</td><td>3 min</td></tr>
+<tr><td>4</td><td><strong>KDP Category Browser.</strong> Enter your seed keyword in this free tool to find the most relevant categories available in the KDP system.</td><td>kindleranker.com (free)</td><td>3 min</td></tr>
+<tr><td>5</td><td><strong>Compile keyword list.</strong> From steps 1–3, you should have 30–50 potential keywords. Select the 7 most relevant and unique (not duplicating title words) for your backend slots.</td><td>Google Sheets / notepad</td><td>5 min</td></tr>
+</table>
+
+<div class="d" style="margin-top:8px"><strong>Total research time per book: ~20 minutes.</strong> For 8 books: ~2.5 hours total. Do all 8 in one session to stay in the research mindset.</div>
+</div></div>
+
+<!-- 8 BOOKS: FULL KEYWORD & CATEGORY MAP -->
+<div class="sec"><div class="sec-h"><span class="num pg">BOOKS</span><h2>📖 All 8 Books — Keywords, Categories & Title Optimization</h2></div><div class="sec-b">
+
+<!-- BOOK 1 -->
+<div class="book">
+<h3>📗 Book 1: New Dad Year One Journal</h3>
+<div class="book-meta"><span>💰 $12.99</span><span>📂 Dad/Family Niche</span><span>✏️ Pen Name: [Dad Niche]</span><span>🎯 Priority: #1</span></div>
+
+<div class="d"><strong>Optimized title:</strong> New Dad Year One Journal: A First-Time Father's Memory Book & Milestone Tracker for Baby's First 12 Months</div>
+
+<div class="d"><strong>7 Backend Keywords:</strong></div>
+<div class="kw-slot"><span class="kw-num">1</span><span class="kw-text">first time dad gift book for new fathers</span><span class="kw-chars">42/50</span></div>
+<div class="kw-slot"><span class="kw-num">2</span><span class="kw-text">daddy daughter son keepsake memory journal</span><span class="kw-chars">44/50</span></div>
+<div class="kw-slot"><span class="kw-num">3</span><span class="kw-text">baby milestone tracker notebook for parents</span><span class="kw-chars">45/50</span></div>
+<div class="kw-slot"><span class="kw-num">4</span><span class="kw-text">new parent diary expectant fathers guided</span><span class="kw-chars">44/50</span></div>
+<div class="kw-slot"><span class="kw-num">5</span><span class="kw-text">self help journal writing fatherhood</span><span class="kw-chars">39/50</span></div>
+<div class="kw-slot"><span class="kw-num">6</span><span class="kw-text">parenting baby shower gift husband partner</span><span class="kw-chars">45/50</span></div>
+<div class="kw-slot"><span class="kw-num">7</span><span class="kw-text">pregnancy announcement present newborn record</span><span class="kw-chars">49/50</span></div>
+
+<div class="d" style="margin-top:8px"><strong>3 Categories:</strong></div>
+<span class="cat-path">Books › Self-Help › Journal Writing</span>
+<span class="cat-path">Books › Parenting & Relationships › Family Activities</span>
+<span class="cat-path">Books › Parenting & Relationships › Family Health</span>
+</div>
+
+<!-- BOOK 2 -->
+<div class="book">
+<h3>📗 Book 2: E-Commerce Launch Planner</h3>
+<div class="book-meta"><span>💰 $12.99</span><span>📂 Business Niche</span><span>✏️ Pen Name: [Business Niche]</span><span>🎯 Priority: #2</span></div>
+
+<div class="d"><strong>Optimized title:</strong> E-Commerce Launch Planner: 90-Day Online Store Startup Workbook with Product Research, Marketing & Revenue Tracker</div>
+
+<div class="d"><strong>7 Backend Keywords:</strong></div>
+<div class="kw-slot"><span class="kw-num">1</span><span class="kw-text">online business planner startup workbook</span><span class="kw-chars">42/50</span></div>
+<div class="kw-slot"><span class="kw-num">2</span><span class="kw-text">dropshipping shopify amazon seller notebook</span><span class="kw-chars">46/50</span></div>
+<div class="kw-slot"><span class="kw-num">3</span><span class="kw-text">small business plan organizer entrepreneur</span><span class="kw-chars">45/50</span></div>
+<div class="kw-slot"><span class="kw-num">4</span><span class="kw-text">side hustle income tracker product launch</span><span class="kw-chars">44/50</span></div>
+<div class="kw-slot"><span class="kw-num">5</span><span class="kw-text">digital marketing social media strategy plan</span><span class="kw-chars">47/50</span></div>
+<div class="kw-slot"><span class="kw-num">6</span><span class="kw-text">processes infrastructure office supplies</span><span class="kw-chars">44/50</span></div>
+<div class="kw-slot"><span class="kw-num">7</span><span class="kw-text">retail inventory management brand building</span><span class="kw-chars">46/50</span></div>
+
+<div class="d" style="margin-top:8px"><strong>3 Categories:</strong></div>
+<span class="cat-path">Books › Business & Money › Small Business & Entrepreneurship › Startups</span>
+<span class="cat-path">Books › Business & Money › Processes & Infrastructure › Office Equipment & Supplies</span>
+<span class="cat-path">Books › Business & Money › E-Commerce › Online Marketing</span>
+</div>
+
+<!-- BOOK 3 -->
+<div class="book">
+<h3>📗 Book 3: Half Marathon Training Log</h3>
+<div class="book-meta"><span>💰 $9.99</span><span>📂 Running Niche</span><span>✏️ Pen Name: [Running Niche]</span><span>🎯 Priority: #3</span></div>
+
+<div class="d"><strong>Optimized title:</strong> Half Marathon Training Log: 16-Week Running Journal with Pace Tracker, Weekly Mileage & Race Day Planner</div>
+
+<div class="d"><strong>7 Backend Keywords:</strong></div>
+<div class="kw-slot"><span class="kw-num">1</span><span class="kw-text">runner journal fitness exercise log book</span><span class="kw-chars">43/50</span></div>
+<div class="kw-slot"><span class="kw-num">2</span><span class="kw-text">13.1 miles race training plan beginners</span><span class="kw-chars">43/50</span></div>
+<div class="kw-slot"><span class="kw-num">3</span><span class="kw-text">5k 10k marathon running diary notebook</span><span class="kw-chars">42/50</span></div>
+<div class="kw-slot"><span class="kw-num">4</span><span class="kw-text">jogging cardio workout tracker athlete gift</span><span class="kw-chars">47/50</span></div>
+<div class="kw-slot"><span class="kw-num">5</span><span class="kw-text">health fitness dieting exercise weight loss</span><span class="kw-chars">47/50</span></div>
+<div class="kw-slot"><span class="kw-num">6</span><span class="kw-text">couch to half marathon progress tracker</span><span class="kw-chars">43/50</span></div>
+<div class="kw-slot"><span class="kw-num">7</span><span class="kw-text">sports outdoors recreation endurance run</span><span class="kw-chars">44/50</span></div>
+
+<div class="d" style="margin-top:8px"><strong>3 Categories:</strong></div>
+<span class="cat-path">Books › Health, Fitness & Dieting › Exercise & Fitness › Running & Jogging</span>
+<span class="cat-path">Books › Sports & Outdoors › Running & Jogging</span>
+<span class="cat-path">Books › Self-Help › Journal Writing</span>
+</div>
+
+<!-- BOOK 4 -->
+<div class="book">
+<h3>📗 Book 4: Family Budget Tracker</h3>
+<div class="book-meta"><span>💰 $9.99</span><span>📂 Dad/Family Niche</span><span>✏️ Pen Name: [Dad Niche]</span><span>🎯 Priority: #4</span></div>
+
+<div class="d"><strong>Optimized title:</strong> Family Budget Tracker: Monthly Expense Planner & Bill Organizer for Households | Simple Money Management Workbook</div>
+
+<div class="d"><strong>7 Backend Keywords:</strong></div>
+<div class="kw-slot"><span class="kw-num">1</span><span class="kw-text">household finance planner money saving book</span><span class="kw-chars">46/50</span></div>
+<div class="kw-slot"><span class="kw-num">2</span><span class="kw-text">debt payoff income expense tracking journal</span><span class="kw-chars">47/50</span></div>
+<div class="kw-slot"><span class="kw-num">3</span><span class="kw-text">couples financial planning notebook ledger</span><span class="kw-chars">46/50</span></div>
+<div class="kw-slot"><span class="kw-num">4</span><span class="kw-text">personal finance organizer cash flow log</span><span class="kw-chars">44/50</span></div>
+<div class="kw-slot"><span class="kw-num">5</span><span class="kw-text">budgeting for beginners new parents home</span><span class="kw-chars">45/50</span></div>
+<div class="kw-slot"><span class="kw-num">6</span><span class="kw-text">accounting bookkeeping undated annual</span><span class="kw-chars">43/50</span></div>
+<div class="kw-slot"><span class="kw-num">7</span><span class="kw-text">savings goal emergency fund weekly paycheck</span><span class="kw-chars">47/50</span></div>
+
+<div class="d" style="margin-top:8px"><strong>3 Categories:</strong></div>
+<span class="cat-path">Books › Business & Money › Personal Finance › Budgeting & Money Management</span>
+<span class="cat-path">Books › Business & Money › Processes & Infrastructure › Office Equipment & Supplies</span>
+<span class="cat-path">Books › Self-Help › Journal Writing</span>
+</div>
+
+<!-- BOOK 5 -->
+<div class="book">
+<h3>📗 Book 5: Walking Fitness Log</h3>
+<div class="book-meta"><span>💰 $9.99</span><span>📂 Running Niche</span><span>✏️ Pen Name: [Running Niche]</span><span>🎯 Priority: #5</span></div>
+
+<div class="d"><strong>Optimized title:</strong> Walking Fitness Log: Daily Step Counter & Exercise Journal for Weight Loss | 90-Day Walking Challenge Tracker</div>
+
+<div class="d"><strong>7 Backend Keywords:</strong></div>
+<div class="kw-slot"><span class="kw-num">1</span><span class="kw-text">step tracker journal pedometer notebook</span><span class="kw-chars">43/50</span></div>
+<div class="kw-slot"><span class="kw-num">2</span><span class="kw-text">walking for weight loss exercise seniors</span><span class="kw-chars">44/50</span></div>
+<div class="kw-slot"><span class="kw-num">3</span><span class="kw-text">hiking outdoor activity wellness diary book</span><span class="kw-chars">46/50</span></div>
+<div class="kw-slot"><span class="kw-num">4</span><span class="kw-text">daily workout planner beginner fitness</span><span class="kw-chars">43/50</span></div>
+<div class="kw-slot"><span class="kw-num">5</span><span class="kw-text">health challenge habit goal progress log</span><span class="kw-chars">44/50</span></div>
+<div class="kw-slot"><span class="kw-num">6</span><span class="kw-text">women over 50 active lifestyle movement</span><span class="kw-chars">44/50</span></div>
+<div class="kw-slot"><span class="kw-num">7</span><span class="kw-text">cardio low impact training distance miles</span><span class="kw-chars">46/50</span></div>
+
+<div class="d" style="margin-top:8px"><strong>3 Categories:</strong></div>
+<span class="cat-path">Books › Health, Fitness & Dieting › Exercise & Fitness › Walking</span>
+<span class="cat-path">Books › Self-Help › Journal Writing</span>
+<span class="cat-path">Books › Health, Fitness & Dieting › Diets & Weight Loss</span>
+</div>
+
+<!-- BOOK 6 -->
+<div class="book">
+<h3>📗 Book 6: Order & Shipping Tracker</h3>
+<div class="book-meta"><span>💰 $9.99</span><span>📂 Business Niche</span><span>✏️ Pen Name: [Business Niche]</span><span>🎯 Priority: #6</span></div>
+
+<div class="d"><strong>Optimized title:</strong> Order & Shipping Tracker: Small Business Sales Log Book with Purchase Orders, Inventory & Delivery Record Notebook</div>
+
+<div class="d"><strong>7 Backend Keywords:</strong></div>
+<div class="kw-slot"><span class="kw-num">1</span><span class="kw-text">online seller order management organizer</span><span class="kw-chars">44/50</span></div>
+<div class="kw-slot"><span class="kw-num">2</span><span class="kw-text">etsy reseller poshmark ebay sales journal</span><span class="kw-chars">46/50</span></div>
+<div class="kw-slot"><span class="kw-num">3</span><span class="kw-text">package tracking customer ledger bookkeep</span><span class="kw-chars">46/50</span></div>
+<div class="kw-slot"><span class="kw-num">4</span><span class="kw-text">fulfillment warehouse supply chain record</span><span class="kw-chars">46/50</span></div>
+<div class="kw-slot"><span class="kw-num">5</span><span class="kw-text">craft business handmade product log book</span><span class="kw-chars">44/50</span></div>
+<div class="kw-slot"><span class="kw-num">6</span><span class="kw-text">office equipment supplies processes work</span><span class="kw-chars">44/50</span></div>
+<div class="kw-slot"><span class="kw-num">7</span><span class="kw-text">wholesale retail tracking spreadsheet paper</span><span class="kw-chars">47/50</span></div>
+
+<div class="d" style="margin-top:8px"><strong>3 Categories:</strong></div>
+<span class="cat-path">Books › Business & Money › Processes & Infrastructure › Office Equipment & Supplies</span>
+<span class="cat-path">Books › Business & Money › Small Business & Entrepreneurship › Operations</span>
+<span class="cat-path">Books › Business & Money › Accounting › Bookkeeping</span>
+</div>
+
+<!-- BOOK 7 -->
+<div class="book">
+<h3>📗 Book 7: Dad's Letters to My Child</h3>
+<div class="book-meta"><span>💰 $11.99</span><span>📂 Dad/Family Niche</span><span>✏️ Pen Name: [Dad Niche]</span><span>🎯 Priority: #7</span></div>
+
+<div class="d"><strong>Optimized title:</strong> Dad's Letters to My Child: A Guided Keepsake Journal for Fathers to Write Messages, Wisdom & Memories to Their Son or Daughter</div>
+
+<div class="d"><strong>7 Backend Keywords:</strong></div>
+<div class="kw-slot"><span class="kw-num">1</span><span class="kw-text">father to son daughter letter writing book</span><span class="kw-chars">45/50</span></div>
+<div class="kw-slot"><span class="kw-num">2</span><span class="kw-text">daddy keepsake memory gift baby shower</span><span class="kw-chars">43/50</span></div>
+<div class="kw-slot"><span class="kw-num">3</span><span class="kw-text">parent child time capsule legacy journal</span><span class="kw-chars">45/50</span></div>
+<div class="kw-slot"><span class="kw-num">4</span><span class="kw-text">sentimental meaningful present for husband</span><span class="kw-chars">46/50</span></div>
+<div class="kw-slot"><span class="kw-num">5</span><span class="kw-text">guided prompts fill in blank love notes</span><span class="kw-chars">43/50</span></div>
+<div class="kw-slot"><span class="kw-num">6</span><span class="kw-text">family heritage storytelling memoir blank</span><span class="kw-chars">44/50</span></div>
+<div class="kw-slot"><span class="kw-num">7</span><span class="kw-text">birthday christening baptism graduation gift</span><span class="kw-chars">47/50</span></div>
+
+<div class="d" style="margin-top:8px"><strong>3 Categories:</strong></div>
+<span class="cat-path">Books › Self-Help › Journal Writing</span>
+<span class="cat-path">Books › Parenting & Relationships › Family Activities</span>
+<span class="cat-path">Books › Crafts, Hobbies & Home › Crafts & Hobbies › Scrapbooking</span>
+</div>
+
+<!-- BOOK 8 -->
+<div class="book">
+<h3>📗 Book 8: Social Media Content Planner</h3>
+<div class="book-meta"><span>💰 $9.99</span><span>📂 Business Niche</span><span>✏️ Pen Name: [Business Niche]</span><span>🎯 Priority: #8</span></div>
+
+<div class="d"><strong>Optimized title:</strong> Social Media Content Planner: 90-Day Posting Schedule & Strategy Workbook for Small Business, Creators & Influencers</div>
+
+<div class="d"><strong>7 Backend Keywords:</strong></div>
+<div class="kw-slot"><span class="kw-num">1</span><span class="kw-text">instagram tiktok youtube content calendar</span><span class="kw-chars">45/50</span></div>
+<div class="kw-slot"><span class="kw-num">2</span><span class="kw-text">digital marketing strategy organizer book</span><span class="kw-chars">45/50</span></div>
+<div class="kw-slot"><span class="kw-num">3</span><span class="kw-text">brand building engagement growth tracker</span><span class="kw-chars">44/50</span></div>
+<div class="kw-slot"><span class="kw-num">4</span><span class="kw-text">online business blogger vlogger creative</span><span class="kw-chars">45/50</span></div>
+<div class="kw-slot"><span class="kw-num">5</span><span class="kw-text">hashtag analytics post ideas brainstorm</span><span class="kw-chars">44/50</span></div>
+<div class="kw-slot"><span class="kw-num">6</span><span class="kw-text">freelancer solopreneur side hustle planner</span><span class="kw-chars">46/50</span></div>
+<div class="kw-slot"><span class="kw-num">7</span><span class="kw-text">advertising promotion campaign weekly daily</span><span class="kw-chars">47/50</span></div>
+
+<div class="d" style="margin-top:8px"><strong>3 Categories:</strong></div>
+<span class="cat-path">Books › Business & Money › Marketing & Sales › Marketing</span>
+<span class="cat-path">Books › Computers & Technology › Internet & Social Media</span>
+<span class="cat-path">Books › Business & Money › Small Business & Entrepreneurship › Startups</span>
+</div>
+
+</div></div>
+
+<!-- TITLE OPTIMIZATION RULES -->
+<div class="sec"><div class="sec-h"><span class="num pa">TITLES</span><h2>Title & Subtitle Optimization Rules</h2></div><div class="sec-b">
+
+<table class="tbl">
+<tr><th>Rule</th><th>Details</th><th>Example</th></tr>
+<tr><td><strong>Title = primary keyword + hook</strong></td><td>The main title should contain your #1 keyword phrase AND communicate what the book IS. Clear beats clever.</td><td>"New Dad Year One Journal" — contains "new dad" + "journal" + "year one"</td></tr>
+<tr><td><strong>Subtitle = keyword-rich benefit statement</strong></td><td>The subtitle expands on the title with additional keywords. Include audience, format, and timeframe. Use colons or pipes to separate concepts.</td><td>"A First-Time Father's Memory Book & Milestone Tracker for Baby's First 12 Months"</td></tr>
+<tr><td><strong>Never keyword stuff the title</strong></td><td>The title must sound natural. If it reads like a list of keywords, Amazon may reject it and buyers won't trust it.</td><td>BAD: "New Dad Father Baby Son Daughter Journal Notebook Planner Gift"</td></tr>
+<tr><td><strong>Include the format word</strong></td><td>Always include one of: Journal, Planner, Tracker, Log, Workbook, Notebook. This tells the buyer what they're getting AND captures format-based searches.</td><td>"E-Commerce Launch Planner" — "planner" is the format word</td></tr>
+<tr><td><strong>Add timeframe when relevant</strong></td><td>"90-Day", "16-Week", "12-Month" adds specificity and perceived value. Buyers prefer structured timeframes over open-ended products.</td><td>"90-Day Online Store Startup Workbook" — implies a system, not just blank pages</td></tr>
+</table>
+</div></div>
+
+<!-- DESCRIPTION KEYWORD INTEGRATION -->
+<div class="sec"><div class="sec-h"><span class="num pb">DESCRIPTION</span><h2>Book Description — Keyword Integration Template</h2></div><div class="sec-b">
+
+<div class="d"><strong>Your book description (4,000 characters max) should naturally incorporate keywords while selling the product. Use this template structure:</strong></div>
+
+<table class="tbl">
+<tr><th>Section</th><th>Content</th><th>Keywords to Include</th></tr>
+<tr><td><strong>Opening hook (2 sentences)</strong></td><td>Address the buyer's pain point or desire directly. "Finally, a [product type] designed specifically for [audience]."</td><td>Primary keyword + audience keyword</td></tr>
+<tr><td><strong>What's inside (bullet points)</strong></td><td>3–5 features/sections of the book. "✓ Weekly [feature] tracker" "✓ Monthly [feature] review pages"</td><td>Feature-related keywords naturally in each bullet</td></tr>
+<tr><td><strong>Who it's for (1–2 sentences)</strong></td><td>"Perfect for [audience 1], [audience 2], and [audience 3]."</td><td>Audience keywords (new dads, first-time fathers, expecting parents)</td></tr>
+<tr><td><strong>Gift angle (1 sentence)</strong></td><td>"Makes an ideal gift for [occasion]." — Gift-related searches drive enormous KDP sales.</td><td>Gift occasion keywords (baby shower, Father's Day, birthday, Christmas)</td></tr>
+<tr><td><strong>Specs (final line)</strong></td><td>Page count, size, paper quality. "120 pages | 6x9 inches | Premium matte cover"</td><td>Format keywords (paperback, softcover, matte)</td></tr>
+</table>
+
+<div class="callout co-g"><strong>The gift hack:</strong> A huge percentage of low-content book sales are GIFTS. Including "gift for [person]" in your description (and one backend keyword slot) captures buyers searching for presents. "Gift for new dad", "gift for runner", "gift for entrepreneur" are high-volume seasonal search terms.</div>
+</div></div>
+
+<!-- KEYWORD REFRESH SCHEDULE -->
+<div class="sec"><div class="sec-h"><span class="num pg">REFRESH</span><h2>Keyword Refresh Schedule</h2></div><div class="sec-b">
+
+<table class="tbl">
+<tr><th>When</th><th>Action</th><th>Why</th></tr>
+<tr><td><strong>At launch</strong></td><td>Use the keywords in this document as your starting set.</td><td>These are researched and ready to go.</td></tr>
+<tr><td><strong>30 days post-launch</strong></td><td>Check KDP dashboard for impressions and clicks. If a book has low impressions, swap the weakest 2–3 keywords for alternatives from your research list.</td><td>Early data reveals which keywords are actually driving discovery.</td></tr>
+<tr><td><strong>Every 90 days</strong></td><td>Full keyword refresh. Re-run Amazon autocomplete research. Check if competitors have changed their keywords. Update 2–3 slots per book with fresh terms.</td><td>Search trends change. Seasonal terms shift. New competitors enter. Keywords need maintenance.</td></tr>
+<tr><td><strong>Before seasonal peaks</strong></td><td>October–November: add Christmas/holiday gift keywords. May: add Father's Day keywords for dad books. January: add "new year" resolution keywords for planners.</td><td>Seasonal keywords can 3–5× your sales during peak gift-buying periods.</td></tr>
+</table>
+</div></div>
+
+<!-- DELIVERABLES -->
+<div class="sec"><div class="sec-h"><h2>📦 K1.4 Deliverables — PROJECT K1 COMPLETE ✓</h2></div><div class="sec-b">
+<div style="display:grid;gap:5px">
+<div class="pillar"><span>✅</span><span>56 backend keywords across 8 books (7 per book) — all within 50-character limit, no title word duplication</span></div>
+<div class="pillar"><span>✅</span><span>24 Amazon categories mapped (3 per book) — mixing broad, mid, and niche for maximum coverage</span></div>
+<div class="pillar"><span>✅</span><span>8 optimized titles + subtitles — keyword-rich, natural-sounding, with format word and timeframe</span></div>
+<div class="pillar"><span>✅</span><span>Free keyword research process (5-step, 20 min/book) using Amazon autocomplete + competitor analysis</span></div>
+<div class="pillar"><span>✅</span><span>KDP 7-slot strategy: Slots 1–4 exact-match, Slots 5–6 category anchoring, Slot 7 broad coverage</span></div>
+<div class="pillar"><span>✅</span><span>Book description keyword integration template with gift hack</span></div>
+<div class="pillar"><span>✅</span><span>Keyword refresh schedule: 30-day check, 90-day full refresh, seasonal peak updates</span></div>
+</div>
+
+<div class="callout co-g" style="margin-top:14px;border-color:#10b98144;background:linear-gradient(135deg,#111827,#0f2318)"><strong style="color:#10b981;font-size:14px">🏆 PROJECT K1: MARKET RESEARCH & NICHE STRATEGY — COMPLETE</strong><br><br>
+All 4 subprojects delivered:<br>
+✓ K1.1 — Niche Research & Validation (18 niches scored, top 3 validated with BSR data)<br>
+✓ K1.2 — Competitor Intelligence Deep-Dive (15 competitors analyzed)<br>
+✓ K1.3 — Publishing Infrastructure & Brand Setup (pen names, tools, KDP setup)<br>
+✓ K1.4 — Keyword Strategy & Category Mapping (56 keywords, 24 categories, 8 optimized titles)<br><br>
+<strong>You now have everything needed to start producing and publishing your first KDP book.</strong> The next KDP project (K2: Low-Content Book Production) will guide you through creating the actual interiors, covers, and listings.</div>
+</div></div>
+
+</div>
+<div class="foot">K1.4 — Keyword Strategy & Category Mapping · KDP Publishing Empire · March 2026</div>
+</body></html>

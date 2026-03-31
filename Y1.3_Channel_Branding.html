@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0"><title>Y1.3 — Channel Branding & Visual Identity</title>
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;700&family=Oswald:wght@400;500;600;700&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Special+Elite&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}body{background:#0a0a0a;color:#e2e8f0;font-family:'Outfit',sans-serif;padding:0 0 60px}
+.hdr{background:linear-gradient(135deg,#0a0a0a,#1a1008,#0a0a0a);border-bottom:1px solid #92400e44;padding:28px 24px;text-align:center;position:relative;overflow:hidden}
+.hdr::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at 40% 30%,#92400e18,transparent 60%)}
+.hdr::after{content:'';position:absolute;inset:0;background:url("data:image/svg+xml,%3Csvg width='200' height='200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence baseFrequency='0.9' numOctaves='4'/%3E%3C/filter%3E%3Crect width='200' height='200' filter='url(%23n)' opacity='0.03'/%3E%3C/svg%3E")}
+.hdr>*{position:relative;z-index:1}
+.tag{font-size:10px;color:#d97706;font-family:'JetBrains Mono',monospace;text-transform:uppercase;letter-spacing:.2em;margin-bottom:6px}
+h1{font-family:'Oswald',sans-serif;font-size:28px;font-weight:700;color:#fafaf9;letter-spacing:.05em;text-transform:uppercase;margin-bottom:4px}
+.sub{font-size:12px;color:#78716c;max-width:650px;margin:0 auto;font-family:'Libre Baskerville',serif;font-style:italic}
+.ct{max-width:880px;margin:0 auto;padding:20px 16px}
+.sec{background:#111111;border:1px solid #292524;border-radius:2px;margin-bottom:14px;overflow:hidden}
+.sec-h{padding:14px 18px;border-bottom:1px solid #292524;display:flex;align-items:center;gap:8px;flex-wrap:wrap}
+.sec-h h2{font-size:14px;font-weight:700;font-family:'Oswald',sans-serif;text-transform:uppercase;letter-spacing:.05em}
+.num{font-size:9px;font-family:'JetBrains Mono',monospace;padding:2px 8px;border-radius:2px;font-weight:700}
+.ng{background:#d9770615;color:#d97706}.nb{background:#3b82f615;color:#60a5fa}
+.sec-b{padding:14px 18px}
+.d{font-size:11px;color:#a8a29e;line-height:1.6;margin-bottom:8px}.d strong{color:#e7e5e4}
+/* Logo mockup */
+.logo-box{background:#0a0a0a;border:1px solid #292524;border-radius:2px;padding:30px;text-align:center;margin:12px 0}
+.logo-main{font-family:'Oswald',sans-serif;font-size:42px;font-weight:700;text-transform:uppercase;letter-spacing:.08em;color:#fafaf9;line-height:1.1;margin-bottom:4px}
+.logo-sub{font-family:'Special Elite',cursive;font-size:13px;color:#d97706;letter-spacing:.15em;text-transform:uppercase}
+.logo-line{width:60px;height:2px;background:#d97706;margin:8px auto}
+/* Color palette */
+.palette{display:flex;gap:8px;flex-wrap:wrap;margin:12px 0}
+.swatch{width:80px;text-align:center}
+.swatch-color{height:60px;border-radius:2px;margin-bottom:4px;border:1px solid #29252488}
+.swatch-name{font-size:9px;font-family:'JetBrains Mono',monospace;color:#a8a29e}
+.swatch-hex{font-size:8px;font-family:'JetBrains Mono',monospace;color:#57534e}
+/* Thumbnail mockup */
+.thumb{background:#0a0a0a;border:1px solid #292524;border-radius:2px;padding:3px;margin:6px 0;display:inline-block}
+.thumb-inner{width:280px;height:158px;background:linear-gradient(135deg,#1c1917,#0c0a09);position:relative;overflow:hidden;border-radius:1px}
+.thumb-overlay{position:absolute;inset:0;background:linear-gradient(180deg,transparent 40%,rgba(0,0,0,.85) 100%)}
+.thumb-text{position:absolute;bottom:10px;left:12px;right:12px}
+.thumb-title{font-family:'Oswald',sans-serif;font-size:16px;font-weight:700;text-transform:uppercase;color:#fafaf9;line-height:1.2;text-shadow:0 2px 8px rgba(0,0,0,.8)}
+.thumb-badge{position:absolute;top:8px;left:8px;background:#dc2626;color:#fff;font-family:'JetBrains Mono',monospace;font-size:8px;font-weight:700;padding:2px 6px;border-radius:1px;text-transform:uppercase}
+.thumb-accent{position:absolute;bottom:0;left:0;right:0;height:3px;background:#d97706}
+/* Typography samples */
+.type-sample{background:#0a0a0a;border:1px solid #292524;border-radius:2px;padding:16px;margin:8px 0}
+/* Table */
+.tbl{width:100%;border-collapse:collapse;margin:10px 0;font-size:10px}
+.tbl th{background:#1c1917;color:#a8a29e;padding:7px 8px;text-align:left;font-family:'JetBrains Mono',monospace;font-size:9px;text-transform:uppercase;border:1px solid #292524}
+.tbl td{padding:7px 8px;border:1px solid #292524;color:#d6d3d1;vertical-align:top}.tbl tr:nth-child(even) td{background:#0d0d0d}
+.callout{padding:14px;border-radius:2px;font-size:12px;line-height:1.6;margin:10px 0}
+.co-g{background:#16a34a08;border:1px solid #16a34a22;color:#86efac}
+.co-a{background:#d9770608;border:1px solid #d9770622;color:#fcd34d}
+.co-b{background:#3b82f608;border:1px solid #3b82f622;color:#93c5fd}
+.callout strong{color:#fafaf9}
+.pillar{display:flex;align-items:center;gap:8px;padding:8px 10px;background:#16a34a08;border:1px solid #16a34a18;border-radius:2px;margin-bottom:4px}
+.pillar span:first-child{color:#16a34a;font-size:10px;font-family:'JetBrains Mono',monospace}
+.pillar span:last-child{font-size:11px;color:#d6d3d1}
+.foot{text-align:center;padding:20px;font-size:10px;color:#44403c;font-family:'JetBrains Mono',monospace}
+</style></head><body>
+<div class="hdr">
+<div class="tag">Y1.3 — Channel Branding & Visual Identity</div>
+<h1>THE FORGOTTEN FRONT</h1>
+<div class="sub">"The military stories history tried to bury"</div>
+</div>
+<div class="ct">
+
+<!-- BRAND NAME -->
+<div class="sec"><div class="sec-h"><span class="num ng">IDENTITY</span><h2>Channel Name: The Forgotten Front</h2></div><div class="sec-b">
+
+<div class="d"><strong>Name validation:</strong> No existing YouTube channel uses this name. "Forgotten" signals untold/rediscovered stories. "Front" is inherently military (battle front, front lines, war front). Together they promise: "military stories from the side of the war nobody covered." The name works for all your content pillars — from WW2 operations to South Asian contributions to espionage stories.</div>
+
+<table class="tbl">
+<tr><th>Check</th><th>Status</th><th>Notes</th></tr>
+<tr><td>YouTube name available</td><td style="color:#16a34a;font-weight:700">✓ CLEAR</td><td>No existing channel. "Forgotten Weapons" and "Forgotten History" exist but are different names.</td></tr>
+<tr><td>Memorable & searchable</td><td style="color:#16a34a;font-weight:700">✓ STRONG</td><td>3 words, alliterative "F" sounds, military connotation immediately clear.</td></tr>
+<tr><td>Works across platforms</td><td style="color:#16a34a;font-weight:700">✓ YES</td><td>@TheForgottenFront works on YouTube, Instagram, TikTok, Twitter/X.</td></tr>
+<tr><td>Scalable beyond YouTube</td><td style="color:#16a34a;font-weight:700">✓ YES</td><td>Works for a podcast name, merch brand, potential book series title.</td></tr>
+<tr><td>Implies content promise</td><td style="color:#16a34a;font-weight:700">✓ YES</td><td>Viewer immediately knows: "this channel covers military stories I haven't heard before."</td></tr>
+</table>
+
+<div class="d" style="margin-top:12px"><strong>Tagline options (pick one for your channel banner):</strong></div>
+<table class="tbl">
+<tr><th>#</th><th>Tagline</th><th>Vibe</th></tr>
+<tr><td>1</td><td style="font-family:'Libre Baskerville',serif;font-style:italic;color:#d97706">"The military stories history tried to bury"</td><td>Mysterious, implies suppression/rediscovery</td></tr>
+<tr><td>2</td><td style="font-family:'Libre Baskerville',serif;font-style:italic;color:#d97706">"Wars fought. Soldiers forgotten. Stories untold — until now."</td><td>Emotional, narrative-driven</td></tr>
+<tr><td>3</td><td style="font-family:'Libre Baskerville',serif;font-style:italic;color:#d97706">"The battles they never taught you"</td><td>Direct, punchy, curiosity hook</td></tr>
+<tr><td>4</td><td style="font-family:'Libre Baskerville',serif;font-style:italic;color:#d97706">"Every war has a forgotten front"</td><td>Ties name to concept, elegant</td></tr>
+</table>
+</div></div>
+
+<!-- LOGO -->
+<div class="sec"><div class="sec-h"><span class="num ng">LOGO</span><h2>Logo Concept — Gritty War Journalism Aesthetic</h2></div><div class="sec-b">
+
+<div class="d">The logo should feel like it was stamped on a field dispatch or stenciled on an ammunition crate — raw, utilitarian, military. Not polished or corporate.</div>
+
+<div class="logo-box">
+<div class="logo-main">THE FORGOTTEN<br>FRONT</div>
+<div class="logo-line"></div>
+<div class="logo-sub">Dispatches from the wars they never taught you</div>
+</div>
+
+<div class="logo-box" style="background:#1c1917">
+<div style="display:inline-block;border:2px solid #d97706;padding:10px 20px">
+<div style="font-family:'Oswald',sans-serif;font-size:11px;font-weight:400;color:#d97706;letter-spacing:.2em;text-transform:uppercase">— THE —</div>
+<div style="font-family:'Oswald',sans-serif;font-size:36px;font-weight:700;color:#fafaf9;letter-spacing:.06em;text-transform:uppercase;line-height:1">FORGOTTEN</div>
+<div style="font-family:'Oswald',sans-serif;font-size:36px;font-weight:700;color:#d97706;letter-spacing:.06em;text-transform:uppercase;line-height:1">FRONT</div>
+</div>
+</div>
+
+<div class="logo-box">
+<div style="display:inline-block;position:relative">
+<div style="font-family:'Special Elite',cursive;font-size:9px;color:#78716c;letter-spacing:.3em;text-transform:uppercase;margin-bottom:2px">CLASSIFIED</div>
+<div style="font-family:'Oswald',sans-serif;font-size:34px;font-weight:700;color:#fafaf9;letter-spacing:.1em;text-transform:uppercase;line-height:1;border-bottom:2px solid #d97706;padding-bottom:4px">THE FORGOTTEN FRONT</div>
+<div style="font-family:'Special Elite',cursive;font-size:10px;color:#d97706;letter-spacing:.15em;text-transform:uppercase;margin-top:4px">Military History · Declassified</div>
+</div>
+</div>
+
+<div class="callout co-a"><strong>Execution in Canva (Free):</strong> Use Oswald Bold for the channel name (free Google Font). Use Special Elite for the "classified/dispatch" text (free Google Font). Colors: white text (#FAFAF9) + amber accent (#D97706) on near-black (#0A0A0A). Add subtle grain/noise texture overlay for the aged document feel. Export as PNG at 800×800 for YouTube profile picture (crop the stacked version to a square).</div>
+</div></div>
+
+<!-- COLOR PALETTE -->
+<div class="sec"><div class="sec-h"><span class="num ng">COLORS</span><h2>Color Palette — War-Worn & Archival</h2></div><div class="sec-b">
+
+<div class="d">This palette is inspired by aged military documents, sepia-toned archival photos, ammunition crate stencils, and wartime dispatch papers. It should feel like you unearthed it from a filing cabinet in a military archive.</div>
+
+<div class="palette">
+<div class="swatch"><div class="swatch-color" style="background:#0A0A0A"></div><div class="swatch-name">Blackout</div><div class="swatch-hex">#0A0A0A</div></div>
+<div class="swatch"><div class="swatch-color" style="background:#1C1917"></div><div class="swatch-name">Bunker</div><div class="swatch-hex">#1C1917</div></div>
+<div class="swatch"><div class="swatch-color" style="background:#292524"></div><div class="swatch-name">Trench</div><div class="swatch-hex">#292524</div></div>
+<div class="swatch"><div class="swatch-color" style="background:#D97706"></div><div class="swatch-name">Amber Signal</div><div class="swatch-hex">#D97706</div></div>
+<div class="swatch"><div class="swatch-color" style="background:#DC2626"></div><div class="swatch-name">Alert Red</div><div class="swatch-hex">#DC2626</div></div>
+<div class="swatch"><div class="swatch-color" style="background:#FAFAF9"></div><div class="swatch-name">Dispatch White</div><div class="swatch-hex">#FAFAF9</div></div>
+<div class="swatch"><div class="swatch-color" style="background:#78716C"></div><div class="swatch-name">Foxhole Grey</div><div class="swatch-hex">#78716C</div></div>
+<div class="swatch"><div class="swatch-color" style="background:#44403C"></div><div class="swatch-name">Shadow</div><div class="swatch-hex">#44403C</div></div>
+</div>
+
+<table class="tbl">
+<tr><th>Usage</th><th>Color</th><th>Where</th></tr>
+<tr><td>Background (all assets)</td><td>#0A0A0A Blackout</td><td>Thumbnails, banner, end screens, social posts</td></tr>
+<tr><td>Primary text</td><td>#FAFAF9 Dispatch White</td><td>Titles, headings, key text on thumbnails</td></tr>
+<tr><td>Primary accent</td><td>#D97706 Amber Signal</td><td>Logo accent, subtitle text, divider lines, key highlights</td></tr>
+<tr><td>Danger/urgency accent</td><td>#DC2626 Alert Red</td><td>Thumbnail badges ("CLASSIFIED", "UNTOLD"), warning elements</td></tr>
+<tr><td>Secondary text</td><td>#78716C Foxhole Grey</td><td>Descriptions, secondary info, metadata</td></tr>
+<tr><td>Card/panel backgrounds</td><td>#1C1917 Bunker</td><td>Content cards, overlay panels in videos</td></tr>
+</table>
+
+<div class="callout co-a"><strong>Save these as a Canva brand kit:</strong> Even on the free tier, you can save hex codes and upload custom fonts. Create a Canva folder called "TFF Brand Kit" with all colors saved as text on a reference page. This ensures every thumbnail and asset looks cohesive.</div>
+</div></div>
+
+<!-- TYPOGRAPHY -->
+<div class="sec"><div class="sec-h"><span class="num ng">TYPE</span><h2>Typography System — All Free Google Fonts</h2></div><div class="sec-b">
+
+<div class="type-sample">
+<div style="font-family:'Oswald',sans-serif;font-size:28px;font-weight:700;text-transform:uppercase;letter-spacing:.05em;color:#fafaf9;margin-bottom:4px">THE BATTLE THAT SAVED INDIA</div>
+<div style="font-size:10px;font-family:'JetBrains Mono',monospace;color:#78716c;margin-bottom:8px">↑ OSWALD BOLD — Headlines, thumbnail titles, video titles</div>
+<div style="font-family:'Libre Baskerville',serif;font-size:14px;color:#d6d3d1;line-height:1.6;font-style:italic;margin-bottom:4px">"87,000 Indian soldiers died fighting a war that wasn't theirs. This is their forgotten story."</div>
+<div style="font-size:10px;font-family:'JetBrains Mono',monospace;color:#78716c;margin-bottom:8px">↑ LIBRE BASKERVILLE ITALIC — Quotes, taglines, emotional hooks</div>
+<div style="font-family:'Special Elite',cursive;font-size:14px;color:#d97706;letter-spacing:.05em;text-transform:uppercase;margin-bottom:4px">CLASSIFIED · DECLASSIFIED · TOP SECRET · FIELD DISPATCH</div>
+<div style="font-size:10px;font-family:'JetBrains Mono',monospace;color:#78716c;margin-bottom:8px">↑ SPECIAL ELITE — Stamps, labels, "classified" badges, archival feel</div>
+<div style="font-family:'Outfit',sans-serif;font-size:13px;color:#a8a29e;line-height:1.6">Body text for descriptions, show notes, and social media captions. Clean and readable without feeling corporate. Works well at small sizes on mobile.</div>
+<div style="font-size:10px;font-family:'JetBrains Mono',monospace;color:#78716c">↑ OUTFIT REGULAR — Body text, descriptions, captions</div>
+</div>
+
+<table class="tbl">
+<tr><th>Font</th><th>Weight</th><th>Usage</th><th>Download</th></tr>
+<tr><td style="font-family:'Oswald',sans-serif;font-weight:700">Oswald</td><td>Bold (700)</td><td>All headlines, thumbnail titles, video titles, logo</td><td>fonts.google.com → Upload to Canva</td></tr>
+<tr><td style="font-family:'Libre Baskerville',serif;font-style:italic">Libre Baskerville</td><td>Italic (400i)</td><td>Quotes, taglines, emotional hooks, narration text overlays</td><td>fonts.google.com → Upload to Canva</td></tr>
+<tr><td style="font-family:'Special Elite',cursive">Special Elite</td><td>Regular (400)</td><td>"Classified" stamps, dates, labels, archival/typewriter elements</td><td>fonts.google.com → Upload to Canva</td></tr>
+<tr><td style="font-family:'Outfit',sans-serif">Outfit</td><td>Regular (400)</td><td>Body text, descriptions, social captions</td><td>fonts.google.com → Upload to Canva</td></tr>
+</table>
+</div></div>
+
+<!-- THUMBNAIL SYSTEM -->
+<div class="sec"><div class="sec-h"><span class="num nb">THUMBS</span><h2>Thumbnail Design System</h2></div><div class="sec-b">
+
+<div class="d">Thumbnails are your most important visual asset — they determine whether someone clicks or scrolls past. Your system should be instantly recognizable at 150px wide (mobile Amazon thumbnail size).</div>
+
+<h3 style="font-size:13px;color:#d97706;margin:10px 0 8px;font-family:'Oswald',sans-serif;text-transform:uppercase">3 Thumbnail Templates</h3>
+
+<!-- Thumb 1 -->
+<div style="display:flex;gap:16px;flex-wrap:wrap;margin-bottom:14px">
+<div class="thumb"><div class="thumb-inner" style="background:linear-gradient(135deg,#1c1917 0%,#292524 40%,#1c1917 100%)">
+<div class="thumb-overlay"></div>
+<div class="thumb-badge">UNTOLD</div>
+<div class="thumb-text"><div class="thumb-title">THE BATTLE THAT<br>SAVED INDIA</div></div>
+<div class="thumb-accent"></div>
+</div></div>
+<div style="flex:1;min-width:200px">
+<div style="font-size:12px;font-weight:700;color:#fafaf9;margin-bottom:4px">Template A: "The Reveal"</div>
+<div class="d">Dark background with dramatic archival image. Bold white title (Oswald) in bottom-left. Red badge top-left ("UNTOLD", "CLASSIFIED", "FORGOTTEN"). Amber accent bar at bottom. Use for South Asian stories and major reveals.</div>
+</div>
+</div>
+
+<!-- Thumb 2 -->
+<div style="display:flex;gap:16px;flex-wrap:wrap;margin-bottom:14px">
+<div class="thumb"><div class="thumb-inner" style="background:linear-gradient(180deg,#0a0a0a 0%,#292524 50%,#1c1917 100%)">
+<div class="thumb-overlay" style="background:linear-gradient(0deg,rgba(220,38,38,.15) 0%,transparent 40%)"></div>
+<div style="position:absolute;top:8px;right:8px;font-family:'Special Elite',cursive;font-size:9px;color:#d97706;letter-spacing:.1em;text-transform:uppercase">DECLASSIFIED</div>
+<div class="thumb-text"><div class="thumb-title" style="font-size:14px">WHY DID 80,000<br>SOLDIERS<br><span style="color:#d97706">SURRENDER?</span></div></div>
+<div class="thumb-accent" style="background:#dc2626"></div>
+</div></div>
+<div style="flex:1;min-width:200px">
+<div style="font-size:12px;font-weight:700;color:#fafaf9;margin-bottom:4px">Template B: "The Question"</div>
+<div class="d">Question-based title with key word in amber. "DECLASSIFIED" stamp top-right. Red accent bar. Dark gradient. Use for strategic analysis and "Why did they lose?" content. The question format drives clicks.</div>
+</div>
+</div>
+
+<!-- Thumb 3 -->
+<div style="display:flex;gap:16px;flex-wrap:wrap;margin-bottom:14px">
+<div class="thumb"><div class="thumb-inner" style="background:linear-gradient(135deg,#0a0a0a,#1a1008)">
+<div style="position:absolute;inset:0;border:1px solid #d9770644;margin:6px"></div>
+<div style="position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);text-align:center;width:90%">
+<div style="font-family:'Special Elite',cursive;font-size:8px;color:#78716c;letter-spacing:.15em;text-transform:uppercase;margin-bottom:4px">OPERATION</div>
+<div style="font-family:'Oswald',sans-serif;font-size:18px;font-weight:700;color:#fafaf9;text-transform:uppercase;line-height:1.1">MINCEMEAT</div>
+<div style="width:30px;height:1px;background:#d97706;margin:5px auto"></div>
+<div style="font-family:'Libre Baskerville',serif;font-size:8px;color:#a8a29e;font-style:italic">The dead man who fooled Hitler</div>
+</div>
+<div class="thumb-accent"></div>
+</div></div>
+<div style="flex:1;min-width:200px">
+<div style="font-size:12px;font-weight:700;color:#fafaf9;margin-bottom:4px">Template C: "The Dossier"</div>
+<div class="d">Centered, classified-document feel. Operation name in large text. Thin border frame. Amber line divider. Italic subtitle. Use for espionage/intelligence content. Feels like you're opening a secret file.</div>
+</div>
+</div>
+
+<div class="callout co-g"><strong>Thumbnail rules (always follow):</strong><br>
+• Title ≤ 7 words (readability at 150px)<br>
+• Oswald Bold UPPERCASE only for titles<br>
+• Dark backgrounds ALWAYS (never white/light — dark performs better in feeds)<br>
+• One key word in amber (#D97706) for emphasis<br>
+• Red badge for content type labels<br>
+• 1280×720px export from Canva (YouTube standard)<br>
+• Test at 150px wide — if you can't read it, simplify<br>
+• Archival image visible but darkened (never a clean, bright photo)</div>
+</div></div>
+
+<!-- CHANNEL BANNER -->
+<div class="sec"><div class="sec-h"><span class="num nb">BANNER</span><h2>YouTube Channel Banner</h2></div><div class="sec-b">
+
+<div style="background:#0a0a0a;border:1px solid #292524;border-radius:2px;padding:3px;margin:8px 0">
+<div style="width:100%;height:0;padding-bottom:16.67%;background:linear-gradient(135deg,#0a0a0a 0%,#1c1917 30%,#1a1008 60%,#0a0a0a 100%);position:relative;overflow:hidden;border-radius:1px">
+<div style="position:absolute;inset:0;display:flex;align-items:center;justify-content:center">
+<div style="text-align:center">
+<div style="font-family:'Oswald',sans-serif;font-size:clamp(14px,3vw,28px);font-weight:700;text-transform:uppercase;letter-spacing:.08em;color:#fafaf9">THE FORGOTTEN FRONT</div>
+<div style="width:40px;height:1px;background:#d97706;margin:4px auto"></div>
+<div style="font-family:'Libre Baskerville',serif;font-size:clamp(7px,1.2vw,11px);color:#78716c;font-style:italic">The military stories history tried to bury</div>
+<div style="font-family:'Special Elite',cursive;font-size:clamp(6px,1vw,9px);color:#d97706;letter-spacing:.15em;text-transform:uppercase;margin-top:6px">NEW DISPATCHES EVERY WEEK</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="d" style="margin-top:8px"><strong>Banner specs:</strong> 2560×1440px (YouTube requirement). Safe area for mobile: center 1546×423px. Keep all text centered. Background: dark gradient with subtle noise/grain texture. Logo centered. Tagline below. "New dispatches every week" at bottom — sets upload expectation.</div>
+</div></div>
+
+<!-- VOICE STRATEGY -->
+<div class="sec"><div class="sec-h"><span class="num ng">VOICE</span><h2>Voice & Narration Strategy</h2></div><div class="sec-b">
+
+<div class="d">You said "not decided yet" on voice — here's my recommendation based on your channel positioning:</div>
+
+<table class="tbl">
+<tr><th>Option</th><th>Pros</th><th>Cons</th><th>Cost</th><th>Verdict</th></tr>
+<tr><td><strong>Your own voice</strong></td><td>Most authentic. Unique (your accent adds character). No AI disclosure needed. Builds parasocial connection even without face. Free.</td><td>Requires recording setup. Takes time per video. Accent may need clarity work initially.</td><td style="color:#16a34a">$0</td><td style="color:#16a34a;font-weight:700">★ RECOMMENDED</td></tr>
+<tr><td>AI voice (ElevenLabs)</td><td>Consistent. Fast. Can produce more videos. Professional-sounding.</td><td>YouTube requires "synthetic content" disclosure since 2025. Increasingly common = less distinctive. Viewers notice and some distrust AI narration.</td><td>$11–$22/mo</td><td>BACKUP OPTION</td></tr>
+<tr><td>Hybrid (yours + AI)</td><td>Your voice for main content, AI for Shorts or supplementary.</td><td>Inconsistency may confuse brand identity.</td><td>$0–$22/mo</td><td>LATER EXPANSION</td></tr>
+</table>
+
+<div class="callout co-g"><strong>Strong recommendation: Use your own voice.</strong> Here's why this is strategic, not just practical:<br><br>
+1. <strong>Your accent is an ASSET, not a liability.</strong> A South Asian narrator covering Indian military history is inherently more authentic and credible than a generic American/British AI voice. It signals "this person has a connection to these stories."<br><br>
+2. <strong>AI voice channels are flooding YouTube in 2026.</strong> Your real voice immediately differentiates you from thousands of faceless AI channels. Viewers can tell and they prefer real humans.<br><br>
+3. <strong>It's free.</strong> You save $11–22/month and invest that in other tools or KDP ads.<br><br>
+4. <strong>Recording setup: minimal.</strong> A decent USB microphone ($20–40 one-time), quiet room, and Audacity (free software) for noise reduction. That's it.</div>
+
+<div class="d" style="margin-top:10px"><strong>Narration style guide:</strong></div>
+<table class="tbl">
+<tr><th>Element</th><th>Guideline</th></tr>
+<tr><td>Pace</td><td>Slower than conversational. Think documentary narrator, not YouTuber. Pause before key reveals.</td></tr>
+<tr><td>Tone</td><td>Serious but not monotone. Convey weight of the subject. Let emotion through on powerful moments.</td></tr>
+<tr><td>Opening hook</td><td>Always start with the most shocking or emotional fact. "87,000 soldiers died fighting for an empire that forgot their names."</td></tr>
+<tr><td>Story structure</td><td>Hook → Context → Build-up → Climax → Aftermath → Reflection. Classic documentary arc.</td></tr>
+<tr><td>Signature sign-off</td><td>"This was The Forgotten Front. The stories they never taught you." — consistent ending builds brand recognition.</td></tr>
+</table>
+</div></div>
+
+<!-- INTRO / OUTRO -->
+<div class="sec"><div class="sec-h"><span class="num nb">INTRO</span><h2>Intro & Outro Design</h2></div><div class="sec-b">
+
+<table class="tbl">
+<tr><th>Element</th><th>Duration</th><th>Design</th><th>Audio</th></tr>
+<tr><td><strong>Cold Open</strong></td><td>15–30 sec</td><td>NO intro card. Start immediately with the most gripping moment or fact. Archival footage + voiceover. Build curiosity.</td><td>Atmospheric tension music. Your voice with the hook.</td></tr>
+<tr><td><strong>Title Card</strong></td><td>3 sec</td><td>After the hook: quick logo flash. "THE FORGOTTEN FRONT" in Oswald + amber line + subtle flicker/grain effect. Quick, not fancy.</td><td>Brief dramatic sting (single percussion hit or low drone)</td></tr>
+<tr><td><strong>Outro</strong></td><td>15 sec</td><td>Logo + "Subscribe for more forgotten stories" + end screen cards (2 recommended videos). Dark background, amber accents.</td><td>Your sign-off: "This was The Forgotten Front" + ambient music fade</td></tr>
+</table>
+
+<div class="callout co-a"><strong>Critical rule: NO long intros.</strong> The first 30 seconds determine if a viewer stays or leaves. Cold open with the most dramatic content. The 3-second title card is just a brand stamp — viewers should already be hooked before they see your logo. This is the format that retains viewers in 2026.</div>
+</div></div>
+
+<!-- SOCIAL MEDIA -->
+<div class="sec"><div class="sec-h"><span class="num nb">SOCIAL</span><h2>Social Media Brand Extensions</h2></div><div class="sec-b">
+<table class="tbl">
+<tr><th>Platform</th><th>Handle</th><th>Use</th><th>Content Format</th></tr>
+<tr><td>YouTube</td><td>@TheForgottenFront</td><td>Primary platform. Long-form + Shorts.</td><td>2 long-form + 4–5 Shorts per week</td></tr>
+<tr><td>Instagram</td><td>@TheForgottenFront</td><td>Behind-the-scenes, archival photos, fact cards. Reels from Shorts.</td><td>Daily story, 3 reels/week (repurposed Shorts)</td></tr>
+<tr><td>TikTok</td><td>@TheForgottenFront</td><td>Repurpose YouTube Shorts. Potential viral discovery.</td><td>Same Shorts content cross-posted</td></tr>
+<tr><td>Twitter/X</td><td>@ForgottenFront</td><td>Thread format: "5 things you didn't know about [battle]". Engagement.</td><td>2–3 threads per week, daily engagement</td></tr>
+</table>
+<div class="d" style="margin-top:6px"><strong>Register all handles NOW</strong> even if you don't post immediately. Securing @TheForgottenFront across platforms prevents name-squatting.</div>
+</div></div>
+
+<!-- IMMEDIATE ACTIONS -->
+<div class="sec"><div class="sec-h"><span class="num ng">ACTION</span><h2>⚡ Immediate Actions (This Week)</h2></div><div class="sec-b">
+<div class="pillar"><span>1</span><span><strong>Register handles:</strong> Create @TheForgottenFront on YouTube, Instagram, TikTok, and Twitter/X. Even if empty — secure the names.</span></div>
+<div class="pillar"><span>2</span><span><strong>Download fonts:</strong> Oswald, Libre Baskerville, Special Elite, Outfit from Google Fonts. Upload all to Canva.</span></div>
+<div class="pillar"><span>3</span><span><strong>Create brand reference page in Canva:</strong> Save all hex codes, font pairings, and logo layout on one Canva design you can reference.</span></div>
+<div class="pillar"><span>4</span><span><strong>Design YouTube profile picture:</strong> Use Logo Concept #2 (bordered version) at 800×800px. Dark background.</span></div>
+<div class="pillar"><span>5</span><span><strong>Design channel banner:</strong> 2560×1440px. Follow the layout shown above. Test on mobile (safe area).</span></div>
+<div class="pillar"><span>6</span><span><strong>Create 3 thumbnail templates in Canva:</strong> "The Reveal", "The Question", "The Dossier" — save as reusable templates.</span></div>
+<div class="pillar"><span>7</span><span><strong>Order USB microphone:</strong> If using your own voice ($20–40 investment). Record a test narration and check audio quality.</span></div>
+<div class="pillar"><span>8</span><span><strong>Write channel "About" section:</strong> Use tagline + brief description of what viewers will find. Include upload schedule.</span></div>
+</div></div>
+
+<!-- DELIVERABLES -->
+<div class="sec"><div class="sec-h"><h2>📦 Y1.3 Deliverables</h2></div><div class="sec-b">
+<div style="display:grid;gap:5px">
+<div class="pillar"><span>✅</span><span>Channel name validated: "The Forgotten Front" — clear across all platforms</span></div>
+<div class="pillar"><span>✅</span><span>3 logo concepts designed in gritty/raw war journalism aesthetic</span></div>
+<div class="pillar"><span>✅</span><span>8-color brand palette with military naming and usage guide</span></div>
+<div class="pillar"><span>✅</span><span>4-font typography system (all free Google Fonts) with usage rules</span></div>
+<div class="pillar"><span>✅</span><span>3 thumbnail templates: "The Reveal", "The Question", "The Dossier"</span></div>
+<div class="pillar"><span>✅</span><span>Channel banner design with specs and safe area guidance</span></div>
+<div class="pillar"><span>✅</span><span>Voice strategy recommendation: own voice (with accent as asset, not liability)</span></div>
+<div class="pillar"><span>✅</span><span>Intro/outro design: cold open + 3-sec title card + 15-sec outro</span></div>
+<div class="pillar"><span>✅</span><span>Social media handles and cross-platform brand guide</span></div>
+<div class="pillar"><span>✅</span><span>8 immediate action items for this week</span></div>
+</div>
+</div></div>
+
+</div>
+<div class="foot">Y1.3 — Channel Branding & Visual Identity · The Forgotten Front · March 2026</div>
+</body></html>

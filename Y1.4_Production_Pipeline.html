@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0"><title>Y1.4 — AI Production Pipeline & Tool Stack</title>
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;700&family=Oswald:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}body{background:#0a0a0a;color:#e2e8f0;font-family:'Outfit',sans-serif;padding:0 0 60px}
+.hdr{background:linear-gradient(135deg,#0a0a0a,#1a1008,#0a0a0a);border-bottom:1px solid #d9770633;padding:28px 24px;text-align:center;position:relative}.hdr::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at 40% 30%,#d9770618,transparent 60%)}.hdr>*{position:relative}
+.tag{font-size:10px;color:#d97706;font-family:'JetBrains Mono',monospace;text-transform:uppercase;letter-spacing:.2em;margin-bottom:6px}
+h1{font-family:'Oswald',sans-serif;font-size:24px;font-weight:700;color:#fafaf9;letter-spacing:.05em;text-transform:uppercase;margin-bottom:4px}
+.sub{font-size:12px;color:#78716c;max-width:650px;margin:0 auto}
+.ct{max-width:880px;margin:0 auto;padding:20px 16px}
+.sec{background:#111111;border:1px solid #292524;border-radius:2px;margin-bottom:14px;overflow:hidden}
+.sec-h{padding:14px 18px;border-bottom:1px solid #292524;display:flex;align-items:center;gap:8px;flex-wrap:wrap}
+.sec-h h2{font-size:14px;font-weight:700;font-family:'Oswald',sans-serif;text-transform:uppercase;letter-spacing:.05em}
+.num{font-size:9px;font-family:'JetBrains Mono',monospace;padding:2px 8px;border-radius:2px;font-weight:700}
+.ng{background:#d9770615;color:#d97706}.nb{background:#3b82f615;color:#60a5fa}.ngr{background:#16a34a15;color:#16a34a}
+.sec-b{padding:14px 18px}
+.d{font-size:11px;color:#a8a29e;line-height:1.6;margin-bottom:8px}.d strong{color:#e7e5e4}
+.tbl{width:100%;border-collapse:collapse;margin:10px 0;font-size:10px}
+.tbl th{background:#1c1917;color:#a8a29e;padding:7px 8px;text-align:left;font-family:'JetBrains Mono',monospace;font-size:9px;text-transform:uppercase;border:1px solid #292524}
+.tbl td{padding:7px 8px;border:1px solid #292524;color:#d6d3d1;vertical-align:top}.tbl tr:nth-child(even) td{background:#0d0d0d}
+.g{color:#16a34a;font-weight:600}.a{color:#d97706;font-weight:600}.r{color:#dc2626;font-weight:600}
+.callout{padding:14px;border-radius:2px;font-size:12px;line-height:1.6;margin:10px 0}
+.co-g{background:#16a34a08;border:1px solid #16a34a22;color:#86efac}
+.co-a{background:#d9770608;border:1px solid #d9770622;color:#fcd34d}
+.co-b{background:#3b82f608;border:1px solid #3b82f622;color:#93c5fd}
+.callout strong{color:#fafaf9}
+.step-flow{display:flex;align-items:stretch;gap:0;margin:14px 0;flex-wrap:wrap}
+.step-card{flex:1;min-width:120px;background:#1c1917;border:1px solid #292524;padding:12px;text-align:center;position:relative}
+.step-card::after{content:'\2192';position:absolute;right:-10px;top:50%;transform:translateY(-50%);color:#d97706;font-size:16px;z-index:1}
+.step-card:last-child::after{display:none}
+.step-num{font-size:20px;margin-bottom:4px}
+.step-label{font-family:'Oswald',sans-serif;font-size:11px;font-weight:700;text-transform:uppercase;color:#fafaf9;letter-spacing:.05em;margin-bottom:2px}
+.step-time{font-size:9px;font-family:'JetBrains Mono',monospace;color:#d97706}
+.step-tool{font-size:9px;color:#78716c}
+.pillar{display:flex;align-items:center;gap:8px;padding:8px 10px;background:#16a34a08;border:1px solid #16a34a18;border-radius:2px;margin-bottom:4px}
+.pillar span:first-child{color:#16a34a;font-size:10px;font-family:'JetBrains Mono',monospace}
+.pillar span:last-child{font-size:11px;color:#d6d3d1}
+.week{background:#0a0a0a;border:1px solid #292524;border-radius:2px;padding:12px;margin-bottom:8px}
+.week h4{font-family:'Oswald',sans-serif;font-size:12px;color:#d97706;text-transform:uppercase;letter-spacing:.05em;margin-bottom:6px}
+.foot{text-align:center;padding:20px;font-size:10px;color:#44403c;font-family:'JetBrains Mono',monospace}
+</style></head><body>
+<div class="hdr"><div class="tag">Y1.4 — AI Production Pipeline & Tool Stack</div><h1>THE FORGOTTEN FRONT — PRODUCTION SYSTEM</h1><div class="sub">Complete video factory: Research → Script → Record → Edit → Publish. Every tool. Every step. Every minute accounted for.</div></div>
+<div class="ct">
+
+<!-- PIPELINE OVERVIEW -->
+<div class="sec"><div class="sec-h"><span class="num ng">PIPELINE</span><h2>6-Step Production Pipeline</h2></div><div class="sec-b">
+
+<div class="step-flow">
+<div class="step-card"><div class="step-num">🔍</div><div class="step-label">Research</div><div class="step-time">30 min</div><div class="step-tool">Claude + Archives</div></div>
+<div class="step-card"><div class="step-num">✍️</div><div class="step-label">Script</div><div class="step-time">45 min</div><div class="step-tool">Claude + Google Docs</div></div>
+<div class="step-card"><div class="step-num">🎙️</div><div class="step-label">Record</div><div class="step-time">20 min</div><div class="step-tool">USB Mic + Audacity</div></div>
+<div class="step-card"><div class="step-num">🖼️</div><div class="step-label">Visuals</div><div class="step-time">30 min</div><div class="step-tool">Archives + Canva</div></div>
+<div class="step-card"><div class="step-num">🎬</div><div class="step-label">Edit</div><div class="step-time">60 min</div><div class="step-tool">CapCut</div></div>
+<div class="step-card" style="border-color:#d97706"><div class="step-num">📤</div><div class="step-label">Publish</div><div class="step-time">15 min</div><div class="step-tool">YouTube Studio</div></div>
+</div>
+
+<div class="callout co-a"><strong>Total per long-form video: ~3.5 hours.</strong> Total per Short: ~30 minutes. Weekly output at 5–7 hrs/week: 1–2 long-form videos + 4–5 Shorts. This pipeline is designed for YOUR constraints: 4–6 hours/week, $0–22/month budget, working from Pakistan.</div>
+
+</div></div>
+
+<!-- COMPLETE TOOL STACK -->
+<div class="sec"><div class="sec-h"><span class="num nb">TOOLS</span><h2>Complete Tool Stack — Two Tiers</h2></div><div class="sec-b">
+
+<h3 style="font-size:12px;color:#16a34a;margin:8px 0;font-family:'Oswald',sans-serif;text-transform:uppercase">Tier 1: Free Stack ($0/month) — Start Here</h3>
+
+<table class="tbl">
+<tr><th>Stage</th><th>Tool</th><th>Cost</th><th>What It Does</th><th>URL</th></tr>
+<tr><td rowspan="2"><strong>1. Research</strong></td><td>Claude (Free)</td><td class="g">$0</td><td>AI research assistant. Generate topic outlines, fact-check, structure narratives. Your primary writing partner.</td><td>claude.ai</td></tr>
+<tr><td>Wikimedia / Imperial War Museum / Library of Congress</td><td class="g">$0</td><td>Public domain archival images, maps, photographs. Your visual library for all military content.</td><td>commons.wikimedia.org<br>iwm.org.uk<br>loc.gov</td></tr>
+<tr><td><strong>2. Script</strong></td><td>Google Docs</td><td class="g">$0</td><td>Write and store all scripts. Share with collaborators later. Version history built in.</td><td>docs.google.com</td></tr>
+<tr><td rowspan="2"><strong>3. Voiceover</strong></td><td>Your voice + USB microphone</td><td class="g">$0*</td><td>Record narration. Your accent = authenticity = brand differentiator. *Mic is $20–40 one-time.</td><td>Any USB condenser mic</td></tr>
+<tr><td>Audacity</td><td class="g">$0</td><td>Record, edit, and enhance audio. Noise reduction, compression, EQ. Professional results from free software.</td><td>audacityteam.org</td></tr>
+<tr><td rowspan="2"><strong>4. Visuals</strong></td><td>Canva Free</td><td class="g">$0</td><td>Create title cards, text overlays, maps with annotations, thumbnail designs. Templates for consistency.</td><td>canva.com</td></tr>
+<tr><td>Pexels / Pixabay</td><td class="g">$0</td><td>Supplementary stock footage (landscapes, atmospheric shots). Use sparingly — archival is better.</td><td>pexels.com / pixabay.com</td></tr>
+<tr><td><strong>5. Editing</strong></td><td>CapCut (Desktop)</td><td class="g">$0</td><td>Full video editor. Ken Burns effect on images, text overlays, transitions, auto-captions, music. Beginner-friendly with pro features.</td><td>capcut.com</td></tr>
+<tr><td><strong>5b. Editing (Alt)</strong></td><td>DaVinci Resolve</td><td class="g">$0</td><td>Professional-grade editor (used by Hollywood). Steeper learning curve but more powerful. Switch once you need advanced color/audio.</td><td>blackmagicdesign.com</td></tr>
+<tr><td><strong>6. Music</strong></td><td>YouTube Audio Library</td><td class="g">$0</td><td>Copyright-free music. Search "dark", "cinematic", "suspense", "military" for your vibe. Download and use freely.</td><td>studio.youtube.com → Audio Library</td></tr>
+<tr><td><strong>7. Thumbnails</strong></td><td>Canva Free</td><td class="g">$0</td><td>Use your 3 templates from Y1.3 brand guide. Swap text and images per video. 1280×720px export.</td><td>canva.com</td></tr>
+<tr><td><strong>8. SEO</strong></td><td>YouTube Search + TubeBuddy Free</td><td class="g">$0</td><td>Research keywords, tags, and competitors. TubeBuddy free tier shows basic tag suggestions.</td><td>tubebuddy.com</td></tr>
+<tr><td><strong>9. Publishing</strong></td><td>YouTube Studio</td><td class="g">$0</td><td>Upload, schedule, manage videos. Set thumbnails, titles, descriptions, tags, end screens.</td><td>studio.youtube.com</td></tr>
+<tr><td colspan="2" style="font-weight:700;color:#16a34a">TOTAL TIER 1</td><td class="g" style="font-size:12px"><strong>$0/mo</strong></td><td colspan="2">+ $20–40 one-time USB microphone. Every tool above is genuinely free (not trial).</td></tr>
+</table>
+
+<h3 style="font-size:12px;color:#d97706;margin:16px 0 8px;font-family:'Oswald',sans-serif;text-transform:uppercase">Tier 2: Growth Stack ($20–55/month) — Upgrade When Earning Revenue</h3>
+
+<table class="tbl">
+<tr><th>Upgrade</th><th>Tool</th><th>Cost</th><th>When to Upgrade</th><th>Why</th></tr>
+<tr><td>AI Writing</td><td>Claude Pro</td><td>$20/mo</td><td>When producing 3+ scripts/week</td><td>Longer context, more messages. Better for deep research scripts.</td></tr>
+<tr><td>Voiceover (backup)</td><td>ElevenLabs Starter</td><td>$11/mo</td><td>If you want AI voice for Shorts while using your voice for long-form</td><td>Clone your voice for consistent AI narration. Good for batch Shorts production.</td></tr>
+<tr><td>Design</td><td>Canva Pro</td><td>$13/mo</td><td>When producing 8+ thumbnails/month</td><td>Brand kit, background remover, premium templates. Saves time.</td></tr>
+<tr><td>SEO</td><td>VidIQ Pro</td><td>$7.50/mo</td><td>After monetization (Month 3–5)</td><td>Advanced keyword research, competitor tracking, daily ideas.</td></tr>
+<tr><td colspan="2" style="font-weight:700;color:#d97706">TOTAL TIER 2</td><td class="a" style="font-size:12px"><strong>$22–55/mo</strong></td><td colspan="2">Only upgrade tools that directly save you 2+ hours/week or improve quality measurably.</td></tr>
+</table>
+
+<div class="callout co-g"><strong>Rule: Start at $0. Upgrade only when revenue covers the cost.</strong> Your KDP business should be generating revenue before your YouTube channel reaches monetization. Use KDP profits to fund YouTube tool upgrades. Never spend money on tools before you've proven the content works with free tools first.</div>
+
+</div></div>
+
+<!-- DETAILED WORKFLOW -->
+<div class="sec"><div class="sec-h"><span class="num ng">WORKFLOW</span><h2>Step-by-Step: How to Make One Video</h2></div><div class="sec-b">
+
+<div class="d"><strong>This is the exact SOP (Standard Operating Procedure) you'll follow for every long-form video on The Forgotten Front.</strong></div>
+
+<div class="week">
+<h4>Step 1: Research & Topic Selection (30 min)</h4>
+<table class="tbl">
+<tr><th>Action</th><th>Tool</th><th>Time</th><th>Details</th></tr>
+<tr><td>Choose topic from content calendar</td><td>Your editorial calendar</td><td>2 min</td><td>Refer to your 8 content pillars and first 10 video ideas from Y1.1</td></tr>
+<tr><td>Deep research</td><td>Claude + Wikipedia + academic sources</td><td>20 min</td><td>Prompt Claude: "I'm making a 15-min documentary about [topic]. Give me the key facts, dramatic moments, lesser-known details, and a narrative arc." Then verify facts with Wikipedia citations and primary sources.</td></tr>
+<tr><td>Collect visual assets</td><td>Wikimedia / IWM / LoC</td><td>8 min</td><td>Download 15–25 archival images, maps, and photographs relevant to the topic. Save to a folder named for this video.</td></tr>
+</table>
+</div>
+
+<div class="week">
+<h4>Step 2: Scriptwriting (45 min)</h4>
+<table class="tbl">
+<tr><th>Action</th><th>Tool</th><th>Time</th><th>Details</th></tr>
+<tr><td>Generate AI first draft</td><td>Claude</td><td>10 min</td><td>Prompt: "Write a 2,000-word documentary script for 'The Forgotten Front' channel about [topic]. Structure: shocking hook (first 15 seconds), context, build-up, climax, aftermath, reflection. Tone: serious, documentary, suspenseful. Include specific dates, names, and numbers."</td></tr>
+<tr><td>Rewrite and add your voice</td><td>Google Docs</td><td>25 min</td><td>CRITICAL: Never use AI output as-is. Rewrite 40–60% in your own words. Add personal insights, better transitions, your unique perspective (especially for South Asian content). This is what makes your content un-replicable.</td></tr>
+<tr><td>Add visual cues</td><td>Google Docs</td><td>10 min</td><td>In brackets, note what image/footage should appear: [SHOW: Map of Imphal region] [SHOW: Photo of Indian soldiers in Burma]. This becomes your editing guide.</td></tr>
+</table>
+<div class="callout co-a"><strong>Script formula (AIDA for documentaries):</strong><br>
+<strong>Hook (0:00–0:30):</strong> Most shocking fact or emotional moment. "87,000 soldiers died fighting a war that wasn't theirs..."<br>
+<strong>Context (0:30–3:00):</strong> Set the scene. Who, where, when, why it matters.<br>
+<strong>Build-Up (3:00–10:00):</strong> The story unfolds. Key events, decisions, turning points.<br>
+<strong>Climax (10:00–13:00):</strong> The most dramatic moment. Battle, revelation, or tragedy.<br>
+<strong>Aftermath (13:00–15:00):</strong> What happened next. Legacy. Why this story was forgotten.<br>
+<strong>CTA (15:00–15:30):</strong> "This was The Forgotten Front." Subscribe prompt. End screen.</div>
+</div>
+
+<div class="week">
+<h4>Step 3: Voice Recording (20 min)</h4>
+<table class="tbl">
+<tr><th>Action</th><th>Tool</th><th>Time</th><th>Details</th></tr>
+<tr><td>Setup</td><td>USB mic + Audacity</td><td>2 min</td><td>Quiet room. Mic 6 inches from mouth. Audacity: 44.1kHz, mono. Pop filter if available.</td></tr>
+<tr><td>Record narration</td><td>Audacity</td><td>12 min</td><td>Read script at documentary pace (slower than conversational). Pause 2 seconds between paragraphs. Re-record any flubbed lines immediately — easier than editing later.</td></tr>
+<tr><td>Basic audio cleanup</td><td>Audacity</td><td>6 min</td><td>Noise Reduction (Effect → Noise Reduction → Get profile → Apply). Normalize volume. Compress dynamics. Export as WAV.</td></tr>
+</table>
+<div class="callout co-b"><strong>Audacity cheat sheet (do this every time):</strong><br>
+1. Select a silent section → Effect → Noise Reduction → "Get Noise Profile"<br>
+2. Select All (Ctrl+A) → Effect → Noise Reduction → Apply (default settings)<br>
+3. Effect → Normalize → -1.0 dB<br>
+4. Effect → Compressor → default settings<br>
+5. Export as WAV (for editing) or MP3 (for backup)<br>
+Total cleanup: 3–5 minutes. Professional-sounding audio every time.</div>
+</div>
+
+<div class="week">
+<h4>Step 4: Visual Assembly (30 min)</h4>
+<table class="tbl">
+<tr><th>Action</th><th>Tool</th><th>Time</th><th>Details</th></tr>
+<tr><td>Organize images in sequence</td><td>File explorer</td><td>5 min</td><td>Rename images in order: 01-map-imphal.jpg, 02-soldiers-march.jpg, etc. Match to script visual cues.</td></tr>
+<tr><td>Create text overlay cards</td><td>Canva</td><td>15 min</td><td>Make title card, section headers, quote cards, date/location cards, and end screen. Use brand templates from Y1.3.</td></tr>
+<tr><td>Create or annotate maps</td><td>Canva</td><td>10 min</td><td>Download base map from Wikimedia. In Canva, add arrows, troop movements, labels, and highlights. Export as PNG.</td></tr>
+</table>
+</div>
+
+<div class="week">
+<h4>Step 5: Video Editing (60 min)</h4>
+<table class="tbl">
+<tr><th>Action</th><th>Tool</th><th>Time</th><th>Details</th></tr>
+<tr><td>Import all assets</td><td>CapCut</td><td>3 min</td><td>Import: voiceover WAV, all images, Canva cards, background music track from YouTube Audio Library.</td></tr>
+<tr><td>Lay voiceover on timeline</td><td>CapCut</td><td>2 min</td><td>Place full narration audio on audio track. This is your master timeline — everything syncs to voice.</td></tr>
+<tr><td>Place images/footage</td><td>CapCut</td><td>25 min</td><td>Following script visual cues, place images on video track. Apply Ken Burns effect (slow zoom/pan) to each image — this creates movement from still photos. Change image every 5–8 seconds.</td></tr>
+<tr><td>Add text overlays</td><td>CapCut</td><td>10 min</td><td>Names, dates, locations as lower-thirds. Key quotes in Libre Baskerville italic. Use brand colors (amber, white on dark).</td></tr>
+<tr><td>Add music track</td><td>CapCut</td><td>5 min</td><td>Place background music at 10–15% volume (ducked under voice). Use suspenseful/cinematic tracks. Music should enhance mood, never overpower narration.</td></tr>
+<tr><td>Add intro title card + outro</td><td>CapCut</td><td>5 min</td><td>3-sec title card after hook. 15-sec outro with subscribe CTA and end screen placeholders.</td></tr>
+<tr><td>Review and polish</td><td>CapCut</td><td>10 min</td><td>Watch full video. Fix timing issues. Add transitions (crossfade between images, 0.5 sec). Ensure audio levels are consistent.</td></tr>
+<tr><td>Export</td><td>CapCut</td><td>—</td><td>Export at 1080p, 30fps, H.264. File size ~500MB–1.5GB for a 15-min video.</td></tr>
+</table>
+</div>
+
+<div class="week">
+<h4>Step 6: Publish & Optimize (15 min)</h4>
+<table class="tbl">
+<tr><th>Action</th><th>Tool</th><th>Time</th><th>Details</th></tr>
+<tr><td>Upload video</td><td>YouTube Studio</td><td>2 min</td><td>Upload while working on metadata. Set to "Scheduled" for optimal publish time.</td></tr>
+<tr><td>Write title</td><td>YouTube Studio</td><td>2 min</td><td>Use proven hook formats: "The [Adjective] [Event/Battle] That [Outcome]" or "[Number] Soldiers [Dramatic Action] — [Consequence]"</td></tr>
+<tr><td>Write description</td><td>YouTube Studio</td><td>4 min</td><td>First 2 lines = hook (visible before "show more"). Include timestamps. Add relevant links. Standard CTA: "Subscribe for more forgotten stories."</td></tr>
+<tr><td>Add tags</td><td>YouTube Studio + TubeBuddy</td><td>3 min</td><td>8–15 tags. Mix broad ("military history", "WW2") with specific ("Battle of Imphal", "Indian Army WW2"). Use TubeBuddy suggestions.</td></tr>
+<tr><td>Upload thumbnail</td><td>YouTube Studio</td><td>1 min</td><td>Use pre-designed thumbnail from Canva template (created in Step 4).</td></tr>
+<tr><td>Set end screen + cards</td><td>YouTube Studio</td><td>2 min</td><td>Add 2 video recommendations + subscribe button in end screen. Add 1–2 info cards linking to related videos.</td></tr>
+<tr><td>Schedule publish</td><td>YouTube Studio</td><td>1 min</td><td>Schedule for optimal time: Tuesday, Thursday, or Saturday at 2–4 PM EST (peak US viewership for education content).</td></tr>
+</table>
+</div>
+
+</div></div>
+
+<!-- SHORTS PIPELINE -->
+<div class="sec"><div class="sec-h"><span class="num ng">SHORTS</span><h2>Shorts Production Pipeline (30 min each)</h2></div><div class="sec-b">
+
+<table class="tbl">
+<tr><th>Step</th><th>Action</th><th>Time</th><th>Tool</th></tr>
+<tr><td>1</td><td>Pick a single shocking fact from your research (or a standalone micro-story)</td><td>3 min</td><td>Your research notes / Claude</td></tr>
+<tr><td>2</td><td>Write a 60–90 word script with immediate hook</td><td>5 min</td><td>Google Docs or text editor</td></tr>
+<tr><td>3</td><td>Record voiceover (or use AI voice for Shorts)</td><td>3 min</td><td>Audacity / ElevenLabs</td></tr>
+<tr><td>4</td><td>Select 3–5 images or create a quick Canva visual</td><td>5 min</td><td>Archives + Canva</td></tr>
+<tr><td>5</td><td>Edit in CapCut: 9:16 vertical format, add captions, music</td><td>12 min</td><td>CapCut (use auto-captions feature)</td></tr>
+<tr><td>6</td><td>Upload to YouTube Shorts + cross-post to TikTok/Reels</td><td>2 min</td><td>YouTube Studio + phone apps</td></tr>
+</table>
+
+<div class="callout co-g"><strong>Shorts batch strategy:</strong> After producing a long-form video, extract 3–5 Short ideas from the same research. This way, one research session feeds both your long-form and Shorts pipeline. A single topic = 1 long-form video + 3–5 Shorts = maximum output from minimum research time.</div>
+</div></div>
+
+<!-- WEEKLY SCHEDULE -->
+<div class="sec"><div class="sec-h"><span class="num nb">SCHEDULE</span><h2>Weekly Production Schedule (5–7 hrs)</h2></div><div class="sec-b">
+
+<table class="tbl">
+<tr><th>Day</th><th>Task</th><th>Time</th><th>Output</th></tr>
+<tr><td><strong>Monday</strong></td><td>Research + Script for Video 1</td><td>1.25 hrs</td><td>Completed script + visual assets collected</td></tr>
+<tr><td><strong>Tuesday</strong></td><td>Record + Edit Video 1</td><td>1.5 hrs</td><td>Finished long-form video ready to upload</td></tr>
+<tr><td><strong>Wednesday</strong></td><td>Publish Video 1 + Create 2–3 Shorts from same topic</td><td>1.25 hrs</td><td>1 long-form published + 2–3 Shorts scheduled</td></tr>
+<tr><td><strong>Thursday</strong></td><td>Research + Script for Video 2 (or batch more Shorts)</td><td>1.25 hrs</td><td>Script ready OR 2–3 additional Shorts</td></tr>
+<tr><td><strong>Friday</strong></td><td>Record + Edit Video 2</td><td>1.5 hrs</td><td>Second long-form video ready</td></tr>
+<tr><td><strong>Weekend</strong></td><td>Publish Video 2 + Schedule remaining Shorts + Analytics review</td><td>0.5 hrs</td><td>Week complete: 2 long-form + 4–5 Shorts published</td></tr>
+</table>
+
+<div class="d" style="margin-top:8px"><strong>Weekly output: 2 long-form videos (12–20 min each) + 4–5 Shorts (30–60 sec each). Total: ~6.25 hours.</strong> This fits within your 4–6 hour/week constraint with slight flexibility. On weeks when time is tight, do 1 long-form + 5 Shorts instead.</div>
+</div></div>
+
+<!-- FILE ORGANIZATION -->
+<div class="sec"><div class="sec-h"><span class="num ngr">FILES</span><h2>Folder Structure & File Naming</h2></div><div class="sec-b">
+
+<div style="font-family:'JetBrains Mono',monospace;font-size:11px;color:#a8a29e;background:#0a0a0a;border:1px solid #292524;padding:14px;line-height:1.8;white-space:pre-wrap"><span style="color:#60a5fa;font-weight:700">📁 TheForgottenFront/</span>
+├── <span style="color:#d97706">📁 Scripts/</span>
+│   ├── TFF-001-2.5M-Soldiers-Forgot.gdoc
+│   ├── TFF-002-Operation-Mincemeat.gdoc
+│   └── TFF-003-Battle-Imphal.gdoc
+├── <span style="color:#d97706">📁 Assets/</span>
+│   ├── 📁 TFF-001/  (images, maps, Canva cards)
+│   ├── 📁 TFF-002/
+│   └── 📁 Music/  (downloaded YouTube Audio Library tracks)
+├── <span style="color:#d97706">📁 Audio/</span>
+│   ├── TFF-001-voiceover.wav
+│   └── TFF-002-voiceover.wav
+├── <span style="color:#d97706">📁 Exports/</span>
+│   ├── TFF-001-FINAL-1080p.mp4
+│   └── TFF-001-SHORT-01.mp4
+├── <span style="color:#d97706">📁 Thumbnails/</span>
+│   ├── TFF-001-thumb.png
+│   └── TFF-002-thumb.png
+├── <span style="color:#d97706">📁 Brand/</span>  (logo, fonts, color reference, templates)
+└── <span style="color:#d97706">📁 Analytics/</span>  (weekly performance tracking)</div>
+
+<div class="d" style="margin-top:8px"><strong>Naming convention:</strong> TFF-[Number]-[Short-Title]-[FileType]. Examples: TFF-001-Soldiers-Forgot-Script, TFF-001-Soldiers-Forgot-Voiceover, TFF-001-Soldiers-Forgot-FINAL.</div>
+</div></div>
+
+<!-- QUALITY CHECKLIST -->
+<div class="sec"><div class="sec-h"><span class="num ng">QC</span><h2>Pre-Publish Quality Checklist</h2></div><div class="sec-b">
+
+<div class="d">Run through this before EVERY upload. Takes 5 minutes and prevents embarrassing mistakes.</div>
+
+<table class="tbl">
+<tr><th>Check</th><th>What to Verify</th></tr>
+<tr><td>☐ Hook test</td><td>First 15 seconds: does it immediately create curiosity or shock? Would YOU keep watching?</td></tr>
+<tr><td>☐ Audio quality</td><td>No background noise, consistent volume, voice clear over music. Music at 10–15% of voice volume.</td></tr>
+<tr><td>☐ Visual pacing</td><td>Image changes every 5–8 seconds. No static shots longer than 10 seconds. Ken Burns on all stills.</td></tr>
+<tr><td>☐ Text readability</td><td>All text overlays readable at 720p on a phone screen. Names/dates visible for at least 3 seconds.</td></tr>
+<tr><td>☐ Factual accuracy</td><td>Key dates, names, and numbers double-checked against reliable sources. No AI hallucinations left in.</td></tr>
+<tr><td>☐ Brand consistency</td><td>Colors match palette (amber, white, dark). Fonts are Oswald/Libre Baskerville/Special Elite. Logo visible.</td></tr>
+<tr><td>☐ Thumbnail</td><td>Readable at 150px. Matches one of 3 templates. Bold text. Dark background. Curiosity hook.</td></tr>
+<tr><td>☐ Title</td><td>Under 60 characters. Contains primary keyword. Creates curiosity or shock. No clickbait lies.</td></tr>
+<tr><td>☐ Description</td><td>First 2 lines are hook (visible before "show more"). Timestamps included. Subscribe CTA. Tags set.</td></tr>
+<tr><td>☐ End screen</td><td>Subscribe button + 2 recommended videos set. Cards linking to related content added.</td></tr>
+<tr><td>☐ Sign-off</td><td>Video ends with: "This was The Forgotten Front. The stories they never taught you."</td></tr>
+</table>
+</div></div>
+
+<!-- FIRST VIDEO SOP -->
+<div class="sec"><div class="sec-h"><span class="num ng">FIRST VIDEO</span><h2>Your First Video: Step-by-Step Action Plan</h2></div><div class="sec-b">
+
+<div class="d"><strong>Video #1: "The 2.5 Million Soldiers History Forgot" (Indian Army in WW2)</strong></div>
+
+<div class="pillar"><span>1</span><span><strong>Research (30 min):</strong> Prompt Claude for the complete story of Indian involvement in WW2. Key facts: 2.5M volunteers, 87,000 deaths, 30 Victoria Crosses, battles in Burma/Italy/North Africa. Download 20+ archival photos from IWM digital archive.</span></div>
+<div class="pillar"><span>2</span><span><strong>Script (45 min):</strong> AI draft → rewrite 50%+ in your voice. Hook: "In 1939, 2.5 million men volunteered to fight for an empire that didn't consider them equal. This is the story nobody told." Structure: Why they joined → Where they fought → What they endured → Why they were forgotten.</span></div>
+<div class="pillar"><span>3</span><span><strong>Record (20 min):</strong> Set up mic. Read script with documentary pacing. Pause for emphasis on emotional moments. Clean up in Audacity.</span></div>
+<div class="pillar"><span>4</span><span><strong>Visuals (30 min):</strong> Create in Canva: title card, map of theaters where Indian troops served, "87,000" stat card, timeline of key battles. Collect archival photos of Indian soldiers.</span></div>
+<div class="pillar"><span>5</span><span><strong>Edit (60 min):</strong> In CapCut: lay voiceover → place images with Ken Burns → add text overlays (dates, names, locations) → background music (search "somber" or "reflective" in YouTube Audio Library) → title card after hook → outro with sign-off.</span></div>
+<div class="pillar"><span>6</span><span><strong>Publish (15 min):</strong> Upload. Title: "The 2.5 Million Soldiers History Forgot | Indian Army in WW2". Thumbnail: Template A "The Reveal" with red "UNTOLD" badge. Schedule for Tuesday or Thursday 3 PM EST.</span></div>
+<div class="pillar"><span>7</span><span><strong>Shorts (30 min):</strong> Extract 3 Shorts: "87,000 Indian soldiers died in WW2 — and nobody remembers" (60 sec), "The Victoria Cross winners India forgot" (45 sec), "Why did 2.5 million Indians volunteer for Britain?" (60 sec). Publish over next 3 days.</span></div>
+
+<div class="callout co-g"><strong>Total time for Video #1 + 3 Shorts: ~4 hours.</strong> Your very first content package for The Forgotten Front. Once published, the production pipeline is proven and you repeat it with improving speed. By Video #5, you'll produce in 2.5–3 hours per long-form.</div>
+</div></div>
+
+<!-- DELIVERABLES -->
+<div class="sec"><div class="sec-h"><h2>📦 Y1.4 Deliverables — PROJECT Y1 COMPLETE ✓</h2></div><div class="sec-b">
+<div style="display:grid;gap:5px">
+<div class="pillar"><span>✅</span><span>Complete 6-step production pipeline: Research → Script → Record → Visuals → Edit → Publish</span></div>
+<div class="pillar"><span>✅</span><span>Full tool stack: Free Tier ($0/mo) + Growth Tier ($22–55/mo) with upgrade triggers</span></div>
+<div class="pillar"><span>✅</span><span>Detailed SOP for each production step with time estimates and exact instructions</span></div>
+<div class="pillar"><span>✅</span><span>Shorts production pipeline: 30 min per Short, batch strategy from long-form research</span></div>
+<div class="pillar"><span>✅</span><span>Weekly schedule: 2 long-form + 4–5 Shorts in 5–7 hours/week</span></div>
+<div class="pillar"><span>✅</span><span>File organization system with naming conventions</span></div>
+<div class="pillar"><span>✅</span><span>Pre-publish quality checklist (11 items)</span></div>
+<div class="pillar"><span>✅</span><span>First video action plan: step-by-step SOP for "The 2.5 Million Soldiers History Forgot"</span></div>
+<div class="pillar"><span>✅</span><span>Script formula (AIDA for documentaries) with hook/context/build/climax/aftermath structure</span></div>
+<div class="pillar"><span>✅</span><span>Audacity audio cleanup cheat sheet (5-step process)</span></div>
+</div>
+
+<div class="callout co-a" style="margin-top:14px;border-color:#d9770644;background:linear-gradient(135deg,#111111,#1a1008)"><strong style="color:#d97706;font-size:14px">🏆 PROJECT Y1: CHANNEL FOUNDATION & NICHE STRATEGY — COMPLETE</strong><br><br>
+All 4 subprojects delivered:<br>
+✓ Y1.1 — Niche Selection & CPM Revenue Analysis<br>
+✓ Y1.2 — Competitive Landscape & Content Gap Analysis<br>
+✓ Y1.3 — Channel Branding & Visual Identity ("The Forgotten Front")<br>
+✓ Y1.4 — AI Production Pipeline & Tool Stack<br><br>
+<strong>You now have everything needed to create and publish your first video.</strong> The next YouTube project (Y2: AI Content Production System) will refine and optimize this pipeline — but you don't need to wait. You can start producing content TODAY with what's in Y1.</div>
+</div></div>
+
+</div>
+<div class="foot">Y1.4 — AI Production Pipeline & Tool Stack · The Forgotten Front · March 2026</div>
+</body></html>

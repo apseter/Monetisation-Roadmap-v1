@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0"><title>Track 3 — Instagram Monetization Roadmap (I1–I3)</title>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;700&family=Sora:wght@400;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#0c0612;--card:#140e1e;--card2:#1c1429;--border:#2a1f3d;--t1:#f4f0fa;--t2:#c4bdd4;--t3:#8a7fa0;--pink:#e84393;--pink-bg:#e8439310;--violet:#6c5ce7;--violet-bg:#6c5ce710;--orange:#fdcb6e;--orange-bg:#fdcb6e10;--green:#00b894;--green-bg:#00b89410;--red:#ff7675;--grad:linear-gradient(135deg,#e84393,#6c5ce7,#00b894)}
+*{margin:0;padding:0;box-sizing:border-box}
+body{background:var(--bg);color:var(--t2);font-family:'DM Sans',sans-serif;line-height:1.65;-webkit-font-smoothing:antialiased}
+
+.hdr{position:relative;padding:48px 24px 40px;text-align:center;overflow:hidden}
+.hdr::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 70% 50% at 50% 0%,#e8439308,transparent),radial-gradient(ellipse 50% 40% at 25% 80%,#6c5ce706,transparent),radial-gradient(ellipse 50% 40% at 75% 80%,#00b89406,transparent)}
+.hdr>*{position:relative}
+.tag{font-size:10px;font-family:'JetBrains Mono',monospace;text-transform:uppercase;letter-spacing:.25em;margin-bottom:10px;background:var(--grad);-webkit-background-clip:text;-webkit-text-fill-color:transparent}
+h1{font-family:'Sora',sans-serif;font-size:clamp(24px,4.5vw,36px);font-weight:800;color:var(--t1);line-height:1.15;margin-bottom:6px}
+h1 em{font-style:normal;background:var(--grad);-webkit-background-clip:text;-webkit-text-fill-color:transparent}
+.sub{font-size:13px;color:var(--t3);max-width:620px;margin:0 auto}
+.ct{max-width:900px;margin:0 auto;padding:20px 16px}
+
+.sec{background:var(--card);border:1px solid var(--border);border-radius:12px;margin-bottom:16px;overflow:hidden}
+.sec-h{padding:16px 20px;border-bottom:1px solid var(--border);display:flex;align-items:center;gap:10px;flex-wrap:wrap}
+.sec-h h2{font-family:'Sora',sans-serif;font-size:15px;font-weight:700;color:var(--t1)}
+.num{font-size:9px;font-family:'JetBrains Mono',monospace;padding:3px 10px;border-radius:20px;font-weight:700}
+.np{background:var(--pink-bg);color:var(--pink)}.nv{background:var(--violet-bg);color:var(--violet)}.ng{background:var(--green-bg);color:var(--green)}.no{background:var(--orange-bg);color:var(--orange)}
+.sec-b{padding:16px 20px}
+.d{font-size:12px;color:var(--t3);line-height:1.65;margin-bottom:10px}.d strong{color:var(--t1)}
+
+.tbl{width:100%;border-collapse:collapse;margin:12px 0;font-size:11px}
+.tbl th{background:var(--card2);color:var(--t3);padding:9px 10px;text-align:left;font-family:'JetBrains Mono',monospace;font-size:9px;text-transform:uppercase;letter-spacing:.04em;border:1px solid var(--border)}
+.tbl td{padding:9px 10px;border:1px solid var(--border);color:var(--t2);vertical-align:top}.tbl tr:nth-child(even) td{background:#0c061288}
+.g{color:var(--green);font-weight:600}.pk{color:var(--pink);font-weight:600}.v{color:var(--violet);font-weight:600}
+
+.callout{padding:16px;border-radius:8px;font-size:12px;line-height:1.65;margin:12px 0}
+.co-p{background:var(--pink-bg);border:1px solid #e8439322;color:#fab1d0}
+.co-v{background:var(--violet-bg);border:1px solid #6c5ce722;color:#b8b0e8}
+.co-g{background:var(--green-bg);border:1px solid #00b89422;color:#7ee8d0}
+.co-o{background:var(--orange-bg);border:1px solid #fdcb6e22;color:#fde6a8}
+.callout strong{color:var(--t1)}
+
+.proj{background:var(--card2);border:1px solid var(--border);border-radius:10px;padding:20px;margin:14px 0}
+.proj h3{font-family:'Sora',sans-serif;font-size:16px;font-weight:700;color:var(--t1);margin-bottom:4px}
+.proj-meta{font-size:10px;font-family:'JetBrains Mono',monospace;color:var(--t3);display:flex;gap:14px;flex-wrap:wrap;margin-bottom:12px}
+.sp{background:var(--card);border:1px solid var(--border);border-radius:8px;padding:12px 16px;margin-bottom:6px}
+.sp h4{font-size:12px;font-weight:700;color:var(--t1);margin-bottom:3px}
+.sp p{font-size:11px;color:var(--t3);line-height:1.55}
+.sp-tag{font-size:8px;font-family:'JetBrains Mono',monospace;padding:2px 8px;border-radius:10px;display:inline-block;margin-right:4px}
+
+.pillar{display:flex;align-items:flex-start;gap:8px;padding:9px 12px;background:var(--green-bg);border:1px solid #00b89418;border-radius:6px;margin-bottom:5px}
+.pillar span:first-child{color:var(--green);font-size:11px;font-family:'JetBrains Mono',monospace;min-width:16px;flex-shrink:0;padding-top:1px}
+.pillar span:last-child{font-size:11px;color:var(--t2);line-height:1.5}
+
+.timeline{position:relative;padding-left:28px;margin:16px 0}
+.timeline::before{content:'';position:absolute;left:8px;top:8px;bottom:8px;width:2px;background:linear-gradient(180deg,var(--pink),var(--violet),var(--green))}
+.t-step{position:relative;margin-bottom:14px}
+.t-step::before{content:'';position:absolute;left:-24px;top:6px;width:10px;height:10px;border-radius:50%;border:2px solid var(--violet);background:var(--bg)}
+.t-step h4{font-size:12px;font-weight:700;color:var(--t1)}
+.t-step p{font-size:11px;color:var(--t3)}
+
+.foot{text-align:center;padding:30px 20px;font-size:10px;color:#4a3f60;font-family:'JetBrains Mono',monospace;border-top:1px solid var(--border);margin-top:30px}
+</style></head><body>
+
+<div class="hdr">
+<div class="tag">Track 3 — Instagram Monetization</div>
+<h1>The Forgotten Front on <em>Instagram</em></h1>
+<div class="sub">Full roadmap: I1–I3 · 12 subprojects · From zero to monetized Instagram page · Built entirely on content you're already creating for YouTube</div>
+</div>
+<div class="ct">
+
+<!-- WHY INSTAGRAM AS TRACK 3 -->
+<div class="sec"><div class="sec-h"><span class="num np">WHY</span><h2>Why Instagram Is Your Best Third Track</h2></div><div class="sec-b">
+
+<div class="d"><strong>You're already creating the content. Instagram just multiplies its distribution and opens new revenue streams you can't access on YouTube alone.</strong></div>
+
+<table class="tbl">
+<tr><th>Factor</th><th>Your Advantage</th></tr>
+<tr><td><strong>Zero extra content creation</strong></td><td>Your YouTube Shorts become Reels. Your archival research becomes carousels. Your script facts become caption posts. Nothing new to create — just reformat and publish.</td></tr>
+<tr><td><strong>Instagram rewards niche clarity</strong></td><td>The 2026 algorithm uses "topic clusters" — pages with a clear niche get 2.5× more reach. Military history is a sharp, recognizable cluster with passionate audiences.</td></tr>
+<tr><td><strong>60%+ Reels views come from non-followers</strong></td><td>Your content reaches people who've never heard of you. Unlike YouTube where search dominates early, Instagram actively pushes Reels to new audiences from day one.</td></tr>
+<tr><td><strong>Saves & shares > likes</strong></td><td>"Did you know?" military history facts are the ultimate save-and-share content. People bookmark these and DM them to friends. That's exactly what the 2026 algorithm rewards most.</td></tr>
+<tr><td><strong>Drives traffic to YouTube & KDP</strong></td><td>Instagram becomes a funnel: Reel hook → "Full documentary on YouTube" → subscriber. Bio link → KDP books. Two income streams fed by one platform.</td></tr>
+<tr><td><strong>Independent monetization</strong></td><td>Subscriptions ($0.99-$99.99/mo), Gifts on Reels, brand partnerships, affiliate links — all separate from YouTube revenue. Diversification = safety.</td></tr>
+<tr><td><strong>2.6 billion monthly users</strong></td><td>Largest visual platform. Your archival imagery aesthetic is PERFECT for Instagram's visual-first format.</td></tr>
+</table>
+
+<div class="callout co-o"><strong>The math:</strong> If you cross-post 5 YouTube Shorts as Reels per week + 2 carousels + 3 Stories, that's ~45 min/week of reformatting work (not new content creation). At 10K followers (achievable in 3-6 months with consistent Reels), you unlock subscriptions, badges, and brand deal eligibility. Instagram becomes your third revenue stream for under 1 hour of additional weekly work.</div>
+</div></div>
+
+<!-- MONETIZATION PATHWAYS -->
+<div class="sec"><div class="sec-h"><span class="num no">MONEY</span><h2>Instagram Revenue Streams — When They Unlock</h2></div><div class="sec-b">
+
+<table class="tbl">
+<tr><th>Revenue Stream</th><th>Requirement</th><th>Estimated Income</th><th>When for You</th></tr>
+<tr><td class="pk"><strong>Brand Partnerships</strong></td><td>500-1K+ engaged followers (micro-influencer)</td><td>$50-500/post depending on niche</td><td>Month 2-3</td></tr>
+<tr><td class="pk"><strong>Affiliate Links (bio)</strong></td><td>Professional account + link in bio</td><td>$20-200/mo from history books, courses</td><td>Month 1 (immediate)</td></tr>
+<tr><td class="v"><strong>Gifts on Reels</strong></td><td>Professional account + eligible country</td><td>$10-100/mo from engaged followers</td><td>Month 2-3</td></tr>
+<tr><td class="v"><strong>Instagram Subscriptions</strong></td><td>10,000 followers + Professional account</td><td>$100-500/mo at 2% conversion</td><td>Month 4-6</td></tr>
+<tr><td class="v"><strong>Live Badges</strong></td><td>10,000 followers</td><td>$20-100/live session</td><td>Month 4-6</td></tr>
+<tr><td class="g"><strong>Instagram Ad Revenue</strong></td><td>Invite-only (currently US, Japan, Korea, Canada)</td><td>$0.50-2.50/1K views</td><td>If invited</td></tr>
+<tr><td class="g"><strong>Driving YouTube subs</strong></td><td>Engaged audience + bio link</td><td>Indirect — increases YT ad revenue</td><td>Month 1+</td></tr>
+<tr><td class="g"><strong>Driving KDP sales</strong></td><td>Engaged audience + Story/post promotion</td><td>Indirect — increases book sales</td><td>Month 1+</td></tr>
+</table>
+
+<div class="callout co-p"><strong>Conservative Month 6 projection from Instagram alone:</strong> Brand deals ($100-300) + affiliate links ($30-100) + Gifts ($20-50) + indirect YouTube/KDP boost ($50-150) = <strong>$200-600/month additional revenue</strong>. Combined with YouTube ($100-500) and KDP ($150-500), your total three-track income projection becomes <strong>$450-1,600/month</strong>. The midpoint crosses your $500-1K target comfortably.</div>
+</div></div>
+
+<!-- CONTENT PILLARS -->
+<div class="sec"><div class="sec-h"><span class="num nv">PILLARS</span><h2>4 Content Pillars for The Forgotten Front on Instagram</h2></div><div class="sec-b">
+
+<div class="d"><strong>Instagram rewards topic cluster clarity. Every post should fit one of these 4 pillars. The algorithm learns what your page is "about" and promotes you to the right audience.</strong></div>
+
+<table class="tbl">
+<tr><th>Pillar</th><th>Content Type</th><th>Format</th><th>% of Posts</th><th>Algorithm Signal</th></tr>
+<tr><td class="pk"><strong>1. Shocking Facts</strong></td><td>"87,000 Indian soldiers died in WW2 — nobody remembers." Quick, punchy, emotional military history facts.</td><td>Reels (15-30 sec) — cross-posted from YouTube Shorts</td><td>40%</td><td>Shares + saves. People DM these to friends. Highest reach potential.</td></tr>
+<tr><td class="v"><strong>2. Deep Dives</strong></td><td>"5 things you didn't know about the Fall of Singapore." Multi-slide educational breakdowns with archival imagery.</td><td>Carousels (5-8 slides)</td><td>25%</td><td>Saves + dwell time. Carousels keep people swiping = high session signal.</td></tr>
+<tr><td style="color:var(--orange);font-weight:600"><strong>3. Behind the Research</strong></td><td>"I just found this photo in the Imperial War Museum archives..." Humanize the channel. Show your process.</td><td>Stories + occasional feed posts</td><td>20%</td><td>Replies + DMs. Builds parasocial connection without showing face.</td></tr>
+<tr><td class="g"><strong>4. Community Engagement</strong></td><td>Polls ("Hero or traitor?"), quizzes ("Which WW2 battle is this?"), Q&As, "What should I cover next?"</td><td>Stories + interactive Reels</td><td>15%</td><td>Interactions + poll votes. Instagram's 2026 algo boosts interactive content 45%.</td></tr>
+</table>
+</div></div>
+
+<!-- THREE PROJECTS OVERVIEW -->
+<div class="sec"><div class="sec-h"><span class="num ng">ROADMAP</span><h2>I1–I3: Three Projects, 12 Subprojects</h2></div><div class="sec-b">
+
+<!-- PROJECT I1 -->
+<div class="proj">
+<h3>📱 Project I1: Instagram Foundation & Profile Setup</h3>
+<div class="proj-meta"><span>4 SUBPROJECTS</span><span>⏱ BUILD TIME: ~3 HRS</span><span>📅 WHEN: Week 1</span></div>
+
+<div class="d"><strong>Goal:</strong> A professional, algorithm-optimized Instagram page ready to grow from day one. Everything a visitor needs to follow, understand your niche, and find your YouTube/KDP links.</div>
+
+<div class="sp">
+<h4>I1.1 — Profile Optimization & Bio Engineering</h4>
+<p>Instagram SEO setup: keyword-rich name field, niche-clear bio (150 chars), optimized profile picture (The Forgotten Front logo from Y1.3), contact button, Professional Creator account setup, category selection, "Your Algorithm" topic alignment. Link-in-bio strategy: Linktree or Hopp with YouTube channel + KDP books + affiliate links. Bio formula: [What you do] + [For whom] + [CTA].</p>
+</div>
+
+<div class="sp">
+<h4>I1.2 — Visual Identity & Feed Aesthetic</h4>
+<p>Adapting the Y1.3 brand system for Instagram: grid aesthetic strategy (dark archival with amber accents), Reel cover template (consistent thumbnails in feed view), carousel template (branded slide design in Canva), Story highlight covers (5 categories: About, Latest, Facts, Behind Scenes, Books). Grid planning: first 9 posts create the "storefront" visitors see. Color palette translation from YouTube to Instagram square/vertical formats.</p>
+</div>
+
+<div class="sp">
+<h4>I1.3 — Hashtag & Instagram SEO Strategy</h4>
+<p>3-5 niche hashtags per post (not 30 — the 2026 algo penalizes spam). Branded hashtag: #TheForgottenFront. Hashtag tiers: 2 niche-specific (#MilitaryHistoryFacts, #ForgottenWars), 1 broad (#HistoryNerd), 1 format (#HistoryReels). Alt-text optimization for search discovery. Caption keyword strategy: Instagram's AI reads captions for topic clustering. Google indexing of public posts — SEO value beyond the app.</p>
+</div>
+
+<div class="sp">
+<h4>I1.4 — Cross-Platform Sync System</h4>
+<p>The workflow connecting YouTube → Instagram → TikTok. Which Shorts become Reels (all of them). How to remove YouTube watermark (export from CapCut directly, not download from YouTube). Scheduling tools: Meta Business Suite (free) for Reels + feed posts. Optimal posting times: Instagram-specific data vs YouTube schedule. Content calendar integration with Y3.2.</p>
+</div>
+</div>
+
+<!-- PROJECT I2 -->
+<div class="proj">
+<h3>🚀 Project I2: Content Engine & Growth System</h3>
+<div class="proj-meta"><span>4 SUBPROJECTS</span><span>⏱ BUILD TIME: ~4 HRS</span><span>📅 WHEN: Weeks 1-4</span></div>
+
+<div class="d"><strong>Goal:</strong> A repeatable content machine that produces 10+ Instagram posts per week from content you're already making for YouTube, with growth strategies to reach 10K followers in 3-6 months.</div>
+
+<div class="sp">
+<h4>I2.1 — Reels Production & Cross-Post Workflow</h4>
+<p>Step-by-step Reels workflow: export Shorts from CapCut at 1080×1920 → add Instagram-native captions (not YouTube ones) → adjust music for Instagram (Pixabay Music cross-platform safe) → write caption with keywords → schedule in Meta Business Suite. Instagram-specific hooks (first 0.5 seconds more aggressive than YouTube). Reel cover image creation in Canva for consistent grid aesthetic. Batch scheduling: all 5 weekly Reels scheduled in one 20-min session.</p>
+</div>
+
+<div class="sp">
+<h4>I2.2 — Carousel Design System</h4>
+<p>Canva carousel template: branded slide design (dark background, Oswald titles, archival imagery, amber accents). 5 carousel formats: "5 Things You Didn't Know", "Then vs Now", "Timeline of Events", "Myth vs Reality", "Who Was [Person]?". Each carousel sourced from your YouTube video research — zero additional research needed. 5-8 slides per carousel. Hook slide design (must stop the scroll). CTA final slide: "Follow for more stories they never taught you."</p>
+</div>
+
+<div class="sp">
+<h4>I2.3 — Stories & Community Engagement Playbook</h4>
+<p>Daily Stories strategy: 2-3 Stories/day mixing behind-the-scenes, polls, quizzes, archival photo shares, and YouTube video teasers. Story highlight organization and maintenance. Interactive sticker usage: polls (30%+ participation = 45% reach boost), quizzes, question boxes, countdowns. DM engagement: auto-responses setup, genuine reply strategy. Comment strategy: first 30 minutes after posting are critical for algorithm signals.</p>
+</div>
+
+<div class="sp">
+<h4>I2.4 — Growth Acceleration Tactics</h4>
+<p>Instagram-specific growth strategies for a niche educational page: collab posts with other history pages, "Add Yours" sticker chains for history content, engagement pods (ethical version — genuine niche communities), Reddit × Instagram cross-promotion. Follower milestone actions at 500, 1K, 5K, 10K. Handling the 10K follower push for subscription eligibility. Avoiding growth traps: no bought followers, no engagement bait, no follow-for-follow (all penalized in 2026).</p>
+</div>
+</div>
+
+<!-- PROJECT I3 -->
+<div class="proj">
+<h3>💰 Project I3: Instagram Monetization Activation</h3>
+<div class="proj-meta"><span>4 SUBPROJECTS</span><span>⏱ BUILD TIME: ~3 HRS</span><span>📅 WHEN: Month 3-6 (when audience exists)</span></div>
+
+<div class="d"><strong>Goal:</strong> Turn your Instagram following into actual revenue through multiple streams — brand deals, subscriptions, affiliate commissions, and cross-platform sales funnels to YouTube and KDP.</div>
+
+<div class="sp">
+<h4>I3.1 — Brand Partnership & Sponsorship System</h4>
+<p>Media kit creation (what to include, how to price). Target sponsors for military history niche: book publishers, strategy video games (Paradox, Total War), educational platforms (Curiosity Stream, Brilliant, Masterclass), history subscription boxes, museum partnerships. Outreach templates. Instagram's Creator Marketplace setup. Pricing model: micro-influencer rates for 1K-10K followers. Sponsored post disclosure rules (FTC compliance). Collab post feature for maximum reach on brand content.</p>
+</div>
+
+<div class="sp">
+<h4>I3.2 — Affiliate Marketing Setup</h4>
+<p>Amazon Associates setup for history book recommendations. Link-in-bio optimization: Linktree with affiliate links to books mentioned in posts. "Swipe up" replacement strategy (link sticker in Stories at any follower count). Which products to promote: books featured in your videos, archival photography collections, history documentary subscriptions, military history board games. Commission tracking and optimization.</p>
+</div>
+
+<div class="sp">
+<h4>I3.3 — Subscription & Exclusive Content Strategy</h4>
+<p>Instagram Subscriptions setup (requires 10K followers). Subscription pricing strategy ($4.99/mo sweet spot for educational content). What to offer subscribers: early access to YouTube videos, exclusive behind-the-research Stories, subscriber-only polls choosing next video topics, bonus mini-documentaries, extended archival photo collections. Free vs paid content ratio: 80% free (growth engine) / 20% exclusive (monetization).</p>
+</div>
+
+<div class="sp">
+<h4>I3.4 — Cross-Platform Revenue Optimization</h4>
+<p>The Instagram → YouTube → KDP revenue funnel. How to drive YouTube subscribers from Instagram (specific CTAs, link placement, Story teasers). How to drive KDP sales from Instagram (book reveal posts, "I wrote this for you" Stories, carousel previews of interior pages). Analytics framework: tracking which Instagram content drives the most YouTube views and KDP purchases. Monthly revenue review template combining all 3 tracks.</p>
+</div>
+</div>
+
+</div></div>
+
+<!-- WEEKLY TIME BUDGET -->
+<div class="sec"><div class="sec-h"><span class="num no">TIME</span><h2>Weekly Time Budget — Instagram Adds ~45 Minutes</h2></div><div class="sec-b">
+
+<table class="tbl">
+<tr><th>Task</th><th>Frequency</th><th>Time</th><th>Notes</th></tr>
+<tr><td><strong>Cross-post Reels</strong></td><td>5/week</td><td>15 min</td><td>Batch all 5 in one session. Export from CapCut → add IG captions → schedule in Meta Business Suite.</td></tr>
+<tr><td><strong>Create carousels</strong></td><td>2/week</td><td>15 min</td><td>Canva template: swap text + images from YouTube research. 7-8 min per carousel.</td></tr>
+<tr><td><strong>Stories</strong></td><td>Daily (2-3)</td><td>10 min</td><td>Quick: archival photo + text, poll, behind-the-scenes. Takes 1-2 minutes each.</td></tr>
+<tr><td><strong>Comment/DM engagement</strong></td><td>Daily (5 min)</td><td>5 min</td><td>Reply to comments in first 30 min after posting. Heart and respond to DMs.</td></tr>
+<tr><td colspan="2" style="font-weight:700;color:var(--pink)">TOTAL WEEKLY</td><td style="font-weight:700;color:var(--pink)">~45 min</td><td>Because you're reformatting, not creating new content. This is the leverage play.</td></tr>
+</table>
+
+<div class="callout co-v"><strong>Updated total weekly time across all 3 tracks:</strong><br>
+YouTube production: 5-7.5 hrs/week (Standard or Full week)<br>
+KDP production: 2-3 hrs/week (when actively building books)<br>
+Instagram: ~45 min/week<br>
+<strong>Total: 8-11 hrs/week during peak production. 6-8 hrs/week in maintenance mode.</strong><br><br>
+This is more than your original 4-6 hrs/week budget. However, with the 3-tier system from the Y2/Y3 Gap Analysis, you can run Standard YouTube weeks (5 hrs) + Instagram (45 min) = ~6 hrs, which fits. KDP and YouTube alternate focus weeks.</div>
+</div></div>
+
+<!-- GROWTH TIMELINE -->
+<div class="sec"><div class="sec-h"><span class="num ng">TIMELINE</span><h2>Instagram Growth Timeline — 6-Month Projection</h2></div><div class="sec-b">
+
+<div class="timeline">
+<div class="t-step">
+<h4 style="color:var(--pink)">Month 1: Foundation (0 → 500 followers)</h4>
+<p>Profile setup, first 9 grid posts, begin cross-posting all YouTube Shorts as Reels, 2 carousels/week. Join 5-10 history-focused Instagram communities. Heavy engagement in comments of similar pages. Goal: establish topic cluster identity with the algorithm.</p>
+</div>
+<div class="t-step">
+<h4 style="color:var(--pink)">Month 2: Momentum (500 → 2K followers)</h4>
+<p>Consistent Reels driving non-follower reach. First collab posts with other history pages. Affiliate links live in bio. Stories daily with polls and quizzes. The algorithm has identified your niche and is actively recommending your Reels. First brand inquiries may arrive.</p>
+</div>
+<div class="t-step">
+<h4 style="color:var(--violet)">Month 3: Acceleration (2K → 5K followers)</h4>
+<p>Carousel content driving massive saves. Specific Reels starting to go mini-viral (10K-50K views). Brand partnership outreach begins. Revenue from affiliate links: $30-80/mo. Community feels established — regulars in your comments.</p>
+</div>
+<div class="t-step">
+<h4 style="color:var(--violet)">Month 4: Authority (5K → 8K followers)</h4>
+<p>Recognized as a go-to military history page. Brand deals: 1-2/month at $50-200 each. Instagram Gifts generating $20-50/mo. Your Instagram consistently drives 50-100 YouTube subscribers per week. KDP book links getting regular clicks from Stories.</p>
+</div>
+<div class="t-step">
+<h4 style="color:var(--green)">Month 5: Monetization Gate (8K → 10K followers)</h4>
+<p>Push toward 10K for Subscription eligibility. Increase Reel frequency slightly. Collab posts with larger pages. The 10K milestone unlocks: Subscriptions, Badges, enhanced analytics, and creator marketplace visibility.</p>
+</div>
+<div class="t-step">
+<h4 style="color:var(--green)">Month 6: Full Monetization (10K+ followers)</h4>
+<p>Subscriptions live ($4.99/mo). Even at 1% conversion = 100 subscribers = $500/mo from subscriptions alone. Combined with brand deals, affiliates, and cross-platform revenue, Instagram contributes $200-600/mo to your total income.</p>
+</div>
+</div>
+
+<div class="callout co-g"><strong>Updated 3-track revenue projection at Month 6:</strong><br><br>
+YouTube ads: $100-500/mo<br>
+KDP books (8 titles): $150-500/mo<br>
+Instagram (brand deals + affiliates + subscriptions + gifts): $200-600/mo<br>
+<strong>Combined: $450-1,600/mo · Midpoint: ~$750-900/mo</strong><br><br>
+Adding Instagram as Track 3 pushes your realistic midpoint above the $500-1K target for the first time with comfortable margin.</div>
+</div></div>
+
+<!-- SYNERGY MAP -->
+<div class="sec"><div class="sec-h"><span class="num nv">SYNERGY</span><h2>How All 3 Tracks Feed Each Other</h2></div><div class="sec-b">
+
+<table class="tbl">
+<tr><th>From</th><th>To</th><th>How</th><th>Revenue Impact</th></tr>
+<tr><td class="v">YouTube</td><td class="pk">Instagram</td><td>Shorts become Reels. Video research becomes carousels. Subscribers follow on IG.</td><td>Free content for Instagram growth</td></tr>
+<tr><td class="pk">Instagram</td><td class="v">YouTube</td><td>"Full story on YouTube" CTA on every Reel. Bio link to channel. Story teasers for new videos.</td><td>+50-100 YouTube subs/week → more ad revenue</td></tr>
+<tr><td class="pk">Instagram</td><td class="g">KDP</td><td>Book reveals in Stories. "I wrote this" posts. Bio link to Amazon listings. Carousel previews of interior pages.</td><td>+10-30 book sales/month from Instagram traffic</td></tr>
+<tr><td class="g">KDP</td><td class="pk">Instagram</td><td>"New book launch" content. Author credibility ("published author" in bio). Book-related Reels.</td><td>Launch content drives engagement spikes</td></tr>
+<tr><td class="v">YouTube</td><td class="g">KDP</td><td>Video descriptions link to relevant books. "If you enjoyed this, check out my planner" CTA.</td><td>Cross-sells between video audience and book buyers</td></tr>
+<tr><td class="g">KDP</td><td class="v">YouTube</td><td>Book buyers discover YouTube channel via author bio/back cover QR code.</td><td>Print-to-digital audience pipeline</td></tr>
+</table>
+</div></div>
+
+<!-- WHAT EXISTING ASSETS YOU'LL REUSE -->
+<div class="sec"><div class="sec-h"><span class="num np">LEVERAGE</span><h2>Existing Assets You'll Reuse (Nothing New to Create)</h2></div><div class="sec-b">
+
+<table class="tbl">
+<tr><th>Existing Asset</th><th>Source Document</th><th>How It's Used on Instagram</th></tr>
+<tr><td>Channel branding (logo, palette, fonts)</td><td>Y1.3</td><td>Profile picture, highlight covers, carousel templates, Reel cover images</td></tr>
+<tr><td>YouTube Shorts (27 from first 10 videos)</td><td>Y3.1</td><td>Direct cross-post as Instagram Reels (5/week)</td></tr>
+<tr><td>Video research & scripts</td><td>Y2.1 + Y3.1</td><td>Source material for carousels and caption posts</td></tr>
+<tr><td>Archival images (copyright-safe)</td><td>Y2.2 + Y2Y3 Gap Analysis</td><td>Carousel slides, feed posts, Story content</td></tr>
+<tr><td>Thumbnail templates</td><td>Y2.4</td><td>Adapted as Reel cover images and carousel first slides</td></tr>
+<tr><td>Music library (Pixabay cross-platform safe)</td><td>Y2Y3 Gap Analysis Gap 5</td><td>Background music for Instagram Reels</td></tr>
+<tr><td>Community engagement strategy</td><td>Y3.4</td><td>Comment strategy, engagement techniques, moderation approach</td></tr>
+<tr><td>KDP book covers and interiors</td><td>K2.1 + K2.2</td><td>Book reveal posts, carousel interior previews, Story promotions</td></tr>
+</table>
+</div></div>
+
+<!-- BUILD ORDER -->
+<div class="sec"><div class="sec-h"><span class="num ng">ORDER</span><h2>Recommended Build Order</h2></div><div class="sec-b">
+
+<table class="tbl">
+<tr><th>Step</th><th>Subproject</th><th>Build Time</th><th>Dependency</th></tr>
+<tr><td>1</td><td class="pk"><strong>I1.1 — Profile Optimization</strong></td><td>45 min</td><td>Need Y1.3 branding assets (done ✓)</td></tr>
+<tr><td>2</td><td class="pk"><strong>I1.2 — Visual Identity & Feed</strong></td><td>60 min</td><td>Need Canva templates (done ✓)</td></tr>
+<tr><td>3</td><td class="pk"><strong>I1.3 — Hashtag & SEO Strategy</strong></td><td>30 min</td><td>None</td></tr>
+<tr><td>4</td><td class="pk"><strong>I1.4 — Cross-Platform Sync</strong></td><td>30 min</td><td>Need Y3.2 schedule (done ✓)</td></tr>
+<tr><td>5</td><td class="v"><strong>I2.1 — Reels Workflow</strong></td><td>45 min</td><td>Need first YouTube Shorts published</td></tr>
+<tr><td>6</td><td class="v"><strong>I2.2 — Carousel System</strong></td><td>60 min</td><td>Need first YouTube video research done</td></tr>
+<tr><td>7</td><td class="v"><strong>I2.3 — Stories Playbook</strong></td><td>45 min</td><td>Page must be live</td></tr>
+<tr><td>8</td><td class="v"><strong>I2.4 — Growth Tactics</strong></td><td>45 min</td><td>Page must be live with 10+ posts</td></tr>
+<tr><td>9-12</td><td class="g"><strong>I3.1-I3.4 — Monetization</strong></td><td>3 hrs total</td><td>Build after reaching 1K+ followers (Month 2-3)</td></tr>
+</table>
+
+<div class="callout co-p"><strong>I1 can be built right now</strong> — you have all the branding, assets, and strategy from Y1-Y3. I2 should be built alongside your first YouTube videos (the content flows directly). I3 should wait until you have real follower data to optimize against. Want me to start building I1.1 now?</div>
+</div></div>
+
+<!-- DELIVERABLES -->
+<div class="sec"><div class="sec-h"><h2>📦 Instagram Track Overview — Deliverables</h2></div><div class="sec-b">
+<div style="display:grid;gap:5px">
+<div class="pillar"><span>✅</span><span>3 projects mapped (I1: Foundation, I2: Content & Growth, I3: Monetization) with 12 total subprojects scoped</span></div>
+<div class="pillar"><span>✅</span><span>7 strategic advantages for Instagram as Track 3 — zero extra content creation, algorithm alignment, revenue diversification</span></div>
+<div class="pillar"><span>✅</span><span>8 revenue streams identified with requirements and timeline: brand deals, affiliates, Gifts, Subscriptions, Badges, ad revenue, YouTube funnel, KDP funnel</span></div>
+<div class="pillar"><span>✅</span><span>4 content pillars defined: Shocking Facts (40%), Deep Dives (25%), Behind the Research (20%), Community Engagement (15%)</span></div>
+<div class="pillar"><span>✅</span><span>Weekly time budget: ~45 min/week on top of existing YouTube production (reformatting, not creating)</span></div>
+<div class="pillar"><span>✅</span><span>6-month growth timeline with follower milestones: 500 → 2K → 5K → 8K → 10K+ with monetization unlock points</span></div>
+<div class="pillar"><span>✅</span><span>3-track synergy map showing how YouTube, KDP, and Instagram feed each other's revenue</span></div>
+<div class="pillar"><span>✅</span><span>Updated revenue projection: 3 tracks combined $450-1,600/mo by Month 6 (midpoint ~$750-900)</span></div>
+<div class="pillar"><span>✅</span><span>8 existing assets reuse map — nothing new to create, everything leveraged from Y1-Y3 and K1-K2</span></div>
+<div class="pillar"><span>✅</span><span>Build order with time estimates: I1 (3 hrs, buildable now), I2 (4 hrs, build alongside first videos), I3 (3 hrs, build at 1K+ followers)</span></div>
+</div>
+</div></div>
+
+</div>
+<div class="foot">Track 3 — Instagram Monetization Roadmap (I1–I3) · The Forgotten Front · March 2026</div>
+</body></html>

@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0"><title>Y2.1 — Script Writing Framework & Templates</title>
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;700&family=Oswald:wght@500;700&family=Libre+Baskerville:ital,wght@0,400;1,400&family=Special+Elite&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}body{background:#0a0a0a;color:#e2e8f0;font-family:'Outfit',sans-serif;padding:0 0 60px}
+.hdr{background:linear-gradient(135deg,#0a0a0a,#1a1008,#0a0a0a);border-bottom:1px solid #d9770633;padding:28px 24px;text-align:center;position:relative}.hdr::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at 40% 30%,#d9770618,transparent 60%)}.hdr>*{position:relative}
+.tag{font-size:10px;color:#d97706;font-family:'JetBrains Mono',monospace;text-transform:uppercase;letter-spacing:.2em;margin-bottom:6px}
+h1{font-family:'Oswald',sans-serif;font-size:24px;font-weight:700;color:#fafaf9;letter-spacing:.05em;text-transform:uppercase;margin-bottom:4px}
+.sub{font-size:12px;color:#78716c;max-width:650px;margin:0 auto}
+.ct{max-width:880px;margin:0 auto;padding:20px 16px}
+.sec{background:#111111;border:1px solid #292524;border-radius:2px;margin-bottom:14px;overflow:hidden}
+.sec-h{padding:14px 18px;border-bottom:1px solid #292524;display:flex;align-items:center;gap:8px;flex-wrap:wrap}
+.sec-h h2{font-size:14px;font-weight:700;font-family:'Oswald',sans-serif;text-transform:uppercase;letter-spacing:.05em}
+.num{font-size:9px;font-family:'JetBrains Mono',monospace;padding:2px 8px;border-radius:2px;font-weight:700}
+.ng{background:#d9770615;color:#d97706}.nb{background:#3b82f615;color:#60a5fa}.ngr{background:#16a34a15;color:#16a34a}.nr{background:#dc262615;color:#dc2626}
+.sec-b{padding:14px 18px}
+.d{font-size:11px;color:#a8a29e;line-height:1.6;margin-bottom:8px}.d strong{color:#e7e5e4}
+.tbl{width:100%;border-collapse:collapse;margin:10px 0;font-size:10px}
+.tbl th{background:#1c1917;color:#a8a29e;padding:7px 8px;text-align:left;font-family:'JetBrains Mono',monospace;font-size:9px;text-transform:uppercase;border:1px solid #292524}
+.tbl td{padding:7px 8px;border:1px solid #292524;color:#d6d3d1;vertical-align:top}.tbl tr:nth-child(even) td{background:#0d0d0d}
+.callout{padding:14px;border-radius:2px;font-size:12px;line-height:1.6;margin:10px 0}
+.co-g{background:#16a34a08;border:1px solid #16a34a22;color:#86efac}
+.co-a{background:#d9770608;border:1px solid #d9770622;color:#fcd34d}
+.co-b{background:#3b82f608;border:1px solid #3b82f622;color:#93c5fd}
+.callout strong{color:#fafaf9}
+.pillar{display:flex;align-items:flex-start;gap:8px;padding:8px 10px;background:#16a34a08;border:1px solid #16a34a18;border-radius:2px;margin-bottom:4px}
+.pillar span:first-child{color:#16a34a;font-size:10px;font-family:'JetBrains Mono',monospace;min-width:16px;flex-shrink:0;padding-top:2px}
+.pillar span:last-child{font-size:11px;color:#d6d3d1;line-height:1.5}
+.script-block{background:#0a0a0a;border:1px solid #292524;border-radius:2px;padding:16px;margin:8px 0;font-size:12px;line-height:1.7}
+.script-block .label{font-family:'JetBrains Mono',monospace;font-size:9px;font-weight:700;text-transform:uppercase;letter-spacing:.1em;padding:2px 8px;border-radius:2px;display:inline-block;margin-bottom:6px}
+.script-block .narration{color:#d6d3d1;font-style:italic}
+.script-block .visual{color:#60a5fa;font-size:10px;font-family:'JetBrains Mono',monospace}
+.script-block .emotion{color:#d97706;font-size:9px;font-family:'JetBrains Mono',monospace;float:right}
+.prompt-box{background:#1c1917;border:1px solid #d9770633;border-radius:2px;padding:14px;margin:8px 0;font-size:11px;line-height:1.6;color:#fcd34d;font-family:'JetBrains Mono',monospace}
+.prompt-box::before{content:'📋 CLAUDE PROMPT:';display:block;font-weight:700;color:#d97706;margin-bottom:6px;font-size:10px}
+.foot{text-align:center;padding:20px;font-size:10px;color:#44403c;font-family:'JetBrains Mono',monospace}
+</style></head><body>
+<div class="hdr"><div class="tag">Y2.1 — Script Writing Framework & Templates</div><h1>THE FORGOTTEN FRONT — SCRIPT SYSTEM</h1><div class="sub">3 proven story structures · Claude prompt templates · Emotion mapping · Visual cue system · Full sample script</div></div>
+<div class="ct">
+
+<!-- CORE PHILOSOPHY -->
+<div class="sec"><div class="sec-h"><span class="num ng">PHILOSOPHY</span><h2>The #1 Rule of Documentary YouTube Scripts</h2></div><div class="sec-b">
+
+<div class="callout co-a"><strong>"The only thing that keeps someone watching is not knowing how something is going to turn out — even if they already know how it turned out."</strong> — Ken Burns. Your script must create uncertainty about events whose outcomes are already historical fact. The viewer knows India won at Imphal. But they DON'T know the specific moment everything nearly fell apart — until you show them.</div>
+
+<div class="d"><strong>What separates a great military history script from a Wikipedia read-aloud:</strong></div>
+<table class="tbl">
+<tr><th>Wikipedia-Style (BAD)</th><th>Documentary-Style (GOOD)</th></tr>
+<tr><td>"The Battle of Imphal took place from March to July 1944 in northeast India. It was fought between British and Indian forces against the Japanese."</td><td>"By April 1944, 150,000 Japanese soldiers were closing in on a city most of the world had never heard of. If Imphal fell, Japan would pour into India — and the war would take a completely different turn. Between the Japanese army and that future stood a force the British Empire had never fully trusted: Indian soldiers."</td></tr>
+<tr><td>Lists facts chronologically</td><td>Creates tension about a known outcome</td></tr>
+<tr><td>Tells the viewer what happened</td><td>Makes the viewer FEEL what it was like</td></tr>
+<tr><td>Passive voice, neutral tone</td><td>Active voice, dramatic pacing, emotional stakes</td></tr>
+</table>
+
+</div></div>
+
+<!-- 3 STORY STRUCTURES -->
+<div class="sec"><div class="sec-h"><span class="num ng">STRUCTURES</span><h2>3 Story Structures for The Forgotten Front</h2></div><div class="sec-b">
+
+<div class="d"><strong>Every video uses one of these three structures. Pick based on the type of story.</strong></div>
+
+<h3 style="font-size:13px;color:#d97706;margin:12px 0 6px;font-family:'Oswald',sans-serif;text-transform:uppercase">Structure A: "The Arc" — Classic Documentary (60% of your videos)</h3>
+<div class="d">Use for: Battle stories, forgotten soldiers, military campaigns. Any story with a clear protagonist, conflict, and outcome.</div>
+<table class="tbl">
+<tr><th>Section</th><th>Duration (15 min video)</th><th>Purpose</th><th>Writing Technique</th></tr>
+<tr><td><strong>1. COLD OPEN</strong></td><td>0:00–0:30</td><td>Shock, intrigue, or emotion. The most dramatic single moment from the entire story, ripped out of context.</td><td>"In medias res" — start in the middle of the action. Drop the viewer into the most intense moment without explanation. They MUST keep watching to understand what they just heard.</td></tr>
+<tr><td><strong>2. TITLE CARD</strong></td><td>0:30–0:33</td><td>Brand stamp. 3 seconds max.</td><td>"THE FORGOTTEN FRONT" logo flash with dramatic sting.</td></tr>
+<tr><td><strong>3. CONTEXT</strong></td><td>0:33–3:00</td><td>Set the scene. Who, where, when. Establish the stakes — what's at risk if things go wrong?</td><td>Zoom out from the cold open. Give the viewer the knowledge they need to care. Answer: "Why should I care about this?" within 90 seconds.</td></tr>
+<tr><td><strong>4. RISING ACTION</strong></td><td>3:00–8:00</td><td>The story unfolds. Key decisions, turning points, complications. Things get worse before they get better.</td><td>Use "micro-loops" — end each 60–90 second segment with a question or tension point that makes the viewer need to hear the next segment. Never resolve tension immediately.</td></tr>
+<tr><td><strong>5. CLIMAX</strong></td><td>8:00–11:00</td><td>The most dramatic moment. The battle, the decision, the revelation.</td><td>Slow your narration pace. Add dramatic pauses. Let the music build. This is where your voice performance matters most.</td></tr>
+<tr><td><strong>6. AFTERMATH</strong></td><td>11:00–13:30</td><td>What happened next? Consequences. Legacy. How this event changed history.</td><td>Shift from dramatic to reflective. Lower your voice. This is the "meaning" section — why this story matters.</td></tr>
+<tr><td><strong>7. "THE FORGOTTEN" MOMENT</strong></td><td>13:30–14:30</td><td>The emotional punch. Why this story was forgotten. Who was erased from history. The injustice.</td><td>This is YOUR brand signature. Every video has a moment where you explicitly address WHY this story isn't taught. This creates the emotional payoff that makes viewers subscribe.</td></tr>
+<tr><td><strong>8. SIGN-OFF + CTA</strong></td><td>14:30–15:00</td><td>"This was The Forgotten Front." Subscribe. End screen.</td><td>Consistent sign-off builds brand recognition. Never skip it.</td></tr>
+</table>
+
+<h3 style="font-size:13px;color:#3b82f6;margin:16px 0 6px;font-family:'Oswald',sans-serif;text-transform:uppercase">Structure B: "The Question" — Strategic Analysis (25% of your videos)</h3>
+<div class="d">Use for: "Why did they lose?" videos, strategic analysis, decision breakdowns. Videos where the ANSWER is the hook.</div>
+<table class="tbl">
+<tr><th>Section</th><th>Duration</th><th>Purpose</th></tr>
+<tr><td><strong>1. THE QUESTION</strong></td><td>0:00–0:45</td><td>State the central question dramatically. "80,000 soldiers surrendered in a single day. The largest capitulation in British military history. How could this possibly happen?"</td></tr>
+<tr><td><strong>2. THE OBVIOUS ANSWER</strong></td><td>0:45–2:30</td><td>Present the answer most people would guess. "You might think it was simply overwhelming Japanese force..." Then reveal why that answer is WRONG or incomplete.</td></tr>
+<tr><td><strong>3. THE REAL STORY</strong></td><td>2:30–10:00</td><td>Unpack the real reasons: bad decisions, hubris, logistics failures, political context. Each reason is a mini-arc within the larger story.</td></tr>
+<tr><td><strong>4. THE ANSWER</strong></td><td>10:00–13:00</td><td>Synthesize everything into a clear, memorable conclusion. "Singapore fell because of three fatal assumptions that the British made..."</td></tr>
+<tr><td><strong>5. THE LESSON + SIGN-OFF</strong></td><td>13:00–15:00</td><td>What can we learn from this? Why does it matter today? Sign-off.</td></tr>
+</table>
+
+<h3 style="font-size:13px;color:#dc2626;margin:16px 0 6px;font-family:'Oswald',sans-serif;text-transform:uppercase">Structure C: "The Dossier" — Espionage & Intelligence (15% of your videos)</h3>
+<div class="d">Use for: Spy stories, intelligence operations, classified missions, dark chapters. Videos with a mystery or reveal at the center.</div>
+<table class="tbl">
+<tr><th>Section</th><th>Duration</th><th>Purpose</th></tr>
+<tr><td><strong>1. THE FILE</strong></td><td>0:00–0:30</td><td>Open with the mystery. "In 1943, a dead man washed up on a Spanish beach carrying military documents. He didn't exist. And the documents were lies. But they would change the outcome of the entire war."</td></tr>
+<tr><td><strong>2. THE SETUP</strong></td><td>0:30–3:00</td><td>The problem that needed solving. What was the intelligence challenge?</td></tr>
+<tr><td><strong>3. THE OPERATION</strong></td><td>3:00–9:00</td><td>How the operation was designed and executed. The people, the plan, the risks. Build suspense — will it work?</td></tr>
+<tr><td><strong>4. THE MOMENT OF TRUTH</strong></td><td>9:00–11:00</td><td>Did it work? What almost went wrong? The tension peak.</td></tr>
+<tr><td><strong>5. DECLASSIFIED</strong></td><td>11:00–14:00</td><td>The aftermath. When the truth came out. What we learned. The people behind the operation.</td></tr>
+<tr><td><strong>6. SIGN-OFF</strong></td><td>14:00–15:00</td><td>"This was The Forgotten Front." CTA.</td></tr>
+</table>
+
+</div></div>
+
+<!-- EMOTION MAPPING -->
+<div class="sec"><div class="sec-h"><span class="num nr">EMOTION</span><h2>Emotion Mapping — The Hidden Layer of Great Scripts</h2></div><div class="sec-b">
+
+<div class="d"><strong>Before you finalize any script, label each section with the emotion it should evoke. Varying emotions is what keeps viewers watching — not just facts.</strong></div>
+
+<table class="tbl">
+<tr><th>Emotion</th><th>Where to Use</th><th>How to Create It</th><th>Voice Technique</th></tr>
+<tr><td style="color:#dc2626;font-weight:700">SHOCK</td><td>Cold open, reveals</td><td>Lead with the most surprising fact. Counterintuitive numbers. "2.5 million soldiers. Zero monuments."</td><td>Drop your voice low. Say it slowly. Pause after the key number.</td></tr>
+<tr><td style="color:#d97706;font-weight:700">CURIOSITY</td><td>After every section break</td><td>Ask a question. Tease what's coming. "But what nobody knew was that the plan had a fatal flaw."</td><td>Slightly raise your pitch. Speed up slightly. Energy in your voice.</td></tr>
+<tr><td style="color:#3b82f6;font-weight:700">TENSION</td><td>Rising action, before climax</td><td>Short sentences. Countdown language. "The Japanese were 30 miles away. Then 20. Then 10."</td><td>Speed up gradually. Shorter pauses. Let the urgency build.</td></tr>
+<tr><td style="color:#16a34a;font-weight:700">RELIEF</td><td>After climax resolution</td><td>The moment things turn. "Against all odds, the line held."</td><td>Exhale slightly. Slow down. Let the listener breathe.</td></tr>
+<tr><td style="color:#8b5cf6;font-weight:700">SADNESS</td><td>"The Forgotten" moment</td><td>Human details. Names. Ages. "Private Ram Singh was 19 years old. His family never learned where he was buried."</td><td>Quiet. Very slow. Almost a whisper. Let silence do the work.</td></tr>
+<tr><td style="color:#78716c;font-weight:700">REFLECTION</td><td>Aftermath, sign-off</td><td>Zoom out to the bigger picture. What does this mean? Why does it matter?</td><td>Calm, steady. Authoritative but not dramatic. Let the weight sit.</td></tr>
+</table>
+
+<div class="callout co-a"><strong>The emotion sequence for a perfect 15-min video:</strong> SHOCK → CURIOSITY → build TENSION → peak TENSION → RELIEF → deeper CURIOSITY → TENSION again → CLIMAX → SADNESS → REFLECTION → SIGN-OFF. The audience should feel at least 4 different emotions during a single video. If your script produces only one emotion (usually just "informative"), it's a Wikipedia read-aloud, not a documentary.</div>
+
+</div></div>
+
+<!-- VISUAL CUE SYSTEM -->
+<div class="sec"><div class="sec-h"><span class="num nb">VISUALS</span><h2>Visual Cue System — Scripting What the Viewer Sees</h2></div><div class="sec-b">
+
+<div class="d"><strong>Every line of narration should have a matching visual cue in brackets. This makes editing 3× faster because you've already planned every image.</strong></div>
+
+<table class="tbl">
+<tr><th>Cue Type</th><th>Format</th><th>Example</th><th>When to Use</th></tr>
+<tr><td>Archival photo</td><td>[PHOTO: description]</td><td>[PHOTO: Indian soldiers marching through Burma jungle, 1944]</td><td>Most narration. Change photo every 5–8 seconds.</td></tr>
+<tr><td>Map</td><td>[MAP: description]</td><td>[MAP: Southeast Asia with arrow showing Japanese advance toward Imphal]</td><td>Any geographic or strategic content. Show troop movements.</td></tr>
+<tr><td>Text card</td><td>[TEXT: content]</td><td>[TEXT: "87,000 — Number of Indian soldiers killed in WW2"]</td><td>Key statistics, dates, or quotes. Use brand fonts.</td></tr>
+<tr><td>Document/archival</td><td>[DOC: description]</td><td>[DOC: Close-up of classified military order with "TOP SECRET" stamp]</td><td>Espionage content, orders, official communications.</td></tr>
+<tr><td>Ken Burns movement</td><td>[ZOOM: direction]</td><td>[ZOOM: Slow push into soldier's face in group photo]</td><td>Emotional moments. Draw attention to one person in a crowd.</td></tr>
+<tr><td>Black screen</td><td>[BLACK]</td><td>[BLACK — 2 seconds of darkness before reveal]</td><td>Before dramatic reveals. Maximum 2 seconds. Use sparingly.</td></tr>
+<tr><td>Title card</td><td>[TITLE]</td><td>[TITLE: The Forgotten Front logo, 3 seconds]</td><td>After cold open only.</td></tr>
+</table>
+
+</div></div>
+
+<!-- CLAUDE PROMPTS -->
+<div class="sec"><div class="sec-h"><span class="num ng">AI PROMPTS</span><h2>Claude Prompt Templates — Your Script Co-Writer</h2></div><div class="sec-b">
+
+<div class="d"><strong>These are copy-paste prompts to generate first drafts. Remember the rule from Y1.4: ALWAYS rewrite 40–60% in your own voice before recording.</strong></div>
+
+<h3 style="font-size:12px;color:#d97706;margin:10px 0 6px;font-family:'Oswald',sans-serif;text-transform:uppercase">Prompt 1: Research & Outline (use first)</h3>
+<div class="prompt-box">I'm creating a 15-minute documentary video for my YouTube channel "The Forgotten Front" about [TOPIC]. The channel covers forgotten military history with a focus on stories mainstream channels skip.
+
+Give me:
+1. The 5 most dramatic/surprising facts about this topic that most people don't know
+2. The single most emotionally powerful moment from this story
+3. A suggested narrative arc: where should the story START (cold open moment), what's the central TENSION, and what's the RESOLUTION?
+4. 3 potential title options in the format: "The [Adjective] [Event] That [Dramatic Outcome]" or a question format
+5. Any connections to South Asian/Indian military history (if applicable)
+6. Key names, dates, and numbers I must include for accuracy
+
+Be specific with facts, dates, and details. I'll verify everything independently.</div>
+
+<h3 style="font-size:12px;color:#d97706;margin:14px 0 6px;font-family:'Oswald',sans-serif;text-transform:uppercase">Prompt 2: Full Script Draft (use after research)</h3>
+<div class="prompt-box">Write a 2,000-word documentary script for "The Forgotten Front" YouTube channel about [TOPIC].
+
+STRUCTURE (follow exactly):
+1. COLD OPEN (0:00-0:30): Start with the most shocking/emotional moment from the story. Drop the viewer into the middle of the action. No context yet — just drama.
+2. CONTEXT (0:33-3:00): Set the scene. Who, where, when. Establish what's at stake.
+3. RISING ACTION (3:00-8:00): The story unfolds chronologically. Key decisions, turning points, things getting worse. End each paragraph with a tension hook.
+4. CLIMAX (8:00-11:00): The most dramatic moment. Slow the pacing. Add weight.
+5. AFTERMATH (11:00-13:30): What happened next. Consequences. Legacy.
+6. "THE FORGOTTEN" MOMENT (13:30-14:30): Why this story isn't taught. Who was erased. The injustice.
+7. SIGN-OFF (14:30): "This was The Forgotten Front. The stories they never taught you."
+
+TONE: Serious, documentary narrator. Think Ken Burns meets true crime. Not academic — dramatic and human.
+VOICE: Second person occasionally ("Imagine you're standing..."), but mostly third person narrative.
+EMOTION MAP: The script should evoke SHOCK → CURIOSITY → TENSION → RELIEF → SADNESS → REFLECTION in that order.
+
+Include [VISUAL CUE] brackets throughout describing what image/map/text should appear during each section.
+
+Do NOT include: greetings, "hey guys", casual YouTube language. This is a documentary, not a vlog.</div>
+
+<h3 style="font-size:12px;color:#d97706;margin:14px 0 6px;font-family:'Oswald',sans-serif;text-transform:uppercase">Prompt 3: Shorts Script (batch production)</h3>
+<div class="prompt-box">Generate 5 YouTube Shorts scripts (60-90 words each) from this topic: [TOPIC].
+
+Each Short should:
+- Open with the most shocking single fact (first sentence = the hook)
+- Give 2-3 sentences of context
+- End with a cliffhanger or call-to-action: "Full story on our channel"
+- Include [VISUAL CUE] for each sentence
+- Be self-contained — a viewer who never sees the long-form video should still find it interesting
+
+Format: Title, Script, Visual Cues. Number them 1-5.</div>
+
+<h3 style="font-size:12px;color:#d97706;margin:14px 0 6px;font-family:'Oswald',sans-serif;text-transform:uppercase">Prompt 4: Title & Thumbnail Brainstorm</h3>
+<div class="prompt-box">I have a documentary video about [TOPIC] for my military history channel "The Forgotten Front."
+
+Generate:
+1. 5 title options using these proven formats:
+   - "The [Adjective] [Event/Battle] That [Dramatic Outcome]"
+   - "Why Did [Number] Soldiers [Action]? The [Adjective] Truth"
+   - "[Number] [People] [Dramatic Action] — And Nobody Remembers"
+   - Question format: "Why Did [Event] Really Happen?"
+2. For each title, suggest a thumbnail concept (what image, what text overlay, which of my 3 templates: "The Reveal", "The Question", or "The Dossier")
+3. Rate each title 1-10 for curiosity hook strength
+
+All titles must be under 60 characters. Primary keyword should appear in the first 40 characters.</div>
+
+</div></div>
+
+<!-- REWRITING RULES -->
+<div class="sec"><div class="sec-h"><span class="num nr">REWRITE</span><h2>The 40–60% Rewrite Rule — What to Change and What to Keep</h2></div><div class="sec-b">
+
+<div class="d"><strong>AI gives you the skeleton. YOU give it a soul. Here's exactly what to change and what to keep from Claude's draft:</strong></div>
+
+<table class="tbl">
+<tr><th>Keep From AI Draft</th><th>Rewrite in Your Voice</th></tr>
+<tr><td>Factual accuracy (dates, names, numbers)</td><td>The cold open hook — rewrite to match YOUR dramatic instinct</td></tr>
+<tr><td>Chronological structure</td><td>All transitional sentences ("But what nobody knew was..." — make these YOUR style)</td></tr>
+<tr><td>Research depth and obscure details</td><td>"The Forgotten" moment — this must feel personally felt, not AI-generated</td></tr>
+<tr><td>Visual cue suggestions</td><td>Any humor, irony, or editorial commentary</td></tr>
+<tr><td>Basic narrative arc</td><td>The sign-off and CTA — must be consistently YOUR words</td></tr>
+</table>
+
+<div class="callout co-g"><strong>The test:</strong> Read the final script out loud. If any sentence feels like "AI wrote this," rewrite it. If you can't imagine yourself naturally SAYING a sentence, it doesn't belong in your script. Your narration should sound like a knowledgeable person telling a story to a friend — not like a textbook being read aloud.</div>
+
+</div></div>
+
+<!-- MICRO-LOOPS -->
+<div class="sec"><div class="sec-h"><span class="num nb">RETENTION</span><h2>Retention Techniques — Keeping Viewers to the End</h2></div><div class="sec-b">
+
+<div class="d"><strong>Average View Duration (AVD) is the #1 metric YouTube uses to decide whether to recommend your video. These techniques keep viewers watching.</strong></div>
+
+<table class="tbl">
+<tr><th>Technique</th><th>What It Is</th><th>Script Example</th><th>When to Use</th></tr>
+<tr><td><strong>Open Loops</strong></td><td>Tease something coming later. Don't resolve it yet.</td><td>"We'll get to what happened when the message was decoded — but first, you need to understand why anyone would attempt this mission in the first place."</td><td>Every 2–3 minutes. Plant a question, answer it 60–90 seconds later.</td></tr>
+<tr><td><strong>Pattern Interrupts</strong></td><td>Break the expected flow. Surprise the viewer.</td><td>"Now, you'd think the British would have seen this coming. They had every piece of intelligence they needed. And they ignored ALL of it."</td><td>When factual density starts to feel monotonous. Wake the viewer up.</td></tr>
+<tr><td><strong>Escalating Stakes</strong></td><td>Make the situation progressively worse before the resolution.</td><td>"The first battalion fell. Then the second. By nightfall, the entire eastern perimeter had collapsed."</td><td>Rising action section. Things must get worse before they get better.</td></tr>
+<tr><td><strong>Time Pressure</strong></td><td>Add urgency with countdown language.</td><td>"They had 72 hours. If reinforcements didn't arrive by dawn on April 5th, the position would be overrun."</td><td>Before climax. Creates physical tension in the viewer.</td></tr>
+<tr><td><strong>"But" Transitions</strong></td><td>Every section transition uses "but", "however", "except" — never "and then."</td><td>"The plan was perfect. But there was one thing they hadn't accounted for." NOT: "And then they executed the plan."</td><td>Every section transition. "But" creates tension. "And" creates boredom.</td></tr>
+<tr><td><strong>Direct Address</strong></td><td>Speak directly to the viewer to re-engage.</td><td>"Think about that for a moment. You're 19 years old, 4,000 miles from home, fighting for an empire that doesn't consider you an equal."</td><td>1–2 times per video max. Use at emotional moments for impact.</td></tr>
+</table>
+
+</div></div>
+
+<!-- SAMPLE SCRIPT -->
+<div class="sec"><div class="sec-h"><span class="num ng">SAMPLE</span><h2>Sample Script — Video #1: "The 2.5 Million Soldiers History Forgot"</h2></div><div class="sec-b">
+
+<div class="d"><strong>This is a condensed example showing the first 3 minutes of your launch video, fully formatted with visual cues, emotion labels, and retention techniques.</strong></div>
+
+<div class="script-block">
+<div class="label" style="background:#dc262615;color:#dc2626">COLD OPEN · 0:00–0:30</div>
+<div class="emotion">[SHOCK]</div>
+<div class="visual">[PHOTO: Massive formation of Indian soldiers standing at attention, 1942]</div>
+<div class="narration">"In 1939, two and a half million men volunteered to fight in a war that wasn't theirs."</div>
+<br>
+<div class="visual">[ZOOM: Slow push into faces of soldiers in the crowd]</div>
+<div class="narration">"They fought in the deserts of North Africa. They bled in the jungles of Burma. They stormed the beaches of Italy."</div>
+<br>
+<div class="visual">[TEXT: "87,000 KILLED" — large, amber text on black]</div>
+<div class="narration">"87,000 of them never came home."</div>
+<br>
+<div class="visual">[BLACK — 2 seconds]</div>
+<div class="narration">"And the world... forgot."</div>
+</div>
+
+<div class="script-block">
+<div class="label" style="background:#d9770615;color:#d97706">TITLE CARD · 0:30–0:33</div>
+<div class="visual">[TITLE: The Forgotten Front logo, dramatic sting, 3 seconds]</div>
+</div>
+
+<div class="script-block">
+<div class="label" style="background:#3b82f615;color:#60a5fa">CONTEXT · 0:33–3:00</div>
+<div class="emotion">[CURIOSITY]</div>
+<div class="visual">[MAP: British India, 1939 — highlighting major cities and military bases]</div>
+<div class="narration">"When Britain declared war on Germany in September 1939, it also declared war on behalf of its entire empire — including India. Nobody asked the 400 million Indians if they wanted to fight."</div>
+<br>
+<div class="visual">[PHOTO: Indian independence leaders — Gandhi, Nehru — at a political meeting]</div>
+<div class="narration">"India's independence leaders were furious. Gandhi called it 'a war of the imperialists.' Congress demanded self-governance as the price of cooperation."</div>
+<br>
+<div class="visual">[PHOTO: Long queue of Indian men at a military recruitment center]</div>
+<div class="narration">"But here's what almost nobody talks about: despite the political opposition, two and a half million Indians volunteered anyway. Not conscripted. Volunteered. Making the Indian Army the largest volunteer force in human history."</div>
+<br>
+<div class="emotion">[CURIOSITY → TENSION]</div>
+<div class="narration">"The question is — why? Why would millions of men fight for an empire that ruled them as subjects?"</div>
+<br>
+<div class="visual">[TEXT: "The largest volunteer force in human history" — Oswald Bold]</div>
+<div class="narration">"The answer is more complicated — and more human — than any textbook will tell you. And the story of what happened to these men after the war... is the part history tried to erase."</div>
+</div>
+
+<div class="callout co-b"><strong>Notice what this cold open does:</strong> In 30 seconds, the viewer knows the scale (2.5 million), the sacrifice (87,000 dead), and the injustice (forgotten). They have a reason to care. The context section then opens TWO loops: (1) why did they volunteer? and (2) what happened after the war? Both loops demand answers the viewer can only get by watching. AVD will be high.</div>
+
+</div></div>
+
+<!-- WORD COUNT GUIDE -->
+<div class="sec"><div class="sec-h"><span class="num nb">LENGTH</span><h2>Script Length Calculator</h2></div><div class="sec-b">
+<div class="d"><strong>Average narration speed: ~140 words per minute (documentary pace, slower than conversational).</strong></div>
+<table class="tbl">
+<tr><th>Target Video Length</th><th>Script Word Count</th><th>Best For</th></tr>
+<tr><td>8 minutes</td><td>~1,100 words</td><td>Short explainers, "Why did X happen?" videos</td></tr>
+<tr><td>12 minutes</td><td>~1,700 words</td><td>Standard episodes, forgotten battles, soldier stories</td></tr>
+<tr><td>15 minutes</td><td>~2,100 words</td><td>Deep-dives, espionage stories, multi-part narratives</td></tr>
+<tr><td>20 minutes</td><td>~2,800 words</td><td>Major episodes, epic battles, comprehensive strategic analysis</td></tr>
+<tr><td>60 seconds (Short)</td><td>~80–100 words</td><td>Single-fact hooks, teasers, "Did you know?" Shorts</td></tr>
+</table>
+</div></div>
+
+<!-- PRE-RECORD CHECKLIST -->
+<div class="sec"><div class="sec-h"><span class="num ngr">CHECK</span><h2>Script Quality Checklist (Before Recording)</h2></div><div class="sec-b">
+<table class="tbl">
+<tr><th>Check</th><th>Question to Ask</th></tr>
+<tr><td>☐ Hook test</td><td>Would the first 15 seconds make YOU stop scrolling? Read it to someone — do they want to hear more?</td></tr>
+<tr><td>☐ "So what?" test</td><td>Within the first 90 seconds, is it clear WHY this story matters? If not, add stakes earlier.</td></tr>
+<tr><td>☐ Emotion variation</td><td>Does the script evoke at least 4 different emotions? Label them in the margins.</td></tr>
+<tr><td>☐ Open loops</td><td>Are there at least 3 moments where you tease something coming later? Check for "but" transitions.</td></tr>
+<tr><td>☐ Visual cues</td><td>Does every 5–8 seconds of narration have a matching [VISUAL] cue? No long stretches without image changes.</td></tr>
+<tr><td>☐ Factual accuracy</td><td>Have all key dates, names, and numbers been verified against at least 2 sources? No AI hallucinations left in.</td></tr>
+<tr><td>☐ Demonetization screen</td><td>Does this script avoid Red Zone content (graphic violence, swastikas, trigger words in title)? Check against Gap Analysis guidelines.</td></tr>
+<tr><td>☐ Read-aloud test</td><td>Read the entire script out loud at documentary pace. Does it sound natural? Cut any sentence you'd never naturally SAY.</td></tr>
+<tr><td>☐ "The Forgotten" moment</td><td>Is there a clear, emotional moment where you explain WHY this story was forgotten? This is your brand signature — never skip it.</td></tr>
+<tr><td>☐ Length check</td><td>Word count matches target video length? (140 words ≈ 1 minute of narration)</td></tr>
+</table>
+</div></div>
+
+<!-- DELIVERABLES -->
+<div class="sec"><div class="sec-h"><h2>📦 Y2.1 Deliverables</h2></div><div class="sec-b">
+<div style="display:grid;gap:5px">
+<div class="pillar"><span>✅</span><span>3 story structures defined: "The Arc" (60%), "The Question" (25%), "The Dossier" (15%) — with section timing and writing techniques</span></div>
+<div class="pillar"><span>✅</span><span>Emotion mapping system — 6 emotions with triggers, voice techniques, and the ideal emotional sequence</span></div>
+<div class="pillar"><span>✅</span><span>Visual cue system — 7 cue types with format standards for seamless script-to-edit workflow</span></div>
+<div class="pillar"><span>✅</span><span>4 Claude prompt templates: Research & Outline, Full Script Draft, Shorts Batch, Title & Thumbnail Brainstorm</span></div>
+<div class="pillar"><span>✅</span><span>40–60% rewrite rules — what to keep from AI, what to rewrite in your voice</span></div>
+<div class="pillar"><span>✅</span><span>6 retention techniques: open loops, pattern interrupts, escalating stakes, time pressure, "but" transitions, direct address</span></div>
+<div class="pillar"><span>✅</span><span>Sample script: first 3 minutes of Video #1 fully formatted with visual cues and emotion labels</span></div>
+<div class="pillar"><span>✅</span><span>Word count calculator for 8/12/15/20-min videos and Shorts</span></div>
+<div class="pillar"><span>✅</span><span>10-point script quality checklist for pre-recording validation</span></div>
+</div>
+</div></div>
+
+</div>
+<div class="foot">Y2.1 — Script Writing Framework & Templates · The Forgotten Front · March 2026</div>
+</body></html>

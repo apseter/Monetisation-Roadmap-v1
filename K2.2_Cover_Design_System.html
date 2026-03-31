@@ -1,0 +1,392 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0"><title>K2.2 — Cover Design System & Templates</title>
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}body{background:#0a0f1a;color:#e2e8f0;font-family:'Outfit',sans-serif;padding:0 0 60px}
+.hdr{background:linear-gradient(135deg,#0f172a,#0f2318,#0f172a);border-bottom:1px solid #10b98133;padding:28px 24px;text-align:center;position:relative}.hdr::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at 40% 30%,#10b98118,transparent 60%)}.hdr>*{position:relative}
+.tag{font-size:10px;color:#10b981;font-family:'JetBrains Mono',monospace;text-transform:uppercase;letter-spacing:.2em;margin-bottom:6px}
+h1{font-size:22px;font-weight:800;color:#f1f5f9;margin-bottom:4px}
+.sub{font-size:12px;color:#64748b;max-width:650px;margin:0 auto}
+.ct{max-width:900px;margin:0 auto;padding:20px 16px}
+.sec{background:#111827;border:1px solid #1e293b;border-radius:8px;margin-bottom:14px;overflow:hidden}
+.sec-h{padding:14px 18px;border-bottom:1px solid #1e293b;display:flex;align-items:center;gap:8px;flex-wrap:wrap}
+.sec-h h2{font-size:14px;font-weight:700}
+.num{font-size:9px;font-family:'JetBrains Mono',monospace;padding:2px 8px;border-radius:4px;font-weight:700}
+.pg{background:#10b98115;color:#10b981}.pb{background:#3b82f615;color:#60a5fa}.pa{background:#f59e0b15;color:#f59e0b}.pr{background:#ef444415;color:#ef4444}
+.sec-b{padding:14px 18px}
+.d{font-size:11px;color:#94a3b8;line-height:1.6;margin-bottom:8px}.d strong{color:#e2e8f0}
+.tbl{width:100%;border-collapse:collapse;margin:10px 0;font-size:10px}
+.tbl th{background:#0f172a;color:#94a3b8;padding:7px 8px;text-align:left;font-family:'JetBrains Mono',monospace;font-size:9px;text-transform:uppercase;border:1px solid #1e293b}
+.tbl td{padding:7px 8px;border:1px solid #1e293b;color:#cbd5e1;vertical-align:top}.tbl tr:nth-child(even) td{background:#0d111788}
+.g{color:#10b981;font-weight:600}.r{color:#ef4444;font-weight:600}.a{color:#f59e0b;font-weight:600}
+.callout{padding:14px;border-radius:6px;font-size:12px;line-height:1.6;margin:10px 0}
+.co-g{background:#10b98108;border:1px solid #10b98122;color:#6ee7b7}
+.co-a{background:#f59e0b08;border:1px solid #f59e0b22;color:#fcd34d}
+.co-b{background:#3b82f608;border:1px solid #3b82f622;color:#93c5fd}
+.co-r{background:#ef444408;border:1px solid #ef444422;color:#fca5a5}
+.callout strong{color:#f1f5f9}
+.pillar{display:flex;align-items:flex-start;gap:8px;padding:8px 10px;background:#10b98108;border:1px solid #10b98118;border-radius:4px;margin-bottom:4px}
+.pillar span:first-child{color:#10b981;font-size:10px;font-family:'JetBrains Mono',monospace;min-width:16px;flex-shrink:0;padding-top:2px}
+.pillar span:last-child{font-size:11px;color:#cbd5e1;line-height:1.5}
+.niche{background:#0f172a;border:1px solid #1e293b;border-radius:8px;padding:16px;margin:10px 0}
+.niche h3{font-size:14px;font-weight:700;color:#f1f5f9;margin-bottom:6px}
+.swatch{display:inline-block;width:28px;height:28px;border-radius:4px;border:1px solid #1e293b;vertical-align:middle;margin-right:4px}
+.book-cover{background:#111827;border:1px solid #1e293b;border-radius:6px;padding:12px;margin:8px 0}
+.book-cover h4{font-size:12px;font-weight:700;color:#e2e8f0;margin-bottom:4px}
+.cover-meta{font-size:9px;font-family:'JetBrains Mono',monospace;color:#64748b;display:flex;gap:10px;flex-wrap:wrap;margin-bottom:8px}
+.foot{text-align:center;padding:20px;font-size:10px;color:#334155;font-family:'JetBrains Mono',monospace}
+</style></head><body>
+<div class="hdr"><div class="tag">K2.2 — Cover Design System & Templates</div><h1>KDP Cover Design Playbook</h1><div class="sub">Technical specs · 3 niche design systems · 8 cover blueprints · Canva workflow · Back cover templates · Spine calculator</div></div>
+<div class="ct">
+
+<!-- KDP COVER TECHNICAL SPECS -->
+<div class="sec"><div class="sec-h"><span class="num pr">CRITICAL</span><h2>KDP Cover Technical Specifications</h2></div><div class="sec-b">
+
+<div class="d"><strong>Your cover is a single PDF file containing the back cover + spine + front cover as one continuous image. Get any dimension wrong and KDP will reject your upload instantly.</strong></div>
+
+<table class="tbl">
+<tr><th>Specification</th><th>Requirement</th><th>Why It Matters</th></tr>
+<tr><td><strong>File format</strong></td><td>PDF only (for print cover)</td><td>KDP does not accept JPG/PNG for paperback covers. Canva exports PDF natively.</td></tr>
+<tr><td><strong>Resolution</strong></td><td>300 DPI minimum</td><td>Below 300 DPI = blurry print = rejection. Canva PDF Print export handles this automatically.</td></tr>
+<tr><td><strong>Color mode</strong></td><td>CMYK recommended, RGB accepted</td><td>KDP converts RGB to CMYK automatically. Colors may shift slightly. Canva uses RGB — that's fine.</td></tr>
+<tr><td><strong>Bleed</strong></td><td>0.125" (3.2mm) on ALL sides</td><td>Bleed = extra image beyond trim line. Without it, you get white edges after cutting. Required if any color/image touches the edge.</td></tr>
+<tr><td><strong>Safe zone</strong></td><td>0.25" (6.4mm) from outside edge</td><td>Keep ALL text and important content inside this zone. Anything closer to the edge may be cut off.</td></tr>
+<tr><td><strong>Spine text</strong></td><td>Only allowed on books with 79+ pages</td><td>All 8 of your books qualify (100+ pages each). Keep spine text centered with 0.0625" (1.6mm) padding on each side.</td></tr>
+<tr><td><strong>Barcode</strong></td><td>KDP adds automatically to back cover</td><td>Leave a blank white rectangle ~2" × 1.2" in the bottom-right of back cover for the auto-barcode. Don't design your own.</td></tr>
+<tr><td><strong>File size</strong></td><td>Under 650MB</td><td>Canva exports are typically 5-15MB. No issue here.</td></tr>
+<tr><td><strong>eBook cover</strong></td><td>Separate JPEG, 2560 × 1600px</td><td>Front cover only. Upload as a separate file during KDP listing. Same design as your paperback front cover, just different dimensions.</td></tr>
+</table>
+
+<div class="callout co-r"><strong>The #1 rejection reason:</strong> Wrong cover dimensions. Your total cover width depends on page count (which determines spine width). ALWAYS use the KDP Cover Calculator at kdp.amazon.com/cover-calculator to get exact dimensions for each book. Enter: Paperback → B&W → White paper → your trim size → your page count → download the template PNG.</div>
+</div></div>
+
+<!-- SPINE WIDTH CALCULATOR -->
+<div class="sec"><div class="sec-h"><span class="num pb">SPINE</span><h2>Spine Width Calculator — All 8 Books</h2></div><div class="sec-b">
+
+<div class="d"><strong>Spine width formula for B&W interior on white paper: page count × 0.002252"</strong></div>
+
+<table class="tbl">
+<tr><th>Book</th><th>Pages</th><th>Trim</th><th>Spine Width</th><th>Full Cover Width (incl. bleed)</th><th>Full Cover Height (incl. bleed)</th></tr>
+<tr><td><strong>1. New Dad Journal</strong></td><td>120</td><td>6×9"</td><td>0.270"</td><td>12.520" (0.125+6+0.270+6+0.125)</td><td>9.250"</td></tr>
+<tr><td><strong>2. E-Commerce Planner</strong></td><td>130</td><td>8.5×11"</td><td>0.293"</td><td>17.543"</td><td>11.250"</td></tr>
+<tr><td><strong>3. Half Marathon Log</strong></td><td>110</td><td>6×9"</td><td>0.248"</td><td>12.498"</td><td>9.250"</td></tr>
+<tr><td><strong>4. Family Budget Tracker</strong></td><td>100</td><td>8.5×11"</td><td>0.225"</td><td>17.475"</td><td>11.250"</td></tr>
+<tr><td><strong>5. Walking Fitness Log</strong></td><td>100</td><td>6×9"</td><td>0.225"</td><td>12.475"</td><td>9.250"</td></tr>
+<tr><td><strong>6. Order & Shipping Tracker</strong></td><td>100</td><td>8.5×11"</td><td>0.225"</td><td>17.475"</td><td>11.250"</td></tr>
+<tr><td><strong>7. Dad's Letters</strong></td><td>110</td><td>6×9"</td><td>0.248"</td><td>12.498"</td><td>9.250"</td></tr>
+<tr><td><strong>8. Social Media Planner</strong></td><td>100</td><td>8.5×11"</td><td>0.225"</td><td>17.475"</td><td>11.250"</td></tr>
+</table>
+
+<div class="callout co-a"><strong>Don't calculate manually — verify.</strong> Use the KDP Cover Calculator at kdp.amazon.com/cover-calculator for each book. The numbers above are pre-calculated for your convenience, but always confirm with KDP's tool before final upload. If you change your page count during interior design, recalculate the spine.</div>
+</div></div>
+
+<!-- 3 NICHE DESIGN SYSTEMS -->
+<div class="sec"><div class="sec-h"><span class="num pg">DESIGN</span><h2>3 Niche Cover Design Systems</h2></div><div class="sec-b">
+
+<div class="d"><strong>Each pen name gets a distinct visual identity. Buyers should recognize books from the same "publisher" at a glance. Here are your three brand systems:</strong></div>
+
+<!-- NICHE A: DAD/FAMILY -->
+<div class="niche">
+<h3>🏠 Niche A: Dad & Family (Books 1, 4, 7)</h3>
+<div class="d"><strong>Vibe:</strong> Warm, heartfelt, approachable. Think handwritten notes on a kitchen table. These are gift books — the cover must say "buy this for someone you love."</div>
+
+<table class="tbl">
+<tr><th>Element</th><th>Specification</th></tr>
+<tr><td><strong>Primary color</strong></td><td><span class="swatch" style="background:#1e3a5f"></span> Navy Blue #1E3A5F — trust, fatherhood, classic</td></tr>
+<tr><td><strong>Accent color</strong></td><td><span class="swatch" style="background:#f4a261"></span> Warm Amber #F4A261 — warmth, sunshine, golden hour</td></tr>
+<tr><td><strong>Background</strong></td><td><span class="swatch" style="background:#faf5ef"></span> Cream #FAF5EF — soft, warm, inviting. Never pure white.</td></tr>
+<tr><td><strong>Text contrast</strong></td><td><span class="swatch" style="background:#1a1a2e"></span> Deep Ink #1A1A2E — dark navy/near-black for readability</td></tr>
+<tr><td><strong>Title font</strong></td><td><strong>Playfair Display Bold</strong> — elegant serif with personality. Feels classic and meaningful.</td></tr>
+<tr><td><strong>Subtitle font</strong></td><td><strong>Montserrat Regular</strong> — clean sans-serif for contrast. Reads well at small sizes.</td></tr>
+<tr><td><strong>Decorative elements</strong></td><td>Simple line illustrations: baby footprints, heart outline, stars, small icons. Nothing photographic — illustration only. Canva "Line Art" style.</td></tr>
+<tr><td><strong>Layout pattern</strong></td><td>Title top-third (large), subtle illustration center, subtitle + pen name bottom. Lots of breathing room. Feels premium, not cluttered.</td></tr>
+<tr><td><strong>Matte vs Glossy</strong></td><td><strong>Matte finish</strong> — feels premium for gift books. KDP lets you choose at upload.</td></tr>
+</table>
+</div>
+
+<!-- NICHE B: BUSINESS -->
+<div class="niche">
+<h3>💼 Niche B: Business & E-Commerce (Books 2, 6, 8)</h3>
+<div class="d"><strong>Vibe:</strong> Bold, professional, action-oriented. These are tools for doers. Cover should scream "this will make you money."</div>
+
+<table class="tbl">
+<tr><th>Element</th><th>Specification</th></tr>
+<tr><td><strong>Primary color</strong></td><td><span class="swatch" style="background:#0f172a"></span> Dark Navy #0F172A — authority, professionalism</td></tr>
+<tr><td><strong>Accent color</strong></td><td><span class="swatch" style="background:#10b981"></span> Emerald Green #10B981 — money, growth, go</td></tr>
+<tr><td><strong>Secondary accent</strong></td><td><span class="swatch" style="background:#f59e0b"></span> Gold #F59E0B — premium, achievement, success</td></tr>
+<tr><td><strong>Background</strong></td><td><span class="swatch" style="background:#ffffff"></span> White #FFFFFF or <span class="swatch" style="background:#0f172a"></span> Dark Navy #0F172A — high contrast either way</td></tr>
+<tr><td><strong>Title font</strong></td><td><strong>Oswald Bold</strong> — strong, modern, commanding. ALL CAPS for titles.</td></tr>
+<tr><td><strong>Subtitle font</strong></td><td><strong>Open Sans Regular</strong> — clean, professional, readable.</td></tr>
+<tr><td><strong>Decorative elements</strong></td><td>Geometric shapes: clean lines, arrows, grid patterns, subtle circuit/tech patterns. Bold color blocks. No illustrations — pure graphic design.</td></tr>
+<tr><td><strong>Layout pattern</strong></td><td>Bold color block at top (60%) with title, clean bottom section (40%) with subtitle. Or full dark background with centered large title. Sharp, structured, no curves.</td></tr>
+<tr><td><strong>Matte vs Glossy</strong></td><td><strong>Glossy finish</strong> — looks polished and professional on bookshelf. Pops in Amazon photos.</td></tr>
+</table>
+</div>
+
+<!-- NICHE C: RUNNING/FITNESS -->
+<div class="niche">
+<h3>🏃 Niche C: Running & Fitness (Books 3, 5)</h3>
+<div class="d"><strong>Vibe:</strong> Energetic, aspirational, outdoorsy. Cover should make you want to lace up and go run.</div>
+
+<table class="tbl">
+<tr><th>Element</th><th>Specification</th></tr>
+<tr><td><strong>Primary color</strong></td><td><span class="swatch" style="background:#dc2626"></span> Runner Red #DC2626 — energy, passion, race-day intensity</td></tr>
+<tr><td><strong>Accent color</strong></td><td><span class="swatch" style="background:#1e293b"></span> Charcoal #1E293B — grounded, serious athlete</td></tr>
+<tr><td><strong>Secondary accent</strong></td><td><span class="swatch" style="background:#f97316"></span> Orange #F97316 — sunrise, momentum, warmth</td></tr>
+<tr><td><strong>Background</strong></td><td><span class="swatch" style="background:#ffffff"></span> White #FFFFFF — clean, sporty, energetic</td></tr>
+<tr><td><strong>Title font</strong></td><td><strong>Bebas Neue</strong> — tall, athletic, bold. All caps. Sporty without being childish.</td></tr>
+<tr><td><strong>Subtitle font</strong></td><td><strong>Lato Regular</strong> — friendly, clean, modern.</td></tr>
+<tr><td><strong>Decorative elements</strong></td><td>Road/path lines, subtle topographic patterns, running shoe silhouettes, distance markers, finish line stripes. Dynamic diagonals — nothing static.</td></tr>
+<tr><td><strong>Layout pattern</strong></td><td>Diagonal color split (red/white at an angle), title large and bold in the dominant zone. Energy feels built into the layout through asymmetry. Runner silhouette or road graphic optional.</td></tr>
+<tr><td><strong>Matte vs Glossy</strong></td><td><strong>Matte finish</strong> — grippier feel for a fitness book. Feels practical and tactile.</td></tr>
+</table>
+</div>
+
+</div></div>
+
+<!-- COVER DESIGN PRINCIPLES -->
+<div class="sec"><div class="sec-h"><span class="num pa">RULES</span><h2>7 Cover Design Rules for Low-Content Books</h2></div><div class="sec-b">
+
+<table class="tbl">
+<tr><th>#</th><th>Rule</th><th>Why</th><th>How</th></tr>
+<tr><td>1</td><td><strong>Readable at thumbnail size</strong></td><td>90% of Amazon shoppers see your cover as a tiny image on a search results page. If they can't read the title, they scroll past.</td><td>Title text must fill at least 40% of the cover width. View your design at 150px wide before exporting — can you read every word?</td></tr>
+<tr><td>2</td><td><strong>Title is the hero</strong></td><td>Low-content books sell on clarity, not mystery. The buyer needs to know EXACTLY what this book is in 1 second.</td><td>Title is the largest text element. Center it or place top-third. Never let decorative elements compete with the title for attention.</td></tr>
+<tr><td>3</td><td><strong>Max 3 colors</strong></td><td>More colors = visual noise = amateur look. Professional covers use restraint.</td><td>Primary + accent + neutral (white/cream/black). That's it. Your niche color system already defines these.</td></tr>
+<tr><td>4</td><td><strong>Never use stock photos</strong></td><td>Stock photos on low-content book covers look cheap and generic. They signal "template." Abstract graphics, patterns, and illustrations look premium.</td><td>Use Canva's built-in shapes, lines, and graphic elements. Flat color blocks with clean typography always outperform stock imagery.</td></tr>
+<tr><td>5</td><td><strong>Subtitle sells the product</strong></td><td>Title names the book. Subtitle explains WHY to buy it. Timeframe + audience + benefit.</td><td>"A First-Time Father's Memory Book & Milestone Tracker for Baby's First 12 Months" — that subtitle alone could sell the book.</td></tr>
+<tr><td>6</td><td><strong>Consistent pen name styling</strong></td><td>Author name should be small, subtle, bottom of cover. Pen name builds brand across books in the same niche.</td><td>Author name in subtitle font at ~40% of title size. Same position on every cover in the niche series. Bottom-center or bottom-right.</td></tr>
+<tr><td>7</td><td><strong>Spine matches front cover</strong></td><td>Books displayed spine-out on physical shelves (and in "Look Inside" views) need a readable, branded spine.</td><td>Title + pen name on spine. Same fonts as front cover. Background matches front cover primary color. Text runs bottom-to-top.</td></tr>
+</table>
+</div></div>
+
+<!-- ALL 8 COVER BLUEPRINTS -->
+<div class="sec"><div class="sec-h"><span class="num pg">COVERS</span><h2>8 Cover Design Blueprints</h2></div><div class="sec-b">
+
+<!-- BOOK 1 -->
+<div class="book-cover">
+<h4>📕 Book 1: New Dad Year One Journal</h4>
+<div class="cover-meta"><span>🏠 Dad Niche</span><span>6×9"</span><span>120 pages</span><span>$12.99</span><span>MATTE</span></div>
+<table class="tbl">
+<tr><th>Element</th><th>Front Cover</th></tr>
+<tr><td><strong>Background</strong></td><td>Cream (#FAF5EF) full cover</td></tr>
+<tr><td><strong>Top section</strong></td><td>Title "NEW DAD" in Playfair Display Bold, navy (#1E3A5F), large — fills top 30%. Below: "Year One Journal" slightly smaller, same font.</td></tr>
+<tr><td><strong>Center</strong></td><td>Simple line art illustration: tiny baby footprints inside a heart outline, amber (#F4A261). Minimal, elegant, centered.</td></tr>
+<tr><td><strong>Bottom section</strong></td><td>Subtitle in Montserrat Regular, small: "A First-Time Father's Memory Book & Milestone Tracker for Baby's First 12 Months". Pen name below in smaller text.</td></tr>
+<tr><td><strong>Spine</strong></td><td>Navy background. "NEW DAD YEAR ONE JOURNAL" in cream. Pen name at bottom.</td></tr>
+<tr><td><strong>Back cover</strong></td><td>Cream background. 4-5 bullet points describing what's inside. Gift angle: "The perfect gift for new dads." Barcode space bottom-right.</td></tr>
+</table>
+</div>
+
+<!-- BOOK 2 -->
+<div class="book-cover">
+<h4>📕 Book 2: E-Commerce Launch Planner</h4>
+<div class="cover-meta"><span>💼 Business Niche</span><span>8.5×11"</span><span>130 pages</span><span>$12.99</span><span>GLOSSY</span></div>
+<table class="tbl">
+<tr><th>Element</th><th>Front Cover</th></tr>
+<tr><td><strong>Background</strong></td><td>Dark Navy (#0F172A) full cover</td></tr>
+<tr><td><strong>Top 60%</strong></td><td>"E-COMMERCE LAUNCH PLANNER" in Oswald Bold, white, all caps, large. Stacked on 2-3 lines. Maximum impact.</td></tr>
+<tr><td><strong>Accent</strong></td><td>Emerald (#10B981) horizontal rule below title. Small emerald arrow icon pointing right.</td></tr>
+<tr><td><strong>Bottom 40%</strong></td><td>Subtitle in Open Sans: "90-Day Online Store Startup Workbook with Product Research, Marketing & Revenue Tracker" in light grey (#94A3B8). Pen name below in emerald.</td></tr>
+<tr><td><strong>Spine</strong></td><td>Dark navy background. Title in white. Emerald accent stripe at top.</td></tr>
+<tr><td><strong>Back cover</strong></td><td>Dark navy. "WHAT'S INSIDE" header in emerald. 5 bullet points in white. "Built by entrepreneurs, for entrepreneurs." Barcode space.</td></tr>
+</table>
+</div>
+
+<!-- BOOK 3 -->
+<div class="book-cover">
+<h4>📕 Book 3: Half Marathon Training Log</h4>
+<div class="cover-meta"><span>🏃 Running Niche</span><span>6×9"</span><span>110 pages</span><span>$9.99</span><span>MATTE</span></div>
+<table class="tbl">
+<tr><th>Element</th><th>Front Cover</th></tr>
+<tr><td><strong>Background</strong></td><td>White with a bold diagonal red (#DC2626) color block cutting from top-left to mid-right</td></tr>
+<tr><td><strong>Title</strong></td><td>"HALF MARATHON TRAINING LOG" in Bebas Neue, charcoal (#1E293B), placed in the white zone. Bold, tall, athletic.</td></tr>
+<tr><td><strong>Accent</strong></td><td>"13.1" in large orange (#F97316) text overlapping the diagonal — a visual anchor. Runners recognize this number instantly.</td></tr>
+<tr><td><strong>Subtitle</strong></td><td>"16-Week Running Journal with Pace Tracker, Weekly Mileage & Race Day Planner" in Lato Regular, smaller, charcoal.</td></tr>
+<tr><td><strong>Spine</strong></td><td>Red background. Title in white. Orange accent dots.</td></tr>
+<tr><td><strong>Back cover</strong></td><td>White. "TRACK YOUR WAY TO THE FINISH LINE" header in red. Features list. "The perfect gift for runners." Barcode space.</td></tr>
+</table>
+</div>
+
+<!-- BOOK 4 -->
+<div class="book-cover">
+<h4>📕 Book 4: Family Budget Tracker</h4>
+<div class="cover-meta"><span>🏠 Dad Niche</span><span>8.5×11"</span><span>100 pages</span><span>$9.99</span><span>MATTE</span></div>
+<table class="tbl">
+<tr><th>Element</th><th>Front Cover</th></tr>
+<tr><td><strong>Background</strong></td><td>Cream (#FAF5EF)</td></tr>
+<tr><td><strong>Top</strong></td><td>"FAMILY BUDGET TRACKER" in Playfair Display Bold, navy. Clean, trustworthy.</td></tr>
+<tr><td><strong>Center</strong></td><td>Simple line art: piggy bank or house icon with a coin, amber (#F4A261) outline. Alternatively, a clean geometric dollar/house combo.</td></tr>
+<tr><td><strong>Bottom</strong></td><td>Subtitle: "Monthly Expense Planner & Bill Organizer for Households" in Montserrat. Pen name.</td></tr>
+<tr><td><strong>Design note</strong></td><td>Same visual language as Book 1 — cream, navy, amber, Playfair. Buyers who own Book 1 should recognize this as "from the same author."</td></tr>
+</table>
+</div>
+
+<!-- BOOK 5 -->
+<div class="book-cover">
+<h4>📕 Book 5: Walking Fitness Log</h4>
+<div class="cover-meta"><span>🏃 Running Niche</span><span>6×9"</span><span>100 pages</span><span>$9.99</span><span>MATTE</span></div>
+<table class="tbl">
+<tr><th>Element</th><th>Front Cover</th></tr>
+<tr><td><strong>Background</strong></td><td>White with diagonal orange (#F97316) block (reverse angle from Book 3 — creates visual variety while staying in the same brand)</td></tr>
+<tr><td><strong>Title</strong></td><td>"WALKING FITNESS LOG" in Bebas Neue, charcoal. Same athletic energy as Book 3.</td></tr>
+<tr><td><strong>Accent</strong></td><td>Step counter icon or path/trail line graphic in red. Subtle topographic pattern in the orange block.</td></tr>
+<tr><td><strong>Subtitle</strong></td><td>"Daily Step Counter & Exercise Journal for Weight Loss | 90-Day Walking Challenge Tracker" in Lato.</td></tr>
+<tr><td><strong>Design note</strong></td><td>Mirrors Book 3's layout but with orange as dominant diagonal instead of red. Pair recognition for running niche buyers.</td></tr>
+</table>
+</div>
+
+<!-- BOOK 6 -->
+<div class="book-cover">
+<h4>📕 Book 6: Order & Shipping Tracker</h4>
+<div class="cover-meta"><span>💼 Business Niche</span><span>8.5×11"</span><span>100 pages</span><span>$9.99</span><span>GLOSSY</span></div>
+<table class="tbl">
+<tr><th>Element</th><th>Front Cover</th></tr>
+<tr><td><strong>Background</strong></td><td>White with dark navy (#0F172A) top 50% creating a sharp horizontal split</td></tr>
+<tr><td><strong>Title</strong></td><td>"ORDER & SHIPPING TRACKER" in Oswald Bold, white (in navy section). Clean and commanding.</td></tr>
+<tr><td><strong>Accent</strong></td><td>Gold (#F59E0B) thin horizontal line at the split. Small package/box icon in gold.</td></tr>
+<tr><td><strong>Bottom</strong></td><td>Subtitle in dark navy on white: "Small Business Sales Log Book with Purchase Orders, Inventory & Delivery Record" in Open Sans. Pen name in emerald.</td></tr>
+<tr><td><strong>Design note</strong></td><td>Variation on Book 2's system — same fonts and colors, different layout. Creates a recognizable business series.</td></tr>
+</table>
+</div>
+
+<!-- BOOK 7 -->
+<div class="book-cover">
+<h4>📕 Book 7: Dad's Letters to My Child</h4>
+<div class="cover-meta"><span>🏠 Dad Niche</span><span>6×9"</span><span>110 pages</span><span>$11.99</span><span>MATTE</span></div>
+<table class="tbl">
+<tr><th>Element</th><th>Front Cover</th></tr>
+<tr><td><strong>Background</strong></td><td>Navy (#1E3A5F) full cover — more emotional, deeper than the cream used on Books 1 and 4</td></tr>
+<tr><td><strong>Title</strong></td><td>"Dad's Letters to My Child" in Playfair Display Bold, cream (#FAF5EF). Elegant, emotional, personal.</td></tr>
+<tr><td><strong>Center</strong></td><td>Simple line art: an envelope with a heart, or a quill pen, in amber (#F4A261). Minimal and beautiful.</td></tr>
+<tr><td><strong>Subtitle</strong></td><td>"A Guided Keepsake Journal for Fathers to Write Messages, Wisdom & Memories" in Montserrat, light grey.</td></tr>
+<tr><td><strong>Design note</strong></td><td>Inverted color scheme from Books 1 and 4 (navy background instead of cream). Creates visual variety within the Dad niche while maintaining brand recognition through fonts and amber accent.</td></tr>
+</table>
+</div>
+
+<!-- BOOK 8 -->
+<div class="book-cover">
+<h4>📕 Book 8: Social Media Content Planner</h4>
+<div class="cover-meta"><span>💼 Business Niche</span><span>8.5×11"</span><span>100 pages</span><span>$9.99</span><span>GLOSSY</span></div>
+<table class="tbl">
+<tr><th>Element</th><th>Front Cover</th></tr>
+<tr><td><strong>Background</strong></td><td>Dark navy (#0F172A) full cover</td></tr>
+<tr><td><strong>Title</strong></td><td>"SOCIAL MEDIA CONTENT PLANNER" in Oswald Bold, white, all caps. Stacked.</td></tr>
+<tr><td><strong>Accent</strong></td><td>Emerald (#10B981) and gold (#F59E0B) small social media–style icons (play button, heart, comment bubble) scattered subtly. Not logos — abstract shapes only.</td></tr>
+<tr><td><strong>Subtitle</strong></td><td>"90-Day Posting Schedule & Strategy Workbook for Small Business, Creators & Influencers" in Open Sans, light grey.</td></tr>
+<tr><td><strong>Design note</strong></td><td>Same dark navy + Oswald system as Books 2 and 6. Buyers see all three on your pen name's Amazon page and perceive a professional, cohesive brand.</td></tr>
+</table>
+</div>
+
+</div></div>
+
+<!-- BACK COVER TEMPLATE -->
+<div class="sec"><div class="sec-h"><span class="num pb">BACK</span><h2>Back Cover Copy Template — Use for All 8 Books</h2></div><div class="sec-b">
+
+<div class="d"><strong>Your back cover has ONE job: convince the person holding the physical book (or viewing "Look Inside") to buy it. Use this template structure:</strong></div>
+
+<table class="tbl">
+<tr><th>Section</th><th>Content</th><th>Placement</th></tr>
+<tr><td><strong>Headline</strong></td><td>"FINALLY, A [PRODUCT TYPE] DESIGNED FOR [AUDIENCE]." — All caps, bold, in your niche's title font. This is the emotional hook.</td><td>Top 15% of back cover, centered</td></tr>
+<tr><td><strong>Features list</strong></td><td>4–5 bullet points starting with ✓. Each bullet = one concrete feature of the interior. "✓ 12 monthly milestone tracking sections" / "✓ Weekly mileage & pace calculator pages"</td><td>Middle 50% of back cover</td></tr>
+<tr><td><strong>Gift line</strong></td><td>"Makes the perfect gift for [audience] — ideal for [occasions]." — This sentence alone drives a massive % of low-content book purchases.</td><td>Below features, centered, in accent color</td></tr>
+<tr><td><strong>Specs</strong></td><td>"[Pages] pages | [Trim size] | Premium [matte/glossy] cover | Printed on quality white paper"</td><td>Small text, near bottom-left</td></tr>
+<tr><td><strong>Barcode zone</strong></td><td>Leave a 2" × 1.2" blank white rectangle in the bottom-right corner. KDP auto-places the barcode here. If you put design elements here, they'll be covered.</td><td>Bottom-right corner</td></tr>
+</table>
+
+<div class="callout co-a"><strong>Back cover example — Book 1 (New Dad Journal):</strong><br><br>
+FINALLY, A JOURNAL DESIGNED FOR DADS.<br><br>
+✓ 12 monthly sections tracking your baby's first year milestones<br>
+✓ Guided prompts for capturing your thoughts, fears, and proudest moments<br>
+✓ "Letter to Baby" pages for each month — a keepsake they'll treasure forever<br>
+✓ Photo memory spots to attach your favorite snapshots<br>
+✓ Space for the moments nobody warns new dads about<br><br>
+<em>The perfect gift for new fathers, expectant dads, and baby showers.</em><br><br>
+<span style="font-size:9px;color:#64748b">120 pages | 6×9 inches | Premium matte cover | Printed on quality white paper</span></div>
+</div></div>
+
+<!-- CANVA COVER WORKFLOW -->
+<div class="sec"><div class="sec-h"><span class="num pg">WORKFLOW</span><h2>Canva Cover Design Workflow — Step by Step</h2></div><div class="sec-b">
+
+<div class="d"><strong>Complete workflow from blank canvas to upload-ready PDF. Do the one-time setup first, then each cover takes 30–45 minutes.</strong></div>
+
+<table class="tbl">
+<tr><th colspan="3" style="color:#10b981">ONE-TIME SETUP (do once, use forever)</th></tr>
+<tr><th>Step</th><th>Action</th><th>Time</th></tr>
+<tr><td>1</td><td><strong>Create a Canva account</strong> (free tier works). Upload your brand fonts if not already available: Playfair Display, Montserrat, Oswald, Open Sans, Bebas Neue, Lato. All are free on Google Fonts.</td><td>10 min</td></tr>
+<tr><td>2</td><td><strong>Save your color palettes</strong> as a text note or Canva Brand Kit (free tier allows 1 palette): Dad niche (navy, amber, cream), Business (dark navy, emerald, gold), Running (red, charcoal, orange).</td><td>5 min</td></tr>
+<tr><td>3</td><td><strong>Download KDP cover templates</strong> for all 8 books from kdp.amazon.com/cover-calculator. Save the PNG templates to a "KDP Templates" folder.</td><td>15 min</td></tr>
+</table>
+
+<table class="tbl" style="margin-top:14px">
+<tr><th colspan="3" style="color:#f59e0b">PER-BOOK COVER DESIGN (30–45 min each)</th></tr>
+<tr><th>Step</th><th>Action</th><th>Time</th></tr>
+<tr><td>1</td><td><strong>New Custom Size in Canva.</strong> Enter the exact Full Cover Width × Full Cover Height from the spine table above (e.g., 12.520" × 9.250" for Book 1). Set to inches. 300 DPI is automatic for PDF export.</td><td>30 sec</td></tr>
+<tr><td>2</td><td><strong>Upload and place KDP template.</strong> Upload the KDP template PNG as a background image. Stretch to fill. This shows your fold lines, spine position, barcode zone, and safe areas. You'll design ON TOP of this template, then delete it before export.</td><td>1 min</td></tr>
+<tr><td>3</td><td><strong>Set up background color.</strong> Draw a rectangle covering the full canvas in your niche's background color. Place it behind the template (which should be semi-transparent or on a layer above).</td><td>1 min</td></tr>
+<tr><td>4</td><td><strong>Design the front cover</strong> (right side of the spread). Place title text, subtitle, pen name, and decorative elements following your niche's blueprint from the section above. Stay inside the safe zone lines shown on the template.</td><td>15 min</td></tr>
+<tr><td>5</td><td><strong>Design the spine.</strong> Rotate text 90° (bottom to top). Title in niche title font. Pen name at bottom. Match front cover's primary background color. Keep text centered within spine boundaries.</td><td>5 min</td></tr>
+<tr><td>6</td><td><strong>Design the back cover</strong> (left side of spread). Use the back cover template from the section above. Leave barcode zone empty (bottom-right of back cover = bottom-LEFT of the full spread).</td><td>10 min</td></tr>
+<tr><td>7</td><td><strong>Delete the KDP template overlay.</strong> Click on the template PNG and delete it. Your design should now be a clean, full cover with no template marks visible.</td><td>15 sec</td></tr>
+<tr><td>8</td><td><strong>Thumbnail test.</strong> Zoom out until the front cover portion is roughly the size of a thumbnail on your screen. Can you read the title? Does the design pop? If not, simplify or enlarge the title.</td><td>30 sec</td></tr>
+<tr><td>9</td><td><strong>Export as PDF Print.</strong> Canva → Share → Download → PDF Print (highest quality). This auto-sets 300 DPI and embeds fonts. Save as "Book[#]_Cover_v1.pdf".</td><td>30 sec</td></tr>
+<tr><td>10</td><td><strong>Create eBook cover.</strong> Duplicate the Canva file. Crop to front cover only. Resize to 2560 × 1600px. Export as JPEG (highest quality). Save as "Book[#]_eBook_Cover.jpg".</td><td>3 min</td></tr>
+</table>
+
+<div class="callout co-g"><strong>Total time for all 8 covers:</strong> One-time setup (30 min) + 8 covers × 40 min each = ~6 hours total. Spread across 2 sessions. Do all 3 Dad covers in one session, then Business, then Running — staying in one brand system keeps you faster and more consistent.</div>
+</div></div>
+
+<!-- COMMON REJECTION REASONS -->
+<div class="sec"><div class="sec-h"><span class="num pr">AVOID</span><h2>8 Common KDP Cover Rejection Reasons</h2></div><div class="sec-b">
+
+<table class="tbl">
+<tr><th>#</th><th>Rejection Reason</th><th>How to Prevent It</th></tr>
+<tr><td>1</td><td class="r">Wrong dimensions</td><td>Always use KDP Cover Calculator. Verify full cover width matches exactly. If page count changes, recalculate everything.</td></tr>
+<tr><td>2</td><td class="r">Missing bleed</td><td>Extend all background colors/images 0.125" beyond trim lines on all sides. If using Canva custom size with exact dimensions from calculator, this is built in.</td></tr>
+<tr><td>3</td><td class="r">Text outside safe zone</td><td>Keep all text 0.25" inside the trim line. Upload the KDP template PNG as a guide layer.</td></tr>
+<tr><td>4</td><td class="r">Spine text on thin books</td><td>Only add spine text if 79+ pages. All your books qualify, but if you reduce page count, check this.</td></tr>
+<tr><td>5</td><td class="r">Low resolution images</td><td>Canva PDF Print export = 300 DPI automatically. Don't use low-res PNGs or JPGs from the internet as decorative elements.</td></tr>
+<tr><td>6</td><td class="r">Cover references pricing</td><td>Never put "$12.99" or "FREE" or pricing language on your cover. KDP terms prohibit this.</td></tr>
+<tr><td>7</td><td class="r">Misleading content claims</td><td>Don't put "#1 Bestseller" or "Award Winner" on the cover unless it's genuinely true. KDP flags this.</td></tr>
+<tr><td>8</td><td class="r">Barcode area obstructed</td><td>Leave a 2" × 1.2" blank white zone in the bottom-right of your back cover. Always.</td></tr>
+</table>
+</div></div>
+
+<!-- PRODUCTION ORDER -->
+<div class="sec"><div class="sec-h"><span class="num pg">ORDER</span><h2>Cover Production Order & Timeline</h2></div><div class="sec-b">
+
+<table class="tbl">
+<tr><th>Session</th><th>Books</th><th>Niche</th><th>Time</th><th>Why This Order</th></tr>
+<tr><td><strong>Session 1</strong></td><td>Book 1 (New Dad Journal)</td><td>Dad</td><td>45 min</td><td>First cover teaches you the full Canva + KDP template workflow. Expect this one to take longest.</td></tr>
+<tr><td><strong>Session 2</strong></td><td>Books 4, 7 (Budget, Letters)</td><td>Dad</td><td>60 min</td><td>Same brand system as Book 1. Duplicate Book 1's Canva file and modify. Much faster.</td></tr>
+<tr><td><strong>Session 3</strong></td><td>Books 2, 6, 8 (E-Commerce, Orders, Social)</td><td>Business</td><td>90 min</td><td>New brand system, but 3 covers in one session. Build Book 2 from scratch, duplicate for 6 and 8.</td></tr>
+<tr><td><strong>Session 4</strong></td><td>Books 3, 5 (Half Marathon, Walking)</td><td>Running</td><td>60 min</td><td>New brand system, 2 covers. Build Book 3, duplicate for Book 5 with color swap.</td></tr>
+<tr><td colspan="3" style="font-weight:700;color:#10b981">TOTAL</td><td style="font-weight:700;color:#10b981">~4.5 hrs</td><td>Spread across 2–3 days. Don't rush — these are the #1 sales driver.</td></tr>
+</table>
+
+<div class="callout co-b"><strong>Key insight:</strong> Your Book 1 cover is the ONLY cover you need to publish your first book. Build Book 1's cover → upload interior + cover → publish → start earning while you design the remaining 7 covers. Don't wait for all 8 to be ready before publishing your first book.</div>
+</div></div>
+
+<!-- DELIVERABLES -->
+<div class="sec"><div class="sec-h"><h2>📦 K2.2 Deliverables</h2></div><div class="sec-b">
+<div style="display:grid;gap:5px">
+<div class="pillar"><span>✅</span><span>KDP cover technical specifications: file format, resolution, bleed, safe zone, spine text rules, barcode placement, eBook cover specs</span></div>
+<div class="pillar"><span>✅</span><span>Spine width calculator for all 8 books with full cover dimensions pre-calculated</span></div>
+<div class="pillar"><span>✅</span><span>3 complete niche design systems: Dad (navy/amber/cream, Playfair), Business (dark navy/emerald/gold, Oswald), Running (red/charcoal/orange, Bebas Neue) — each with colors, fonts, decorative elements, layout patterns, and finish choice</span></div>
+<div class="pillar"><span>✅</span><span>7 cover design rules for low-content books: thumbnail readability, title hierarchy, color restraint, no stock photos, subtitle selling, pen name consistency, spine branding</span></div>
+<div class="pillar"><span>✅</span><span>8 complete cover design blueprints with element-by-element specifications for front cover, spine, and back cover</span></div>
+<div class="pillar"><span>✅</span><span>Back cover copy template with worked example (Book 1) — headline, features, gift angle, specs, barcode zone</span></div>
+<div class="pillar"><span>✅</span><span>10-step Canva cover workflow: one-time setup (30 min) + per-book production (30–45 min) including KDP template overlay method and PDF Print export</span></div>
+<div class="pillar"><span>✅</span><span>8 common KDP rejection reasons with prevention checklist</span></div>
+<div class="pillar"><span>✅</span><span>Cover production order & timeline: 4 sessions, ~4.5 hours total, with "publish Book 1 immediately" guidance</span></div>
+</div>
+
+<div class="callout co-g" style="margin-top:14px;border-color:#10b98144;background:linear-gradient(135deg,#111827,#0f2318)"><strong style="color:#10b981;font-size:13px">K2.2 COMPLETE — You can now build Book 1's cover.</strong><br><br>
+Combined with K2.1 (Interior Template Library), you have everything needed to produce and publish your first KDP book:<br><br>
+✓ K2.1 — Page-by-page interior specs for all 8 books + Canva workflow<br>
+✓ K2.2 — Cover design system with blueprints, colors, fonts, and Canva workflow<br><br>
+<strong>Next step:</strong> K2.3 (First 4 Books Production Sprint) — but you don't need to wait. Open Canva right now and start building Book 1's interior and cover. You can publish Book 1 on KDP this week.</div>
+</div></div>
+
+</div>
+<div class="foot">K2.2 — Cover Design System & Templates · KDP Publishing Empire · March 2026</div>
+</body></html>

@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0"><title>Y2.4 — Thumbnail Design System</title>
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;700&family=Oswald:wght@500;700&family=Libre+Baskerville:ital,wght@1,400&family=Special+Elite&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}body{background:#0a0a0a;color:#e2e8f0;font-family:'Outfit',sans-serif;padding:0 0 60px}
+.hdr{background:linear-gradient(135deg,#0a0a0a,#1a1008,#0a0a0a);border-bottom:1px solid #d9770633;padding:28px 24px;text-align:center;position:relative}.hdr::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at 40% 30%,#d9770618,transparent 60%)}.hdr>*{position:relative}
+.tag{font-size:10px;color:#d97706;font-family:'JetBrains Mono',monospace;text-transform:uppercase;letter-spacing:.2em;margin-bottom:6px}
+h1{font-family:'Oswald',sans-serif;font-size:24px;font-weight:700;color:#fafaf9;letter-spacing:.05em;text-transform:uppercase;margin-bottom:4px}
+.sub{font-size:12px;color:#78716c;max-width:650px;margin:0 auto}
+.ct{max-width:880px;margin:0 auto;padding:20px 16px}
+.sec{background:#111111;border:1px solid #292524;border-radius:2px;margin-bottom:14px;overflow:hidden}
+.sec-h{padding:14px 18px;border-bottom:1px solid #292524;display:flex;align-items:center;gap:8px;flex-wrap:wrap}
+.sec-h h2{font-size:14px;font-weight:700;font-family:'Oswald',sans-serif;text-transform:uppercase;letter-spacing:.05em}
+.num{font-size:9px;font-family:'JetBrains Mono',monospace;padding:2px 8px;border-radius:2px;font-weight:700}
+.ng{background:#d9770615;color:#d97706}.nb{background:#3b82f615;color:#60a5fa}.ngr{background:#16a34a15;color:#16a34a}.nr{background:#dc262615;color:#dc2626}
+.sec-b{padding:14px 18px}
+.d{font-size:11px;color:#a8a29e;line-height:1.6;margin-bottom:8px}.d strong{color:#e7e5e4}
+.tbl{width:100%;border-collapse:collapse;margin:10px 0;font-size:10px}
+.tbl th{background:#1c1917;color:#a8a29e;padding:7px 8px;text-align:left;font-family:'JetBrains Mono',monospace;font-size:9px;text-transform:uppercase;border:1px solid #292524}
+.tbl td{padding:7px 8px;border:1px solid #292524;color:#d6d3d1;vertical-align:top}.tbl tr:nth-child(even) td{background:#0d0d0d}
+.g{color:#16a34a;font-weight:600}.a{color:#d97706;font-weight:600}.r{color:#dc2626;font-weight:600}
+.callout{padding:14px;border-radius:2px;font-size:12px;line-height:1.6;margin:10px 0}
+.co-g{background:#16a34a08;border:1px solid #16a34a22;color:#86efac}
+.co-a{background:#d9770608;border:1px solid #d9770622;color:#fcd34d}
+.co-b{background:#3b82f608;border:1px solid #3b82f622;color:#93c5fd}
+.co-r{background:#dc262608;border:1px solid #dc262622;color:#fca5a5}
+.callout strong{color:#fafaf9}
+.pillar{display:flex;align-items:flex-start;gap:8px;padding:8px 10px;background:#16a34a08;border:1px solid #16a34a18;border-radius:2px;margin-bottom:4px}
+.pillar span:first-child{color:#16a34a;font-size:10px;font-family:'JetBrains Mono',monospace;min-width:16px;flex-shrink:0;padding-top:2px}
+.pillar span:last-child{font-size:11px;color:#d6d3d1;line-height:1.5}
+/* Thumbnail mockups */
+.thumb{background:#0a0a0a;border:1px solid #292524;border-radius:2px;padding:3px;display:inline-block}
+.thumb-inner{width:280px;height:158px;position:relative;overflow:hidden;border-radius:1px}
+.thumb-overlay{position:absolute;inset:0}
+.thumb-text{position:absolute;bottom:10px;left:12px;right:12px}
+.thumb-title{font-family:'Oswald',sans-serif;font-weight:700;text-transform:uppercase;color:#fafaf9;line-height:1.15;text-shadow:0 2px 8px rgba(0,0,0,.9)}
+.thumb-badge{position:absolute;font-family:'JetBrains Mono',monospace;font-weight:700;border-radius:1px;text-transform:uppercase}
+.thumb-accent{position:absolute;bottom:0;left:0;right:0;height:3px}
+.foot{text-align:center;padding:20px;font-size:10px;color:#44403c;font-family:'JetBrains Mono',monospace}
+</style></head><body>
+<div class="hdr"><div class="tag">Y2.4 — Thumbnail Design System</div><h1>THE FORGOTTEN FRONT — THUMBNAIL SYSTEM</h1><div class="sub">3 battle-tested templates · 5-minute Canva workflow · CTR psychology · A/B testing protocol · Mobile optimization</div></div>
+<div class="ct">
+
+<!-- WHY THUMBNAILS MATTER -->
+<div class="sec"><div class="sec-h"><span class="num nr">CRITICAL</span><h2>Why Thumbnails Are Your Most Important Asset</h2></div><div class="sec-b">
+
+<div class="callout co-r"><strong>Your thumbnail determines 50%+ of your video's success.</strong> A viewer decides to click or scroll in under 1 second. Your video could be the best military documentary ever made — if the thumbnail doesn't earn the click, nobody will ever know. Average YouTube CTR is 2–5%. Top performers hit 8–12%. The difference between 3% CTR and 8% CTR on 100K impressions = 5,000 extra views from the exact same video.</div>
+
+<table class="tbl">
+<tr><th>CTR Level</th><th>What It Means</th><th>Action</th></tr>
+<tr><td class="r">&lt;3%</td><td>Thumbnail is failing. YouTube stops promoting the video.</td><td>Redesign immediately. Swap thumbnail within 48 hours of upload.</td></tr>
+<tr><td class="a">3–5%</td><td>Average. Video gets some traction but won't break out.</td><td>A/B test an alternative thumbnail to try to push higher.</td></tr>
+<tr><td class="g">5–8%</td><td>Good. YouTube actively recommends to more viewers.</td><td>Keep this design. Study what makes it work and replicate.</td></tr>
+<tr><td class="g" style="color:#10b981">8%+</td><td>Excellent. Algorithm loves this video. Viral potential.</td><td>This is your winning formula. Make more videos with similar thumbnail style.</td></tr>
+</table>
+</div></div>
+
+<!-- 3 TEMPLATES -->
+<div class="sec"><div class="sec-h"><span class="num ng">TEMPLATES</span><h2>3 Thumbnail Templates — Your Reusable Canva System</h2></div><div class="sec-b">
+
+<div class="d"><strong>Every thumbnail uses ONE of these three templates. Create each once in Canva, then duplicate and swap text/image per video. Production time: 3–5 minutes per thumbnail once templates are built.</strong></div>
+
+<!-- Template A -->
+<h3 style="font-size:13px;color:#d97706;margin:12px 0 8px;font-family:'Oswald',sans-serif;text-transform:uppercase">Template A: "The Reveal" — For battle stories, forgotten soldiers, South Asian content</h3>
+
+<div style="display:flex;gap:16px;flex-wrap:wrap;margin-bottom:14px">
+<div class="thumb"><div class="thumb-inner" style="background:linear-gradient(135deg,#1c1917 0%,#292524 40%,#1c1917 100%)">
+<div class="thumb-overlay" style="background:linear-gradient(180deg,transparent 30%,rgba(0,0,0,.85) 100%)"></div>
+<div class="thumb-badge" style="top:8px;left:8px;background:#dc2626;color:#fff;font-size:8px;padding:3px 8px">UNTOLD</div>
+<div class="thumb-text"><div class="thumb-title" style="font-size:16px">THE BATTLE THAT<br>SAVED INDIA</div></div>
+<div class="thumb-accent" style="background:#d97706"></div>
+</div></div>
+<div style="flex:1;min-width:200px">
+<table class="tbl">
+<tr><th>Element</th><th>Specification</th></tr>
+<tr><td>Background</td><td>Dark archival image, darkened 40–60% with black overlay gradient (bottom heavier)</td></tr>
+<tr><td>Title text</td><td>Oswald Bold, white (#FAFAF9), 2–5 words MAX. Bottom-left aligned. Drop shadow.</td></tr>
+<tr><td>Badge</td><td>Top-left. Red (#DC2626) background. White text. Labels: "UNTOLD", "FORGOTTEN", "CLASSIFIED", "BURIED"</td></tr>
+<tr><td>Accent bar</td><td>Amber (#D97706), 3px, full width at bottom</td></tr>
+<tr><td>Use for</td><td>60% of videos. Battle stories, forgotten soldiers, South Asian military history, campaign stories.</td></tr>
+</table>
+</div>
+</div>
+
+<!-- Template B -->
+<h3 style="font-size:13px;color:#3b82f6;margin:16px 0 8px;font-family:'Oswald',sans-serif;text-transform:uppercase">Template B: "The Question" — For strategic analysis, "Why did they lose?" content</h3>
+
+<div style="display:flex;gap:16px;flex-wrap:wrap;margin-bottom:14px">
+<div class="thumb"><div class="thumb-inner" style="background:linear-gradient(180deg,#0a0a0a 0%,#292524 50%,#1c1917 100%)">
+<div class="thumb-overlay" style="background:linear-gradient(0deg,rgba(220,38,38,.12) 0%,transparent 40%)"></div>
+<div class="thumb-badge" style="top:8px;right:8px;font-family:'Special Elite',cursive;font-size:9px;color:#d97706;letter-spacing:.1em;background:none">DECLASSIFIED</div>
+<div class="thumb-text"><div class="thumb-title" style="font-size:14px">WHY DID 80,000<br>SOLDIERS<br><span style="color:#d97706">SURRENDER?</span></div></div>
+<div class="thumb-accent" style="background:#dc2626"></div>
+</div></div>
+<div style="flex:1;min-width:200px">
+<table class="tbl">
+<tr><th>Element</th><th>Specification</th></tr>
+<tr><td>Background</td><td>Dark gradient. Minimal or heavily darkened image. Focus is on the TEXT, not the image.</td></tr>
+<tr><td>Title text</td><td>Oswald Bold, white + ONE key word in amber (#D97706). The amber word is the hook — usually the emotion or action word (SURRENDER, LOST, FAILED, FORGOTTEN).</td></tr>
+<tr><td>Stamp</td><td>Top-right. "DECLASSIFIED" in Special Elite, amber. Archival feel.</td></tr>
+<tr><td>Accent bar</td><td>Red (#DC2626), 3px, full width at bottom</td></tr>
+<tr><td>Use for</td><td>25% of videos. Strategic analysis, "Why did X happen?", decision breakdowns, comparative analysis.</td></tr>
+</table>
+</div>
+</div>
+
+<!-- Template C -->
+<h3 style="font-size:13px;color:#dc2626;margin:16px 0 8px;font-family:'Oswald',sans-serif;text-transform:uppercase">Template C: "The Dossier" — For espionage, intelligence, classified operations</h3>
+
+<div style="display:flex;gap:16px;flex-wrap:wrap;margin-bottom:14px">
+<div class="thumb"><div class="thumb-inner" style="background:linear-gradient(135deg,#0a0a0a,#1a1008)">
+<div style="position:absolute;inset:0;border:1px solid #d9770644;margin:6px"></div>
+<div style="position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);text-align:center;width:90%">
+<div style="font-family:'Special Elite',cursive;font-size:8px;color:#78716c;letter-spacing:.15em;text-transform:uppercase;margin-bottom:4px">OPERATION</div>
+<div style="font-family:'Oswald',sans-serif;font-size:18px;font-weight:700;color:#fafaf9;text-transform:uppercase;line-height:1.1">MINCEMEAT</div>
+<div style="width:30px;height:1px;background:#d97706;margin:5px auto"></div>
+<div style="font-family:'Libre Baskerville',serif;font-size:8px;color:#a8a29e;font-style:italic">The dead man who fooled Hitler</div>
+</div>
+<div class="thumb-accent" style="background:#d97706"></div>
+</div></div>
+<div style="flex:1;min-width:200px">
+<table class="tbl">
+<tr><th>Element</th><th>Specification</th></tr>
+<tr><td>Background</td><td>Near-black with subtle amber gradient. Thin amber border frame inset 6px.</td></tr>
+<tr><td>Layout</td><td>Centered text. "OPERATION" label in Special Elite grey above. Main title in Oswald Bold white. Amber divider line. Subtitle in Libre Baskerville italic grey below.</td></tr>
+<tr><td>Feel</td><td>Like opening a classified file. Minimal, typographic, mysterious.</td></tr>
+<tr><td>Accent bar</td><td>Amber (#D97706), 3px, full width at bottom</td></tr>
+<tr><td>Use for</td><td>15% of videos. Spy stories, intelligence operations, dark chapters, classified missions.</td></tr>
+</table>
+</div>
+</div>
+
+</div></div>
+
+<!-- CANVA WORKFLOW -->
+<div class="sec"><div class="sec-h"><span class="num nb">WORKFLOW</span><h2>5-Minute Canva Thumbnail Workflow</h2></div><div class="sec-b">
+
+<h3 style="font-size:12px;color:#d97706;margin:8px 0 6px;font-family:'Oswald',sans-serif;text-transform:uppercase">One-Time Setup (do this once, use forever)</h3>
+<table class="tbl">
+<tr><th>Step</th><th>Action</th><th>Time</th></tr>
+<tr><td>1</td><td><strong>Create 3 template designs</strong> in Canva at 1280×720px. One for each template (Reveal, Question, Dossier). Add all elements: background overlay, text placeholders, badge, accent bar.</td><td>30 min total</td></tr>
+<tr><td>2</td><td><strong>Upload brand fonts</strong> to Canva: Oswald Bold, Special Elite, Libre Baskerville Italic. (Free tier: upload via Canva's font upload feature.)</td><td>5 min</td></tr>
+<tr><td>3</td><td><strong>Save brand colors</strong> as text on a Canva reference page: Blackout #0A0A0A, Bunker #1C1917, Amber Signal #D97706, Alert Red #DC2626, Dispatch White #FAFAF9, Foxhole Grey #78716C.</td><td>3 min</td></tr>
+</table>
+
+<h3 style="font-size:12px;color:#d97706;margin:14px 0 6px;font-family:'Oswald',sans-serif;text-transform:uppercase">Per-Video Workflow (3–5 minutes)</h3>
+<table class="tbl">
+<tr><th>Step</th><th>Action</th><th>Time</th></tr>
+<tr><td>1</td><td><strong>Duplicate the right template.</strong> Choose Reveal, Question, or Dossier based on your content pillar (from Y2.1 script structure).</td><td>15 sec</td></tr>
+<tr><td>2</td><td><strong>Swap the background image.</strong> Upload the most dramatic archival photo from your research. Resize to fill. Apply darkening overlay (black rectangle, 40–60% opacity).</td><td>90 sec</td></tr>
+<tr><td>3</td><td><strong>Change the title text.</strong> 2–5 words maximum. Use the title from your script — shortened to the core hook. One word in amber if using Template B.</td><td>30 sec</td></tr>
+<tr><td>4</td><td><strong>Update the badge/stamp.</strong> Match to content type: "UNTOLD" for forgotten stories, "CLASSIFIED" for espionage, "FORGOTTEN" for overlooked events.</td><td>15 sec</td></tr>
+<tr><td>5</td><td><strong>Mobile test.</strong> Zoom out in Canva until the thumbnail is roughly 150px wide on your screen. Can you still read the text? If not, enlarge the font or simplify the text.</td><td>15 sec</td></tr>
+<tr><td>6</td><td><strong>Export as PNG.</strong> Download at highest quality. Save to TheForgottenFront/Thumbnails/TFF-[number]-thumb.png</td><td>15 sec</td></tr>
+</table>
+
+<div class="callout co-g"><strong>That's it. 3–5 minutes per thumbnail.</strong> Because you have pre-built templates, you're only changing 3 things: background image, title text, and badge. The layout, colors, fonts, and brand elements are already locked in. This consistency is what makes your channel instantly recognizable in a crowded feed.</div>
+</div></div>
+
+<!-- DESIGN PSYCHOLOGY -->
+<div class="sec"><div class="sec-h"><span class="num ng">PSYCHOLOGY</span><h2>Thumbnail CTR Psychology — Why Viewers Click</h2></div><div class="sec-b">
+
+<table class="tbl">
+<tr><th>Principle</th><th>What It Means</th><th>How You Apply It</th></tr>
+<tr><td><strong>Curiosity gap</strong></td><td>The thumbnail+title together must create a question the viewer NEEDS answered. They click to close the gap.</td><td>Your thumbnail shows the drama (darkened battle photo). Your title asks the question ("Why Did 80,000 Soldiers Surrender?"). Together they create an itch only clicking can scratch.</td></tr>
+<tr><td><strong>Dark backgrounds win</strong></td><td>YouTube's feed is predominantly white/light on mobile. Dark thumbnails create instant contrast and stand out.</td><td>ALL your templates use near-black backgrounds (#0A0A0A). This is non-negotiable. Never use bright or white backgrounds.</td></tr>
+<tr><td><strong>Readable at 150px</strong></td><td>63%+ of YouTube viewing is on mobile. Your thumbnail is tiny. If text isn't readable at 150px wide, it fails.</td><td>Maximum 5 words on thumbnail. Oswald Bold only. Large font size. Always do the mobile zoom test before export.</td></tr>
+<tr><td><strong>One focal point</strong></td><td>The viewer's eye should land on ONE thing. Cluttered thumbnails with multiple subjects confuse and get scrolled past.</td><td>Template A: ONE dramatic image + text. Template B: text IS the focal point. Template C: centered operation name. Never compete for attention within your own thumbnail.</td></tr>
+<tr><td><strong>Color contrast</strong></td><td>High contrast between text and background increases readability and visual pop.</td><td>White text on dark backgrounds. Amber accent word for emphasis. Red badge pops against dark imagery. Never put light text on light areas of an image.</td></tr>
+<tr><td><strong>Emotional trigger</strong></td><td>Thumbnails that evoke emotion (shock, curiosity, dread, sadness) outperform neutral/informational ones.</td><td>Choose the most emotionally charged archival image — soldiers' faces, dramatic landscapes, aftermath shots. The image should make the viewer FEEL something before reading a word.</td></tr>
+<tr><td><strong>Title + thumbnail = one message</strong></td><td>The thumbnail and title should NOT say the same thing. They should complement each other to tell a bigger story together.</td><td>BAD: Thumbnail text "Battle of Imphal" + Title "The Battle of Imphal." GOOD: Thumbnail text "UNTOLD" + dramatic image + Title "The Battle That Saved India | Imphal 1944." Together they create intrigue.</td></tr>
+</table>
+</div></div>
+
+<!-- IMAGE SELECTION -->
+<div class="sec"><div class="sec-h"><span class="num nb">IMAGES</span><h2>Choosing the Right Thumbnail Image</h2></div><div class="sec-b">
+
+<table class="tbl">
+<tr><th>Image Type</th><th>When to Use</th><th>CTR Impact</th><th>Example</th></tr>
+<tr><td><strong>Close-up face</strong></td><td>When you have a compelling archival portrait of a soldier, commander, or spy.</td><td class="g">HIGHEST — faces trigger emotional response. Eyes draw attention.</td><td>Close-up of a young Indian soldier's face from a WW2 group photo. Intense, determined expression.</td></tr>
+<tr><td><strong>Dramatic action shot</strong></td><td>When you have archival photos of troops marching, ships at sea, aircraft in formation.</td><td class="g">HIGH — conveys scale and drama.</td><td>Thousands of Indian soldiers marching through Burma jungle. Scale communicates the story's magnitude.</td></tr>
+<tr><td><strong>Map/strategic view</strong></td><td>For strategic analysis videos (Template B). When the "question" is more interesting than any single image.</td><td class="a">MEDIUM — works well when paired with strong text.</td><td>Map of Southeast Asia with red arrows showing Japanese advance. Text: "WHY DID THEY LOSE?"</td></tr>
+<tr><td><strong>Document/artifact</strong></td><td>Espionage content (Template C). Classified documents, coded messages, identity papers.</td><td class="a">MEDIUM — creates mystery. Works for Dossier template.</td><td>Aged document with "TOP SECRET" stamp. Creates intrigue about what the document reveals.</td></tr>
+<tr><td><strong>No image (text only)</strong></td><td>Template C "Dossier" sometimes works with pure typography on dark background.</td><td class="a">VARIABLE — test against image-based version.</td><td>"OPERATION MINCEMEAT" centered on black with amber accents. Clean, mysterious, classified feel.</td></tr>
+</table>
+
+<div class="callout co-r"><strong>Images to NEVER use on thumbnails:</strong> Graphic violence, casualties, or wounded soldiers (demonetization risk + viewer revulsion). Swastikas or hate symbols (even in archival context — YouTube flags thumbnails separately from video content). Bright, modern stock photos that look out of place with your archival aesthetic. AI-generated images (viewers in the military history niche are savvy and will call you out).</div>
+</div></div>
+
+<!-- TITLE + THUMBNAIL PAIRING -->
+<div class="sec"><div class="sec-h"><span class="num ng">PAIRING</span><h2>Title + Thumbnail Pairing System</h2></div><div class="sec-b">
+
+<div class="d"><strong>Your thumbnail text and video title must work as a PAIR — not repeat each other. Here's the formula:</strong></div>
+
+<table class="tbl">
+<tr><th>Video Topic</th><th>Thumbnail Text (2–5 words)</th><th>Video Title (under 60 chars)</th><th>Template</th><th>Why It Works</th></tr>
+<tr><td>Indian Army in WW2</td><td>UNTOLD<br>(+ image of Indian soldiers)</td><td>The 2.5 Million Soldiers History Forgot | Indian Army WW2</td><td>A: Reveal</td><td>Thumbnail signals "hidden story" + faces. Title gives the scale (2.5M) and context.</td></tr>
+<tr><td>Fall of Singapore</td><td>WHY DID THEY<br><span style="color:#d97706">SURRENDER?</span></td><td>Why 80,000 Soldiers Surrendered in One Day | Singapore 1942</td><td>B: Question</td><td>Thumbnail asks the emotional question. Title adds the shocking number and context.</td></tr>
+<tr><td>Operation Mincemeat</td><td>OPERATION<br>MINCEMEAT<br><em style="color:#78716c;font-size:9px">The dead man who fooled Hitler</em></td><td>The Corpse That Changed WW2 | Operation Mincemeat</td><td>C: Dossier</td><td>Thumbnail creates classified-file mystery. Title adds the dramatic "corpse changed WW2" hook.</td></tr>
+<tr><td>Bengal Famine</td><td>CHURCHILL'S<br>DARKEST SECRET</td><td>The Famine Churchill Didn't Want You to Know About</td><td>A: Reveal</td><td>Thumbnail names the person. Title creates curiosity gap around the secret.</td></tr>
+<tr><td>Gurkhas</td><td>MOST FEARED<br>SOLDIERS</td><td>Why the World's Armies Fear These Soldiers | Gurkhas</td><td>A: Reveal</td><td>Thumbnail claims superlative. Title adds context. Together = "I need to know who these soldiers are."</td></tr>
+</table>
+</div></div>
+
+<!-- A/B TESTING -->
+<div class="sec"><div class="sec-h"><span class="num nb">TESTING</span><h2>A/B Testing Protocol — Data-Driven Improvement</h2></div><div class="sec-b">
+
+<table class="tbl">
+<tr><th>Step</th><th>Action</th><th>When</th></tr>
+<tr><td>1</td><td><strong>Create 2 thumbnail variations per video.</strong> Version A: your default template choice. Version B: different image OR different text approach OR different template entirely.</td><td>Before every upload (once you're comfortable with the system)</td></tr>
+<tr><td>2</td><td><strong>Upload both to YouTube's "Test & Compare" feature.</strong> YouTube Studio → Content → select video → Thumbnail → "Test & Compare" (rolled out 2025). YouTube automatically splits impressions 50/50 and measures CTR for each.</td><td>At upload time</td></tr>
+<tr><td>3</td><td><strong>Wait 7 days.</strong> YouTube needs enough impressions to reach statistical significance. Don't swap early.</td><td>7 days post-upload</td></tr>
+<tr><td>4</td><td><strong>Check results.</strong> YouTube declares a winner. Keep the winning thumbnail. Record what made it win in your analytics log.</td><td>Day 7–10</td></tr>
+<tr><td>5</td><td><strong>Pattern recognition.</strong> After 10+ tests, patterns emerge: does your audience prefer faces or text-heavy? Reveal or Question template? Amber accent or red? Use patterns to refine your default templates.</td><td>Monthly review</td></tr>
+</table>
+
+<div class="callout co-b"><strong>What to test (change only ONE variable at a time):</strong> Test A: different background image (same text). Test B: different text (same image). Test C: different template (Reveal vs. Question). Test D: with badge vs. without badge. Test E: amber accent word vs. all white text. Single-variable testing tells you EXACTLY what caused the CTR difference.</div>
+
+<div class="callout co-a"><strong>Early stage (first 20 videos):</strong> Don't A/B test yet. Focus on consistency — use the templates as designed, build your visual identity, and get comfortable with the 5-minute workflow. Start A/B testing once you have enough traffic for meaningful data (typically 1,000+ impressions per video).</div>
+</div></div>
+
+<!-- THUMBNAIL CHECKLIST -->
+<div class="sec"><div class="sec-h"><span class="num ngr">QC</span><h2>Thumbnail Quality Checklist (Before Upload)</h2></div><div class="sec-b">
+<table class="tbl">
+<tr><th>Check</th><th>What to Verify</th></tr>
+<tr><td>☐ Mobile readability</td><td>Zoom to 150px wide in browser or Canva. Can you read ALL text? Can you understand the image? If not, simplify.</td></tr>
+<tr><td>☐ Word count</td><td>5 words maximum on the thumbnail. Ideally 2–3 words. Every extra word reduces readability.</td></tr>
+<tr><td>☐ One focal point</td><td>Your eye lands on ONE thing first. Not two competing elements. Squint test: blur your vision — can you still tell what the thumbnail is about?</td></tr>
+<tr><td>☐ Dark background</td><td>Background is near-black or heavily darkened. Never bright, never white. Stands out in YouTube's feed.</td></tr>
+<tr><td>☐ Brand consistency</td><td>Uses one of 3 templates. Amber accent bar at bottom. Oswald Bold for text. Recognizable as "The Forgotten Front" at a glance.</td></tr>
+<tr><td>☐ Title complement</td><td>Thumbnail text and video title tell a COMBINED story. They don't repeat each other. Together = curiosity gap.</td></tr>
+<tr><td>☐ Emotional charge</td><td>Does the image make you FEEL something? If it's just informational with no emotional pull, choose a different image.</td></tr>
+<tr><td>☐ Demonetization safe</td><td>No graphic violence, no swastikas, no disturbing imagery. Archival photos of soldiers (not combat/casualties) are always safe.</td></tr>
+<tr><td>☐ File specs</td><td>1280×720px, PNG, under 2MB. Exported from Canva at highest quality.</td></tr>
+<tr><td>☐ Competitor scroll test</td><td>Open YouTube, search "military history". Would YOUR thumbnail stand out next to the results? If it blends in, add more contrast or simplify further.</td></tr>
+</table>
+</div></div>
+
+<!-- DELIVERABLES -->
+<div class="sec"><div class="sec-h"><h2>📦 Y2.4 Deliverables — PROJECT Y2 COMPLETE ✓</h2></div><div class="sec-b">
+<div style="display:grid;gap:5px">
+<div class="pillar"><span>✅</span><span>3 thumbnail templates fully specified: "The Reveal" (60%), "The Question" (25%), "The Dossier" (15%) — with exact colors, fonts, layouts, and use cases</span></div>
+<div class="pillar"><span>✅</span><span>5-minute Canva workflow: one-time setup (38 min) + per-video production (3–5 min each)</span></div>
+<div class="pillar"><span>✅</span><span>7 CTR psychology principles: curiosity gap, dark backgrounds, mobile readability, focal point, color contrast, emotional triggers, title+thumbnail pairing</span></div>
+<div class="pillar"><span>✅</span><span>Image selection guide: 5 image types ranked by CTR impact + forbidden images list (demonetization prevention)</span></div>
+<div class="pillar"><span>✅</span><span>Title + thumbnail pairing system with 5 worked examples matching your first videos</span></div>
+<div class="pillar"><span>✅</span><span>A/B testing protocol: 5-step process using YouTube's Test & Compare feature + single-variable testing guide</span></div>
+<div class="pillar"><span>✅</span><span>10-point thumbnail quality checklist including mobile test, competitor scroll test, and demonetization screen</span></div>
+</div>
+
+<div class="callout co-a" style="margin-top:14px;border-color:#d9770644;background:linear-gradient(135deg,#111111,#1a1008)"><strong style="color:#d97706;font-size:14px">🏆 PROJECT Y2: AI CONTENT PRODUCTION SYSTEM — COMPLETE</strong><br><br>
+All 4 subprojects delivered:<br>
+✓ Y2.1 — Script Writing Framework & Templates<br>
+✓ Y2.2 — Visual Production Pipeline<br>
+✓ Y2.3 — Audio/Voiceover System<br>
+✓ Y2.4 — Thumbnail Design System<br><br>
+<strong>Combined with Y1 (Channel Foundation), you now have a complete end-to-end system for The Forgotten Front.</strong> From niche research through competitive analysis, branding, scripting, visual sourcing, audio recording, editing, thumbnail design, to publishing. Every step is documented, every tool is identified, and every process has a checklist. You can produce your first video TODAY.</div>
+</div></div>
+
+</div>
+<div class="foot">Y2.4 — Thumbnail Design System · The Forgotten Front · March 2026</div>
+</body></html>

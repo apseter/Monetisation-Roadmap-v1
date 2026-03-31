@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0"><title>Y3.2 — Publishing Schedule & Cadence</title>
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;700&family=Oswald:wght@500;700&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}body{background:#0a0a0a;color:#e2e8f0;font-family:'Outfit',sans-serif;padding:0 0 60px}
+.hdr{background:linear-gradient(135deg,#0a0a0a,#1a1008,#0a0a0a);border-bottom:1px solid #d9770633;padding:28px 24px;text-align:center;position:relative}.hdr::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at 40% 30%,#d9770618,transparent 60%)}.hdr>*{position:relative}
+.tag{font-size:10px;color:#d97706;font-family:'JetBrains Mono',monospace;text-transform:uppercase;letter-spacing:.2em;margin-bottom:6px}
+h1{font-family:'Oswald',sans-serif;font-size:24px;font-weight:700;color:#fafaf9;letter-spacing:.05em;text-transform:uppercase;margin-bottom:4px}
+.sub{font-size:12px;color:#78716c;max-width:650px;margin:0 auto}
+.ct{max-width:900px;margin:0 auto;padding:20px 16px}
+.sec{background:#111111;border:1px solid #292524;border-radius:2px;margin-bottom:14px;overflow:hidden}
+.sec-h{padding:14px 18px;border-bottom:1px solid #292524;display:flex;align-items:center;gap:8px;flex-wrap:wrap}
+.sec-h h2{font-size:14px;font-weight:700;font-family:'Oswald',sans-serif;text-transform:uppercase;letter-spacing:.05em}
+.num{font-size:9px;font-family:'JetBrains Mono',monospace;padding:2px 8px;border-radius:2px;font-weight:700}
+.ng{background:#d9770615;color:#d97706}.nb{background:#3b82f615;color:#60a5fa}.ngr{background:#16a34a15;color:#16a34a}.nr{background:#dc262615;color:#dc2626}
+.sec-b{padding:14px 18px}
+.d{font-size:11px;color:#a8a29e;line-height:1.6;margin-bottom:8px}.d strong{color:#e7e5e4}
+.tbl{width:100%;border-collapse:collapse;margin:10px 0;font-size:10px}
+.tbl th{background:#1c1917;color:#a8a29e;padding:7px 8px;text-align:left;font-family:'JetBrains Mono',monospace;font-size:9px;text-transform:uppercase;border:1px solid #292524}
+.tbl td{padding:7px 8px;border:1px solid #292524;color:#d6d3d1;vertical-align:top}.tbl tr:nth-child(even) td{background:#0d0d0d}
+.g{color:#16a34a;font-weight:600}.a{color:#d97706;font-weight:600}.r{color:#dc2626;font-weight:600}
+.callout{padding:14px;border-radius:2px;font-size:12px;line-height:1.6;margin:10px 0}
+.co-g{background:#16a34a08;border:1px solid #16a34a22;color:#86efac}
+.co-a{background:#d9770608;border:1px solid #d9770622;color:#fcd34d}
+.co-b{background:#3b82f608;border:1px solid #3b82f622;color:#93c5fd}
+.co-r{background:#dc262608;border:1px solid #dc262622;color:#fca5a5}
+.callout strong{color:#fafaf9}
+.pillar{display:flex;align-items:flex-start;gap:8px;padding:8px 10px;background:#16a34a08;border:1px solid #16a34a18;border-radius:2px;margin-bottom:4px}
+.pillar span:first-child{color:#16a34a;font-size:10px;font-family:'JetBrains Mono',monospace;min-width:16px;flex-shrink:0;padding-top:2px}
+.pillar span:last-child{font-size:11px;color:#d6d3d1;line-height:1.5}
+.month{background:#0a0a0a;border:1px solid #292524;border-radius:2px;margin:10px 0;overflow:hidden}
+.month-h{padding:10px 14px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:6px}
+.month-h h3{font-family:'Oswald',sans-serif;font-size:14px;font-weight:700;text-transform:uppercase;letter-spacing:.03em}
+.month-tag{font-size:8px;font-family:'JetBrains Mono',monospace;font-weight:700;padding:3px 8px;border-radius:2px;text-transform:uppercase}
+.month-b{padding:0 14px 14px}
+.week-row{display:grid;grid-template-columns:60px 1fr 1fr 100px;gap:6px;padding:6px 0;border-bottom:1px solid #1c1917;font-size:10px;align-items:start}
+.week-label{font-family:'JetBrains Mono',monospace;font-weight:700;color:#d97706;font-size:9px}
+.vid-title{color:#e7e5e4;font-weight:600;font-size:10px;line-height:1.4}
+.vid-cat{font-size:8px;font-family:'JetBrains Mono',monospace;color:#78716c;margin-top:2px}
+.shorts-count{font-size:9px;font-family:'JetBrains Mono',monospace;color:#60a5fa}
+.foot{text-align:center;padding:20px;font-size:10px;color:#44403c;font-family:'JetBrains Mono',monospace}
+@media(max-width:600px){.week-row{grid-template-columns:50px 1fr;}.week-row>:nth-child(3),.week-row>:nth-child(4){grid-column:2}}
+</style></head><body>
+<div class="hdr"><div class="tag">Y3.2 — Publishing Schedule & Cadence</div><h1>THE FORGOTTEN FRONT — 6-MONTH CALENDAR</h1><div class="sub">48 long-form videos · 120+ Shorts · Weekly production rhythm · Seasonal planning · Milestone targets</div></div>
+<div class="ct">
+
+<!-- CADENCE OVERVIEW -->
+<div class="sec"><div class="sec-h"><span class="num ng">CADENCE</span><h2>Publishing Rhythm — Your Non-Negotiable Weekly Cadence</h2></div><div class="sec-b">
+
+<table class="tbl">
+<tr><th>Content Type</th><th>Frequency</th><th>Publish Day</th><th>Time (EST / PKT)</th></tr>
+<tr><td><strong>Long-form video</strong></td><td>2 per week</td><td>Tuesday + Thursday</td><td>3:00 PM EST / 1:00 AM PKT</td></tr>
+<tr><td><strong>YouTube Shorts</strong></td><td>5 per week</td><td>Mon, Wed, Fri, Sat, Sun</td><td>12:00 PM EST / 10:00 PM PKT</td></tr>
+<tr><td><strong>TikTok cross-post</strong></td><td>5 per week (same as Shorts)</td><td>Same day as Shorts</td><td>30 min after YouTube Short</td></tr>
+<tr><td><strong>Instagram Reels</strong></td><td>3 per week (best-performing Shorts)</td><td>Mon, Wed, Fri</td><td>Same as Shorts</td></tr>
+</table>
+
+<div class="callout co-a"><strong>Why Tuesday + Thursday for long-form?</strong> YouTube analytics data shows peak viewership for education content on Tuesday–Thursday afternoons EST. Weekend uploads compete with entertainment content. Midweek uploads get recommended to viewers during their "learning mode" browsing sessions. 3 PM EST catches both US afternoon and EU evening viewers.</div>
+
+<div class="callout co-r"><strong>The consistency rule:</strong> NEVER skip a scheduled upload unless there's a genuine emergency. Use the 3-tier schedule system:<br><br>
+🟢 <strong>Full Week (7.5 hrs):</strong> 2 long-form + 5 Shorts + promotion. Target 2–3 of these per month.<br>
+🟡 <strong>Standard Week (5 hrs):</strong> 1 long-form + 5 Shorts + promotion. Your DEFAULT schedule. Sustainable long-term.<br>
+🔴 <strong>Minimum Week (1.5 hrs):</strong> 0 long-form + 5 pre-batched Shorts + minimal promotion. For sick/travel/emergency weeks. Max 1× per month.<br>
+⛔ <strong>Off Week (0 hrs):</strong> NEVER. One week of zero uploads = algorithm penalty that takes 2–3 weeks to recover.<br><br>
+<strong>Revised monthly target: 6 long-form videos (not 8).</strong> Mix of Standard and Full Weeks. Still hits monetization but prevents burnout with toddlers and a job.</div>
+
+<div class="d" style="margin-top:8px"><strong>Weekly time budget:</strong></div>
+<table class="tbl">
+<tr><th>Day</th><th>Task</th><th>Hours</th></tr>
+<tr><td><strong>Monday</strong></td><td>Research + script Video A</td><td>1.25h</td></tr>
+<tr><td><strong>Tuesday</strong></td><td>Record + edit + publish Video A. Create 2 Shorts.</td><td>2h</td></tr>
+<tr><td><strong>Wednesday</strong></td><td>Research + script Video B</td><td>1.25h</td></tr>
+<tr><td><strong>Thursday</strong></td><td>Record + edit + publish Video B. Create 2 Shorts.</td><td>2h</td></tr>
+<tr><td><strong>Friday</strong></td><td>Create 1 Short + schedule weekend content + weekly analytics check (15 min)</td><td>0.5h</td></tr>
+<tr><td colspan="2" style="font-weight:700;color:#d97706">TOTAL</td><td style="font-weight:700;color:#d97706">~7 hours/week</td></tr>
+</table>
+<div class="d">This is at the upper end of your 4–7 hr/week budget. On weeks where time is tight, drop to 1 long-form + 5 Shorts (~4 hours). Never drop below 1 long-form per week.</div>
+</div></div>
+
+<!-- 6-MONTH CALENDAR -->
+<div class="sec"><div class="sec-h"><span class="num nb">CALENDAR</span><h2>6-Month Editorial Calendar — 48 Videos Planned</h2></div><div class="sec-b">
+
+<div class="d"><strong>Each month has 8 long-form videos (2/week × 4 weeks) + 20 Shorts (5/week × 4 weeks). Content split adjusts monthly based on the growth phase.</strong></div>
+
+<!-- MONTH 1 -->
+<div class="month" style="border-color:#dc262644">
+<div class="month-h" style="background:#dc262608">
+<h3 style="color:#fca5a5">Month 1 — Launch & Identity</h3>
+<span class="month-tag" style="background:#dc262622;color:#dc2626">SA: 50% | GLOBAL: 30% | ESP: 20%</span>
+</div>
+<div class="month-b">
+<div class="d"><strong>Goal:</strong> Establish channel identity. Trigger diaspora sharing. Give algorithm initial data. Target: 200–500 subscribers.</div>
+<div class="week-row" style="border-bottom:1px solid #292524">
+<span class="week-label">WK 1</span>
+<div><div class="vid-title">V1: The 2.5M Soldiers History Forgot</div><div class="vid-cat">South Asian · Arc · Reveal</div></div>
+<div><div class="vid-title">V2: The Battle That Saved India — Imphal</div><div class="vid-cat">South Asian · Arc · Reveal</div></div>
+<div class="shorts-count">6 Shorts</div>
+</div>
+<div class="week-row" style="border-bottom:1px solid #292524">
+<span class="week-label">WK 2</span>
+<div><div class="vid-title">V3: The Ghost Army — Fake Tanks Won WW2</div><div class="vid-cat">Espionage · Dossier · Dossier</div></div>
+<div><div class="vid-title">V4: Why 80,000 Surrendered at Singapore</div><div class="vid-cat">Global · Question · Question</div></div>
+<div class="shorts-count">5 Shorts</div>
+</div>
+<div class="week-row" style="border-bottom:1px solid #292524">
+<span class="week-label">WK 3</span>
+<div><div class="vid-title">V5: The Spy Princess — Noor Inayat Khan</div><div class="vid-cat">SA + Espionage · Dossier · Reveal</div></div>
+<div><div class="vid-title">V6: Operation Mincemeat</div><div class="vid-cat">Espionage · Dossier · Dossier</div></div>
+<div class="shorts-count">5 Shorts</div>
+</div>
+<div class="week-row">
+<span class="week-label">WK 4</span>
+<div><div class="vid-title">V7: Indians vs Indians — The INA</div><div class="vid-cat">South Asian · Arc · Reveal</div></div>
+<div><div class="vid-title">V8: Why Germany Actually Lost WW2</div><div class="vid-cat">Global · Question · Question</div></div>
+<div class="shorts-count">5 Shorts</div>
+</div>
+<div class="d" style="margin-top:8px;color:#78716c"><strong>Promo focus:</strong> Reddit r/history, r/IndianHistory, r/military, r/ww2. Facebook WW2 groups. Quora answers. TikTok cross-posting ALL Shorts.</div>
+</div>
+</div>
+
+<!-- MONTH 2 -->
+<div class="month" style="border-color:#d9770644">
+<div class="month-h" style="background:#d9770608">
+<h3 style="color:#fcd34d">Month 2 — Breadth & Algorithm Training</h3>
+<span class="month-tag" style="background:#d9770622;color:#d97706">SA: 25% | GLOBAL: 50% | ESP: 25%</span>
+</div>
+<div class="month-b">
+<div class="d"><strong>Goal:</strong> Show algorithm you're a full military history channel. Mix famous + obscure topics. Target: 500–1,200 subscribers.</div>
+<div class="week-row" style="border-bottom:1px solid #292524">
+<span class="week-label">WK 5</span>
+<div><div class="vid-title">V9: The Gurkhas — Most Feared Soldiers</div><div class="vid-cat">South Asian · Arc · Reveal</div></div>
+<div><div class="vid-title">V10: Churchill's Darkest Secret — Bengal Famine</div><div class="vid-cat">SA Dark · Arc · Reveal</div></div>
+<div class="shorts-count">5 Shorts</div>
+</div>
+<div class="week-row" style="border-bottom:1px solid #292524">
+<span class="week-label">WK 6</span>
+<div><div class="vid-title">V11: The Code That Won WW2 — Enigma</div><div class="vid-cat">Espionage · Dossier · Dossier</div></div>
+<div><div class="vid-title">V12: Why Japan Attacked Pearl Harbor — Real Reason</div><div class="vid-cat">Global · Question · Question</div></div>
+<div class="shorts-count">5 Shorts</div>
+</div>
+<div class="week-row" style="border-bottom:1px solid #292524">
+<span class="week-label">WK 7</span>
+<div><div class="vid-title">V13: Operation Fortitude — D-Day's Secret Weapon</div><div class="vid-cat">Espionage · Dossier · Dossier</div></div>
+<div><div class="vid-title">V14: The Forgotten Korean War</div><div class="vid-cat">Global · Arc · Reveal</div></div>
+<div class="shorts-count">5 Shorts</div>
+</div>
+<div class="week-row">
+<span class="week-label">WK 8</span>
+<div><div class="vid-title">V15: The Indian Victoria Cross Winners Nobody Knows</div><div class="vid-cat">South Asian · Arc · Reveal</div></div>
+<div><div class="vid-title">V16: The Battle of Stalingrad — Why It Changed Everything</div><div class="vid-cat">Global · Arc · Reveal</div></div>
+<div class="shorts-count">5 Shorts</div>
+</div>
+<div class="d" style="margin-top:8px;color:#78716c"><strong>Promo focus:</strong> Start engaging with small military history channels for future collabs. Continue Reddit/TikTok. Add Twitter/X history threads.</div>
+</div>
+</div>
+
+<!-- MONTH 3 -->
+<div class="month" style="border-color:#16a34a44">
+<div class="month-h" style="background:#16a34a08">
+<h3 style="color:#86efac">Month 3 — Monetization Sprint</h3>
+<span class="month-tag" style="background:#16a34a22;color:#16a34a">SA: 25% | GLOBAL: 50% | ESP/DARK: 25%</span>
+</div>
+<div class="month-b">
+<div class="d"><strong>Goal:</strong> Pass 1K subs + 4K watch hours. Apply for YPP. Analyze which pillar performs best. Target: 1,000–2,000 subscribers.</div>
+<div class="week-row" style="border-bottom:1px solid #292524">
+<span class="week-label">WK 9</span>
+<div><div class="vid-title">V17: The Partition — History's Largest Migration</div><div class="vid-cat">SA Dark · Arc · Reveal</div></div>
+<div><div class="vid-title">V18: Why Russia Lost to Finland — Winter War</div><div class="vid-cat">Global · Question · Question</div></div>
+<div class="shorts-count">5 Shorts</div>
+</div>
+<div class="week-row" style="border-bottom:1px solid #292524">
+<span class="week-label">WK 10</span>
+<div><div class="vid-title">V19: The Indian Navy Mutiny of 1946</div><div class="vid-cat">South Asian · Arc · Reveal</div></div>
+<div><div class="vid-title">V20: How Israel Won the Six-Day War</div><div class="vid-cat">Global · Question · Question</div></div>
+<div class="shorts-count">5 Shorts</div>
+</div>
+<div class="week-row" style="border-bottom:1px solid #292524">
+<span class="week-label">WK 11</span>
+<div><div class="vid-title">V21: Subhas Chandra Bose — Hero or Traitor?</div><div class="vid-cat">South Asian · Question · Question</div></div>
+<div><div class="vid-title">V22: The Cold War's Forgotten Proxy Wars</div><div class="vid-cat">Global · Arc · Reveal</div></div>
+<div class="shorts-count">5 Shorts</div>
+</div>
+<div class="week-row">
+<span class="week-label">WK 12</span>
+<div><div class="vid-title">V23: The Berlin Wall — The Night It Fell</div><div class="vid-cat">Global · Arc · Reveal</div></div>
+<div><div class="vid-title">V24: The Spy Network That Saved the Allies — SOE</div><div class="vid-cat">Espionage · Dossier · Dossier</div></div>
+<div class="shorts-count">5 Shorts</div>
+</div>
+<div class="d" style="margin-top:8px;color:#78716c"><strong>Milestone:</strong> If 1K subs reached → Apply for YPP immediately. If not yet → increase Shorts volume to 7/week and intensify Reddit/community promo.</div>
+</div>
+</div>
+
+<!-- MONTHS 4-6 -->
+<div class="month" style="border-color:#3b82f644">
+<div class="month-h" style="background:#3b82f608">
+<h3 style="color:#93c5fd">Months 4–6 — Data-Driven Iteration</h3>
+<span class="month-tag" style="background:#3b82f622;color:#60a5fa">SPLIT ADJUSTED BY ANALYTICS</span>
+</div>
+<div class="month-b">
+<div class="d"><strong>By Month 4, you have 24 videos of performance data. The calendar becomes responsive to analytics, not fixed.</strong></div>
+
+<table class="tbl">
+<tr><th>Signal From Analytics</th><th>Calendar Adjustment</th></tr>
+<tr><td>South Asian videos get 2× more views than Global</td><td>Increase SA to 40%, reduce Global to 45%, keep Espionage at 15%</td></tr>
+<tr><td>Espionage/Dossier format has highest retention (AVD)</td><td>Increase Espionage to 25%, create more Dossier-style even for non-spy topics</td></tr>
+<tr><td>"Why did they lose?" Question format gets highest CTR</td><td>Convert 50% of Global videos to Question format regardless of topic</td></tr>
+<tr><td>One specific topic went viral (e.g., Gurkhas at 500K views)</td><td>Create 3-part series diving deeper into that topic. Ride the wave.</td></tr>
+<tr><td>Shorts from a specific topic outperform others on TikTok</td><td>Batch 10+ Shorts from that topic. Create a "mini-series" of related Shorts.</td></tr>
+</table>
+
+<div class="d" style="margin-top:8px"><strong>Month 4–6 topic pool (choose based on what analytics tell you):</strong></div>
+<table class="tbl">
+<tr><th>South Asian Pool</th><th>Global Pool</th><th>Espionage/Dark Pool</th></tr>
+<tr><td>The Siege of Kut — Britain's Worst Defeat</td><td>Why Napoleon Actually Lost at Waterloo</td><td>The Cambridge Five — Soviet Spies in British Intelligence</td></tr>
+<tr><td>Indian Soldiers in the Italian Campaign</td><td>The Vietnam War — Why America Lost</td><td>Project MKUltra — CIA's Mind Control Program</td></tr>
+<tr><td>The 1971 Bangladesh Liberation War</td><td>The Cuban Missile Crisis — 13 Days from Nuclear War</td><td>The Mossad's Most Daring Operations</td></tr>
+<tr><td>Pakistan's Military History — Key Battles</td><td>Why the Ottoman Empire Collapsed</td><td>War Criminals Who Escaped Justice</td></tr>
+<tr><td>The Sikh Regiment — A Legacy of Valor</td><td>How Switzerland Stayed Neutral in 2 World Wars</td><td>Double Agents Who Changed History</td></tr>
+<tr><td>The Kashmir Conflict — Origins Explained</td><td>The Battle of Thermopylae — Truth vs. Legend</td><td>The Assassination Plots That Changed History</td></tr>
+<tr><td>The Mountbatten Plan — 72 Days to Partition</td><td>The Fall of the Roman Empire — Strategic Analysis</td><td>The Rosenbergs — Atomic Spies</td></tr>
+<tr><td>Indian Air Force in 1965 and 1971 Wars</td><td>The Falklands War — How Britain Won 8,000 Miles Away</td><td>Operation Gladio — NATO's Secret Armies</td></tr>
+</table>
+<div class="d" style="margin-top:6px">That's 24 additional topics — enough for Months 4–6 at 8/month. Pick the 8 best-performing topic types from your first 24 videos and prioritize accordingly.</div>
+</div>
+</div>
+
+</div></div>
+
+<!-- MILESTONE TARGETS -->
+<div class="sec"><div class="sec-h"><span class="num ngr">TARGETS</span><h2>6-Month Milestone Targets</h2></div><div class="sec-b">
+<table class="tbl">
+<tr><th>Metric</th><th>Month 1</th><th>Month 2</th><th>Month 3</th><th>Month 4</th><th>Month 5</th><th>Month 6</th></tr>
+<tr><td><strong>Subscribers</strong></td><td>200–500</td><td>500–1,200</td><td class="g">1,000–2,000</td><td>2,000–4,000</td><td>4,000–7,000</td><td class="g">7,000–15,000</td></tr>
+<tr><td><strong>Long-form videos (total)</strong></td><td>8</td><td>16</td><td>24</td><td>32</td><td>40</td><td>48</td></tr>
+<tr><td><strong>Shorts (total)</strong></td><td>20</td><td>40</td><td>60</td><td>80</td><td>100</td><td>120+</td></tr>
+<tr><td><strong>Watch hours (cumulative)</strong></td><td>500–1K</td><td>1.5K–3K</td><td class="g">4K+ (YPP)</td><td>8K+</td><td>15K+</td><td>30K+</td></tr>
+<tr><td><strong>Monthly ad revenue</strong></td><td>$0</td><td>$0</td><td>$0–30</td><td>$30–150</td><td>$50–300</td><td>$100–500</td></tr>
+<tr><td><strong>Key milestone</strong></td><td>First 8 videos live</td><td>Algorithm starts recommending</td><td class="g">Apply for YPP</td><td>First ad revenue</td><td>Consistent monetization</td><td class="g">$500+/mo target</td></tr>
+</table>
+
+<div class="callout co-r"><strong>Honest reality check (REVISED from Y2+Y3 Gap Analysis):</strong> These targets assume consistent uploads + active promotion. Your audience will likely be a MIX of US/UK viewers (RPM $4–8) and South Asian viewers (RPM $0.50–$1.50). With ~60% SA audience, your blended RPM could be $2–4 instead of $6–8. This means you need MORE views to hit the same revenue. <strong>Revised realistic Month 6: $100–500 YouTube ads + $150–500 KDP books = $275–1,150 combined, midpoint ~$500–700.</strong> The "valley of death" (Months 1–3 with $0 YouTube revenue) is why KDP income matters — it keeps you funded and motivated during the YouTube ramp-up.</div>
+</div></div>
+
+<!-- CONTINGENCY PLANS -->
+<div class="sec"><div class="sec-h"><span class="num nr">CONTINGENCY</span><h2>When Things Don't Go to Plan</h2></div><div class="sec-b">
+<table class="tbl">
+<tr><th>Scenario</th><th>Diagnosis</th><th>Action</th></tr>
+<tr><td><strong>Month 3: Under 500 subscribers</strong></td><td>Content isn't reaching people OR topics aren't resonating.</td><td>1) Increase Shorts to 7/week. 2) Post to 3 new Reddit communities per week. 3) Create a "viral attempt" video on an extremely popular topic (e.g., "Top 10 Deadliest Battles in History"). 4) Review titles + thumbnails — swap the bottom 5 performing thumbnails.</td></tr>
+<tr><td><strong>Month 3: Good views but few subscribers</strong></td><td>People watch but don't subscribe. Your CTA is weak or content doesn't promise ongoing value.</td><td>1) Add a mid-video subscribe prompt: "If you're learning things they never taught you in school, subscribe — new dispatches every week." 2) Create a channel trailer. 3) Strengthen your sign-off with specific upcoming content teasers.</td></tr>
+<tr><td><strong>Busy week — can't do 2 long-form</strong></td><td>Life happens. Kids, work, fatigue.</td><td>Minimum viable week: 1 long-form + 5 Shorts. Pre-batch 2–3 Shorts on weekends when you have time, so you always have a buffer. NEVER go a full week with zero uploads.</td></tr>
+<tr><td><strong>Running out of topic ideas</strong></td><td>Your editorial pool is depleted.</td><td>Use the Claude research prompt from Y2.1: "Give me 10 forgotten military history stories that would make great 15-minute documentaries." Reddit r/AskHistorians is also an infinite source of video ideas — sort by top posts.</td></tr>
+<tr><td><strong>A video goes viral (100K+ views)</strong></td><td>Algorithm is promoting you aggressively. This window lasts 2–7 days.</td><td>DROP EVERYTHING. Publish a follow-up video within 48 hours on the same topic. Create 5 Shorts from the viral video immediately. The algorithm rewards channels that capitalize on momentum.</td></tr>
+</table>
+</div></div>
+
+<!-- BATCH PRODUCTION STRATEGY -->
+<div class="sec"><div class="sec-h"><span class="num ng">BATCHING</span><h2>Batch Production — Staying Ahead of Schedule</h2></div><div class="sec-b">
+
+<div class="d"><strong>The goal: always have 1–2 weeks of content pre-produced. This buffer protects you from missed uploads during busy weeks.</strong></div>
+
+<table class="tbl">
+<tr><th>Strategy</th><th>How</th><th>Benefit</th></tr>
+<tr><td><strong>Weekend research batch</strong></td><td>On one weekend per month, spend 3 hours researching + outlining scripts for 4 videos at once. You're just doing research + outlines, not full scripts.</td><td>Monday of each week, you start with a completed outline instead of from scratch. Saves 20 min/video.</td></tr>
+<tr><td><strong>Shorts batch day</strong></td><td>Once every 2 weeks, spend 90 minutes creating 10 Shorts in one session. Write 10 scripts → record 10 voiceovers → edit 10 Shorts. Assembly line approach.</td><td>2 weeks of Shorts content produced in 90 minutes. Much faster than making them individually.</td></tr>
+<tr><td><strong>Thumbnail batch</strong></td><td>When producing the week's 2 videos, also create thumbnails for NEXT week's 2 videos (since you know the topics from your calendar).</td><td>Thumbnails are always ready before you need them. Eliminates last-minute design pressure.</td></tr>
+<tr><td><strong>Music pre-selection</strong></td><td>Build a "TFF Music Library" of 20 pre-selected tracks. Categorize by mood. Never browse YouTube Audio Library during an editing session again.</td><td>Eliminates 10+ min of browsing per video. Pick from your curated library instead.</td></tr>
+</table>
+</div></div>
+
+<!-- DELIVERABLES -->
+<div class="sec"><div class="sec-h"><h2>📦 Y3.2 Deliverables</h2></div><div class="sec-b">
+<div style="display:grid;gap:5px">
+<div class="pillar"><span>✅</span><span>Non-negotiable weekly cadence: 2 long-form (Tue/Thu) + 5 Shorts (Mon/Wed/Fri/Sat/Sun) + cross-posts to TikTok and Instagram</span></div>
+<div class="pillar"><span>✅</span><span>Detailed weekly time budget: 7 hours/week with day-by-day task allocation (scalable down to 4 hrs/week minimum)</span></div>
+<div class="pillar"><span>✅</span><span>Complete Month 1–3 editorial calendar: 24 long-form videos with titles, pillars, formats, and thumbnail templates</span></div>
+<div class="pillar"><span>✅</span><span>Month 4–6 topic pool: 24 additional topics across all 3 pillars, selected by analytics performance data</span></div>
+<div class="pillar"><span>✅</span><span>6-month milestone targets: subscribers, watch hours, revenue, and key actions per month</span></div>
+<div class="pillar"><span>✅</span><span>5 contingency plans: under-performance, low sub conversion, busy weeks, topic drought, viral video response</span></div>
+<div class="pillar"><span>✅</span><span>Batch production strategy: weekend research batch, Shorts batch day, thumbnail pre-production, music library</span></div>
+<div class="pillar"><span>✅</span><span>Content split evolution: 50/30/20 at launch → 25/50/25 by Month 2 → data-driven from Month 4</span></div>
+</div>
+</div></div>
+
+</div>
+<div class="foot">Y3.2 — Publishing Schedule & Cadence · The Forgotten Front · March 2026</div>
+</body></html>

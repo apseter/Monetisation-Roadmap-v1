@@ -1,0 +1,437 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0"><title>Founder's Execution Plan & Achievement Matrix</title>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;700&family=Sora:wght@400;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#07090f;--card:#0d1117;--card2:#161b22;--border:#21262d;--t1:#f0f6fc;--t2:#c9d1d9;--t3:#8b949e;--green:#3fb950;--green-bg:#3fb95012;--amber:#d29922;--amber-bg:#d2992212;--blue:#58a6ff;--blue-bg:#58a6ff12;--red:#f85149;--red-bg:#f8514912;--purple:#bc8cff;--purple-bg:#bc8cff12;--kdp:#10b981;--yt:#d97706;--ig:#e84393}
+*{margin:0;padding:0;box-sizing:border-box}
+body{background:var(--bg);color:var(--t2);font-family:'DM Sans',sans-serif;line-height:1.6;-webkit-font-smoothing:antialiased}
+.hdr{padding:40px 24px 32px;text-align:center;position:relative;overflow:hidden}
+.hdr::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 80% 50% at 50% 0%,#58a6ff06,transparent)}
+.hdr>*{position:relative}
+.tag{font-size:10px;font-family:'JetBrains Mono',monospace;color:var(--blue);text-transform:uppercase;letter-spacing:.25em;margin-bottom:8px}
+h1{font-family:'Sora',sans-serif;font-size:clamp(22px,4vw,34px);font-weight:800;color:var(--t1);margin-bottom:4px}
+.sub{font-size:13px;color:var(--t3);max-width:650px;margin:0 auto}
+.ct{max-width:960px;margin:0 auto;padding:20px 16px}
+.nav{position:sticky;top:0;z-index:100;background:var(--bg);border-bottom:1px solid var(--border);padding:0 16px;backdrop-filter:blur(12px)}
+.nav-inner{max-width:960px;margin:0 auto;display:flex;gap:0;overflow-x:auto;scrollbar-width:none}
+.nav-inner::-webkit-scrollbar{display:none}
+.nav-btn{padding:12px 18px;font-size:12px;font-weight:600;color:var(--t3);background:none;border:none;cursor:pointer;white-space:nowrap;border-bottom:2px solid transparent;transition:all .2s}
+.nav-btn:hover{color:var(--t1)}
+.nav-btn.active{color:var(--blue);border-bottom-color:var(--blue)}
+.section{display:none;animation:fadeIn .3s ease}
+.section.active{display:block}
+@keyframes fadeIn{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:translateY(0)}}
+.sec{background:var(--card);border:1px solid var(--border);border-radius:10px;margin-bottom:14px;overflow:hidden}
+.sec-h{padding:14px 18px;border-bottom:1px solid var(--border);display:flex;align-items:center;gap:8px;flex-wrap:wrap}
+.sec-h h2{font-family:'Sora',sans-serif;font-size:14px;font-weight:700;color:var(--t1)}
+.num{font-size:9px;font-family:'JetBrains Mono',monospace;padding:3px 10px;border-radius:12px;font-weight:700}
+.ng{background:var(--green-bg);color:var(--green)}.na{background:var(--amber-bg);color:var(--amber)}.nb{background:var(--blue-bg);color:var(--blue)}.nr{background:var(--red-bg);color:var(--red)}.np{background:var(--purple-bg);color:var(--purple)}
+.sec-b{padding:14px 18px}
+.d{font-size:12px;color:var(--t3);line-height:1.6;margin-bottom:8px}.d strong{color:var(--t1)}
+.tbl{width:100%;border-collapse:collapse;margin:10px 0;font-size:10px}
+.tbl th{background:var(--card2);color:var(--t3);padding:8px 8px;text-align:left;font-family:'JetBrains Mono',monospace;font-size:8px;text-transform:uppercase;letter-spacing:.04em;border:1px solid var(--border)}
+.tbl td{padding:8px 8px;border:1px solid var(--border);color:var(--t2);vertical-align:top}.tbl tr:nth-child(even) td{background:#0d111788}
+.g{color:var(--green);font-weight:600}.a{color:var(--amber);font-weight:600}.r{color:var(--red);font-weight:600}.b{color:var(--blue);font-weight:600}
+.callout{padding:14px;border-radius:8px;font-size:12px;line-height:1.6;margin:10px 0}
+.co-g{background:var(--green-bg);border:1px solid #3fb95022;color:#7ee8b0}
+.co-a{background:var(--amber-bg);border:1px solid #d2992222;color:#f0d080}
+.co-b{background:var(--blue-bg);border:1px solid #58a6ff22;color:#a0ccff}
+.co-r{background:var(--red-bg);border:1px solid #f8514922;color:#ffa0a0}
+.callout strong{color:var(--t1)}
+.day-card{background:var(--card2);border:1px solid var(--border);border-radius:8px;padding:14px;margin:8px 0}
+.day-card h4{font-family:'Sora',sans-serif;font-size:13px;font-weight:700;color:var(--t1);margin-bottom:6px;display:flex;align-items:center;gap:8px}
+.day-num{font-size:10px;font-family:'JetBrains Mono',monospace;padding:2px 8px;border-radius:10px;font-weight:700}
+.task{display:flex;align-items:flex-start;gap:6px;padding:5px 0;font-size:11px;color:var(--t2);line-height:1.5}
+.task-check{color:var(--t3);flex-shrink:0;margin-top:1px}
+.task-track{font-size:8px;font-family:'JetBrains Mono',monospace;padding:1px 6px;border-radius:8px;flex-shrink:0;margin-top:1px}
+.tk{background:#10b98112;color:#10b981}
+.ty{background:#d9770612;color:#d97706}
+.ti{background:#e8439312;color:#e84393}
+.ta{background:#58a6ff12;color:#58a6ff}
+.scenario{border-left:3px solid var(--border);padding:12px 16px;margin:8px 0;background:var(--card2);border-radius:0 8px 8px 0}
+.scenario h4{font-size:13px;font-weight:700;color:var(--t1);margin-bottom:4px}
+.scenario p{font-size:11px;color:var(--t3)}
+.pillar{display:flex;align-items:flex-start;gap:8px;padding:8px 10px;background:var(--green-bg);border:1px solid #3fb95018;border-radius:6px;margin-bottom:4px}
+.pillar span:first-child{color:var(--green);font-size:10px;font-family:'JetBrains Mono',monospace;min-width:16px;flex-shrink:0;padding-top:1px}
+.pillar span:last-child{font-size:11px;color:var(--t2);line-height:1.5}
+.foot{text-align:center;padding:30px 20px;font-size:10px;color:#4a4f58;font-family:'JetBrains Mono',monospace;border-top:1px solid var(--border);margin-top:30px}
+</style></head><body>
+
+<div class="hdr">
+<div class="tag">Founder's Execution Plan</div>
+<h1>30-Day Launch Sprint + Achievement Matrix</h1>
+<div class="sub">Day-by-day task list across all 3 tracks · 5-scenario projections at Week 4, 8, 12, and 24 · Views, subs, revenue benchmarks</div>
+</div>
+
+<div class="nav"><div class="nav-inner">
+<button class="nav-btn active" onclick="showSection('sprint')">30-Day Task List</button>
+<button class="nav-btn" onclick="showSection('matrix')">Achievement Matrix</button>
+<button class="nav-btn" onclick="showSection('benchmarks')">Video Benchmarks</button>
+<button class="nav-btn" onclick="showSection('signals')">Performance Signals</button>
+</div></div>
+
+<div class="ct">
+
+<!-- ==================== 30-DAY SPRINT ==================== -->
+<div class="section active" id="sec-sprint">
+<div class="sec"><div class="sec-h"><span class="num nb">OVERVIEW</span><h2>30-Day Launch Sprint — Ground Rules</h2></div><div class="sec-b">
+<div class="d"><strong>This is your execution plan for the first 30 days. Each day has specific deliverables across KDP (green), YouTube (amber), and Instagram (pink). Tasks are ordered by priority — do the top task first. Daily time: 1-2 hours on weekdays, 2-3 hours on weekends.</strong></div>
+<table class="tbl">
+<tr><th>Track</th><th>Color</th><th>Month 1 Goal</th></tr>
+<tr><td>📚 KDP</td><td class="g">Green</td><td>Book 1 published on Amazon, earning royalties</td></tr>
+<tr><td>🎬 YouTube</td><td class="a">Amber</td><td>Channel live, 3 videos + 9 Shorts published</td></tr>
+<tr><td>📱 Instagram</td><td style="color:var(--ig);font-weight:600">Pink</td><td>Profile live, 15+ posts, 200+ followers</td></tr>
+<tr><td>⚙️ Setup</td><td class="b">Blue</td><td>All accounts, tools, and infrastructure ready</td></tr>
+</table>
+</div></div>
+
+<!-- WEEK 1 -->
+<div class="sec"><div class="sec-h"><span class="num ng">WEEK 1</span><h2>Days 1–7: Infrastructure + KDP Book 1 Production</h2></div><div class="sec-b">
+
+<div class="day-card">
+<h4><span class="day-num" style="background:var(--blue-bg);color:var(--blue)">DAY 1</span> Setup Day — Accounts & Tools</h4>
+<div class="task"><span class="task-check">☐</span><span class="task-track ta">SETUP</span> Create KDP account at kdp.amazon.com. Complete W-8BEN tax interview.</div>
+<div class="task"><span class="task-check">☐</span><span class="task-track ta">SETUP</span> Create Canva account. Upload brand fonts (Oswald, Special Elite, Libre Baskerville, Outfit).</div>
+<div class="task"><span class="task-check">☐</span><span class="task-track ta">SETUP</span> Create YouTube channel as @TheForgottenFront. Upload profile pic + banner.</div>
+<div class="task"><span class="task-check">☐</span><span class="task-track ti">INSTA</span> Create Instagram @theforgottenfront. Set up Creator account per I1.1.</div>
+<div class="task"><span class="task-check">☐</span><span class="task-track ta">SETUP</span> Register @TheForgottenFront on TikTok, Twitter/X. Create <a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="60140805060f12070f1414050e06120f0e1420070d01090c4e030f0d">[email&#160;protected]</a>.</div>
+<div class="task"><span class="task-check">☐</span><span class="task-track ta">SETUP</span> Install Audacity + CapCut. Create folder structure: TheForgottenFront/Scripts, Assets, Audio, Exports, Thumbnails.</div>
+<div class="callout co-b"><strong>Day 1 total: ~2 hours.</strong> Everything after today assumes these accounts exist.</div>
+</div>
+
+<div class="day-card">
+<h4><span class="day-num" style="background:var(--green-bg);color:var(--green)">DAY 2</span> KDP: Book 1 Interior — Part 1</h4>
+<div class="task"><span class="task-check">☐</span><span class="task-track tk">KDP</span> Open Canva → Custom Size 6×9" → Begin Book 1 (New Dad Journal) interior per K2.1 specs.</div>
+<div class="task"><span class="task-check">☐</span><span class="task-track tk">KDP</span> Build title page, copyright page, table of contents, and introduction.</div>
+<div class="task"><span class="task-check">☐</span><span class="task-track tk">KDP</span> Build Months 1-4 sections (monthly milestone checklists, guided prompts, photo spots).</div>
+<div class="task"><span class="task-check">☐</span><span class="task-track ti">INSTA</span> Create 5 Story Highlight covers in Canva (10 min). Upload to Instagram.</div>
+</div>
+
+<div class="day-card">
+<h4><span class="day-num" style="background:var(--green-bg);color:var(--green)">DAY 3</span> KDP: Book 1 Interior — Part 2</h4>
+<div class="task"><span class="task-check">☐</span><span class="task-track tk">KDP</span> Build Months 5-8 sections of Book 1 interior.</div>
+<div class="task"><span class="task-check">☐</span><span class="task-track tk">KDP</span> Build Months 9-12 sections + "Letter to Baby" year-end pages.</div>
+<div class="task"><span class="task-check">☐</span><span class="task-track ti">INSTA</span> Create 4 Canva templates per I1.2 (Reel Cover, Carousel, Fact Card, Story). ~45 min.</div>
+</div>
+
+<div class="day-card">
+<h4><span class="day-num" style="background:var(--green-bg);color:var(--green)">DAY 4</span> KDP: Book 1 Cover + Final Interior</h4>
+<div class="task"><span class="task-check">☐</span><span class="task-track tk">KDP</span> Download KDP cover template from kdp.amazon.com/cover-calculator (Book 1: 6×9, 120 pages, B&W, white paper).</div>
+<div class="task"><span class="task-check">☐</span><span class="task-track tk">KDP</span> Design Book 1 cover in Canva per K2.2 blueprint (Dad Niche: cream/navy/amber, Playfair Display).</div>
+<div class="task"><span class="task-check">☐</span><span class="task-track tk">KDP</span> Final review of interior: check margins, page count, consistency. Export as PDF Print.</div>
+<div class="task"><span class="task-check">☐</span><span class="task-track tk">KDP</span> Export cover as PDF Print. Export eBook cover as 2560×1600 JPEG.</div>
+</div>
+
+<div class="day-card">
+<h4><span class="day-num" style="background:var(--green-bg);color:var(--green)">DAY 5</span> KDP: PUBLISH BOOK 1 🎉</h4>
+<div class="task"><span class="task-check">☐</span><span class="task-track tk">KDP</span> Log into KDP → Create Paperback → Enter title, subtitle, pen name from K1.4.</div>
+<div class="task"><span class="task-check">☐</span><span class="task-track tk">KDP</span> Upload interior PDF + cover PDF. Set trim 6×9, no bleed, white paper, B&W.</div>
+<div class="task"><span class="task-check">☐</span><span class="task-track tk">KDP</span> Enter 7 backend keywords from K1.4. Select 3 categories. Set price $12.99.</div>
+<div class="task"><span class="task-check">☐</span><span class="task-track tk">KDP</span> Write book description using K1.4 template. Preview book. Submit for review.</div>
+<div class="callout co-g"><strong>🎉 MILESTONE: Book 1 submitted to KDP.</strong> Review takes 24-72 hours. Your first product is going live on Amazon.</div>
+</div>
+
+<div class="day-card">
+<h4><span class="day-num" style="background:var(--amber-bg);color:var(--amber)">DAY 6</span> YouTube: Video #1 Research + Script</h4>
+<div class="task"><span class="task-check">☐</span><span class="task-track ty">YT</span> Research Video #1 ("The 2.5 Million Soldiers History Forgot") per Y2.1 Claude prompts.</div>
+<div class="task"><span class="task-check">☐</span><span class="task-track ty">YT</span> Write full script (~2,100 words). Rewrite 40-60% in your voice. Add [VISUAL CUES].</div>
+<div class="task"><span class="task-check">☐</span><span class="task-track ty">YT</span> Download 20+ archival images from copyright-safe sources (Wikimedia PD, IWM, LOC).</div>
+<div class="task"><span class="task-check">☐</span><span class="task-track ty">YT</span> Do keyword research: YouTube autocomplete + TubeBuddy for tags.</div>
+</div>
+
+<div class="day-card">
+<h4><span class="day-num" style="background:var(--amber-bg);color:var(--amber)">DAY 7</span> YouTube: Video #1 Production</h4>
+<div class="task"><span class="task-check">☐</span><span class="task-track ty">YT</span> Record voiceover in Audacity. Apply 7-step mastering chain from Y2.3.</div>
+<div class="task"><span class="task-check">☐</span><span class="task-track ty">YT</span> Edit video in CapCut: audio → images with Ken Burns → maps → text overlays → music → outro.</div>
+<div class="task"><span class="task-check">☐</span><span class="task-track ty">YT</span> Create thumbnail in Canva (Template A: "The Reveal"). Export as PNG.</div>
+<div class="task"><span class="task-check">☐</span><span class="task-track ti">INSTA</span> Post 3 "About" Stories for your ABOUT highlight. Page is now visually live.</div>
+</div>
+</div></div>
+
+<!-- WEEK 2 -->
+<div class="sec"><div class="sec-h"><span class="num na">WEEK 2</span><h2>Days 8–14: First Uploads + KDP Book 2 Start</h2></div><div class="sec-b">
+
+<div class="day-card">
+<h4><span class="day-num" style="background:var(--amber-bg);color:var(--amber)">DAY 8</span> PUBLISH Video #1 + Shorts Batch</h4>
+<div class="task"><span class="task-check">☐</span><span class="task-track ty">YT</span> Upload Video #1 to YouTube. Fill metadata per Y3.3 template. Add thumbnail, end screens, tags.</div>
+<div class="task"><span class="task-check">☐</span><span class="task-track ty">YT</span> Pin comment with engagement hook. Add to playlist.</div>
+<div class="task"><span class="task-check">☐</span><span class="task-track ty">YT</span> Script + record + edit 3 Shorts from Video #1 content per Y2Y3 Gap Analysis workflow.</div>
+<div class="task"><span class="task-check">☐</span><span class="task-track ti">INSTA</span> Cross-post Short #1 as Instagram Reel with custom cover. First feed post live!</div>
+<div class="task"><span class="task-check">☐</span><span class="task-track ty">YT</span> Promote: share to r/IndianHistory, r/MilitaryHistory, 2 Facebook groups.</div>
+</div>
+
+<div class="day-card">
+<h4><span class="day-num" style="background:var(--ig);color:var(--ig)">DAY 9</span> Instagram Content Blitz + KDP Check</h4>
+<div class="task"><span class="task-check">☐</span><span class="task-track ti">INSTA</span> Post Carousel #1: "5 Things About the Indian Army in WW2" from Video #1 research.</div>
+<div class="task"><span class="task-check">☐</span><span class="task-track ti">INSTA</span> Post Reel #2 (Short #2 cross-posted). Post Fact Card #1.</div>
+<div class="task"><span class="task-check">☐</span><span class="task-track tk">KDP</span> Check KDP dashboard — Book 1 should be live or in final review. Order proof copy if available.</div>
+<div class="task"><span class="task-check">☐</span><span class="task-track ty">YT</span> Upload YouTube Shorts #1-3. Reply to all Video #1 comments.</div>
+</div>
+
+<div class="day-card">
+<h4><span class="day-num" style="background:var(--amber-bg);color:var(--amber)">DAYS 10-11</span> Video #2 Production</h4>
+<div class="task"><span class="task-check">☐</span><span class="task-track ty">YT</span> Research + script Video #2 ("The Battle That Saved India — Imphal 1944").</div>
+<div class="task"><span class="task-check">☐</span><span class="task-track ty">YT</span> Record voiceover + edit video + create thumbnail. Export.</div>
+<div class="task"><span class="task-check">☐</span><span class="task-track ti">INSTA</span> Daily: 2-3 Stories (archival photo finds, polls, video teaser). Cross-post Reel #3.</div>
+</div>
+
+<div class="day-card">
+<h4><span class="day-num" style="background:var(--amber-bg);color:var(--amber)">DAY 12</span> Publish Video #2 + Start KDP Book 2</h4>
+<div class="task"><span class="task-check">☐</span><span class="task-track ty">YT</span> Upload Video #2. Full metadata. Promote to 2 Reddit subs + 2 Facebook groups.</div>
+<div class="task"><span class="task-check">☐</span><span class="task-track ty">YT</span> Batch 3 Shorts from Video #2. Upload to YouTube + cross-post 1 to Instagram.</div>
+<div class="task"><span class="task-check">☐</span><span class="task-track tk">KDP</span> Begin Book 2 (E-Commerce Planner) interior in Canva. Build structure + first 40 pages.</div>
+</div>
+
+<div class="day-card">
+<h4><span class="day-num" style="background:var(--ig);color:var(--ig)">DAYS 13-14</span> Instagram Growth + KDP Book 2</h4>
+<div class="task"><span class="task-check">☐</span><span class="task-track ti">INSTA</span> Post Carousel #2 from Video #2 research. Post 2 Reels + 1 Fact Card.</div>
+<div class="task"><span class="task-check">☐</span><span class="task-track ti">INSTA</span> Engage: comment on 10 military history pages. Reply to all your comments/DMs.</div>
+<div class="task"><span class="task-check">☐</span><span class="task-track tk">KDP</span> Continue Book 2 interior: remaining pages + cover design + submit to KDP.</div>
+<div class="task"><span class="task-check">☐</span><span class="task-track ty">YT</span> Write 1 Quora answer linking to Video #1 or #2.</div>
+<div class="callout co-a"><strong>End of Week 2 checkpoint:</strong> 2 YouTube videos live, 6 Shorts published, ~10 Instagram posts, Book 1 on Amazon, Book 2 submitted.</div>
+</div>
+</div></div>
+
+<!-- WEEK 3 -->
+<div class="sec"><div class="sec-h"><span class="num na">WEEK 3</span><h2>Days 15–21: Video #3 + KDP Book 3 + Growth Push</h2></div><div class="sec-b">
+
+<div class="day-card">
+<h4><span class="day-num" style="background:var(--amber-bg);color:var(--amber)">DAYS 15-16</span> Video #3 Production</h4>
+<div class="task"><span class="task-check">☐</span><span class="task-track ty">YT</span> Research + script Video #3 ("The Ghost Army — How Fake Tanks Won WW2").</div>
+<div class="task"><span class="task-check">☐</span><span class="task-track ty">YT</span> Record + edit + thumbnail + 3 Shorts batch.</div>
+<div class="task"><span class="task-check">☐</span><span class="task-track ti">INSTA</span> Daily Stories + cross-post Reels. Engage with history community.</div>
+</div>
+
+<div class="day-card">
+<h4><span class="day-num" style="background:var(--amber-bg);color:var(--amber)">DAY 17</span> Publish Video #3 + Promotion Sprint</h4>
+<div class="task"><span class="task-check">☐</span><span class="task-track ty">YT</span> Upload Video #3. Full metadata + promotion across Reddit, Facebook, TikTok.</div>
+<div class="task"><span class="task-check">☐</span><span class="task-track ti">INSTA</span> Carousel #3 from Video #3 research. Cross-post best Short as Reel.</div>
+<div class="task"><span class="task-check">☐</span><span class="task-track ty">YT</span> Write Twitter/X thread: "5 things about the Ghost Army."</div>
+</div>
+
+<div class="day-card">
+<h4><span class="day-num" style="background:var(--green-bg);color:var(--green)">DAYS 18-19</span> KDP Book 3 (Half Marathon Log)</h4>
+<div class="task"><span class="task-check">☐</span><span class="task-track tk">KDP</span> Build Book 3 interior in Canva (6×9, 110 pages). 16-week training log per K2.1 specs.</div>
+<div class="task"><span class="task-check">☐</span><span class="task-track tk">KDP</span> Design cover (Running Niche: red/charcoal/orange, Bebas Neue). Submit to KDP.</div>
+<div class="task"><span class="task-check">☐</span><span class="task-track ti">INSTA</span> Continue daily Stories + Reels. Engage with 10+ accounts daily.</div>
+</div>
+
+<div class="day-card">
+<h4><span class="day-num" style="background:var(--blue-bg);color:var(--blue)">DAYS 20-21</span> Week 3 Analytics + Plan Ahead</h4>
+<div class="task"><span class="task-check">☐</span><span class="task-track ta">ALL</span> First weekly analytics review: YouTube Studio (CTR, views, subs) + Instagram Insights (reach, follows).</div>
+<div class="task"><span class="task-check">☐</span><span class="task-track ta">ALL</span> Check KDP dashboard for Book 1 sales. Any sales = proof of concept.</div>
+<div class="task"><span class="task-check">☐</span><span class="task-track ty">YT</span> Review: which video performed best? Which Shorts got most views? Plan adjustments.</div>
+<div class="task"><span class="task-check">☐</span><span class="task-track ti">INSTA</span> Review: which post got most saves? Most shares? Double down on that format next week.</div>
+</div>
+</div></div>
+
+<!-- WEEK 4 -->
+<div class="sec"><div class="sec-h"><span class="num ng">WEEK 4</span><h2>Days 22–30: Momentum + KDP Book 4 + Video #4-5 Pipeline</h2></div><div class="sec-b">
+
+<div class="day-card">
+<h4><span class="day-num" style="background:var(--amber-bg);color:var(--amber)">DAYS 22-24</span> Videos #4-5 Production</h4>
+<div class="task"><span class="task-check">☐</span><span class="task-track ty">YT</span> Research + script + record + edit Video #4 ("Why 80,000 Soldiers Surrendered — Singapore").</div>
+<div class="task"><span class="task-check">☐</span><span class="task-track ty">YT</span> Upload Video #4. Batch 2 Shorts. Promote.</div>
+<div class="task"><span class="task-check">☐</span><span class="task-track ty">YT</span> Begin Video #5 research ("The Spy Princess — Noor Inayat Khan").</div>
+<div class="task"><span class="task-check">☐</span><span class="task-track ti">INSTA</span> Continue rhythm: Reel/Carousel/Fact Card cycle. Daily Stories.</div>
+</div>
+
+<div class="day-card">
+<h4><span class="day-num" style="background:var(--green-bg);color:var(--green)">DAYS 25-27</span> KDP Book 4 + Video #5</h4>
+<div class="task"><span class="task-check">☐</span><span class="task-track tk">KDP</span> Build Book 4 (Family Budget Tracker) interior + cover. Submit to KDP.</div>
+<div class="task"><span class="task-check">☐</span><span class="task-track ty">YT</span> Complete Video #5 production. Upload + promote.</div>
+<div class="task"><span class="task-check">☐</span><span class="task-track ti">INSTA</span> First collab attempt: DM 3 history pages (5K-20K followers) with collab post proposal.</div>
+</div>
+
+<div class="day-card">
+<h4><span class="day-num" style="background:var(--blue-bg);color:var(--blue)">DAYS 28-30</span> Month 1 Review + Month 2 Planning</h4>
+<div class="task"><span class="task-check">☐</span><span class="task-track ta">ALL</span> Full Month 1 analytics review across all 3 tracks. Fill weekly analytics template.</div>
+<div class="task"><span class="task-check">☐</span><span class="task-track tk">KDP</span> Review Book 1-4 sales data. Any keyword changes needed? Any description improvements?</div>
+<div class="task"><span class="task-check">☐</span><span class="task-track ty">YT</span> Identify best-performing video. Plan Month 2 content calendar based on what worked.</div>
+<div class="task"><span class="task-check">☐</span><span class="task-track ti">INSTA</span> Review follower growth curve. Which content type drove the most follows?</div>
+</div>
+
+<div class="callout co-g"><strong>🏁 END OF MONTH 1 TARGET DELIVERABLES:</strong><br>
+📚 KDP: 4 books published on Amazon (earning royalties)<br>
+🎬 YouTube: 5 videos + 12 Shorts published (algorithm learning your channel)<br>
+📱 Instagram: 20+ posts + daily Stories (200-500 followers)<br>
+⏱ Total time invested: ~50-60 hours across the month</div>
+</div></div>
+</div>
+
+<!-- ==================== ACHIEVEMENT MATRIX ==================== -->
+<div class="section" id="sec-matrix">
+<div class="sec"><div class="sec-h"><span class="num nr">CONTEXT</span><h2>5 Scenarios Explained</h2></div><div class="sec-b">
+
+<div class="scenario" style="border-color:var(--red)">
+<h4 style="color:var(--red)">🔴 Worst Case (10th percentile)</h4>
+<p>Algorithm ignores you. Low engagement. No viral moments. You hit every obstacle: bad audio quality, topics that don't resonate, posting inconsistently due to life events. You're in the bottom 10% of new channels. But you keep going.</p>
+</div>
+<div class="scenario" style="border-color:var(--amber)">
+<h4 style="color:var(--amber)">🟡 Base Case (25th percentile)</h4>
+<p>Average new channel performance. Slow, steady growth. No breakout videos but consistent modest performance. Some Shorts get traction. KDP books sell a few copies per week. Typical first-year creator trajectory.</p>
+</div>
+<div class="scenario" style="border-color:var(--blue)">
+<h4 style="color:var(--blue)">🔵 Probable Case (50th percentile)</h4>
+<p>Your content quality + niche positioning + South Asian differentiator work as planned. You're in the top half of new educational channels. A few videos get algorithmic pickup. KDP books establish steady sales. Instagram grows from Reels discovery.</p>
+</div>
+<div class="scenario" style="border-color:var(--green)">
+<h4 style="color:var(--green)">🟢 Optimistic (75th percentile)</h4>
+<p>One or two videos get picked up by the algorithm and reach 50K+ views. Reddit promotion drives significant early traffic. South Asian diaspora shares your content widely. KDP books rank well in their categories. Instagram Reels hit Explore page.</p>
+</div>
+<div class="scenario" style="border-color:var(--purple)">
+<h4 style="color:var(--purple)">🟣 Highly Optimistic (90th percentile)</h4>
+<p>A video goes genuinely viral (500K+ views). A history subreddit or influencer shares your content. KDP books earn a "Bestseller" badge in a niche category. Everything compounds fast. Top 10% of new channels in niche. This is possible but don't plan for it.</p>
+</div>
+</div></div>
+
+<!-- YOUTUBE MATRIX -->
+<div class="sec"><div class="sec-h"><span class="num na">YOUTUBE</span><h2>YouTube Channel — 5-Scenario Projections</h2></div><div class="sec-b">
+<table class="tbl">
+<tr><th>Metric</th><th>Week 4<br>(5 videos)</th><th>Week 8<br>(10 videos)</th><th>Week 12<br>(16 videos)</th><th>Week 24<br>(36 videos)</th></tr>
+<tr><td colspan="5" style="background:var(--red-bg);color:var(--red);font-weight:700;text-align:center;font-size:9px">🔴 WORST CASE</td></tr>
+<tr><td>Total views</td><td>200-500</td><td>800-2K</td><td>2K-5K</td><td>8K-20K</td></tr>
+<tr><td>Subscribers</td><td>10-30</td><td>40-100</td><td>80-200</td><td>200-500</td></tr>
+<tr><td>Avg views/video</td><td>40-100</td><td>80-200</td><td>120-300</td><td>200-550</td></tr>
+<tr><td>Watch hours</td><td>3-8</td><td>12-30</td><td>30-75</td><td>120-300</td></tr>
+<tr><td>Monthly revenue</td><td>$0</td><td>$0</td><td>$0</td><td class="r">$0-20</td></tr>
+<tr><td colspan="5" style="background:var(--amber-bg);color:var(--amber);font-weight:700;text-align:center;font-size:9px">🟡 BASE CASE</td></tr>
+<tr><td>Total views</td><td>500-1.5K</td><td>2K-6K</td><td>6K-15K</td><td>30K-70K</td></tr>
+<tr><td>Subscribers</td><td>30-80</td><td>100-300</td><td>250-600</td><td>600-1.5K</td></tr>
+<tr><td>Avg views/video</td><td>100-300</td><td>200-600</td><td>400-1K</td><td>800-2K</td></tr>
+<tr><td>Watch hours</td><td>8-22</td><td>30-90</td><td>90-225</td><td>450-1K</td></tr>
+<tr><td>Monthly revenue</td><td>$0</td><td>$0</td><td>$0</td><td class="a">$30-100</td></tr>
+<tr><td colspan="5" style="background:var(--blue-bg);color:var(--blue);font-weight:700;text-align:center;font-size:9px">🔵 PROBABLE CASE</td></tr>
+<tr><td>Total views</td><td>1.5K-4K</td><td>6K-18K</td><td>18K-50K</td><td>80K-200K</td></tr>
+<tr><td>Subscribers</td><td>80-200</td><td>300-700</td><td>700-1.5K</td><td class="b">1.5K-4K</td></tr>
+<tr><td>Avg views/video</td><td>300-800</td><td>600-1.8K</td><td>1K-3K</td><td>2K-6K</td></tr>
+<tr><td>Watch hours</td><td>22-60</td><td>90-270</td><td>270-750</td><td>1.2K-3K</td></tr>
+<tr><td>Monthly revenue</td><td>$0</td><td>$0</td><td>$0-50</td><td class="b">$100-400</td></tr>
+<tr><td colspan="5" style="background:var(--green-bg);color:var(--green);font-weight:700;text-align:center;font-size:9px">🟢 OPTIMISTIC</td></tr>
+<tr><td>Total views</td><td>4K-12K</td><td>20K-60K</td><td>60K-150K</td><td>250K-600K</td></tr>
+<tr><td>Subscribers</td><td>200-600</td><td>800-2K</td><td>2K-5K</td><td class="g">5K-12K</td></tr>
+<tr><td>Avg views/video</td><td>800-2.5K</td><td>2K-6K</td><td>4K-10K</td><td>7K-17K</td></tr>
+<tr><td>Watch hours</td><td>60-180</td><td>300-900</td><td>900-2.2K</td><td>3.7K-9K</td></tr>
+<tr><td>Monthly revenue</td><td>$0</td><td>$0</td><td>$30-150</td><td class="g">$300-800</td></tr>
+<tr><td colspan="5" style="background:var(--purple-bg);color:var(--purple);font-weight:700;text-align:center;font-size:9px">🟣 HIGHLY OPTIMISTIC</td></tr>
+<tr><td>Total views</td><td>12K-50K</td><td>60K-200K</td><td>200K-500K</td><td>800K-2M</td></tr>
+<tr><td>Subscribers</td><td>600-2K</td><td>2.5K-8K</td><td>8K-20K</td><td style="color:var(--purple);font-weight:700">20K-50K</td></tr>
+<tr><td>Avg views/video</td><td>2.5K-10K</td><td>6K-20K</td><td>12K-30K</td><td>22K-55K</td></tr>
+<tr><td>Watch hours</td><td>180-750</td><td>900-3K</td><td>3K-7.5K</td><td>12K-30K</td></tr>
+<tr><td>Monthly revenue</td><td>$0</td><td>$0-50</td><td>$100-500</td><td style="color:var(--purple);font-weight:700">$800-2K</td></tr>
+</table>
+</div></div>
+
+<!-- KDP + INSTAGRAM + COMBINED -->
+<div class="sec"><div class="sec-h"><span class="num ng">COMBINED</span><h2>All 3 Tracks — Combined Monthly Revenue (Month 6)</h2></div><div class="sec-b">
+<table class="tbl">
+<tr><th>Scenario</th><th>YouTube Ads</th><th>KDP Books</th><th>Instagram</th><th style="color:var(--t1)">TOTAL /MONTH</th><th>Target Hit?</th></tr>
+<tr><td class="r">🔴 Worst</td><td>$0-20</td><td>$20-80</td><td>$0-20</td><td class="r">$20-120</td><td class="r">❌ No</td></tr>
+<tr><td class="a">🟡 Base</td><td>$30-100</td><td>$80-250</td><td>$20-80</td><td class="a">$130-430</td><td class="a">⚠️ Below target</td></tr>
+<tr><td class="b">🔵 Probable</td><td>$100-400</td><td>$150-400</td><td>$50-200</td><td class="b">$300-1,000</td><td class="b">✅ Hits low end</td></tr>
+<tr><td class="g">🟢 Optimistic</td><td>$300-800</td><td>$250-500</td><td>$100-400</td><td class="g">$650-1,700</td><td class="g">✅ Exceeds target</td></tr>
+<tr><td style="color:var(--purple);font-weight:600">🟣 Highly Opt.</td><td>$800-2K</td><td>$400-800</td><td>$200-600</td><td style="color:var(--purple);font-weight:700">$1,400-3,400</td><td class="g">✅✅ Exceeds 2×</td></tr>
+</table>
+
+<div class="callout co-b"><strong>What moves you between scenarios?</strong> The #1 factor is consistency. Publishing 2 videos/week for 6 months straight almost guarantees you land in Probable or above. The #2 factor is content quality — specifically watch-time retention above 50%. The #3 factor is promotion — Reddit and community sharing in Month 1 can make or break early algorithm training. Your niche positioning (SA military history) is your wildcard upside — if it catches the diaspora audience, you jump scenarios fast.</div>
+</div></div>
+</div>
+
+<!-- ==================== VIDEO BENCHMARKS ==================== -->
+<div class="section" id="sec-benchmarks">
+<div class="sec"><div class="sec-h"><span class="num na">PER-VIDEO</span><h2>Expected Performance Per Video — By Video Count</h2></div><div class="sec-b">
+<div class="d"><strong>How each individual video typically performs based on how many total videos your channel has published:</strong></div>
+<table class="tbl">
+<tr><th>Videos Published</th><th>Avg Views/Video (30 days)</th><th>Avg CTR</th><th>Avg Retention</th><th>Expected Subs/Video</th><th>What's Happening</th></tr>
+<tr><td>1-3</td><td>50-300</td><td>2-4%</td><td>30-45%</td><td>2-10</td><td>Algorithm has no data. All traffic is external (Reddit, you sharing). Performance is NOT indicative of long-term.</td></tr>
+<tr><td>4-7</td><td>100-800</td><td>3-5%</td><td>35-50%</td><td>5-25</td><td>Algorithm begins categorizing your channel. Suggested/Browse traffic starts appearing. Quality improvements visible.</td></tr>
+<tr><td>8-12</td><td>200-2K</td><td>4-6%</td><td>40-55%</td><td>10-50</td><td>Algorithm "understands" your niche. Best videos start getting recommended. Older videos may get a boost. First signs of compounding.</td></tr>
+<tr><td>13-20</td><td>500-5K</td><td>4-8%</td><td>42-55%</td><td>15-80</td><td>Channel identity established. Each video builds on the last. Top videos may reach 10K+. You're past the "quit zone."</td></tr>
+<tr><td>21-36</td><td>1K-10K</td><td>5-10%</td><td>45-60%</td><td>20-150</td><td>Flywheel effect. New videos boost old ones. Search traffic compounding. If you're here, you're in the top 20% of new creators.</td></tr>
+</table>
+
+<div class="callout co-a"><strong>The critical Video #10 threshold:</strong> YouTube analytics show that most channels that succeed have their first "breakout" video between video #8 and #15. The algorithm needs that many data points to understand your channel. If you quit at Video 5 because views are low, you're quitting right before the algorithm would have started helping you. The commitment is to Video #10 minimum — then evaluate.</div>
+</div></div>
+
+<div class="sec"><div class="sec-h"><span class="num ng">SHORTS</span><h2>YouTube Shorts Performance Benchmarks</h2></div><div class="sec-b">
+<table class="tbl">
+<tr><th>Shorts Published</th><th>Avg Views/Short</th><th>% Driving Subs</th><th>% Driving Long-Form Views</th><th>Notes</th></tr>
+<tr><td>1-10</td><td>100-1K</td><td>0.5-1%</td><td>2-5%</td><td>Shorts have their own algorithm. Performance is highly variable early on. Some get 50 views, some get 10K.</td></tr>
+<tr><td>11-30</td><td>500-5K</td><td>1-2%</td><td>3-8%</td><td>Algorithm finds your audience. Consistent hooks and captions improve. Best Shorts may hit 20K+.</td></tr>
+<tr><td>31-60</td><td>1K-15K</td><td>1-3%</td><td>5-10%</td><td>The "Shorts funnel" kicks in. Viewers discover Shorts → visit profile → watch long-form → subscribe.</td></tr>
+<tr><td>60+</td><td>2K-30K</td><td>2-4%</td><td>5-15%</td><td>Shorts become a subscriber engine. Each Short is a mini-advertisement for your channel.</td></tr>
+</table>
+</div></div>
+
+<div class="sec"><div class="sec-h"><span class="num ng">KDP</span><h2>KDP Sales Benchmarks — Per Book</h2></div><div class="sec-b">
+<table class="tbl">
+<tr><th>Scenario</th><th>Month 1</th><th>Month 3</th><th>Month 6</th><th>Royalty/Sale</th><th>Monthly Rev (8 books, Mo 6)</th></tr>
+<tr><td class="r">🔴 Worst</td><td>0-2 sales</td><td>1-5/mo</td><td>2-8/mo per book</td><td>$3.79-5.35</td><td class="r">$20-80</td></tr>
+<tr><td class="a">🟡 Base</td><td>2-5 sales</td><td>5-15/mo</td><td>10-25/mo per book</td><td>$3.79-5.35</td><td class="a">$80-250</td></tr>
+<tr><td class="b">🔵 Probable</td><td>3-10 sales</td><td>10-30/mo</td><td>20-50/mo per book</td><td>$3.79-5.35</td><td class="b">$150-400</td></tr>
+<tr><td class="g">🟢 Optimistic</td><td>5-20 sales</td><td>20-60/mo</td><td>30-80/mo per book</td><td>$3.79-5.35</td><td class="g">$250-500</td></tr>
+<tr><td style="color:var(--purple);font-weight:600">🟣 Highly Opt.</td><td>10-40 sales</td><td>40-100/mo</td><td>50-120/mo per book</td><td>$3.79-5.35</td><td style="color:var(--purple);font-weight:700">$400-800</td></tr>
+</table>
+</div></div>
+</div>
+
+<!-- ==================== PERFORMANCE SIGNALS ==================== -->
+<div class="section" id="sec-signals">
+<div class="sec"><div class="sec-h"><span class="num ng">GREEN</span><h2>🟢 Signals You're On Track (Keep Going)</h2></div><div class="sec-b">
+<table class="tbl">
+<tr><th>Signal</th><th>What It Means</th><th>When to Look</th></tr>
+<tr><td class="g">CTR above 5%</td><td>Your thumbnails and titles are working. Algorithm will promote you.</td><td>After Video 3+</td></tr>
+<tr><td class="g">Avg view duration above 50%</td><td>Your content is engaging. Viewers watch more than half the video. This is the #1 growth signal.</td><td>After Video 3+</td></tr>
+<tr><td class="g">Subscribers growing faster than views</td><td>People who find you WANT more. High conversion = loyal audience forming.</td><td>After Video 5+</td></tr>
+<tr><td class="g">Comments with questions and debates</td><td>Viewers are engaged enough to participate. Algorithm loves comment activity.</td><td>After Video 1+</td></tr>
+<tr><td class="g">Shorts driving profile visits</td><td>The Shorts→Long-form funnel is working. Check YouTube Studio → Analytics → Traffic Sources.</td><td>After 10+ Shorts</td></tr>
+<tr><td class="g">KDP book getting reviews</td><td>Real buyers are reading and reviewing. Reviews compound sales through social proof.</td><td>After Week 4+</td></tr>
+<tr><td class="g">Instagram saves above 3%</td><td>People are bookmarking your content. Saves are the #1 algorithm signal in 2026.</td><td>After 10+ posts</td></tr>
+</table>
+</div></div>
+
+<div class="sec"><div class="sec-h"><span class="num na">AMBER</span><h2>🟡 Warning Signals (Adjust, Don't Panic)</h2></div><div class="sec-b">
+<table class="tbl">
+<tr><th>Signal</th><th>What It Means</th><th>Fix</th></tr>
+<tr><td class="a">CTR below 3%</td><td>Thumbnails or titles aren't compelling enough to click.</td><td>Redesign thumbnails. Test different title formulas from Y3.3. A/B test after 1K+ impressions.</td></tr>
+<tr><td class="a">Avg view duration below 35%</td><td>Viewers click but leave early. Your hook or pacing needs work.</td><td>Improve cold open (first 15 seconds). Check if you have a "dead spot" where retention drops — cut or restructure that section.</td></tr>
+<tr><td class="a">Shorts views but no sub growth</td><td>Shorts are being watched but viewers aren't converting to subscribers.</td><td>Add stronger CTA at end: "Full story on our channel." Check bio link is working. Consider pinning a comment with channel link.</td></tr>
+<tr><td class="a">KDP 0 sales after 30 days</td><td>Listing isn't being discovered. Keywords may be wrong or competition too high.</td><td>Refresh 2-3 backend keywords. Check if your title appears when you search those keywords on Amazon. Consider running a $5/day Amazon ad test for 7 days.</td></tr>
+<tr><td class="a">Instagram followers stalling below 200</td><td>Content isn't reaching non-followers. Algorithm hasn't classified your niche yet.</td><td>Increase Reels to 7/week. Use more niche hashtags. Engage heavily with similar accounts (comments, not just likes).</td></tr>
+</table>
+</div></div>
+
+<div class="sec"><div class="sec-h"><span class="num nr">RED</span><h2>🔴 Danger Signals (Act Immediately)</h2></div><div class="sec-b">
+<table class="tbl">
+<tr><th>Signal</th><th>What It Means</th><th>Emergency Action</th></tr>
+<tr><td class="r">Copyright strike on YouTube</td><td>You used non-safe content. One strike = warning. Three = channel terminated.</td><td>Immediately audit ALL videos for non-safe images/music. Re-read Y2Y3 Gap Analysis Gap 1. Remove offending content. File counter-notification if strike is incorrect.</td></tr>
+<tr><td class="r">KDP book rejected</td><td>Interior or cover doesn't meet specs. Content policy violation.</td><td>Read rejection email carefully — it tells you exactly what's wrong. Fix and resubmit. Usually formatting issues, not content.</td></tr>
+<tr><td class="r">2 weeks with zero uploads</td><td>Algorithm penalty begins. You're losing the consistency signal.</td><td>Activate Minimum Week protocol from Y2Y3 Gap Analysis: publish 5 pre-batched Shorts + 10 min promo. NEVER go fully dark.</td></tr>
+<tr><td class="r">Burnout / motivation crash</td><td>You're trying to do too much. This is the #1 creator killer.</td><td>Drop to Standard Week (1 video + 5 Shorts). Skip Instagram for 1 week. Focus on the single next video only. Return to full schedule when energy returns. Quitting is the only failure.</td></tr>
+</table>
+</div></div>
+
+<!-- DELIVERABLES -->
+<div class="sec"><div class="sec-h"><h2>📦 Deliverables</h2></div><div class="sec-b">
+<div style="display:grid;gap:5px">
+<div class="pillar"><span>✅</span><span>30-day day-by-day task list across all 3 tracks (KDP, YouTube, Instagram) with ~120 specific tasks</span></div>
+<div class="pillar"><span>✅</span><span>5-scenario achievement matrix (Worst/Base/Probable/Optimistic/Highly Optimistic) at Week 4, 8, 12, and 24</span></div>
+<div class="pillar"><span>✅</span><span>YouTube projections: views, subscribers, CTR, watch hours, and revenue per scenario per timeframe</span></div>
+<div class="pillar"><span>✅</span><span>KDP projections: sales per book per month across 5 scenarios with royalty calculations</span></div>
+<div class="pillar"><span>✅</span><span>Combined 3-track revenue matrix at Month 6: $20-120 (worst) to $1,400-3,400 (highly optimistic)</span></div>
+<div class="pillar"><span>✅</span><span>Per-video performance benchmarks by video count (1-3, 4-7, 8-12, 13-20, 21-36) with avg views, CTR, retention</span></div>
+<div class="pillar"><span>✅</span><span>Shorts performance benchmarks by volume (1-10, 11-30, 31-60, 60+)</span></div>
+<div class="pillar"><span>✅</span><span>Green/Amber/Red signal framework: 7 positive signals, 5 warning signals, 4 danger signals with specific fixes</span></div>
+<div class="pillar"><span>✅</span><span>Month 1 target deliverables: 4 KDP books + 5 YouTube videos + 12 Shorts + 20+ Instagram posts</span></div>
+</div>
+</div></div>
+</div>
+
+</div>
+
+<div class="foot">Founder's Execution Plan & Achievement Matrix · All 3 Tracks · March 2026</div>
+
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+function showSection(id){
+document.querySelectorAll('.section').forEach(s=>s.classList.remove('active'));
+document.querySelectorAll('.nav-btn').forEach(b=>b

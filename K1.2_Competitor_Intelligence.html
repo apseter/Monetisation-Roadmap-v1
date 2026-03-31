@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0"><title>K1.2 — Competitor Intelligence Deep-Dive</title>
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}body{background:#0a0f1a;color:#e2e8f0;font-family:'Outfit',sans-serif;padding:0 0 60px}
+.hdr{background:linear-gradient(135deg,#0f172a,#1a1a33,#0f172a);border-bottom:1px solid #6366f133;padding:28px 24px;text-align:center;position:relative}.hdr::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at 40% 30%,#6366f115,transparent 60%)}.hdr>*{position:relative}
+.tag{font-size:10px;color:#6366f1;font-family:'JetBrains Mono',monospace;text-transform:uppercase;letter-spacing:.2em;margin-bottom:6px}
+h1{font-size:22px;font-weight:800;color:#f1f5f9;margin-bottom:4px}
+.sub{font-size:12px;color:#64748b;max-width:650px;margin:0 auto}
+.ct{max-width:880px;margin:0 auto;padding:20px 16px}
+.sec{background:#111827;border:1px solid #1e293b;border-radius:12px;margin-bottom:14px;overflow:hidden}
+.sec-h{padding:14px 18px;border-bottom:1px solid #1e293b;display:flex;align-items:center;gap:8px;flex-wrap:wrap}
+.sec-h h2{font-size:14px;font-weight:700}
+.num{font-size:9px;font-family:'JetBrains Mono',monospace;padding:2px 8px;border-radius:4px;font-weight:700}
+.sec-b{padding:14px 18px}
+.c{background:#0a0f1a;border:1px solid #1e293b;border-radius:10px;padding:14px;margin-bottom:10px}
+.c h3{font-size:13px;font-weight:700;color:#f1f5f9;margin-bottom:4px}
+.cm{font-size:10px;font-family:'JetBrains Mono',monospace;color:#64748b;margin-bottom:8px;display:flex;gap:10px;flex-wrap:wrap}
+.p{font-size:8px;font-family:'JetBrains Mono',monospace;padding:2px 6px;border-radius:3px;font-weight:600}
+.pg{background:#10b98115;color:#10b981}.pr{background:#ef444415;color:#ef4444}.pa{background:#f59e0b15;color:#f59e0b}.pb{background:#3b82f615;color:#60a5fa}
+.s{font-size:11px;color:#94a3b8;line-height:1.5;margin-bottom:6px}.s b{color:#e2e8f0}
+.gap{background:#ef444408;border:1px solid #ef444418;border-radius:8px;padding:10px 12px;margin-bottom:6px;font-size:11px;color:#fca5a5;line-height:1.5}
+.gap::before{content:'⚠️ GAP: ';font-weight:700;color:#ef4444}
+.fix{background:#10b98108;border:1px solid #10b98118;border-radius:8px;padding:10px 12px;margin-bottom:6px;font-size:11px;color:#6ee7b7;line-height:1.5}
+.fix::before{content:'✅ YOUR FIX: ';font-weight:700;color:#10b981}
+.uvp{background:linear-gradient(135deg,#111827,#0f2318);border:2px solid #10b98144;border-radius:12px;padding:18px;margin:14px 0}
+.uvp h3{font-size:14px;font-weight:800;color:#10b981;margin-bottom:6px}
+.uvp p{font-size:12px;color:#94a3b8;line-height:1.6}.uvp strong{color:#e2e8f0}
+.tbl{width:100%;border-collapse:collapse;margin:10px 0;font-size:10px}
+.tbl th{background:#0f172a;color:#94a3b8;padding:6px 8px;text-align:left;font-family:'JetBrains Mono',monospace;font-size:9px;text-transform:uppercase;border:1px solid #1e293b}
+.tbl td{padding:6px 8px;border:1px solid #1e293b;color:#cbd5e1;vertical-align:top}.tbl tr:nth-child(even) td{background:#0d111788}
+.g{color:#10b981;font-weight:600}.r{color:#ef4444;font-weight:600}.a{color:#f59e0b;font-weight:600}
+.foot{text-align:center;padding:20px;font-size:10px;color:#475569;font-family:'JetBrains Mono',monospace}
+</style></head><body>
+<div class="hdr"><div class="tag">K1.2 — Competitor Intelligence Deep-Dive</div><h1>Know Thy Competition, Then Beat Them</h1><div class="sub">15 competitors analyzed · 3 validated niches · Pricing, positioning, strengths, gaps & your unique value proposition for each</div></div>
+<div class="ct">
+
+<!-- ══════════════ NICHE 1: DAD ══════════════ -->
+<div class="sec"><div class="sec-h"><span class="num pg">NICHE #1</span><h2>👨‍👧‍👦 Dad Journals & Father Keepsakes</h2></div><div class="sec-b">
+<p style="font-size:12px;color:#94a3b8;margin-bottom:12px">Market dominated by 2–3 quality players (Andrew Shaw, Family Memory Books, Hear Your Story) and hundreds of low-effort KDP knock-offs. The gap between the top and bottom is enormous — and you can position right in the quality tier at a competitive price.</p>
+
+<div class="c"><h3>1. "First-Time Dad Journal" — Andrew Shaw <span class="p pg">MARKET LEADER</span></h3>
+<div class="cm"><span>📊 BSR ~40K–80K</span><span>⭐ 4.5+</span><span>📝 100+ reviews</span><span>💰 $14.99</span><span>📄 ~160pg</span><span>📦 Callisto Media</span></div>
+<div class="s"><b>Strengths:</b> Real parenting columnist with media credentials. Monthly check-ins from trimester 1 through baby's first months. Combines guided prompts with to-do lists. Professional publisher = quality design/editing. Expert endorsements. Multi-retailer distribution.</div>
+<div class="gap">Focuses only on pregnancy → early months. No toddler years. No standalone practical tools (checklists, trackers). At $14.99, there's room for a $12.99 competitor. Prompts are polished but feel "edited by committee" — lacks raw authenticity.</div>
+<div class="fix">Extend coverage through Year 1 into toddler territory. Include practical standalone pages (hospital bag, pediatrician log, baby gear checklist). Price at $12.99. Write with a real dad's raw, honest voice — not a columnist's polished tone. Your lived experience IS the differentiator.</div></div>
+
+<div class="c"><h3>2. "Dad Pregnancy Journal" — Family Memory Books <span class="p pa">STRONG</span></h3>
+<div class="cm"><span>📊 BSR ~30K–70K</span><span>⭐ 4.4</span><span>📝 200+ reviews</span><span>💰 $9.99</span><span>📄 88pg</span><span>📦 KDP</span></div>
+<div class="s"><b>Strengths:</b> 41-week calendar with baby development descriptions. Guided prompts. Sections: pregnancy, birth, about dad, life lessons. Gender-neutral cover. Photo pages. Strong review count for KDP product.</div>
+<div class="gap">Only 88 pages — feels thin for a keepsake. Ends at birth. No practical sections. Prompts are functional but generic. Reviews mention wanting more writing space per prompt. No post-birth content.</div>
+<div class="fix">Double the page count (150+). Include post-birth Year 1 milestones. More writing space per prompt (full page, not half). Add practical checklists they're missing.</div></div>
+
+<div class="c"><h3>3. "Dad, I Want to Hear Your Story" — Hear Your Story <span class="p pg">#1 BEST SELLER</span></h3>
+<div class="cm"><span>📊 BSR ~5K–15K</span><span>⭐ 4.7</span><span>📝 15,000+ reviews</span><span>💰 $13.99</span><span>📄 120pg</span><span>📦 21-book series</span></div>
+<div class="s"><b>Strengths:</b> Massively successful brand. Part of 21-book series. Hardcover + spiral options. Prompts help dads share LIFE STORY. 15K+ reviews = insurmountable social proof. Multiple covers and formats.</div>
+<div class="gap">NOT actually a new-dad/pregnancy journal — targets older kids giving dad a journal to share his life story. Dominates "dad journal" keywords but serves a different purpose entirely. No pregnancy/baby content.</div>
+<div class="fix">Don't compete head-on. LEARN from the series model — build YOUR dad journals into a 3–4 book series. Use specific long-tail keywords ("new dad pregnancy journal") to avoid their keyword dominance. Potentially create a "Letters to My Baby" book as your equivalent to their "Hear Your Story" approach.</div></div>
+
+<div class="c"><h3>4. "Dad's Letters to Baby" + "Pregnancy Journal for Dad-To-Be" (Various) <span class="p pb">MID-TIER</span></h3>
+<div class="cm"><span>📊 BSR ~50K–200K</span><span>⭐ 4.0–4.4</span><span>📝 20–100 reviews</span><span>💰 $8.99–$11.99</span><span>📄 80–120pg</span></div>
+<div class="s"><b>Strengths:</b> Letter-based formats (47 prompts from dad to child). Emotional keepsake positioning. Clean modern designs. Affordable pricing.</div>
+<div class="gap">Letter format only — no practical sections. No week-by-week tracking. Limited space per letter. Not comprehensive standalone products. Covers often look feminine/pink despite targeting dads.</div></div>
+
+<div class="c"><h3>5. KDP Low-Quality Knock-offs (70%+ of search results) <span class="p pr">WEAK</span></h3>
+<div class="cm"><span>📊 BSR 500K+</span><span>⭐ 0–3</span><span>📝 0–5 reviews</span><span>💰 $5.99–$7.99</span><span>📄 50–80pg</span></div>
+<div class="s"><b>Weaknesses:</b> AI-generated covers that look generic. Copy-paste prompts. Thin pages. No author identity. Poor formatting. Pink/pastel covers on "dad" products. Zero marketing. These make up 70%+ of results — they LOWER buyer expectations, meaning a quality product stands out immediately.</div>
+<div class="fix">Simply being professional puts you in the top 20%. Masculine/premium cover design (dark colors, clean typography). Real author perspective. Quality content. Proper pricing ($12.99 not $5.99).</div></div>
+
+<!-- DAD UVP -->
+<div class="uvp"><h3>Your Unique Value Proposition — Dad Journal</h3>
+<p><strong>"The first dad journal written by a dad who's actually in the trenches."</strong> Unlike polished columnist journals or generic KDP knock-offs, yours combines raw authenticity (you're a dad of toddlers RIGHT NOW), practical tools (checklists, trackers, emergency contacts), guided prompts that address real dad experiences (sleep deprivation humor, dad guilt, work-life chaos), and comprehensive coverage from pregnancy through toddler years. Positioned at $12.99 — premium quality, competitive price.</p></div>
+
+<!-- Buyer complaint synthesis -->
+<h3 style="font-size:13px;color:#f59e0b;margin:14px 0 8px">📢 What Buyers Actually Complain About (Review Synthesis)</h3>
+<table class="tbl">
+<tr><th>Complaint Pattern</th><th>Frequency</th><th>Your Product Solution</th></tr>
+<tr><td>Prompts feel generic / same as mom journals repackaged</td><td class="r">Very Common</td><td>Write prompts FROM a real dad's perspective — "Describe the moment it hit you: I'm actually a dad now"</td></tr>
+<tr><td>Not enough writing space per prompt</td><td class="a">Common</td><td>Full page per prompt minimum. Quality over quantity of prompts (40 great ones > 100 shallow ones)</td></tr>
+<tr><td>Covers look feminine / not designed for men</td><td class="a">Common</td><td>Dark colors, clean bold typography, no pastels/florals. Think "premium men's journal" not "baby book"</td></tr>
+<tr><td>Stops at birth — nothing for actual parenthood</td><td class="r">Very Common</td><td>Include Year 1 milestones section + monthly baby progress tracker. Position as "pregnancy to first year"</td></tr>
+<tr><td>No practical sections, just prompts</td><td class="a">Common</td><td>Add: hospital bag checklist, baby gear list, pediatrician visit tracker, emergency contacts page, feeding log</td></tr>
+<tr><td>Too thin / not enough pages for a keepsake</td><td class="a">Common</td><td>150+ pages. Feels substantial as a gift. Cream paper for premium feel. Matte cover.</td></tr>
+</table>
+</div></div>
+
+<!-- ══════════════ NICHE 2: E-COMMERCE ══════════════ -->
+<div class="sec"><div class="sec-h"><span class="num pb">NICHE #2</span><h2>💼 E-Commerce & Online Business Planners</h2></div><div class="sec-b">
+<p style="font-size:12px;color:#94a3b8;margin-bottom:12px">This market is fragmented — no single dominant player. Most existing products are generic "small business planners" relabeled, or extremely basic KDP journals with "e-commerce" in the title. The gap between what exists and what online sellers ACTUALLY need is massive.</p>
+
+<div class="c"><h3>1. "Business Planner for Boutique Owners" — Multiple Covers <span class="p pa">TOP IN CATEGORY</span></h3>
+<div class="cm"><span>📊 BSR ~100K–300K</span><span>⭐ 4.2</span><span>📝 50+ reviews</span><span>💰 $6.99–$8.99</span><span>📄 ~100pg</span><span>📦 KDP</span></div>
+<div class="s"><b>Strengths:</b> Specifically targets boutique owners. Multiple cover variants for different aesthetics. Includes: supplies, shipping, inventory, sales, expenses, income, tax deductions, goals, marketing planning. Addresses a real audience (boutique/fashion resellers).</div>
+<div class="gap">Priced too low ($6.99) — earning barely $1 per sale. Interior design is basic. No digital marketing/social media sections. No platform-specific tracking (Shopify, Etsy, Amazon). No product sourcing or supplier management. Feels like a generic ledger with "boutique" on the cover.</div>
+<div class="fix">Price at $12.99 with genuinely useful e-commerce specific interiors. Include: supplier contact database, product sourcing tracker, inventory by SKU, platform-specific analytics pages, social media content calendar, advertising spend tracker, profit margin calculator templates. Your e-commerce + fashion retail experience means you know what sections actually matter.</div></div>
+
+<div class="c"><h3>2. "The Best E-Commerce Planner" — Symphony Girl Designs <span class="p pr">WEAK EXECUTION</span></h3>
+<div class="cm"><span>📊 BSR 1M+</span><span>⭐ Limited</span><span>📝 Few reviews</span><span>💰 $12.99</span><span>📄 ~100pg</span><span>📦 KDP</span></div>
+<div class="s"><b>Strengths:</b> Attempts to be e-commerce specific. Undated (reusable). Year-long planning scope.</div>
+<div class="gap">BSR over 1M means essentially no sales. Poor cover design. Interior is generic time management, not e-commerce operational. Title is overly bold for the actual content quality. No reviews suggesting no marketing effort.</div>
+<div class="fix">The high price ($12.99) with no sales proves that price alone doesn't sell — you need quality + marketing. Your book needs genuinely valuable interiors AND a launch strategy with KDP ads and community promotion.</div></div>
+
+<div class="c"><h3>3. "E-Commerce Planner" — S.D. (basic KDP) <span class="p pr">MINIMAL</span></h3>
+<div class="cm"><span>📊 BSR 2M+</span><span>📝 0 reviews</span><span>💰 $8.99</span><span>📄 ~80pg</span><span>📦 KDP</span></div>
+<div class="s"><b>Described features:</b> Shop/account setup, SEO planning, single product planning. Positioned for Woocommerce, Etsy, Wix, Amazon sellers.</div>
+<div class="gap">Zero sales traction. Too thin (80 pages). No reviews. Unclear what the interior actually looks like. No author credibility established.</div></div>
+
+<div class="c"><h3>4. Etsy Digital Planners (2,000+ results) <span class="p pa">INDIRECT COMPETITION</span></h3>
+<div class="cm"><span>📊 N/A (Etsy)</span><span>⭐ Varies</span><span>💰 $3.99–$14.99 (digital)</span><span>📦 Digital download / Canva template</span></div>
+<div class="s"><b>Important context:</b> Over 2,000 "ecommerce planner" products on Etsy — but these are DIGITAL products (PDFs, Canva templates). This proves demand exists. People ARE searching for e-commerce planning tools. But there's a segment that prefers PHYSICAL planners (writing by hand, carrying to meetings, having on desk). KDP paperback serves this segment.</div>
+<div class="fix">The Etsy digital planner market validates demand. Your KDP paperback serves the physical-product segment. Mention "prefer pen and paper?" in your Amazon listing to capture buyers who considered digital but want physical.</div></div>
+
+<div class="c"><h3>5. Generic "Small Business Planner" books (thousands) <span class="p pr">SATURATED BUT GENERIC</span></h3>
+<div class="cm"><span>📊 BSR varies widely</span><span>💰 $6.99–$14.99</span><span>📄 80–200pg</span></div>
+<div class="s"><b>Pattern:</b> Thousands of "small business planner" books exist. Top sellers have strong BSR. But they're generic — they work for a bakery, a lawn service, or an online store equally. None are specifically designed for e-commerce operational needs like inventory management, order tracking, multi-platform selling, or digital marketing analytics.</div>
+<div class="gap">Generic = no competitive advantage. A bakery owner and a Shopify seller have COMPLETELY different planning needs. Nobody is specifically serving e-commerce sellers with tailored operational tools in physical book format.</div>
+<div class="fix">Own the "e-commerce planner" keyword space by being the ONLY quality physical planner specifically designed for online sellers. Include platform-specific sections (Shopify dashboard tracking, Etsy stats, Amazon seller metrics). This specificity is your moat.</div></div>
+
+<div class="uvp"><h3>Your Unique Value Proposition — E-Commerce Planner</h3>
+<p><strong>"The only business planner built by someone who's actually run an online store."</strong> Unlike generic small business planners, yours includes: SKU-level inventory tracking, supplier management database, platform-specific analytics pages (Shopify/Etsy/Amazon), order fulfillment log, shipping cost tracker, social media content calendar, ad spend & ROAS tracker, and seasonal buying calendar for fashion retail. Built from real operational experience — not a generic template with "e-commerce" slapped on the cover.</p></div>
+
+<h3 style="font-size:13px;color:#f59e0b;margin:14px 0 8px">📢 What Business Planner Buyers Complain About</h3>
+<table class="tbl">
+<tr><th>Complaint Pattern</th><th>Frequency</th><th>Your Product Solution</th></tr>
+<tr><td>"Too generic — not specific to my type of business"</td><td class="r">Very Common</td><td>EVERYTHING is e-commerce specific. Sections labeled for online sellers, not generic "business"</td></tr>
+<tr><td>"No financial tracking built in"</td><td class="r">Very Common</td><td>Monthly P&L pages with e-commerce expense categories (inventory, shipping, platform fees, ads)</td></tr>
+<tr><td>"Missing inventory management"</td><td class="a">Common</td><td>Product catalog by SKU, stock levels, reorder triggers, supplier contacts per product</td></tr>
+<tr><td>"No marketing/social media planning"</td><td class="a">Common</td><td>Monthly content calendar, campaign tracker, ad spend log with ROAS calculation</td></tr>
+<tr><td>"Too many motivational quotes, not enough function"</td><td class="a">Common</td><td>90% functional pages, 10% inspiration max. Respect the buyer's intelligence and time.</td></tr>
+<tr><td>"Paper quality is poor / bleeds through"</td><td class="a">Moderate</td><td>Mention "thick quality paper" in listing. Use 6x9 for portability or 8.5x11 for desk use.</td></tr>
+</table>
+</div></div>
+
+<!-- ══════════════ NICHE 3: RUNNING ══════════════ -->
+<div class="sec"><div class="sec-h"><span class="num pa">NICHE #3</span><h2>🏃 Running Logs & Marathon Training Journals</h2></div><div class="sec-b">
+<p style="font-size:12px;color:#94a3b8;margin-bottom:12px">Market has one dominant traditional publisher (Runner's World) and hundreds of low-quality KDP products. The BSR data shows a bifurcation: quality products with real training content sell well; generic "running log" notebooks do not sell at all.</p>
+
+<div class="c"><h3>1. "Runner's World Training Journal" <span class="p pg">ESTABLISHED LEADER</span></h3>
+<div class="cm"><span>📊 BSR ~15K–30K</span><span>⭐ 4.5+</span><span>📝 800+ reviews</span><span>💰 $14.99</span><span>📄 192pg</span><span>📦 Traditional publisher (Rodale)</span></div>
+<div class="s"><b>Strengths:</b> Backed by the Runner's World brand. Full-color photos. Motivation tips. Pace charts for 200m to marathon. Year's worth of run tracking. Cross-training sections. Stretching and recovery info. Nutrition tips embedded. Weekly motivational quotes. Well-known in running community.</div>
+<div class="gap">Full-color = more expensive to produce on KDP. Brand power is unbeatable in general running. NOT specifically a half marathon or marathon training plan — it's a general running log. Published years ago, hasn't been meaningfully updated. Somewhat overwhelming for beginners. No race-day specific preparation tools.</div>
+<div class="fix">Don't try to out-general Runner's World. Go SPECIFIC: "Half Marathon Training Log" or "First Marathon Planner." They own "running journal" — you own "half marathon training plan + tracker." Include what they don't: progressive week-by-week training schedule, race-day checklist, nutrition timing guide, shoe mileage tracker.</div></div>
+
+<div class="c"><h3>2. "Marathon & Half-Marathon Training Journal" — Dariusz Janczewski <span class="p pa">NICHE AUTHORITY</span></h3>
+<div class="cm"><span>📊 BSR ~80K–200K</span><span>⭐ 4.3</span><span>📝 50+ reviews</span><span>💰 $14.95</span><span>📄 250pg</span><span>📦 Traditional pub</span></div>
+<div class="s"><b>Strengths:</b> Written by a real competitive runner (2:42 Boston Marathon). Comprehensive: 53 weekly spreads, racing calendar, pacing charts, stretching guide, nutrition planning, contacts. Designed to last a full year. Includes weightlifting log for cross-training.</div>
+<div class="gap">Published in 2010 — very outdated. Design feels dated. 250 pages is heavy/thick. Calendars are from 2010/2011 (!). No modern training concepts (heart rate zones, perceived effort scales). Not beginner-friendly. Price high at $14.95.</div>
+<div class="fix">A MODERN version of this concept with: current training science, undated format (reusable), cleaner design, beginner-friendly language, and specific half-marathon focus. This is essentially your blueprint — but updated for 2026 runners.</div></div>
+
+<div class="c"><h3>3. "First Marathon Training Journal" — MOKA Journals <span class="p pb">DIRECT COMPETITOR</span></h3>
+<div class="cm"><span>📊 BSR ~200K–500K</span><span>⭐ 4.0</span><span>📝 10–30 reviews</span><span>💰 $9.99</span><span>📄 ~150pg</span><span>📦 KDP</span></div>
+<div class="s"><b>Strengths:</b> Specifically targets first-time marathon runners. 24-week training plan in miles AND kilometers. Daily running logs. Training tips on mental and physical aspects. Race-day planning section. Motivational quotes. Milestone race planning section. Available at accessible $9.99 price.</div>
+<div class="gap">24 weeks is unusually long for most training plans (16–20 is standard). Interior design is basic. Limited nutrition tracking. No shoe mileage log. No heart rate or effort tracking. Motivational quotes take up space that could be functional. Cover designs are simple and generic.</div>
+<div class="fix">Your version: 16-week plan (standard for half marathon), include pace/splits tracking, effort scale (RPE), shoe log, pre-run nutrition, weather conditions, cross-training log, and a race-day strategy planner. Make the interior genuinely useful to a runner, not just a template with running words on it.</div></div>
+
+<div class="c"><h3>4–5. Generic "Running Log Book 2026" Products (hundreds) <span class="p pr">DEAD ON ARRIVAL</span></h3>
+<div class="cm"><span>📊 BSR 1M–5M+</span><span>⭐ 0–2</span><span>📝 0 reviews</span><span>💰 $6.99–$8.99</span><span>📄 80–110pg</span></div>
+<div class="s"><b>Pattern:</b> Hundreds of near-identical "Running Log Book 2026" products with: generic covers, basic distance/time/pace fields, no training plans, no nutritional guidance, no race preparation. BSRs above 1M confirm zero sales. These products validate that SIMPLY HAVING a running log on Amazon doesn't generate sales.</div>
+<div class="gap">No differentiation. No training structure. No author credibility. Dated titles (2026 edition) become worthless in 12 months. Priced below $9.99 = 50% royalty tier = barely profitable even if they sold.</div>
+<div class="fix">Go UNDATED (evergreen, sells for years). Include a real training PLAN, not just empty logging pages. Establish authority in your listing: "Designed by a marathon runner." Price at $9.99 for 60% royalty. Invest in a professional cover that signals quality.</div></div>
+
+<div class="uvp"><h3>Your Unique Value Proposition — Running Log</h3>
+<p><strong>"A training PLAN, not just a log book — designed by an actual marathon runner."</strong> Unlike generic running logs (which don't sell), yours includes a structured 16-week progressive training schedule for half-marathon, pace charts and goal-time calculators, nutrition timing for long runs, shoe rotation and mileage tracker, race-day strategy planner with checklist, mental game notes and RPE tracking, and cross-training integration. Undated so it sells year-round. Priced at $9.99. Your running experience makes every page credible.</p></div>
+
+<h3 style="font-size:13px;color:#f59e0b;margin:14px 0 8px">📢 What Running Journal Buyers Want (From Reviews & Forums)</h3>
+<table class="tbl">
+<tr><th>What Runners Want</th><th>Source</th><th>Your Product Solution</th></tr>
+<tr><td>Structured training plan, not just empty pages</td><td>Amazon reviews + running forums</td><td>16-week progressive plan with easy/hard day structure built into the journal</td></tr>
+<tr><td>Nutrition and fueling tracking alongside runs</td><td>Marathon Handbook, Another Mother Runner</td><td>Pre-run meal, mid-run fuel, hydration, and post-run recovery sections per entry</td></tr>
+<tr><td>Shoe mileage tracking (replace at 350–500 miles)</td><td>Running community best practices</td><td>Dedicated shoe log page with purchase date, cumulative miles, and replacement reminders</td></tr>
+<tr><td>How they FELT, not just numbers</td><td>Widespread in review data</td><td>RPE (Rate of Perceived Effort) scale 1–10, mood tracking, energy level, and "mental notes" field</td></tr>
+<tr><td>Race-day preparation and strategy</td><td>Running forums, competitor gaps</td><td>Race-day planner: goal time, pacing strategy by mile/km, nutrition plan, gear checklist, warm-up routine</td></tr>
+<tr><td>Ability to look back and see progress</td><td>Core runner motivation</td><td>Weekly summary pages with total distance, avg pace, and progress visualization space</td></tr>
+</table>
+</div></div>
+
+<!-- ══════════════ POSITIONING MAP ══════════════ -->
+<div class="sec"><div class="sec-h"><h2>🗺️ Competitive Positioning Summary</h2></div><div class="sec-b">
+<table class="tbl">
+<tr><th>Your Niche</th><th>Main Competitor</th><th>Their Price</th><th>Your Price</th><th>Their Weakness</th><th>Your Edge</th></tr>
+<tr><td>Dad Journal</td><td>Andrew Shaw ($14.99)</td><td>$14.99</td><td class="g">$12.99</td><td>Ends at early months, polished but not raw</td><td class="g">Real dad voice, extends to Year 1, practical tools included</td></tr>
+<tr><td>Dad Journal</td><td>Family Memory Books ($9.99)</td><td>$9.99</td><td class="g">$12.99</td><td>Only 88 pages, stops at birth</td><td class="g">150+ pages, pregnancy → Year 1, premium keepsake quality</td></tr>
+<tr><td>E-Commerce Planner</td><td>Boutique Planner ($6.99)</td><td>$6.99</td><td class="g">$12.99</td><td>Generic ledger with "boutique" on cover, too cheap</td><td class="g">E-commerce specific: SKU tracking, supplier mgmt, platform analytics, ad tracking</td></tr>
+<tr><td>E-Commerce Planner</td><td>Generic business planners</td><td>$8–$15</td><td class="g">$12.99</td><td>Same planner for bakery and Shopify store</td><td class="g">Only planner designed specifically for online sellers by someone who's done it</td></tr>
+<tr><td>Half Marathon Log</td><td>Runner's World ($14.99)</td><td>$14.99</td><td class="g">$9.99</td><td>General running, not race-specific, expensive</td><td class="g">Half marathon specific training PLAN + log. More affordable. Designed by a runner.</td></tr>
+<tr><td>Half Marathon Log</td><td>MOKA First Marathon ($9.99)</td><td>$9.99</td><td class="g">$9.99</td><td>Basic interior, no nutrition/shoe tracking, dated</td><td class="g">Modern training science, nutrition integration, shoe mileage, race-day prep</td></tr>
+</table>
+</div></div>
+
+<!-- ══════════════ DELIVERABLES CHECKLIST ══════════════ -->
+<div class="sec"><div class="sec-h"><h2>📦 K1.2 Deliverables Checklist</h2></div><div class="sec-b">
+<div style="display:grid;gap:5px">
+<div style="display:flex;align-items:center;gap:8px;padding:8px 10px;background:#10b98108;border:1px solid #10b98118;border-radius:6px"><span style="color:#10b981">✅</span><span style="font-size:11px;color:#cbd5e1">15 competitors analyzed with BSR, pricing, reviews, and positioning data</span></div>
+<div style="display:flex;align-items:center;gap:8px;padding:8px 10px;background:#10b98108;border:1px solid #10b98118;border-radius:6px"><span style="color:#10b981">✅</span><span style="font-size:11px;color:#cbd5e1">Gap analysis per competitor — specific weaknesses mapped to your product fixes</span></div>
+<div style="display:flex;align-items:center;gap:8px;padding:8px 10px;background:#10b98108;border:1px solid #10b98118;border-radius:6px"><span style="color:#10b981">✅</span><span style="font-size:11px;color:#cbd5e1">Buyer complaint synthesis from reviews and forums — 18 complaints = 18 product features</span></div>
+<div style="display:flex;align-items:center;gap:8px;padding:8px 10px;background:#10b98108;border:1px solid #10b98118;border-radius:6px"><span style="color:#10b981">✅</span><span style="font-size:11px;color:#cbd5e1">Unique Value Proposition defined for each of your 3 niches</span></div>
+<div style="display:flex;align-items:center;gap:8px;padding:8px 10px;background:#10b98108;border:1px solid #10b98118;border-radius:6px"><span style="color:#10b981">✅</span><span style="font-size:11px;color:#cbd5e1">Competitive positioning map with pricing strategy vs. each competitor</span></div>
+</div>
+</div></div>
+
+</div>
+<div class="foot">K1.2 — Competitor Intelligence Deep-Dive · KDP Publishing Empire GTM · March 2026</div>
+</body></html>

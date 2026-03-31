@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0"><title>K1.3 — Publishing Infrastructure & Brand Setup</title>
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}body{background:#0a0f1a;color:#e2e8f0;font-family:'Outfit',sans-serif;padding:0 0 60px}
+.hdr{background:linear-gradient(135deg,#0f172a,#1a2e1a,#0f172a);border-bottom:1px solid #10b98133;padding:28px 24px;text-align:center;position:relative}.hdr::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at 40% 30%,#10b98118,transparent 60%)}.hdr>*{position:relative}
+.tag{font-size:10px;color:#10b981;font-family:'JetBrains Mono',monospace;text-transform:uppercase;letter-spacing:.2em;margin-bottom:6px}
+h1{font-size:22px;font-weight:800;color:#f1f5f9;margin-bottom:4px}
+.sub{font-size:12px;color:#64748b;max-width:650px;margin:0 auto}
+.ct{max-width:880px;margin:0 auto;padding:20px 16px}
+.sec{background:#111827;border:1px solid #1e293b;border-radius:12px;margin-bottom:14px;overflow:hidden}
+.sec-h{padding:14px 18px;border-bottom:1px solid #1e293b;display:flex;align-items:center;gap:8px;flex-wrap:wrap}
+.sec-h h2{font-size:14px;font-weight:700}
+.num{font-size:9px;font-family:'JetBrains Mono',monospace;padding:2px 8px;border-radius:4px;font-weight:700}
+.pg{background:#10b98115;color:#10b981}.pb{background:#3b82f615;color:#60a5fa}.pa{background:#f59e0b15;color:#f59e0b}.pp{background:#8b5cf615;color:#a78bfa}.pr{background:#ef444415;color:#ef4444}
+.sec-b{padding:14px 18px}
+.step{display:flex;gap:12px;margin-bottom:14px;align-items:flex-start}
+.step-n{width:30px;height:30px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:700;font-family:'JetBrains Mono',monospace;flex-shrink:0}
+.step-t{font-size:12px;color:#cbd5e1;line-height:1.6}
+.step-t strong{color:#f1f5f9}.step-t a{color:#60a5fa;text-decoration:none}
+.rec{background:linear-gradient(135deg,#111827,#0f2318);border:2px solid #10b98144;border-radius:12px;padding:18px;margin:14px 0}
+.rec h3{font-size:14px;font-weight:800;color:#10b981;margin-bottom:6px}
+.rec p{font-size:12px;color:#94a3b8;line-height:1.6}.rec strong{color:#e2e8f0}
+.warn{background:#f59e0b08;border:1px solid #f59e0b22;border-radius:8px;padding:12px;font-size:11px;color:#fcd34d;line-height:1.6;margin:10px 0}
+.warn::before{content:'⚠️ ';font-size:13px}
+.info{background:#3b82f608;border:1px solid #3b82f622;border-radius:8px;padding:12px;font-size:11px;color:#93c5fd;line-height:1.6;margin:10px 0}
+.info::before{content:'💡 ';font-size:13px}
+.good{background:#10b98108;border:1px solid #10b98122;border-radius:8px;padding:12px;font-size:11px;color:#6ee7b7;line-height:1.6;margin:10px 0}
+.good::before{content:'✅ ';font-size:13px}
+.tbl{width:100%;border-collapse:collapse;margin:10px 0;font-size:10px}
+.tbl th{background:#0f172a;color:#94a3b8;padding:7px 8px;text-align:left;font-family:'JetBrains Mono',monospace;font-size:9px;text-transform:uppercase;border:1px solid #1e293b}
+.tbl td{padding:7px 8px;border:1px solid #1e293b;color:#cbd5e1;vertical-align:top}.tbl tr:nth-child(even) td{background:#0d111788}
+.folder{font-family:'JetBrains Mono',monospace;font-size:11px;color:#94a3b8;background:#0a0f1a;border:1px solid #1e293b;border-radius:8px;padding:14px;line-height:1.8;white-space:pre-wrap}
+.folder b{color:#60a5fa}.folder em{color:#10b981;font-style:normal}
+.foot{text-align:center;padding:20px;font-size:10px;color:#475569;font-family:'JetBrains Mono',monospace}
+</style></head><body>
+<div class="hdr"><div class="tag">K1.3 — Publishing Infrastructure & Brand Setup</div><h1>Build Once, Publish Forever</h1><div class="sub">Brand strategy · Pen name architecture · Free tool stack · KDP account setup · Folder structure · Revenue tracking template</div></div>
+<div class="ct">
+
+<!-- ══════════════ BRAND DECISION ══════════════ -->
+<div class="sec"><div class="sec-h"><span class="num pp">DECISION 1</span><h2>🏷️ Publishing Identity: Brand Name vs. Real Name vs. Pen Name</h2></div><div class="sec-b">
+<p style="font-size:12px;color:#94a3b8;margin-bottom:12px">This is a strategic decision, not just a creative one. Here's my recommendation based on your multi-niche strategy:</p>
+
+<div class="rec"><h3>Recommended: One KDP Account → 3 Pen Names (1 per niche)</h3>
+<p><strong>Why this is optimal for you:</strong></p>
+<p>• <strong>One KDP account manages everything</strong> — you don't need multiple accounts. Your existing KDP account can manage several pen names simultaneously. When you reach the "Author" section in your book setup, simply input your chosen pen name instead of your real name.</p>
+<p>• <strong>Each pen name builds niche authority</strong> — a "running" pen name with 5 running books looks more credible than a random name with 1 running book + 1 dad book + 1 business book</p>
+<p>• <strong>Separate Author Central pages</strong> — Amazon allows authors to manage up to three pen names per Author Central account. That's perfect — you have exactly 3 niches</p>
+<p>• <strong>Privacy</strong> — your real name stays on your KDP account (for payments/taxes) but never appears publicly on books</p>
+<p>• <strong>No publisher brand name needed</strong> — KDP self-published books show the author name, not a publisher name. A "publisher name" adds nothing to buyer perception on Amazon</p>
+</div>
+
+<h3 style="font-size:13px;color:#a78bfa;margin:12px 0 8px">Your 3 Pen Names — Choosing Strategy</h3>
+<table class="tbl">
+<tr><th>Niche</th><th>Pen Name Guidelines</th><th>Author Bio Positioning</th><th>Example Names (Inspiration Only)</th></tr>
+<tr><td>🏃 Running</td><td>Gender-neutral or male. Should sound like someone who actually runs. Avoid overly "publishery" names.</td><td>"Marathon runner, running coach, and fitness enthusiast. Writes practical training tools for runners at every level."</td><td>Adam Stride, Mark Trailey, Ryan Pace, James Harmon</td></tr>
+<tr><td>👨‍👧‍👦 Dad/Family</td><td>Male name. Should sound warm, approachable, relatable. Could be your actual first name + different surname.</td><td>"Dad of two young kids, writing from the trenches of toddlerhood. Creating the journals and planners he wished existed when he became a dad."</td><td>David Hartwell, Sam Parker, Daniel Brooks, Michael Kaye</td></tr>
+<tr><td>💼 Business</td><td>Professional sounding. Could be gender-neutral. Should signal business credibility.</td><td>"E-commerce entrepreneur and retail strategist. Builds practical planning tools for online sellers based on real operational experience."</td><td>Alex Mercer, Jordan Blake, Chris Harrington, Nathan Cole</td></tr>
+</table>
+
+<div class="warn"><strong>Before finalizing any pen name:</strong> Search it on Amazon to make sure no existing author uses that exact name. Google it to check for any negative associations. Check it's not a trademarked name. Make it easy to spell and remember. Avoid names too similar to famous authors.</div>
+
+<div class="info"><strong>You DON'T need to decide pen names today.</strong> You choose the pen name when you upload each book. But having them ready saves time. Pick your top choice for each niche, verify availability, and record them in the Pen Name Registry tab of the tracking spreadsheet.</div>
+</div></div>
+
+<!-- ══════════════ FREE TOOL STACK ══════════════ -->
+<div class="sec"><div class="sec-h"><span class="num pb">SETUP</span><h2>🔧 Free Tool Stack — $0/month to Start</h2></div><div class="sec-b">
+<p style="font-size:12px;color:#94a3b8;margin-bottom:12px">You said you prefer free tools. Here's a complete stack that costs $0/month and covers everything you need to publish your first 8 books:</p>
+
+<table class="tbl">
+<tr><th>Purpose</th><th>Free Tool</th><th>URL</th><th>What You'll Use It For</th><th>Paid Upgrade (Later)</th></tr>
+<tr><td style="font-weight:700;color:#10b981">Design (Covers + Interiors)</td><td>Canva Free</td><td>canva.com</td><td>Book covers, interior page templates, product mockups. Free tier gives you 250K+ templates, 100+ design types, 5GB storage.</td><td>Canva Pro ($13/mo) — unlocks brand kit, background remover, premium templates. Upgrade when doing 3+ books/month.</td></tr>
+<tr><td style="font-weight:700;color:#10b981">AI Writing</td><td>Claude (Free tier) or ChatGPT Free</td><td>claude.ai / chatgpt.com</td><td>Generate book descriptions, journal prompts, content outlines, listing copy. Use as your writing assistant.</td><td>Claude Pro / ChatGPT Plus ($20/mo) — more messages, longer context. Upgrade when writing ebooks.</td></tr>
+<tr><td style="font-weight:700;color:#10b981">Interior Design (Alt)</td><td>Google Docs / Slides</td><td>docs.google.com</td><td>Create interior pages, format manuscripts for ebooks. Export as PDF for KDP upload.</td><td>N/A — Google Docs is sufficient for most interiors</td></tr>
+<tr><td style="font-weight:700;color:#10b981">Cover Calculator</td><td>KDP Cover Calculator</td><td>kdp.amazon.com/cover-calculator</td><td>Generate exact cover dimensions including spine width for your page count. Essential for every book.</td><td>N/A — free from Amazon</td></tr>
+<tr><td style="font-weight:700;color:#10b981">Tracking & Analytics</td><td>Google Sheets</td><td>sheets.google.com</td><td>Revenue tracking, KPI monitoring, keyword research recording. Use the template provided with this deliverable.</td><td>N/A — Google Sheets is sufficient</td></tr>
+<tr><td style="font-weight:700;color:#10b981">Color Palette</td><td>Coolors</td><td>coolors.co</td><td>Generate professional color palettes for your cover designs and brand identity.</td><td>N/A — free tier is more than enough</td></tr>
+<tr><td style="font-weight:700;color:#10b981">Fonts</td><td>Google Fonts</td><td>fonts.google.com</td><td>Free commercial-use fonts. Upload to Canva for use in covers and interiors.</td><td>N/A — free and extensive</td></tr>
+<tr><td style="font-weight:700;color:#10b981">Keyword Research</td><td>Amazon Autocomplete + AMZ Suggestion Expander</td><td>Chrome Web Store</td><td>Type keywords in Amazon search bar → see what buyers search for. Free Chrome extension expands suggestions.</td><td>Publisher Rocket ($97 one-time) or Titans Pro ($15/mo) — deeper data. Consider after first 5 books.</td></tr>
+<tr><td style="font-weight:700;color:#10b981">BSR Checking</td><td>DS Amazon Quick View</td><td>Chrome Web Store</td><td>Shows BSR directly on Amazon search results pages. Essential for niche research.</td><td>N/A — free Chrome extension</td></tr>
+<tr><td style="font-weight:700;color:#10b981">Image Editing</td><td>Photopea</td><td>photopea.com</td><td>Free Photoshop alternative in browser. For advanced cover editing if Canva isn't enough.</td><td>N/A — free, very capable</td></tr>
+<tr><td style="font-weight:700;color:#10b981">PDF Merging</td><td>ILovePDF</td><td>ilovepdf.com</td><td>Merge interior pages, compress PDFs, convert formats. Essential for combining Canva pages into one manuscript.</td><td>N/A — free tier handles most needs</td></tr>
+<tr><td style="font-weight:700;color:#10b981">Email Marketing (Later)</td><td>MailerLite Free</td><td>mailerlite.com</td><td>Build email list from book readers. Free for up to 1,000 subscribers. Set up now, use later (Month 3+).</td><td>Paid tiers start at $10/mo for 500+ subscribers</td></tr>
+</table>
+
+<div class="good"><strong>Total cost to start: $0/month.</strong> This free stack is genuinely sufficient for your first 8–10 books. The only paid tool worth considering early is Canva Pro ($13/mo) once you're producing 3+ books per month — the brand kit and premium templates save significant time. Everything else can stay free until you're earning revenue to reinvest.</div>
+</div></div>
+
+<!-- ══════════════ KDP ACCOUNT SETUP ══════════════ -->
+<div class="sec"><div class="sec-h"><span class="num pr">ACTION</span><h2>⚡ KDP Account Setup — Step by Step</h2></div><div class="sec-b">
+
+<div class="step"><div class="step-n" style="background:#ef444418;color:#ef4444">1</div><div class="step-t"><strong>Create your KDP account</strong> → Go to <a href="https://kdp.amazon.com">kdp.amazon.com</a> and sign in with your existing Amazon account (or create one). This is free and takes 5 minutes.</div></div>
+
+<div class="step"><div class="step-n" style="background:#ef444418;color:#ef4444">2</div><div class="step-t"><strong>Complete the Tax Interview</strong> → This is REQUIRED before you can receive any royalties. Go to KDP dashboard → Account → Tax Information. Since you're in Pakistan, you'll fill out the <strong>W-8BEN form</strong> (for non-US individuals). You'll need: your full legal name, address, and tax ID or passport number. There's a US-Pakistan tax treaty that may reduce withholding tax on your US royalties — make sure to claim treaty benefits during the interview.</div></div>
+
+<div class="step"><div class="step-n" style="background:#ef444418;color:#ef4444">3</div><div class="step-t"><strong>Set up bank/payment information</strong> → KDP Dashboard → Account → Payment Settings. You can receive payments via: <strong>Electronic Fund Transfer (EFT)</strong> to your local bank account (cheapest), wire transfer, or check. EFT is recommended. Payments arrive ~60 days after the end of the month in which sales occur (e.g., January sales paid in late March).</div></div>
+
+<div class="step"><div class="step-n" style="background:#f59e0b18;color:#f59e0b">4</div><div class="step-t"><strong>Set up KDP Advertising account</strong> → Go to <a href="https://ads.amazon.com">ads.amazon.com</a> and link it to your KDP account. Add a credit card for ad billing. You won't run ads immediately, but having the account ready means zero friction when you're ready to advertise (Project K4).</div></div>
+
+<div class="step"><div class="step-n" style="background:#3b82f618;color:#60a5fa">5</div><div class="step-t"><strong>Author Central setup (AFTER first book is live)</strong> → Go to <a href="https://author.amazon.com">author.amazon.com</a>. You need at least one published book before you can claim an Author Central profile. An Author page allows you to have all of your work on one page and gives you the opportunity to introduce yourself to your readers. Create one Author Central profile per pen name (up to 3 on one account). Add: author photo/avatar, biography, and links.</div></div>
+
+<div class="step"><div class="step-n" style="background:#10b98118;color:#10b981">6</div><div class="step-t"><strong>Bookmark your essential URLs:</strong><br>
+• <a href="https://kdp.amazon.com">kdp.amazon.com</a> — your publishing dashboard<br>
+• <a href="https://kdp.amazon.com/en_US/royalty-calculator">KDP Royalty Calculator</a> — calculate royalties before publishing<br>
+• <a href="https://kdp.amazon.com/cover-calculator">KDP Cover Calculator</a> — generate exact cover dimensions<br>
+• <a href="https://ads.amazon.com">ads.amazon.com</a> — your advertising dashboard<br>
+• <a href="https://author.amazon.com">author.amazon.com</a> — Author Central profiles<br>
+• <a href="https://kdp.amazon.com/en_US/help/topic/G201834340">KDP Printing Costs page</a> — reference for pricing decisions</div></div>
+
+<div class="warn"><strong>Important for Pakistan-based sellers:</strong> KDP supports payments to Pakistan via EFT and wire transfer. Verify your bank accepts international USD transfers. Some Pakistani banks have specific requirements for receiving foreign payments — check with your bank before setting up. Also ensure your bank account name matches your KDP account name exactly.</div>
+</div></div>
+
+<!-- ══════════════ BRAND IDENTITY ══════════════ -->
+<div class="sec"><div class="sec-h"><span class="num pa">BRAND</span><h2>🎨 Brand Visual Identity — Per Niche</h2></div><div class="sec-b">
+<p style="font-size:12px;color:#94a3b8;margin-bottom:12px">Each pen name needs a distinct visual identity so their books look cohesive on Amazon. Here's a starter framework using free tools:</p>
+
+<table class="tbl">
+<tr><th>Element</th><th>🏃 Running Niche</th><th>👨‍👧‍👦 Dad/Family Niche</th><th>💼 Business Niche</th></tr>
+<tr><td style="font-weight:700">Color Palette</td><td>Primary: Electric Blue (#2563EB)<br>Accent: Neon Orange (#FF6B35)<br>Background: Dark Navy (#0F172A)</td><td>Primary: Forest Green (#166534)<br>Accent: Warm Gold (#D97706)<br>Background: Cream (#FFFBEB) or Charcoal (#1F2937)</td><td>Primary: Deep Indigo (#4338CA)<br>Accent: Teal (#0D9488)<br>Background: Near-Black (#0A0F1A)</td></tr>
+<tr><td style="font-weight:700">Cover Style</td><td>Bold, energetic. Dark backgrounds with bright accent colors. Clean sans-serif titles. Movement-implied design elements.</td><td>Warm, premium. Dark tones with gold/warm accents for masculine feel. Clean typography. NOT pastel/pink.</td><td>Professional, modern. Dark with teal/indigo accents. Sharp, clean layout. Signals "serious business tool."</td></tr>
+<tr><td style="font-weight:700">Font Pairing (Free)</td><td><strong>Title:</strong> Montserrat Black<br><strong>Body:</strong> Open Sans</td><td><strong>Title:</strong> Playfair Display Bold<br><strong>Body:</strong> Lato Regular</td><td><strong>Title:</strong> Poppins Bold<br><strong>Body:</strong> Inter Regular</td></tr>
+<tr><td style="font-weight:700">Cover Text Rules</td><td>Title ≤ 7 words. Bold white or neon on dark. Subtitle in accent color.</td><td>Title ≤ 6 words. Gold/white on dark, or dark on cream. Subtitle warm tone.</td><td>Title ≤ 7 words. White/teal on dark. Subtitle with benefit statement.</td></tr>
+<tr><td style="font-weight:700">Thumbnail Test</td><td>Must be readable at 150px wide (how Amazon shows it on mobile)</td><td>Must be readable at 150px wide. Warm tones should still pop at small size.</td><td>Must be readable at 150px wide. Professional look must survive tiny display.</td></tr>
+</table>
+
+<div class="info"><strong>Action: Generate your palettes on coolors.co</strong> (free). Enter one color → press spacebar → it generates complementary colors. Download your fonts from fonts.google.com. Upload custom fonts to Canva to use in your designs.</div>
+</div></div>
+
+<!-- ══════════════ FOLDER STRUCTURE ══════════════ -->
+<div class="sec"><div class="sec-h"><span class="num pg">ORG</span><h2>📁 Folder Structure — Organize for 100+ Books</h2></div><div class="sec-b">
+<p style="font-size:12px;color:#94a3b8;margin-bottom:8px">Set this up NOW. When you have 20+ books, you'll thank yourself.</p>
+<div class="folder"><b>📁 KDP-Business/</b>
+├── <b>📁 01-Running/</b>
+│   ├── <em>📁 Book-01-Half-Marathon-Training-Log/</em>
+│   │   ├── manuscript-interior.pdf
+│   │   ├── cover-front.pdf
+│   │   ├── cover-full-wrap.pdf
+│   │   ├── product-mockup.png
+│   │   ├── listing-copy.txt
+│   │   └── keywords-categories.txt
+│   ├── <em>📁 Book-02-Walking-Fitness-Log/</em>
+│   │   └── (same structure)
+│   ├── <em>📁 Templates/</em>  ← reusable interior templates
+│   └── <em>📁 Brand/</em>  ← logo, colors, fonts for this pen name
+├── <b>📁 02-Dad-Family/</b>
+│   ├── <em>📁 Book-01-New-Dad-Year-One-Journal/</em>
+│   ├── <em>📁 Templates/</em>
+│   └── <em>📁 Brand/</em>
+├── <b>📁 03-Business/</b>
+│   ├── <em>📁 Book-01-Ecommerce-Launch-Planner/</em>
+│   ├── <em>📁 Templates/</em>
+│   └── <em>📁 Brand/</em>
+├── <b>📁 04-Tracking/</b>
+│   ├── KDP-Portfolio-Tracker.xlsx  ← the spreadsheet from this deliverable
+│   ├── weekly-revenue-log.xlsx
+│   └── ad-performance-log.xlsx
+└── <b>📁 05-Resources/</b>
+    ├── keyword-research-master.xlsx
+    ├── competitor-analysis.xlsx
+    └── SOPs/  ← production process documents</div>
+
+<div class="info"><strong>File naming convention:</strong> Use consistent names: <code>[NicheCode]-[BookNum]-[ShortTitle]-[FileType].[ext]</code><br>
+Example: <code>RUN-01-HalfMarathonLog-Interior.pdf</code>, <code>DAD-01-NewDadJournal-Cover.pdf</code>, <code>BIZ-01-EcommPlanner-Listing.txt</code></div>
+</div></div>
+
+<!-- ══════════════ TRACKING SPREADSHEET ══════════════ -->
+<div class="sec"><div class="sec-h"><span class="num pg">TRACKER</span><h2>📊 Revenue Tracking Spreadsheet — Included</h2></div><div class="sec-b">
+<p style="font-size:12px;color:#94a3b8;margin-bottom:12px">The attached Excel file (<strong>K1.3_KDP_Tracker_Template.xlsx</strong>) contains 4 ready-to-use sheets:</p>
+
+<table class="tbl">
+<tr><th>Sheet</th><th>Purpose</th><th>When to Use</th></tr>
+<tr><td style="font-weight:700;color:#10b981">Book Portfolio</td><td>Track every book: title, niche, pen name, pages, price, print cost, royalty/sale, BSR, reviews, monthly sales, revenue, ad spend, net profit. Pre-loaded with your first 8 planned books. Formulas auto-calculate royalties and profit.</td><td>Update weekly as you publish books and receive sales data</td></tr>
+<tr><td style="font-weight:700;color:#3b82f6">Monthly Summary</td><td>12-month overview: books published, total portfolio, KDP royalties, ebook royalties, ad spend, tool costs, gross revenue, net profit, hours invested, hourly rate, reviews, best BSR. Your business health dashboard.</td><td>Update on the 1st of each month (royalty data arrives ~60 days after month end)</td></tr>
+<tr><td style="font-weight:700;color:#f59e0b">Setup Checklist</td><td>22-item actionable checklist: account setup, tools, brand, organization. Priority-coded (CRITICAL / HIGH / MEDIUM). Check items off as you complete them.</td><td>Use NOW — work through the CRITICAL items first, then HIGH, then MEDIUM</td></tr>
+<tr><td style="font-weight:700;color:#a78bfa">Pen Name Registry</td><td>Track your pen names: name, niche, target audience, Author Central status, books published, bio notes. Pre-loaded with your 3 niche slots.</td><td>Fill in once you've chosen your pen names. Update as you publish.</td></tr>
+</table>
+
+<div class="good"><strong>Blue-colored cells are input fields</strong> — type your data there. Black cells contain formulas that auto-calculate. The Book Portfolio sheet auto-calculates your print cost, royalty per sale, monthly revenue, and net profit for every book.</div>
+</div></div>
+
+<!-- ══════════════ NEXT STEPS ══════════════ -->
+<div class="sec"><div class="sec-h"><span class="num pg">NEXT</span><h2>✅ Your Action Items (Priority Order)</h2></div><div class="sec-b">
+<div class="step"><div class="step-n" style="background:#ef444418;color:#ef4444">1</div><div class="step-t"><strong>TODAY (30 min):</strong> Create your KDP account at kdp.amazon.com. Complete the tax interview (W-8BEN). Set up payment information. This is the #1 blocker — nothing else can happen until this is done.</div></div>
+<div class="step"><div class="step-n" style="background:#ef444418;color:#ef4444">2</div><div class="step-t"><strong>TODAY (15 min):</strong> Create your Canva Free account. Install the Canva desktop app. Install DS Amazon Quick View and AMZ Suggestion Expander Chrome extensions.</div></div>
+<div class="step"><div class="step-n" style="background:#f59e0b18;color:#f59e0b">3</div><div class="step-t"><strong>THIS WEEK (30 min):</strong> Choose your 3 pen names. Search each on Amazon to verify uniqueness. Record them in the Pen Name Registry sheet. Write a 2–3 sentence author bio for each.</div></div>
+<div class="step"><div class="step-n" style="background:#f59e0b18;color:#f59e0b">4</div><div class="step-t"><strong>THIS WEEK (20 min):</strong> Set up your folder structure on your computer (copy the structure above). Create a dedicated email for your KDP business. Generate color palettes on coolors.co for each niche.</div></div>
+<div class="step"><div class="step-n" style="background:#3b82f618;color:#60a5fa">5</div><div class="step-t"><strong>THIS WEEK (15 min):</strong> Download fonts from Google Fonts (Montserrat, Playfair Display, Poppins, Open Sans, Lato, Inter). Upload them to your Canva account. Save the tracking spreadsheet to your 04-Tracking folder.</div></div>
+<div class="step"><div class="step-n" style="background:#10b98118;color:#10b981">6</div><div class="step-t"><strong>READY FOR K1.4:</strong> Once the above is done, you're fully set up to start K1.4 (Keyword Strategy & Category Mapping) and then move into K2 (Book Production). Zero friction from here.</div></div>
+
+<div class="good"><strong>Total time to complete K1.3: ~2 hours.</strong> This is a one-time investment that eliminates all setup friction for your entire 6-month publishing journey. Every minute spent here saves 10 minutes later.</div>
+</div></div>
+
+<!-- ══════════════ DELIVERABLES ══════════════ -->
+<div class="sec"><div class="sec-h"><h2>📦 K1.3 Deliverables</h2></div><div class="sec-b">
+<div style="display:grid;gap:5px">
+<div style="display:flex;align-items:center;gap:8px;padding:8px 10px;background:#10b98108;border:1px solid #10b98118;border-radius:6px"><span style="color:#10b981">✅</span><span style="font-size:11px;color:#cbd5e1">Brand strategy: One KDP account + 3 pen names architecture with bio templates</span></div>
+<div style="display:flex;align-items:center;gap:8px;padding:8px 10px;background:#10b98108;border:1px solid #10b98118;border-radius:6px"><span style="color:#10b981">✅</span><span style="font-size:11px;color:#cbd5e1">Free tool stack: 12 tools, $0/month, covering design, writing, research, tracking</span></div>
+<div style="display:flex;align-items:center;gap:8px;padding:8px 10px;background:#10b98108;border:1px solid #10b98118;border-radius:6px"><span style="color:#10b981">✅</span><span style="font-size:11px;color:#cbd5e1">KDP account setup: Step-by-step guide with Pakistan-specific payment notes</span></div>
+<div style="display:flex;align-items:center;gap:8px;padding:8px 10px;background:#10b98108;border:1px solid #10b98118;border-radius:6px"><span style="color:#10b981">✅</span><span style="font-size:11px;color:#cbd5e1">Visual identity framework: Color palettes, font pairings, cover style rules per niche</span></div>
+<div style="display:flex;align-items:center;gap:8px;padding:8px 10px;background:#10b98108;border:1px solid #10b98118;border-radius:6px"><span style="color:#10b981">✅</span><span style="font-size:11px;color:#cbd5e1">Folder structure template: Organized for 100+ books across 3 niches</span></div>
+<div style="display:flex;align-items:center;gap:8px;padding:8px 10px;background:#10b98108;border:1px solid #10b98118;border-radius:6px"><span style="color:#10b981">✅</span><span style="font-size:11px;color:#cbd5e1">Excel tracking template (4 sheets): Book Portfolio, Monthly Summary, Setup Checklist, Pen Name Registry</span></div>
+</div>
+</div></div>
+
+</div>
+<div class="foot">K1.3 — Publishing Infrastructure & Brand Setup · KDP Publishing Empire GTM · March 2026</div>
+</body></html>

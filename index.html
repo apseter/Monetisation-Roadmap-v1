@@ -1,0 +1,414 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Monetization Roadmap — Complete Command Center</title>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;700&family=Sora:wght@400;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#06080e;--card:#0c1018;--card2:#131a26;--border:#1c2536;--t1:#edf2f7;--t2:#a0aec0;--t3:#5a6a80;--green:#38d97a;--green2:#10b981;--green-bg:#38d97a0a;--amber:#f0b429;--amber-bg:#f0b4290a;--blue:#4da6ff;--blue-bg:#4da6ff0a;--red:#f56565;--red-bg:#f565650a;--purple:#b388ff;--purple-bg:#b388ff0a;--kdp:#10b981;--yt:#d97706;--ig:#e84393;--pink:#e84393;--pink-bg:#e843930a}
+*{margin:0;padding:0;box-sizing:border-box}html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--t2);font-family:'Plus Jakarta Sans',system-ui,sans-serif;line-height:1.6;-webkit-font-smoothing:antialiased}
+/* HERO */
+.hero{position:relative;padding:50px 24px 44px;text-align:center;overflow:hidden;border-bottom:1px solid var(--border)}
+.hero::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 80% 50% at 50% -10%,#4da6ff06,transparent),radial-gradient(ellipse 50% 40% at 20% 90%,#10b98104,transparent),radial-gradient(ellipse 50% 40% at 80% 90%,#d9770604,transparent)}
+.hero>*{position:relative}
+.hero-tag{font-size:10px;font-family:'JetBrains Mono',monospace;color:var(--blue);text-transform:uppercase;letter-spacing:.3em;margin-bottom:12px;opacity:.7}
+.hero h1{font-family:'Sora',sans-serif;font-size:clamp(26px,5vw,42px);font-weight:800;color:var(--t1);line-height:1.1;margin-bottom:8px}
+.hero h1 .gr{background:linear-gradient(135deg,var(--kdp),var(--blue),var(--yt),var(--ig));-webkit-background-clip:text;-webkit-text-fill-color:transparent}
+.hero-sub{font-size:14px;color:var(--t3);max-width:620px;margin:0 auto 20px}
+.hero-metrics{display:flex;justify-content:center;gap:28px;flex-wrap:wrap}
+.hm{text-align:center}.hm-num{font-family:'Sora',sans-serif;font-size:28px;font-weight:800;color:var(--t1)}.hm-label{font-size:10px;color:var(--t3);text-transform:uppercase;letter-spacing:.08em}
+/* NAV */
+.nav{position:sticky;top:0;z-index:100;background:rgba(6,8,14,.92);border-bottom:1px solid var(--border);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px)}
+.nav-inner{max-width:1100px;margin:0 auto;display:flex;overflow-x:auto;scrollbar-width:none;padding:0 12px}
+.nav-inner::-webkit-scrollbar{display:none}
+.nav-btn{padding:13px 16px;font-size:12px;font-weight:600;color:var(--t3);background:none;border:none;cursor:pointer;white-space:nowrap;border-bottom:2px solid transparent;transition:all .15s}
+.nav-btn:hover{color:var(--t2)}
+.nav-btn.active{color:var(--blue);border-bottom-color:var(--blue)}
+.container{max-width:1100px;margin:0 auto;padding:20px 16px}
+.section{display:none;animation:fadeIn .25s ease}.section.active{display:block}
+@keyframes fadeIn{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:translateY(0)}}
+/* PROGRESS */
+.prog{background:var(--card);border:1px solid var(--border);border-radius:12px;padding:24px;margin-bottom:20px}
+.prog-row{display:flex;justify-content:space-between;align-items:center;margin-bottom:14px;flex-wrap:wrap;gap:8px}
+.prog-row h2{font-family:'Sora',sans-serif;font-size:17px;font-weight:700;color:var(--t1)}
+.prog-pct{font-family:'JetBrains Mono',monospace;font-size:22px;font-weight:700;color:var(--green)}
+.bar{height:6px;background:var(--card2);border-radius:3px;overflow:hidden;margin-bottom:16px}
+.bar-fill{height:100%;border-radius:3px}
+.tracks{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+@media(max-width:700px){.tracks{grid-template-columns:1fr}}
+.track{padding:16px;border-radius:10px;border:1px solid var(--border)}
+.track h3{font-size:12px;font-weight:700;margin-bottom:4px}
+.track-num{font-family:'Sora',sans-serif;font-size:22px;font-weight:800}
+.track-label{font-size:10px;color:var(--t3)}
+/* CARDS */
+.project-card{background:var(--card);border:1px solid var(--border);border-radius:10px;margin-bottom:10px;overflow:hidden}
+.pc-h{padding:14px 18px;display:flex;align-items:center;gap:8px;cursor:pointer;flex-wrap:wrap}
+.pc-h:hover{background:var(--card2)}
+.pc-h h3{font-size:13px;font-weight:700;color:var(--t1);flex:1;min-width:180px}
+.badge{font-size:8px;font-family:'JetBrains Mono',monospace;padding:3px 10px;border-radius:10px;font-weight:700;text-transform:uppercase;letter-spacing:.04em}
+.b-done{background:var(--green-bg);color:var(--green);border:1px solid #38d97a18}
+.b-prog{background:var(--amber-bg);color:var(--amber);border:1px solid #f0b42918}
+.b-pend{background:#1c253608;color:var(--t3);border:1px solid var(--border)}
+.b-kdp{background:var(--green-bg);color:var(--kdp);border:1px solid #10b98118}
+.b-yt{background:var(--amber-bg);color:var(--yt);border:1px solid #d9770618}
+.b-ig{background:var(--pink-bg);color:var(--ig);border:1px solid #e8439318}
+.b-exec{background:var(--blue-bg);color:var(--blue);border:1px solid #4da6ff18}
+.pc-body{padding:0 18px 16px;display:none}
+.pc-body.open{display:block}
+/* FILE LINKS */
+.file{display:flex;align-items:center;gap:10px;padding:10px 14px;background:var(--card2);border:1px solid var(--border);border-radius:8px;margin-bottom:5px;text-decoration:none;color:inherit;transition:all .15s}
+.file:hover{border-color:var(--blue);background:#131a2e}
+.file-icon{font-size:16px;flex-shrink:0}
+.file-info{flex:1;min-width:0}
+.file-name{font-size:11px;font-weight:600;color:var(--t1)}
+.file-desc{font-size:9px;color:var(--t3);margin-top:1px;line-height:1.4}
+.file-badge{font-size:8px;font-family:'JetBrains Mono',monospace;padding:2px 7px;border-radius:4px;flex-shrink:0}
+.fb-h{background:#4da6ff10;color:var(--blue)}.fb-x{background:#38d97a10;color:var(--green)}
+/* JOURNEY */
+.journey{position:relative;padding-left:28px}
+.journey::before{content:'';position:absolute;left:7px;top:10px;bottom:10px;width:2px;background:linear-gradient(180deg,var(--blue),var(--kdp),var(--yt),var(--ig))}
+.j-step{position:relative;margin-bottom:16px;padding:14px 18px;background:var(--card);border:1px solid var(--border);border-radius:10px}
+.j-step::before{content:'';position:absolute;left:-25px;top:18px;width:10px;height:10px;border-radius:50%;border:2px solid var(--blue);background:var(--bg)}
+.j-step.done::before{background:var(--green);border-color:var(--green)}
+.j-step h4{font-size:12px;font-weight:700;color:var(--t1);margin-bottom:3px}
+.j-step p{font-size:10px;color:var(--t3);line-height:1.5}
+.j-tag{font-size:8px;font-family:'JetBrains Mono',monospace;color:var(--blue);text-transform:uppercase;letter-spacing:.12em;margin-bottom:3px}
+/* TABLES */
+.tbl{width:100%;border-collapse:collapse;margin:10px 0;font-size:10px}
+.tbl th{background:var(--card2);color:var(--t3);padding:8px;text-align:left;font-family:'JetBrains Mono',monospace;font-size:8px;text-transform:uppercase;letter-spacing:.04em;border:1px solid var(--border)}
+.tbl td{padding:8px;border:1px solid var(--border);color:var(--t2);vertical-align:top}.tbl tr:nth-child(even) td{background:var(--card)}
+.g{color:var(--green);font-weight:600}.a{color:var(--amber);font-weight:600}.r{color:var(--red);font-weight:600}.bl{color:var(--blue);font-weight:600}
+.callout{padding:14px;border-radius:8px;font-size:11px;line-height:1.6;margin:10px 0}
+.co-g{background:var(--green-bg);border:1px solid #38d97a18;color:#7af0a8}
+.co-a{background:var(--amber-bg);border:1px solid #f0b42918;color:#f5d580}
+.co-b{background:var(--blue-bg);border:1px solid #4da6ff18;color:#9eccff}
+.callout strong{color:var(--t1)}
+/* PROFILE */
+.info-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:10px;margin-bottom:16px}
+.info-item{padding:12px;background:var(--card2);border-radius:8px;border:1px solid var(--border)}
+.info-label{font-size:9px;color:var(--t3);text-transform:uppercase;font-family:'JetBrains Mono',monospace;letter-spacing:.04em;margin-bottom:2px}
+.info-value{font-size:12px;font-weight:600;color:var(--t1)}
+.scenario{border-left:3px solid var(--border);padding:10px 14px;margin:6px 0;background:var(--card2);border-radius:0 8px 8px 0}
+.scenario h4{font-size:11px;font-weight:700;color:var(--t1);margin-bottom:2px}
+.scenario p{font-size:10px;color:var(--t3)}
+.foot{text-align:center;padding:32px 20px;font-size:10px;color:#3a4252;font-family:'JetBrains Mono',monospace;border-top:1px solid var(--border);margin-top:30px}
+</style>
+</head><body>
+
+<!-- HERO -->
+<div class="hero">
+<div class="hero-tag">Side Income Monetization Roadmap</div>
+<h1>Your Path to <span class="gr">$500–1K/Month</span></h1>
+<div class="hero-sub">3 parallel income tracks — KDP Publishing, AI-Automated YouTube, and Instagram — fully planned, documented, and ready for execution.</div>
+<div class="hero-metrics">
+<div class="hm"><div class="hm-num" style="color:var(--green)">23</div><div class="hm-label">Subprojects Done</div></div>
+<div class="hm"><div class="hm-num" style="color:var(--amber)">37</div><div class="hm-label">Remaining</div></div>
+<div class="hm"><div class="hm-num" style="color:var(--blue)">30</div><div class="hm-label">Documents</div></div>
+<div class="hm"><div class="hm-num" style="color:var(--purple)">38%</div><div class="hm-label">Complete</div></div>
+</div>
+</div>
+
+<!-- NAV -->
+<div class="nav"><div class="nav-inner">
+<button class="nav-btn active" onclick="show('overview')">Overview</button>
+<button class="nav-btn" onclick="show('journey')">How We Got Here</button>
+<button class="nav-btn" onclick="show('kdp')">📚 KDP</button>
+<button class="nav-btn" onclick="show('youtube')">🎬 YouTube</button>
+<button class="nav-btn" onclick="show('instagram')">📱 Instagram</button>
+<button class="nav-btn" onclick="show('execution')">⚡ Execution Plan</button>
+<button class="nav-btn" onclick="show('matrix')">📊 Achievement Matrix</button>
+<button class="nav-btn" onclick="show('docs')">📁 All Documents</button>
+<button class="nav-btn" onclick="show('status')">Full Status</button>
+</div></div>
+
+<div class="container">
+
+<!-- ===== OVERVIEW ===== -->
+<div class="section active" id="sec-overview">
+<div class="prog">
+<div class="prog-row"><h2>Overall Progress</h2><div class="prog-pct">23 / 60 (38%)</div></div>
+<div class="bar"><div class="bar-fill" style="width:38%;background:linear-gradient(90deg,var(--kdp),var(--blue),var(--yt),var(--ig))"></div></div>
+<div class="tracks">
+<div class="track" style="background:var(--green-bg)"><h3 style="color:var(--kdp)">📚 KDP Publishing</h3><div class="track-num" style="color:var(--kdp)">6 / 24</div><div class="track-label">K1 ✓ · K2 in progress (2/4)</div></div>
+<div class="track" style="background:var(--amber-bg)"><h3 style="color:var(--yt)">🎬 YouTube</h3><div class="track-num" style="color:var(--yt)">12 / 24</div><div class="track-label">Y1 ✓ · Y2 ✓ · Y3 ✓ · + 2 gap analyses</div></div>
+<div class="track" style="background:var(--pink-bg)"><h3 style="color:var(--ig)">📱 Instagram</h3><div class="track-num" style="color:var(--ig)">5 / 12</div><div class="track-label">I0 Roadmap ✓ · I1 Complete (4/4)</div></div>
+</div>
+</div>
+
+<div style="background:var(--card);border:1px solid var(--border);border-radius:12px;padding:20px;margin-bottom:16px">
+<h3 style="font-family:'Sora',sans-serif;font-size:15px;color:var(--t1);margin-bottom:12px">Creator Profile</h3>
+<div class="info-grid">
+<div class="info-item"><div class="info-label">Background</div><div class="info-value">Marketing/Sales + E-Commerce</div></div>
+<div class="info-item"><div class="info-label">Expertise</div><div class="info-value">Marathon Runner · Dad of Toddlers</div></div>
+<div class="info-item"><div class="info-label">Location</div><div class="info-value">Pakistan</div></div>
+<div class="info-item"><div class="info-label">Budget</div><div class="info-value">$50 – $150/month</div></div>
+<div class="info-item"><div class="info-label">Weekly Time</div><div class="info-value">4 – 6 hours</div></div>
+<div class="info-item"><div class="info-label">Target</div><div class="info-value" style="color:var(--green)">$500 – $1K/mo in 6 months</div></div>
+</div>
+</div>
+
+<div style="background:var(--card);border:1px solid var(--border);border-radius:12px;padding:20px">
+<h3 style="font-family:'Sora',sans-serif;font-size:15px;color:var(--t1);margin-bottom:12px">3-Track Revenue Projection — Month 6 (Probable Case)</h3>
+<div class="info-grid">
+<div class="info-item"><div class="info-label">YouTube Ads</div><div class="info-value" style="color:var(--yt)">$100 – $400</div></div>
+<div class="info-item"><div class="info-label">KDP (8 Books)</div><div class="info-value" style="color:var(--kdp)">$150 – $400</div></div>
+<div class="info-item"><div class="info-label">Instagram</div><div class="info-value" style="color:var(--ig)">$50 – $200</div></div>
+<div class="info-item"><div class="info-label">Combined Midpoint</div><div class="info-value" style="color:var(--green);font-size:16px">~$750 – $900/mo</div></div>
+</div>
+</div>
+</div>
+
+<!-- ===== JOURNEY ===== -->
+<div class="section" id="sec-journey">
+<h2 style="font-family:'Sora',sans-serif;font-size:20px;font-weight:800;color:var(--t1);margin-bottom:20px">How We Got Here</h2>
+<div class="journey">
+<div class="j-step done"><div class="j-tag">Phase 0</div><h4>User Profile & Constraints</h4><p>Identified strengths (marketing, running, dad, e-commerce), constraints ($50-150/mo, 4-6 hrs/week, Pakistan-based), set $500-1K/month target.</p></div>
+<div class="j-step done"><div class="j-tag">Phase 1</div><h4>Evaluated 12+ Income Models</h4><p>Scored against 7 criteria. Eliminated freelancing, dropshipping, courses, POD. Selected KDP Publishing + AI YouTube as two primary tracks.</p></div>
+<div class="j-step done"><div class="j-tag">Phase 2</div><h4>KDP Niche Research — 18 Sub-Niches Scored</h4><p>Cross-referenced expertise with BSR data. Top 3: New Dad Journals, E-Commerce Planners, Half Marathon Logs. Critical rule: never price below $9.99 (royalty jump). 8-book portfolio built.</p></div>
+<div class="j-step done"><div class="j-tag">Phase 3</div><h4>YouTube Niche — Military History (9.0/10)</h4><p>Evaluated 8 niches. Military history won: high CPM ($7-15), no camera needed, South Asian angle untapped. Channel: "The Forgotten Front." Armchair Historian hiatus = timing opportunity.</p></div>
+<div class="j-step done"><div class="j-tag">Phase 4</div><h4>27 Competitors Mapped</h4><p>KDP: 15 competitors — NO quality e-commerce planner exists (blue ocean). YouTube: 12 channels — Mark Felton as format blueprint.</p></div>
+<div class="j-step done"><div class="j-tag">Phase 5</div><h4>Complete Production Pipelines Built</h4><p>KDP: keywords, categories, interior templates, cover design system. YouTube: branding, scripts, visuals, audio, thumbnails, 10 videos planned, editorial calendar, SEO, community playbook.</p></div>
+<div class="j-step done"><div class="j-tag">Phase 6</div><h4>20 Operational Gaps Closed</h4><p>Two gap analyses: copyright safety, cross-platform music, revenue benchmarks, burnout prevention, moderation, repurposing framework, recovery protocols.</p></div>
+<div class="j-step done"><div class="j-tag">Phase 7</div><h4>Instagram Track Added</h4><p>Track 3 designed: 12 subprojects across I1-I3. Zero new content needed — reformats YouTube content. Profile optimization + visual identity system built.</p></div>
+<div class="j-step" style="border-color:var(--amber)"><div class="j-tag" style="color:var(--amber)">Phase 8 — CURRENT</div><h4>30-Day Execution Sprint Ready</h4><p>Day-by-day task list created. 5-scenario achievement matrix built. All planning complete. Book 1 can publish in 5 days. Video 1 can go live in 8 days.</p></div>
+</div>
+</div>
+
+<!-- ===== KDP ===== -->
+<div class="section" id="sec-kdp">
+<h2 style="font-family:'Sora',sans-serif;font-size:20px;font-weight:800;color:var(--kdp);margin-bottom:20px">📚 KDP Publishing Track (6 projects, 24 subprojects)</h2>
+
+<div class="project-card"><div class="pc-h" onclick="toggle(this)"><span class="badge b-done">✓ COMPLETE</span><h3>K1: Market Research & Niche Strategy</h3><span class="badge b-kdp">4/4</span></div>
+<div class="pc-body">
+<a href="K1.1_Niche_Research_Report.html" target="_blank" class="file"><span class="file-icon">📄</span><span class="file-info"><span class="file-name">K1.1 — Niche Research & Validation Report</span><span class="file-desc">18 sub-niches scored. Top 3 validated with BSR data. Royalty calculator. $9.99 price floor rule.</span></span><span class="file-badge fb-h">HTML ↗</span></a>
+<a href="K1.1_Gap_Analysis_Addendum.html" target="_blank" class="file"><span class="file-icon">📄</span><span class="file-info"><span class="file-name">K1.1 — Gap Analysis Addendum</span><span class="file-desc">BSR validation, royalty recalculation, risk mitigation for top 3 niches.</span></span><span class="file-badge fb-h">HTML ↗</span></a>
+<a href="K1.2_Competitor_Intelligence.html" target="_blank" class="file"><span class="file-icon">📄</span><span class="file-info"><span class="file-name">K1.2 — Competitor Intelligence Deep-Dive</span><span class="file-desc">15 competitors analyzed. Key finding: NO quality e-commerce planner on Amazon.</span></span><span class="file-badge fb-h">HTML ↗</span></a>
+<a href="K1.3_Infrastructure_Brand_Setup.html" target="_blank" class="file"><span class="file-icon">📄</span><span class="file-info"><span class="file-name">K1.3 — Infrastructure & Brand Setup</span><span class="file-desc">KDP account setup, 3 pen names, free tool stack, 8-book priority list with pricing.</span></span><span class="file-badge fb-h">HTML ↗</span></a>
+<a href="K1.4_Keyword_Category_Strategy.html" target="_blank" class="file"><span class="file-icon">📄</span><span class="file-info"><span class="file-name">K1.4 — Keyword Strategy & Category Mapping</span><span class="file-desc">56 backend keywords (7/book), 24 categories (3/book), 8 optimized titles. 7-slot strategy.</span></span><span class="file-badge fb-h">HTML ↗</span></a>
+<div class="file" style="opacity:.5"><span class="file-icon">📊</span><span class="file-info"><span class="file-name">K1.1 — Niche Scoring Matrix + K1.3 — KDP Tracker</span><span class="file-desc">Excel files (download from Claude chat)</span></span><span class="file-badge fb-x">XLSX</span></div>
+</div></div>
+
+<div class="project-card"><div class="pc-h" onclick="toggle(this)"><span class="badge b-prog">IN PROGRESS</span><h3>K2: Low-Content Book Production</h3><span class="badge b-kdp">2/4</span></div>
+<div class="pc-body">
+<a href="K2.1_Interior_Template_Library.html" target="_blank" class="file"><span class="file-icon">📄</span><span class="file-info"><span class="file-name">K2.1 — Interior Template Library</span><span class="file-desc">Page-by-page specs for all 8 books. Canva 6-step workflow. KDP print specs. Margins.</span></span><span class="file-badge fb-h">HTML ↗</span></a>
+<a href="K2.2_Cover_Design_System.html" target="_blank" class="file"><span class="file-icon">📄</span><span class="file-info"><span class="file-name">K2.2 — Cover Design System & Templates</span><span class="file-desc">3 niche brand systems, 8 cover blueprints, spine calculator, Canva workflow, back cover template.</span></span><span class="file-badge fb-h">HTML ↗</span></a>
+<div class="file" style="opacity:.4"><span class="file-icon">⏳</span><span class="file-info"><span class="file-name">K2.3 — First 4 Books Production Sprint</span></span></div>
+<div class="file" style="opacity:.4"><span class="file-icon">⏳</span><span class="file-info"><span class="file-name">K2.4 — Listing Optimization & Launch</span></span></div>
+</div></div>
+
+<div class="project-card"><div class="pc-h"><span class="badge b-pend">NOT STARTED</span><h3>K3–K6: Launch, Scale, Advertising, Optimization</h3><span class="badge b-kdp">0/16</span></div></div>
+</div>
+
+<!-- ===== YOUTUBE ===== -->
+<div class="section" id="sec-youtube">
+<h2 style="font-family:'Sora',sans-serif;font-size:20px;font-weight:800;color:var(--yt);margin-bottom:20px">🎬 YouTube Track — "The Forgotten Front" (6 projects, 24 subprojects)</h2>
+
+<div class="project-card"><div class="pc-h" onclick="toggle(this)"><span class="badge b-done">✓ COMPLETE</span><h3>Y1: Channel Foundation & GTM Strategy</h3><span class="badge b-yt">4/4 + Gap</span></div>
+<div class="pc-body">
+<a href="Y1.1_YouTube_Niche_Analysis.html" target="_blank" class="file"><span class="file-icon">📄</span><span class="file-info"><span class="file-name">Y1.1 — YouTube Niche & CPM Analysis</span><span class="file-desc">8 niches evaluated. Military history 9.0/10. CPM $7-15.</span></span><span class="file-badge fb-h">HTML ↗</span></a>
+<a href="Y1.1_YouTube_Niche_Addendum.html" target="_blank" class="file"><span class="file-icon">📄</span><span class="file-info"><span class="file-name">Y1.1 — Niche Addendum</span><span class="file-desc">South Asian military history as unique differentiator.</span></span><span class="file-badge fb-h">HTML ↗</span></a>
+<a href="Y1.2_Competitive_Landscape.html" target="_blank" class="file"><span class="file-icon">📄</span><span class="file-info"><span class="file-name">Y1.2 — Competitive Landscape</span><span class="file-desc">12 competitors. Armchair Historian hiatus. Mark Felton as blueprint.</span></span><span class="file-badge fb-h">HTML ↗</span></a>
+<a href="Y1.3_Channel_Branding.html" target="_blank" class="file"><span class="file-icon">📄</span><span class="file-info"><span class="file-name">Y1.3 — Channel Branding & Visual Identity</span><span class="file-desc">Name, 3 logos, 8-color palette, 4-font system, 3 thumbnail templates.</span></span><span class="file-badge fb-h">HTML ↗</span></a>
+<a href="Y1.4_Production_Pipeline.html" target="_blank" class="file"><span class="file-icon">📄</span><span class="file-info"><span class="file-name">Y1.4 — AI Production Pipeline & Tool Stack</span><span class="file-desc">6-step pipeline, ~3.5 hrs/video, $0/mo tool stack.</span></span><span class="file-badge fb-h">HTML ↗</span></a>
+<a href="Y1_Gap_Analysis_GTM_Revision.html" target="_blank" class="file"><span class="file-icon">🔍</span><span class="file-info"><span class="file-name">Y1 — Gap Analysis & GTM Revision</span><span class="file-desc">8 gaps: SEO, monetization sprint, demonetization risk, content calendar, analytics.</span></span><span class="file-badge fb-h">HTML ↗</span></a>
+</div></div>
+
+<div class="project-card"><div class="pc-h" onclick="toggle(this)"><span class="badge b-done">✓ COMPLETE</span><h3>Y2: AI Content Production System</h3><span class="badge b-yt">4/4</span></div>
+<div class="pc-body">
+<a href="Y2.1_Script_Writing_Framework.html" target="_blank" class="file"><span class="file-icon">📄</span><span class="file-info"><span class="file-name">Y2.1 — Script Writing Framework</span><span class="file-desc">3 story structures, emotion mapping, 4 Claude prompts, sample script.</span></span><span class="file-badge fb-h">HTML ↗</span></a>
+<a href="Y2.2_Visual_Production_Pipeline.html" target="_blank" class="file"><span class="file-icon">📄</span><span class="file-info"><span class="file-name">Y2.2 — Visual Production Pipeline</span><span class="file-desc">10 archival sources (copyright-safe), visual treatments, Canva maps, CapCut workflow.</span></span><span class="file-badge fb-h">HTML ↗</span></a>
+<a href="Y2.3_Audio_Voiceover_System.html" target="_blank" class="file"><span class="file-icon">📄</span><span class="file-info"><span class="file-name">Y2.3 — Audio/Voiceover System</span><span class="file-desc">USB mic + Audacity 7-step mastering chain. Two music folder system.</span></span><span class="file-badge fb-h">HTML ↗</span></a>
+<a href="Y2.4_Thumbnail_Design_System.html" target="_blank" class="file"><span class="file-icon">📄</span><span class="file-info"><span class="file-name">Y2.4 — Thumbnail Design System</span><span class="file-desc">3 templates (Reveal/Question/Dossier), 5-min Canva workflow, CTR psychology.</span></span><span class="file-badge fb-h">HTML ↗</span></a>
+</div></div>
+
+<div class="project-card"><div class="pc-h" onclick="toggle(this)"><span class="badge b-done">✓ COMPLETE</span><h3>Y3: Launch & Consistency Sprint</h3><span class="badge b-yt">4/4 + Gap</span></div>
+<div class="pc-body">
+<a href="Y3.1_First_10_Videos.html" target="_blank" class="file"><span class="file-icon">📄</span><span class="file-info"><span class="file-name">Y3.1 — First 10 Videos Production Plan</span><span class="file-desc">10 videos planned. 27 Shorts. 14-point pre-launch checklist.</span></span><span class="file-badge fb-h">HTML ↗</span></a>
+<a href="Y3.2_Publishing_Schedule.html" target="_blank" class="file"><span class="file-icon">📄</span><span class="file-info"><span class="file-name">Y3.2 — Publishing Schedule & 6-Month Calendar</span><span class="file-desc">3-tier schedule. 48 long-form + 120 Shorts over 6 months.</span></span><span class="file-badge fb-h">HTML ↗</span></a>
+<a href="Y3.3_SEO_Metadata.html" target="_blank" class="file"><span class="file-icon">📄</span><span class="file-info"><span class="file-name">Y3.3 — SEO & Metadata Optimization</span><span class="file-desc">7 title formulas, description template, tag strategy, 12-point checklist.</span></span><span class="file-badge fb-h">HTML ↗</span></a>
+<a href="Y3.4_Community_Monetization.html" target="_blank" class="file"><span class="file-icon">📄</span><span class="file-info"><span class="file-name">Y3.4 — Community Building & Monetization Sprint</span><span class="file-desc">7 growth channels, YPP plan, comment strategy, revenue projections.</span></span><span class="file-badge fb-h">HTML ↗</span></a>
+<a href="Y2Y3_Gap_Analysis.html" target="_blank" class="file"><span class="file-icon">🔍</span><span class="file-info"><span class="file-name">Y2+Y3 — Gap Analysis & Operational Fixes</span><span class="file-desc">12 gaps: copyright, time budget, Shorts workflow, music, moderation, recovery.</span></span><span class="file-badge fb-h">HTML ↗</span></a>
+</div></div>
+
+<div class="project-card"><div class="pc-h"><span class="badge b-pend">NOT STARTED</span><h3>Y4–Y6: Audience Growth, Monetization, Scale</h3><span class="badge b-yt">0/12</span></div></div>
+</div>
+
+<!-- ===== INSTAGRAM ===== -->
+<div class="section" id="sec-instagram">
+<h2 style="font-family:'Sora',sans-serif;font-size:20px;font-weight:800;color:var(--ig);margin-bottom:20px">📱 Instagram Track (3 projects, 12 subprojects)</h2>
+
+<div class="project-card"><div class="pc-h" onclick="toggle(this)"><span class="badge b-done">✓ COMPLETE</span><h3>I0: Instagram Track Roadmap Overview</h3><span class="badge b-ig">ROADMAP</span></div>
+<div class="pc-body">
+<a href="I0_Instagram_Track_Roadmap.html" target="_blank" class="file"><span class="file-icon">📄</span><span class="file-info"><span class="file-name">I0 — Full Instagram I1-I3 Roadmap</span><span class="file-desc">Why Instagram, 8 revenue streams, 4 content pillars, 6-month timeline, synergy map, build order.</span></span><span class="file-badge fb-h">HTML ↗</span></a>
+</div></div>
+
+<div class="project-card"><div class="pc-h" onclick="toggle(this)"><span class="badge b-done">✓ COMPLETE</span><h3>I1: Instagram Foundation & Profile Setup</h3><span class="badge b-ig">4/4</span></div>
+<div class="pc-body">
+<a href="I1.1_Profile_Optimization.html" target="_blank" class="file"><span class="file-icon">📄</span><span class="file-info"><span class="file-name">I1.1 — Profile Optimization & Bio Engineering</span><span class="file-desc">Creator account, SEO name field, 3 bio versions, link-in-bio strategy, highlight covers, mockup.</span></span><span class="file-badge fb-h">HTML ↗</span></a>
+<a href="I1.2_Visual_Identity_Feed.html" target="_blank" class="file"><span class="file-icon">📄</span><span class="file-info"><span class="file-name">I1.2 — Visual Identity & Feed Aesthetic</span><span class="file-desc">2026 specs, color system, 4 Canva templates, grid strategy, first 9 posts, posting rhythm.</span></span><span class="file-badge fb-h">HTML ↗</span></a>
+<a href="I1.3_Hashtag_SEO_Strategy.html" target="_blank" class="file"><span class="file-icon">📄</span><span class="file-info"><span class="file-name">I1.3 — Hashtag & Instagram SEO Strategy</span><span class="file-desc">2026 hashtag rules, 4-tier framework, 6 pre-built sets, caption SEO, alt text, search optimization.</span></span><span class="file-badge fb-h">HTML ↗</span></a>
+<a href="I1.4_Cross_Platform_Sync.html" target="_blank" class="file"><span class="file-icon">📄</span><span class="file-info"><span class="file-name">I1.4 — Cross-Platform Sync System</span><span class="file-desc">YouTube→Instagram→TikTok pipeline, scheduling tools, format conversion, 45-min weekly batch workflow.</span></span><span class="file-badge fb-h">HTML ↗</span></a>
+</div></div>
+
+<div class="project-card"><div class="pc-h"><span class="badge b-pend">NOT STARTED</span><h3>I2: Content Engine & Growth</h3><span class="badge b-ig">0/4</span></div></div>
+<div class="project-card"><div class="pc-h"><span class="badge b-pend">NOT STARTED</span><h3>I3: Instagram Monetization</h3><span class="badge b-ig">0/4</span></div></div>
+</div>
+
+<!-- ===== EXECUTION PLAN ===== -->
+<div class="section" id="sec-execution">
+<h2 style="font-family:'Sora',sans-serif;font-size:20px;font-weight:800;color:var(--blue);margin-bottom:20px">⚡ 30-Day Execution Plan & Achievement Matrix</h2>
+
+<div class="project-card"><div class="pc-h" onclick="toggle(this)"><span class="badge b-exec">EXECUTION</span><h3>Founder's Execution Plan & Achievement Matrix</h3><span class="badge" style="background:var(--blue-bg);color:var(--blue);border:1px solid #4da6ff18">4 TABS</span></div>
+<div class="pc-body">
+<a href="Founders_Execution_Plan.html" target="_blank" class="file"><span class="file-icon">⚡</span><span class="file-info"><span class="file-name">Full Execution Plan — Open Interactive Document</span><span class="file-desc">30-day task list (120+ tasks) · 5-scenario matrix · Video benchmarks · Performance signals</span></span><span class="file-badge fb-h">HTML ↗</span></a>
+<div class="callout co-b"><strong>What's inside:</strong> Day-by-day tasks across KDP, YouTube, and Instagram for your first 30 days. Plus a 5-scenario achievement matrix (Worst → Highly Optimistic) projecting views, subscribers, revenue at Week 4, 8, 12, and 24. Green/Amber/Red performance signals with specific fixes.</div>
+</div></div>
+
+<div style="background:var(--card);border:1px solid var(--border);border-radius:12px;padding:20px;margin-top:14px">
+<h3 style="font-family:'Sora',sans-serif;font-size:15px;color:var(--t1);margin-bottom:12px">Month 1 Target Deliverables</h3>
+<table class="tbl">
+<tr><th>Track</th><th>Deliverable</th><th>Timeline</th></tr>
+<tr><td class="g">📚 KDP</td><td>4 books published on Amazon, earning royalties</td><td>Books 1-4 by Day 27</td></tr>
+<tr><td class="a">🎬 YouTube</td><td>5 long-form videos + 12 Shorts published</td><td>Video 1 by Day 8, Video 5 by Day 25</td></tr>
+<tr><td style="color:var(--ig);font-weight:600">📱 Instagram</td><td>20+ posts (Reels + Carousels + Fact Cards), 200+ followers</td><td>First post Day 8, consistent from Day 9+</td></tr>
+</table>
+</div>
+
+<div style="background:var(--card);border:1px solid var(--border);border-radius:12px;padding:20px;margin-top:14px">
+<h3 style="font-family:'Sora',sans-serif;font-size:15px;color:var(--t1);margin-bottom:12px">Combined Revenue at Month 6 — 5 Scenarios</h3>
+<table class="tbl">
+<tr><th>Scenario</th><th>YouTube</th><th>KDP</th><th>Instagram</th><th style="color:var(--t1)">TOTAL</th></tr>
+<tr><td class="r">🔴 Worst</td><td>$0-20</td><td>$20-80</td><td>$0-20</td><td class="r">$20-120</td></tr>
+<tr><td class="a">🟡 Base</td><td>$30-100</td><td>$80-250</td><td>$20-80</td><td class="a">$130-430</td></tr>
+<tr><td class="bl">🔵 Probable</td><td>$100-400</td><td>$150-400</td><td>$50-200</td><td class="bl">$300-1,000</td></tr>
+<tr><td class="g">🟢 Optimistic</td><td>$300-800</td><td>$250-500</td><td>$100-400</td><td class="g">$650-1,700</td></tr>
+<tr><td style="color:var(--purple);font-weight:600">🟣 Highly Opt.</td><td>$800-2K</td><td>$400-800</td><td>$200-600</td><td style="color:var(--purple);font-weight:700">$1,400-3,400</td></tr>
+</table>
+</div>
+</div>
+
+<!-- ===== ACHIEVEMENT MATRIX ===== -->
+<div class="section" id="sec-matrix">
+<h2 style="font-family:'Sora',sans-serif;font-size:20px;font-weight:800;color:var(--t1);margin-bottom:20px">📊 YouTube Achievement Matrix — Views & Subscribers Over Time</h2>
+<table class="tbl">
+<tr><th>Scenario</th><th colspan="2">Week 4 (5 vids)</th><th colspan="2">Week 8 (10 vids)</th><th colspan="2">Week 12 (16 vids)</th><th colspan="2">Week 24 (36 vids)</th></tr>
+<tr><th></th><th>Views</th><th>Subs</th><th>Views</th><th>Subs</th><th>Views</th><th>Subs</th><th>Views</th><th>Subs</th></tr>
+<tr><td class="r">🔴 Worst</td><td>200-500</td><td>10-30</td><td>800-2K</td><td>40-100</td><td>2K-5K</td><td>80-200</td><td>8K-20K</td><td>200-500</td></tr>
+<tr><td class="a">🟡 Base</td><td>500-1.5K</td><td>30-80</td><td>2K-6K</td><td>100-300</td><td>6K-15K</td><td>250-600</td><td>30K-70K</td><td>600-1.5K</td></tr>
+<tr><td class="bl">🔵 Probable</td><td>1.5K-4K</td><td>80-200</td><td>6K-18K</td><td>300-700</td><td>18K-50K</td><td>700-1.5K</td><td>80K-200K</td><td class="bl">1.5K-4K</td></tr>
+<tr><td class="g">🟢 Optimistic</td><td>4K-12K</td><td>200-600</td><td>20K-60K</td><td>800-2K</td><td>60K-150K</td><td>2K-5K</td><td>250K-600K</td><td class="g">5K-12K</td></tr>
+<tr><td style="color:var(--purple);font-weight:600">🟣 Highly Opt.</td><td>12K-50K</td><td>600-2K</td><td>60K-200K</td><td>2.5K-8K</td><td>200K-500K</td><td>8K-20K</td><td>800K-2M</td><td style="color:var(--purple);font-weight:700">20K-50K</td></tr>
+</table>
+
+<div class="callout co-a" style="margin-top:14px"><strong>The #1 factor between scenarios is consistency.</strong> Publishing 2 videos/week for 6 months almost guarantees Probable or above. The algorithm needs 10-20 videos to understand your channel. Quit at Video 5 = stay in Worst. Push to Video 20 = unlock compounding growth. Open the full Execution Plan for per-video benchmarks, Shorts projections, KDP sales benchmarks, and Green/Amber/Red performance signals.</div>
+
+<div style="margin-top:14px"><a href="Founders_Execution_Plan.html" target="_blank" class="file" style="border-color:var(--blue)"><span class="file-icon">⚡</span><span class="file-info"><span class="file-name">Open Full Achievement Matrix & Execution Plan →</span><span class="file-desc">Per-video benchmarks, Shorts projections, KDP sales, performance signals, day-by-day task list</span></span><span class="file-badge fb-h">HTML ↗</span></a></div>
+</div>
+
+<!-- ===== ALL DOCS ===== -->
+<div class="section" id="sec-docs">
+<h2 style="font-family:'Sora',sans-serif;font-size:20px;font-weight:800;color:var(--t1);margin-bottom:20px">📁 Complete Document Library (30 documents)</h2>
+
+<h3 style="font-size:13px;color:var(--kdp);margin:16px 0 8px;font-family:'Sora',sans-serif">📚 KDP Track (9 documents)</h3>
+<a href="K1.1_Niche_Research_Report.html" target="_blank" class="file"><span class="file-icon">📄</span><span class="file-info"><span class="file-name">K1.1 — Niche Research & Validation Report</span></span><span class="file-badge fb-h">HTML ↗</span></a>
+<a href="K1.1_Gap_Analysis_Addendum.html" target="_blank" class="file"><span class="file-icon">📄</span><span class="file-info"><span class="file-name">K1.1 — Gap Analysis Addendum</span></span><span class="file-badge fb-h">HTML ↗</span></a>
+<a href="K1.2_Competitor_Intelligence.html" target="_blank" class="file"><span class="file-icon">📄</span><span class="file-info"><span class="file-name">K1.2 — Competitor Intelligence</span></span><span class="file-badge fb-h">HTML ↗</span></a>
+<a href="K1.3_Infrastructure_Brand_Setup.html" target="_blank" class="file"><span class="file-icon">📄</span><span class="file-info"><span class="file-name">K1.3 — Infrastructure & Brand Setup</span></span><span class="file-badge fb-h">HTML ↗</span></a>
+<a href="K1.4_Keyword_Category_Strategy.html" target="_blank" class="file"><span class="file-icon">📄</span><span class="file-info"><span class="file-name">K1.4 — Keyword Strategy & Category Mapping</span></span><span class="file-badge fb-h">HTML ↗</span></a>
+<a href="K2.1_Interior_Template_Library.html" target="_blank" class="file"><span class="file-icon">📄</span><span class="file-info"><span class="file-name">K2.1 — Interior Template Library</span></span><span class="file-badge fb-h">HTML ↗</span></a>
+<a href="K2.2_Cover_Design_System.html" target="_blank" class="file"><span class="file-icon">📄</span><span class="file-info"><span class="file-name">K2.2 — Cover Design System & Templates</span></span><span class="file-badge fb-h">HTML ↗</span></a>
+<div class="file" style="opacity:.5"><span class="file-icon">📊</span><span class="file-info"><span class="file-name">K1.1 Niche Scoring Matrix (XLSX)</span></span><span class="file-badge fb-x">XLSX</span></div>
+<div class="file" style="opacity:.5"><span class="file-icon">📊</span><span class="file-info"><span class="file-name">K1.3 KDP Tracker Template (XLSX)</span></span><span class="file-badge fb-x">XLSX</span></div>
+
+<h3 style="font-size:13px;color:var(--yt);margin:20px 0 8px;font-family:'Sora',sans-serif">🎬 YouTube Track (15 documents)</h3>
+<a href="Y1.1_YouTube_Niche_Analysis.html" target="_blank" class="file"><span class="file-icon">📄</span><span class="file-info"><span class="file-name">Y1.1 — YouTube Niche & CPM Analysis</span></span><span class="file-badge fb-h">HTML ↗</span></a>
+<a href="Y1.1_YouTube_Niche_Addendum.html" target="_blank" class="file"><span class="file-icon">📄</span><span class="file-info"><span class="file-name">Y1.1 — Niche Addendum</span></span><span class="file-badge fb-h">HTML ↗</span></a>
+<a href="Y1.2_Competitive_Landscape.html" target="_blank" class="file"><span class="file-icon">📄</span><span class="file-info"><span class="file-name">Y1.2 — Competitive Landscape</span></span><span class="file-badge fb-h">HTML ↗</span></a>
+<a href="Y1.3_Channel_Branding.html" target="_blank" class="file"><span class="file-icon">📄</span><span class="file-info"><span class="file-name">Y1.3 — Channel Branding & Visual Identity</span></span><span class="file-badge fb-h">HTML ↗</span></a>
+<a href="Y1.4_Production_Pipeline.html" target="_blank" class="file"><span class="file-icon">📄</span><span class="file-info"><span class="file-name">Y1.4 — AI Production Pipeline & Tool Stack</span></span><span class="file-badge fb-h">HTML ↗</span></a>
+<a href="Y1_Gap_Analysis_GTM_Revision.html" target="_blank" class="file"><span class="file-icon">🔍</span><span class="file-info"><span class="file-name">Y1 — Gap Analysis & GTM Revision</span></span><span class="file-badge fb-h">HTML ↗</span></a>
+<a href="Y2.1_Script_Writing_Framework.html" target="_blank" class="file"><span class="file-icon">📄</span><span class="file-info"><span class="file-name">Y2.1 — Script Writing Framework</span></span><span class="file-badge fb-h">HTML ↗</span></a>
+<a href="Y2.2_Visual_Production_Pipeline.html" target="_blank" class="file"><span class="file-icon">📄</span><span class="file-info"><span class="file-name">Y2.2 — Visual Production Pipeline</span></span><span class="file-badge fb-h">HTML ↗</span></a>
+<a href="Y2.3_Audio_Voiceover_System.html" target="_blank" class="file"><span class="file-icon">📄</span><span class="file-info"><span class="file-name">Y2.3 — Audio/Voiceover System</span></span><span class="file-badge fb-h">HTML ↗</span></a>
+<a href="Y2.4_Thumbnail_Design_System.html" target="_blank" class="file"><span class="file-icon">📄</span><span class="file-info"><span class="file-name">Y2.4 — Thumbnail Design System</span></span><span class="file-badge fb-h">HTML ↗</span></a>
+<a href="Y3.1_First_10_Videos.html" target="_blank" class="file"><span class="file-icon">📄</span><span class="file-info"><span class="file-name">Y3.1 — First 10 Videos Production Plan</span></span><span class="file-badge fb-h">HTML ↗</span></a>
+<a href="Y3.2_Publishing_Schedule.html" target="_blank" class="file"><span class="file-icon">📄</span><span class="file-info"><span class="file-name">Y3.2 — Publishing Schedule & 6-Month Calendar</span></span><span class="file-badge fb-h">HTML ↗</span></a>
+<a href="Y3.3_SEO_Metadata.html" target="_blank" class="file"><span class="file-icon">📄</span><span class="file-info"><span class="file-name">Y3.3 — SEO & Metadata Optimization</span></span><span class="file-badge fb-h">HTML ↗</span></a>
+<a href="Y3.4_Community_Monetization.html" target="_blank" class="file"><span class="file-icon">📄</span><span class="file-info"><span class="file-name">Y3.4 — Community Building & Monetization</span></span><span class="file-badge fb-h">HTML ↗</span></a>
+<a href="Y2Y3_Gap_Analysis.html" target="_blank" class="file"><span class="file-icon">🔍</span><span class="file-info"><span class="file-name">Y2+Y3 — Gap Analysis & Operational Fixes</span></span><span class="file-badge fb-h">HTML ↗</span></a>
+
+<h3 style="font-size:13px;color:var(--ig);margin:20px 0 8px;font-family:'Sora',sans-serif">📱 Instagram Track (5 documents)</h3>
+<a href="I0_Instagram_Track_Roadmap.html" target="_blank" class="file"><span class="file-icon">📄</span><span class="file-info"><span class="file-name">I0 — Instagram Track Roadmap (I1-I3 Overview)</span></span><span class="file-badge fb-h">HTML ↗</span></a>
+<a href="I1.1_Profile_Optimization.html" target="_blank" class="file"><span class="file-icon">📄</span><span class="file-info"><span class="file-name">I1.1 — Profile Optimization & Bio Engineering</span></span><span class="file-badge fb-h">HTML ↗</span></a>
+<a href="I1.2_Visual_Identity_Feed.html" target="_blank" class="file"><span class="file-icon">📄</span><span class="file-info"><span class="file-name">I1.2 — Visual Identity & Feed Aesthetic</span></span><span class="file-badge fb-h">HTML ↗</span></a>
+<a href="I1.3_Hashtag_SEO_Strategy.html" target="_blank" class="file"><span class="file-icon">📄</span><span class="file-info"><span class="file-name">I1.3 — Hashtag & Instagram SEO Strategy</span></span><span class="file-badge fb-h">HTML ↗</span></a>
+<a href="I1.4_Cross_Platform_Sync.html" target="_blank" class="file"><span class="file-icon">📄</span><span class="file-info"><span class="file-name">I1.4 — Cross-Platform Sync System</span></span><span class="file-badge fb-h">HTML ↗</span></a>
+
+<h3 style="font-size:13px;color:var(--blue);margin:20px 0 8px;font-family:'Sora',sans-serif">⚡ Execution & Planning (1 document)</h3>
+<a href="Founders_Execution_Plan.html" target="_blank" class="file"><span class="file-icon">⚡</span><span class="file-info"><span class="file-name">Founder's Execution Plan & Achievement Matrix</span></span><span class="file-badge fb-h">HTML ↗</span></a>
+</div>
+
+<!-- ===== FULL STATUS ===== -->
+<div class="section" id="sec-status">
+<h2 style="font-family:'Sora',sans-serif;font-size:20px;font-weight:800;color:var(--t1);margin-bottom:20px">Full Project Status — 60 Subprojects</h2>
+<table class="tbl">
+<tr><th>Project</th><th>Subproject</th><th>Status</th><th>Docs</th></tr>
+<tr><td rowspan="4" style="font-weight:700;color:var(--kdp)">K1</td><td>K1.1 Niche Research</td><td class="g">✓</td><td>3</td></tr>
+<tr><td>K1.2 Competitor Intel</td><td class="g">✓</td><td>1</td></tr>
+<tr><td>K1.3 Infrastructure</td><td class="g">✓</td><td>2</td></tr>
+<tr><td>K1.4 Keywords</td><td class="g">✓</td><td>1</td></tr>
+<tr><td rowspan="4" style="font-weight:700;color:var(--kdp)">K2</td><td>K2.1 Interiors</td><td class="g">✓</td><td>1</td></tr>
+<tr><td>K2.2 Covers</td><td class="g">✓</td><td>1</td></tr>
+<tr><td>K2.3 Production Sprint</td><td class="a">⏳</td><td>—</td></tr>
+<tr><td>K2.4 Listing Launch</td><td class="a">⏳</td><td>—</td></tr>
+<tr><td style="font-weight:700;color:var(--kdp)">K3-K6</td><td colspan="3" style="color:var(--t3)">16 subprojects — not started</td></tr>
+<tr><td colspan="4" style="height:2px;padding:0;background:var(--border)"></td></tr>
+<tr><td rowspan="5" style="font-weight:700;color:var(--yt)">Y1</td><td>Y1.1 Niche Analysis</td><td class="g">✓</td><td>2</td></tr>
+<tr><td>Y1.2 Competitors</td><td class="g">✓</td><td>1</td></tr>
+<tr><td>Y1.3 Branding</td><td class="g">✓</td><td>1</td></tr>
+<tr><td>Y1.4 Pipeline</td><td class="g">✓</td><td>1</td></tr>
+<tr><td>Y1 Gap Analysis</td><td class="g">✓</td><td>1</td></tr>
+<tr><td rowspan="4" style="font-weight:700;color:var(--yt)">Y2</td><td>Y2.1 Scripts</td><td class="g">✓</td><td>1</td></tr>
+<tr><td>Y2.2 Visuals</td><td class="g">✓</td><td>1</td></tr>
+<tr><td>Y2.3 Audio</td><td class="g">✓</td><td>1</td></tr>
+<tr><td>Y2.4 Thumbnails</td><td class="g">✓</td><td>1</td></tr>
+<tr><td rowspan="5" style="font-weight:700;color:var(--yt)">Y3</td><td>Y3.1 First 10 Videos</td><td class="g">✓</td><td>1</td></tr>
+<tr><td>Y3.2 Schedule</td><td class="g">✓</td><td>1</td></tr>
+<tr><td>Y3.3 SEO</td><td class="g">✓</td><td>1</td></tr>
+<tr><td>Y3.4 Community</td><td class="g">✓</td><td>1</td></tr>
+<tr><td>Y2+Y3 Gap Analysis</td><td class="g">✓</td><td>1</td></tr>
+<tr><td style="font-weight:700;color:var(--yt)">Y4-Y6</td><td colspan="3" style="color:var(--t3)">12 subprojects — build after 10 videos published</td></tr>
+<tr><td colspan="4" style="height:2px;padding:0;background:var(--border)"></td></tr>
+<tr><td rowspan="5" style="font-weight:700;color:var(--ig)">I0+I1</td><td>I0 Roadmap Overview</td><td class="g">✓</td><td>1</td></tr>
+<tr><td>I1.1 Profile Setup</td><td class="g">✓</td><td>1</td></tr>
+<tr><td>I1.2 Visual Identity</td><td class="g">✓</td><td>1</td></tr>
+<tr><td>I1.3 Hashtag & SEO</td><td class="g">✓</td><td>1</td></tr>
+<tr><td>I1.4 Cross-Platform Sync</td><td class="g">✓</td><td>1</td></tr>
+<tr><td style="font-weight:700;color:var(--ig)">I2-I3</td><td colspan="3" style="color:var(--t3)">8 subprojects — I2 after first videos, I3 after 1K followers</td></tr>
+<tr><td colspan="4" style="height:2px;padding:0;background:var(--border)"></td></tr>
+<tr><td style="font-weight:700;color:var(--blue)">Exec</td><td>Founder's Execution Plan</td><td class="g">✓</td><td>1</td></tr>
+</table>
+
+<div style="margin-top:16px;padding:16px;background:var(--card);border:1px solid var(--border);border-radius:10px">
+<h3 style="font-size:14px;color:var(--t1);margin-bottom:10px;font-family:'Sora',sans-serif">Key Decisions</h3>
+<table class="tbl">
+<tr><th>Decision</th><th>Choice</th><th>Rationale</th></tr>
+<tr><td>YouTube content split</td><td>60% global / 25% South Asian / 15% espionage</td><td>SA = differentiator; global = broad reach</td></tr>
+<tr><td>Channel name</td><td>The Forgotten Front</td><td>Clear across all platforms. War journalism aesthetic.</td></tr>
+<tr><td>KDP pricing floor</td><td>Never below $9.99</td><td>50%→60% royalty jump. Massive revenue impact.</td></tr>
+<tr><td>Video cadence</td><td>6 long-form/month (not 8)</td><td>Burnout prevention. 3-tier schedule.</td></tr>
+<tr><td>Track 3 added</td><td>Instagram (not freelancing/courses)</td><td>Zero new content. Reformats existing YouTube/KDP output.</td></tr>
+<tr><td>Revenue target</td><td>$750-900/mo combined by Month 6</td><td>3-track diversification hits target at probable case.</td></tr>
+</table>
+</div>
+</div>
+
+</div>
+
+<div class="foot">Monetization Roadmap · 3 Tracks · 60 Subprojects · 30 Documents · Built March 2026 · Ready for Execution</div>
+
+<script>
+function show(id){document.querySelectorAll('.section').forEach(s=>s.classList.remove('active'));document.querySelectorAll('.nav-btn').forEach(b=>b.classList.remove('active'));document.getElementById('sec-'+id).classList.add('active');event.target.classList.add('active');window.scrollTo({top:document.querySelector('.nav').offsetTop,behavior:'smooth'})}
+function toggle(el){const b=el.nextElementSibling;if(b)b.classList.toggle('open')}
+</script>
+</body></html>

@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0"><title>K2.1 — Interior Template Library</title>
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}body{background:#0a0f1a;color:#e2e8f0;font-family:'Outfit',sans-serif;padding:0 0 60px}
+.hdr{background:linear-gradient(135deg,#0f172a,#0f2318,#0f172a);border-bottom:1px solid #10b98133;padding:28px 24px;text-align:center;position:relative}.hdr::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at 40% 30%,#10b98118,transparent 60%)}.hdr>*{position:relative}
+.tag{font-size:10px;color:#10b981;font-family:'JetBrains Mono',monospace;text-transform:uppercase;letter-spacing:.2em;margin-bottom:6px}
+h1{font-size:22px;font-weight:800;color:#f1f5f9;margin-bottom:4px}
+.sub{font-size:12px;color:#64748b;max-width:650px;margin:0 auto}
+.ct{max-width:900px;margin:0 auto;padding:20px 16px}
+.sec{background:#111827;border:1px solid #1e293b;border-radius:8px;margin-bottom:14px;overflow:hidden}
+.sec-h{padding:14px 18px;border-bottom:1px solid #1e293b;display:flex;align-items:center;gap:8px;flex-wrap:wrap}
+.sec-h h2{font-size:14px;font-weight:700}
+.num{font-size:9px;font-family:'JetBrains Mono',monospace;padding:2px 8px;border-radius:4px;font-weight:700}
+.pg{background:#10b98115;color:#10b981}.pb{background:#3b82f615;color:#60a5fa}.pa{background:#f59e0b15;color:#f59e0b}.pr{background:#ef444415;color:#ef4444}
+.sec-b{padding:14px 18px}
+.d{font-size:11px;color:#94a3b8;line-height:1.6;margin-bottom:8px}.d strong{color:#e2e8f0}
+.tbl{width:100%;border-collapse:collapse;margin:10px 0;font-size:10px}
+.tbl th{background:#0f172a;color:#94a3b8;padding:7px 8px;text-align:left;font-family:'JetBrains Mono',monospace;font-size:9px;text-transform:uppercase;border:1px solid #1e293b}
+.tbl td{padding:7px 8px;border:1px solid #1e293b;color:#cbd5e1;vertical-align:top}.tbl tr:nth-child(even) td{background:#0d111788}
+.g{color:#10b981;font-weight:600}
+.callout{padding:14px;border-radius:6px;font-size:12px;line-height:1.6;margin:10px 0}
+.co-g{background:#10b98108;border:1px solid #10b98122;color:#6ee7b7}
+.co-a{background:#f59e0b08;border:1px solid #f59e0b22;color:#fcd34d}
+.co-b{background:#3b82f608;border:1px solid #3b82f622;color:#93c5fd}
+.co-r{background:#ef444408;border:1px solid #ef444422;color:#fca5a5}
+.callout strong{color:#f1f5f9}
+.pillar{display:flex;align-items:flex-start;gap:8px;padding:8px 10px;background:#10b98108;border:1px solid #10b98118;border-radius:4px;margin-bottom:4px}
+.pillar span:first-child{color:#10b981;font-size:10px;font-family:'JetBrains Mono',monospace;min-width:16px;flex-shrink:0;padding-top:2px}
+.pillar span:last-child{font-size:11px;color:#cbd5e1;line-height:1.5}
+.book{background:#0f172a;border:1px solid #1e293b;border-radius:8px;padding:16px;margin:10px 0}
+.book h3{font-size:14px;font-weight:700;color:#f1f5f9;margin-bottom:2px}
+.book-meta{font-size:9px;font-family:'JetBrains Mono',monospace;color:#64748b;display:flex;gap:10px;flex-wrap:wrap;margin-bottom:10px}
+.page-type{background:#111827;border:1px solid #1e293b;border-radius:4px;padding:10px;margin:6px 0}
+.page-type h4{font-size:11px;font-weight:700;color:#60a5fa;margin-bottom:4px}
+.foot{text-align:center;padding:20px;font-size:10px;color:#334155;font-family:'JetBrains Mono',monospace}
+</style></head><body>
+<div class="hdr"><div class="tag">K2.1 — Interior Template Library</div><h1>KDP Interior Templates — All 8 Books</h1><div class="sub">Trim sizes · Margins & bleed · Page-by-page interior specs · Canva creation workflow · PDF export settings</div></div>
+<div class="ct">
+
+<!-- KDP PRINT SPECS -->
+<div class="sec"><div class="sec-h"><span class="num pr">SPECS</span><h2>📐 KDP Print Specifications — Master These First</h2></div><div class="sec-b">
+
+<table class="tbl">
+<tr><th>Specification</th><th>Your Books</th><th>Details</th></tr>
+<tr><td><strong>Trim sizes</strong></td><td>6×9" (journals) and 8.5×11" (planners/workbooks)</td><td>6×9 = portable, fits in a bag, standard journal size. 8.5×11 = large workspace, better for planners with tables and trackers.</td></tr>
+<tr><td><strong>Bleed</strong></td><td>NO BLEED for all 8 books</td><td>None of your books have images running to the page edge. Lines, boxes, and text stay within margins. No-bleed = simpler setup, no dimension adjustments needed.</td></tr>
+<tr><td><strong>Paper</strong></td><td>White paper, black & white ink</td><td>Cheapest print cost = highest royalty. Cream paper adds warmth but costs more. White + B&W is the standard for journals/planners.</td></tr>
+<tr><td><strong>Binding</strong></td><td>Paperback</td><td>Lowest cost, fastest to publish. Hardcover is an upgrade for later once you validate demand.</td></tr>
+<tr><td><strong>Page count</strong></td><td>100–130 pages per book</td><td>Minimum: 24 pages. Sweet spot for journals/planners: 100–130 pages. Enough content to feel substantial, low enough print cost to maintain good royalties at $9.99–$12.99.</td></tr>
+</table>
+
+<div class="d" style="margin-top:8px"><strong>Margins (no-bleed):</strong></div>
+<table class="tbl">
+<tr><th>Margin</th><th>6×9" books</th><th>8.5×11" books</th><th>Why</th></tr>
+<tr><td><strong>Top</strong></td><td>0.5"</td><td>0.5"</td><td>Space for headers/page numbers</td></tr>
+<tr><td><strong>Bottom</strong></td><td>0.5"</td><td>0.5"</td><td>Space for page numbers/footers</td></tr>
+<tr><td><strong>Outside (right on odd, left on even)</strong></td><td>0.5"</td><td>0.5"</td><td>Thumb space for the reader</td></tr>
+<tr><td><strong>Inside/Gutter</strong></td><td>0.625" (100 pages) — 0.75" (130+ pages)</td><td>0.625" (100 pages) — 0.75" (130+ pages)</td><td>CRITICAL — the gutter prevents text from disappearing into the spine. Wider for thicker books.</td></tr>
+</table>
+</div></div>
+
+<!-- CANVA WORKFLOW -->
+<div class="sec"><div class="sec-h"><span class="num pb">CANVA</span><h2>🎨 Canva Interior Creation Workflow</h2></div><div class="sec-b">
+
+<table class="tbl">
+<tr><th>Step</th><th>Action</th><th>Details</th></tr>
+<tr><td>1</td><td><strong>Create custom size</strong></td><td>Canva → Create a Design → Custom Size. Enter: 6×9 inches OR 8.5×11 inches (no bleed adjustment needed since you're no-bleed).</td></tr>
+<tr><td>2</td><td><strong>Set up ruler guides</strong></td><td>File → Show Rulers. Drag guides to create margins: 0.5" from top, bottom, outside edge. 0.75" from inside/gutter edge. ALL content stays inside these guides.</td></tr>
+<tr><td>3</td><td><strong>Design first page type</strong></td><td>Build your first interior page (e.g., a lined journal page). Use lines, shapes, text boxes. Keep everything within margin guides.</td></tr>
+<tr><td>4</td><td><strong>Duplicate to fill book</strong></td><td>Right-click page → Duplicate Page. Repeat until you have the correct page count. For alternating layouts, duplicate different page types in sequence.</td></tr>
+<tr><td>5</td><td><strong>Add front matter</strong></td><td>Page 1: Title page (book title, pen name). Page 2: Copyright page. Page 3: Table of contents or "This book belongs to" page. Page 4: Introduction or "How to use this book".</td></tr>
+<tr><td>6</td><td><strong>Export as PDF</strong></td><td>Share → Download → PDF Print → Flatten PDF ☑️ → Download. This creates a 300 DPI print-ready PDF that KDP accepts.</td></tr>
+</table>
+
+<div class="callout co-a"><strong>Canva Free vs. Pro:</strong> Canva Free works for all 8 books. The only limitation: Free limits you to ~100 pages per design. For 120+ page books, split into two Canva files (front matter + first half, second half) and merge PDFs using a free tool like iLovePDF. Canva Pro ($13/mo) removes this limit — consider upgrading AFTER your first book earns revenue, not before.</div>
+
+<div class="callout co-r"><strong>KDP's reskinning rule (2025+):</strong> Amazon now rejects books that are identical interiors with only different covers. Each book MUST have unique interior content — different page layouts, different prompts, different headers. You cannot publish the same lined journal 5 times with different covers. All 8 of your books have genuinely different interiors by design, so this isn't a risk for you — but never try to shortcut by reusing an interior across multiple listings.</div>
+</div></div>
+
+<!-- ALL 8 BOOK INTERIORS -->
+<div class="sec"><div class="sec-h"><span class="num pg">BOOKS</span><h2>📖 Interior Specifications — All 8 Books</h2></div><div class="sec-b">
+
+<!-- BOOK 1 -->
+<div class="book">
+<h3>📗 Book 1: New Dad Year One Journal</h3>
+<div class="book-meta"><span>📐 6×9"</span><span>📄 120 pages</span><span>💰 $12.99</span><span>🎯 Priority #1</span></div>
+
+<div class="d"><strong>Concept:</strong> A guided journal for first-time fathers to record memories, milestones, and reflections during baby's first 12 months. NOT a blank notebook — each page has prompts and structure.</div>
+
+<div class="page-type"><h4>Front Matter (4 pages)</h4>
+<div class="d">Page 1: Title page — "New Dad Year One Journal" + pen name. Page 2: Copyright + "Published by [Pen Name]" + year. Page 3: "This Journal Belongs To" with fields: Dad's Name, Baby's Name, Baby's Birthday, Started On. Page 4: "How to Use This Journal" — brief intro explaining the monthly structure.</div></div>
+
+<div class="page-type"><h4>Monthly Sections × 12 (8 pages each = 96 pages)</h4>
+<div class="d">Each month gets 8 pages with this repeating structure:</div>
+<table class="tbl">
+<tr><th>Page</th><th>Layout</th><th>Content</th></tr>
+<tr><td>1</td><td><strong>Month header</strong></td><td>Large "Month [X]" header. Fields: Baby's age, Baby's weight, Baby's length. "This month's biggest moment:" (3 lines).</td></tr>
+<tr><td>2</td><td><strong>Milestones checklist</strong></td><td>Age-appropriate milestones as checkboxes: "☐ First smile ☐ Rolled over ☐ Slept through the night" etc. Different milestones for each month (research real baby development milestones).</td></tr>
+<tr><td>3</td><td><strong>Dad's reflections — guided prompts</strong></td><td>3 prompts with 4–5 lines each: "The funniest thing that happened this month:", "Something I learned about being a dad:", "A moment I never want to forget:"</td></tr>
+<tr><td>4</td><td><strong>Letter to baby</strong></td><td>Header: "Dear [Baby's Name]," followed by lined space (15 lines). "This month I want you to know..."</td></tr>
+<tr><td>5–6</td><td><strong>Photo/memory pages</strong></td><td>Decorative bordered boxes labeled "Paste photo here" or "Draw/sketch here" + caption lines below each box. 2 boxes per page = 4 photo spots per month.</td></tr>
+<tr><td>7</td><td><strong>Favorites & firsts</strong></td><td>Quick-fill fields: "Baby's favorite toy:", "Favorite food:", "New sound/word:", "Funniest face:", "Number of diapers (estimate):", "Hours of sleep (ha):"</td></tr>
+<tr><td>8</td><td><strong>Free journaling</strong></td><td>Header: "Anything else from Month [X]:" + full page of lined space. Wide-ruled (0.34" spacing).</td></tr>
+</table></div>
+
+<div class="page-type"><h4>Back Matter (20 pages)</h4>
+<div class="d">Pages 101–104: "Year in Review" — summary page with fields for each month. Pages 105–108: "Firsts" compilation (First word, first step, first tooth, etc. — single checklist spread). Pages 109–118: 10 pages of blank lined journaling ("Extra Space for Memories"). Pages 119–120: "About This Journal" + pen name branding page.</div></div>
+</div>
+
+<!-- BOOK 2 -->
+<div class="book">
+<h3>📗 Book 2: E-Commerce Launch Planner</h3>
+<div class="book-meta"><span>📐 8.5×11"</span><span>📄 130 pages</span><span>💰 $12.99</span><span>🎯 Priority #2</span></div>
+
+<div class="d"><strong>Concept:</strong> A 90-day structured workbook for launching an online store. Fills the gap found in K1.2 — NO quality e-commerce planner exists on Amazon. This is your biggest competitive advantage.</div>
+
+<div class="page-type"><h4>Front Matter (6 pages)</h4>
+<div class="d">Title page, copyright, "This Planner Belongs To" (Name, Business Name, Launch Date, Revenue Goal), Table of Contents, "How to Use This 90-Day Planner" (1-page overview of the 3-phase structure), "Your Launch Roadmap" visual timeline.</div></div>
+
+<div class="page-type"><h4>Phase 1: Foundation — Days 1–30 (40 pages)</h4>
+<table class="tbl">
+<tr><th>Page Type</th><th>Count</th><th>Layout</th></tr>
+<tr><td>Niche & Product Research</td><td>4</td><td>Fields: Niche idea, Target customer description, 5 competitor URLs, Price range, Supplier options. One worksheet per product idea.</td></tr>
+<tr><td>Business Setup Checklist</td><td>2</td><td>Checkboxes: ☐ Business name, ☐ Domain registered, ☐ Platform chosen (Shopify/WooCommerce/Etsy), ☐ Payment gateway, ☐ Tax setup, ☐ Social media handles.</td></tr>
+<tr><td>Brand Identity Worksheet</td><td>2</td><td>Fields: Brand name, Tagline, 3 brand values, Target audience persona (age, income, interests, pain points), Color palette, Font choices.</td></tr>
+<tr><td>Product Listing Template</td><td>6</td><td>1 page per product: Product name, Description (10 lines), Price, Cost, Margin %, Keywords (5 fields), Photo shot list (5 checkboxes).</td></tr>
+<tr><td>Supplier Comparison</td><td>2</td><td>Table with columns: Supplier name, Contact, MOQ, Unit cost, Shipping time, Sample ordered (Y/N), Rating (1–5).</td></tr>
+<tr><td>Weekly Planning (Weeks 1–4)</td><td>16</td><td>4 pages per week: Weekly goals (3 fields), daily task checklist (Mon–Sun, 5 tasks each), weekly revenue/expense tracker, weekly reflection (what worked, what didn't, next week's priority).</td></tr>
+<tr><td>Monthly Review — Month 1</td><td>2</td><td>Revenue vs. target, Expenses, Net profit, Top 3 wins, Top 3 challenges, Key lesson, Month 2 focus areas.</td></tr>
+</table></div>
+
+<div class="page-type"><h4>Phase 2: Launch — Days 31–60 (40 pages)</h4>
+<div class="d">Same weekly planning structure (16 pages). Plus: Marketing Campaign Planner (4 pages — social media calendar, email sequence, ad budget), Launch Day Checklist (2 pages), Customer Feedback Tracker (4 pages — customer name, order #, feedback, rating, action taken), Inventory Tracker (4 pages — product, quantity, reorder point, supplier, cost), Monthly Review Month 2 (2 pages).</div></div>
+
+<div class="page-type"><h4>Phase 3: Scale — Days 61–90 (40 pages)</h4>
+<div class="d">Same weekly planning structure (16 pages). Plus: Revenue Dashboard (4 pages — daily sales log with date, orders, revenue, ad spend, profit columns), SEO & Traffic Tracker (4 pages), Scaling Checklist (2 pages — automation, email flows, upsells, partnerships), 90-Day Final Review (4 pages — comprehensive metrics, lessons, next 90-day goals), Monthly Review Month 3 (2 pages).</div></div>
+
+<div class="page-type"><h4>Back Matter (4 pages)</h4>
+<div class="d">Resource page (recommended tools/platforms — no affiliate links in V1), Notes pages (2), About the Author.</div></div>
+</div>
+
+<!-- BOOK 3 -->
+<div class="book">
+<h3>📗 Book 3: Half Marathon Training Log</h3>
+<div class="book-meta"><span>📐 6×9"</span><span>📄 110 pages</span><span>💰 $9.99</span><span>🎯 Priority #3</span></div>
+
+<div class="page-type"><h4>Interior Structure</h4>
+<table class="tbl">
+<tr><th>Section</th><th>Pages</th><th>Layout</th></tr>
+<tr><td>Front matter</td><td>4</td><td>Title, copyright, "Runner's Profile" (name, goal race, target time, starting weekly mileage, training start date), How to Use.</td></tr>
+<tr><td>16-Week Training Log</td><td>80</td><td>5 pages per week × 16 weeks. Each week: Header "Week [X] of 16" + weekly mileage goal. Daily log rows (Mon–Sun): Date, Distance, Time, Pace, Route, How I Felt (1–5 scale), Notes. Weekly summary: Total miles, Best run, Worst run, Injury/pain notes, Next week focus.</td></tr>
+<tr><td>Race Day Planner</td><td>6</td><td>Race details (name, date, location, bib#, corral). Pre-race checklist (gear, nutrition, sleep plan). Race strategy (target splits per mile). Post-race reflection: finish time, how I felt, what I'd change, proudest moment.</td></tr>
+<tr><td>Personal Records</td><td>4</td><td>PR tracker table: Distance, Time, Date, Location, Notes. Rows for 1 mile, 5K, 10K, 15K, Half Marathon.</td></tr>
+<tr><td>Injury & Recovery Log</td><td>4</td><td>Date, Body part, Severity (1–5), Treatment, Days off, Lessons learned.</td></tr>
+<tr><td>Notes & Reflections</td><td>10</td><td>Lined pages for general journaling about the training journey.</td></tr>
+<tr><td>Back matter</td><td>2</td><td>Pace chart (min/mile → finish time table), About.</td></tr>
+</table></div>
+</div>
+
+<!-- BOOK 4 -->
+<div class="book">
+<h3>📗 Book 4: Family Budget Tracker</h3>
+<div class="book-meta"><span>📐 8.5×11"</span><span>📄 120 pages</span><span>💰 $9.99</span><span>🎯 Priority #4</span></div>
+
+<div class="page-type"><h4>Interior Structure</h4>
+<table class="tbl">
+<tr><th>Section</th><th>Pages</th><th>Layout</th></tr>
+<tr><td>Front matter</td><td>4</td><td>Title, copyright, "Our Family Finances" (household members, monthly income, savings goal, debt payoff goal), How to Use.</td></tr>
+<tr><td>Annual Overview</td><td>4</td><td>12-month income summary table. 12-month expense summary table. Annual savings tracker with monthly progress bars. Debt payoff tracker with balances.</td></tr>
+<tr><td>Monthly Budget Sections × 12</td><td>96</td><td>8 pages per month: Monthly income page (salary, side income, other — fields for expected vs. actual). Expense categories page (housing, utilities, groceries, transport, insurance, childcare, subscriptions, entertainment, personal, other — budgeted vs. actual columns). Weekly expense tracker × 4 (daily line items: date, description, category, amount). Monthly summary (total in, total out, saved, over/under budget, notes, next month adjustment).</td></tr>
+<tr><td>Savings Goals</td><td>4</td><td>Goal name, target amount, monthly contribution, start date, target date, progress bar (fill-in-the-blank). 4 goals per page × 4 pages = 16 goals.</td></tr>
+<tr><td>Debt Payoff Tracker</td><td>4</td><td>Creditor, balance, interest rate, minimum payment, extra payment, new balance. Snowball method visual tracker.</td></tr>
+<tr><td>Bills Calendar</td><td>4</td><td>Monthly bill due-dates grid: Bill name, due date, amount, autopay (Y/N), paid (✓).</td></tr>
+<tr><td>Notes</td><td>4</td><td>Lined pages.</td></tr>
+</table></div>
+</div>
+
+<!-- BOOK 5 -->
+<div class="book">
+<h3>📗 Book 5: Walking Fitness Log</h3>
+<div class="book-meta"><span>📐 6×9"</span><span>📄 100 pages</span><span>💰 $9.99</span><span>🎯 Priority #5</span></div>
+
+<div class="page-type"><h4>Interior Structure</h4>
+<table class="tbl">
+<tr><th>Section</th><th>Pages</th><th>Layout</th></tr>
+<tr><td>Front matter</td><td>4</td><td>Title, copyright, "My Walking Profile" (name, starting weight, daily step goal, weekly distance goal, start date), How to Use.</td></tr>
+<tr><td>90-Day Walking Challenge</td><td>78</td><td>13 weeks × 6 pages/week. Each week: Weekly goal header. Daily log (7 rows): Date, Steps, Distance, Time, Route, Mood (emoji scale 😐😊😁). Weekly summary: Total steps, total distance, weight, how I feel, highlight of the week. Every 4th week: Progress check — compare Week 1 stats to current. Motivational prompt.</td></tr>
+<tr><td>Monthly Body Measurements</td><td>6</td><td>3 months × 2 pages: Weight, waist, hips, thigh, arm, energy level (1–10), sleep quality (1–10), overall wellbeing (1–10). Progress comparison table.</td></tr>
+<tr><td>Walking Routes</td><td>6</td><td>Favorite routes log: Route name, distance, time, difficulty (1–5), scenery rating, notes. Space for 12 routes.</td></tr>
+<tr><td>90-Day Reflection</td><td>4</td><td>Before vs. After stats. Biggest achievement. Biggest challenge. What I learned. Next 90-day goals.</td></tr>
+<tr><td>Notes</td><td>2</td><td>Lined pages.</td></tr>
+</table></div>
+</div>
+
+<!-- BOOK 6 -->
+<div class="book">
+<h3>📗 Book 6: Order & Shipping Tracker</h3>
+<div class="book-meta"><span>📐 8.5×11"</span><span>📄 120 pages</span><span>💰 $9.99</span><span>🎯 Priority #6</span></div>
+
+<div class="page-type"><h4>Interior Structure</h4>
+<table class="tbl">
+<tr><th>Section</th><th>Pages</th><th>Layout</th></tr>
+<tr><td>Front matter</td><td>4</td><td>Title, copyright, "Business Info" (business name, platforms sold on, primary supplier contacts), How to Use.</td></tr>
+<tr><td>Order Log</td><td>80</td><td>Table format, 10 orders per page × 80 pages = 800 order slots. Columns: Order #, Date, Customer Name, Items, Qty, Total $, Platform, Tracking #, Ship Date, Delivered (✓), Notes.</td></tr>
+<tr><td>Monthly Sales Summary</td><td>12</td><td>1 page per month: Total orders, total revenue, total shipping costs, returns/refunds, net revenue, top-selling item, notes. Bar chart placeholder for daily sales visualization.</td></tr>
+<tr><td>Inventory Tracker</td><td>10</td><td>Product name, SKU, Qty on hand, Reorder point, Supplier, Unit cost, Retail price, Last reorder date. 15 products per page = 150 product slots.</td></tr>
+<tr><td>Supplier Directory</td><td>4</td><td>Supplier name, contact, email, phone, products, lead time, MOQ, payment terms, notes. 4 suppliers per page = 16 supplier slots.</td></tr>
+<tr><td>Returns & Refunds Log</td><td>6</td><td>Order #, date, customer, reason, action taken, refund amount, item restocked (Y/N). 12 entries per page.</td></tr>
+<tr><td>Notes</td><td>4</td><td>Lined pages.</td></tr>
+</table></div>
+</div>
+
+<!-- BOOK 7 -->
+<div class="book">
+<h3>📗 Book 7: Dad's Letters to My Child</h3>
+<div class="book-meta"><span>📐 6×9"</span><span>📄 110 pages</span><span>💰 $11.99</span><span>🎯 Priority #7</span></div>
+
+<div class="page-type"><h4>Interior Structure</h4>
+<table class="tbl">
+<tr><th>Section</th><th>Pages</th><th>Layout</th></tr>
+<tr><td>Front matter</td><td>6</td><td>Title page, copyright, dedication page ("For _________, with all my love — Dad"), "A Note from Your Father" (guided 1-page intro the dad writes), Table of contents listing each letter prompt.</td></tr>
+<tr><td>Guided Letters × 30</td><td>90</td><td>3 pages per letter × 30 letters. Page 1: Decorative header with prompt title (e.g., "The Day You Were Born"), 1–2 guiding questions in italic, then lined space. Pages 2–3: Continuation lined pages with subtle header "Letter continues..." Each letter has a UNIQUE prompt (see list below).</td></tr>
+<tr><td>Free Letters</td><td>10</td><td>5 blank letter templates: "Dear ________," header + full-page lined space + date field. For occasions the guided prompts don't cover.</td></tr>
+<tr><td>Back matter</td><td>4</td><td>"A Message for When You Read These Letters" — a final page of lined space for the dad to write a closing letter. "Photo of Us" page (bordered frame with caption lines). About the Author.</td></tr>
+</table>
+<div class="d" style="margin-top:8px"><strong>30 Letter Prompts:</strong> 1) The day you were born, 2) How we chose your name, 3) The first time I held you, 4) What I was like at your age, 5) My hopes for your future, 6) The hardest day of being your dad, 7) The funniest thing you ever did, 8) What our family means to me, 9) The world I grew up in vs. yours, 10) A lesson I learned the hard way, 11) Your first birthday, 12) What makes you unique, 13) The music I want you to hear, 14) A place I want to take you someday, 15) What I wish someone had told me, 16) Your favorite things right now, 17) How you changed me, 18) A recipe that reminds me of family, 19) My biggest fear for you, 20) The bravest thing I ever did, 21) What success means to me, 22) The people who shaped me, 23) When I knew I was ready to be a dad, 24) What love looks like, 25) A tradition I want us to keep, 26) Your first word / first steps, 27) How to handle failure, 28) Something I'm proud of about you, 29) For when you're having a hard day, 30) The letter I'll read at your wedding.</div>
+</div>
+
+<!-- BOOK 8 -->
+<div class="book">
+<h3>📗 Book 8: Social Media Content Planner</h3>
+<div class="book-meta"><span>📐 8.5×11"</span><span>📄 120 pages</span><span>💰 $9.99</span><span>🎯 Priority #8</span></div>
+
+<div class="page-type"><h4>Interior Structure</h4>
+<table class="tbl">
+<tr><th>Section</th><th>Pages</th><th>Layout</th></tr>
+<tr><td>Front matter</td><td>6</td><td>Title, copyright, "My Social Media Profile" (brand name, platforms, handles, current follower counts, 90-day growth target), Table of Contents, "How to Plan Your Content" (1-page overview of the weekly system), Content Pillar Planner (define 3–5 content pillars with descriptions).</td></tr>
+<tr><td>Weekly Content Plans × 13</td><td>78</td><td>6 pages per week × 13 weeks. Page 1: Weekly overview — theme, goal, key dates/events. Pages 2–5: Daily content grid (Mon–Sun). Each day: Platform, Post type (reel/story/carousel/static), Caption draft (5 lines), Hashtags (3 lines), Time to post, Posted? (✓). Page 6: Weekly analytics — total reach, engagement rate, new followers, best post, worst post, lesson learned.</td></tr>
+<tr><td>Monthly Strategy</td><td>12</td><td>4 pages per month × 3 months. Monthly goals (3 fields), content calendar overview (table view — 30 days), campaign/launch planner, monthly analytics summary (follower growth, top post, engagement rate trend).</td></tr>
+<tr><td>Content Ideas Bank</td><td>8</td><td>Brainstorm pages organized by content pillar. "Post Idea:" field + "Hook:" field + "CTA:" field + "Visual:" field. 6 ideas per page = 48 idea slots.</td></tr>
+<tr><td>Hashtag Library</td><td>4</td><td>Hashtag sets by category: Brand hashtags, niche hashtags, trending hashtags, community hashtags. 30 hashtags per category.</td></tr>
+<tr><td>Collab & Partnership Tracker</td><td>4</td><td>Partner name, platform, contact, collab type, date, status, results. 8 entries per page.</td></tr>
+<tr><td>Notes & Ideas</td><td>8</td><td>Lined/dotted pages for freeform planning.</td></tr>
+</table></div>
+</div>
+
+</div></div>
+
+<!-- PDF EXPORT CHECKLIST -->
+<div class="sec"><div class="sec-h"><span class="num pg">EXPORT</span><h2>📤 PDF Export Settings & Quality Checklist</h2></div><div class="sec-b">
+
+<table class="tbl">
+<tr><th>Setting</th><th>Value</th><th>Why</th></tr>
+<tr><td>File format</td><td>PDF Print</td><td>NOT PDF Standard — Print gives you 300 DPI resolution.</td></tr>
+<tr><td>Flatten PDF</td><td>✅ Checked</td><td>Flattening embeds all fonts and images. Prevents rendering issues on KDP's printers.</td></tr>
+<tr><td>Color profile</td><td>Canva default (sRGB)</td><td>For B&W interiors, color profile doesn't matter — everything prints in greyscale. Don't overthink this.</td></tr>
+<tr><td>Crop marks / bleed</td><td>❌ Unchecked</td><td>You're no-bleed. Don't add crop marks or bleed. Leave both unchecked.</td></tr>
+</table>
+
+<div class="d" style="margin-top:8px"><strong>Pre-upload quality checklist:</strong></div>
+<table class="tbl">
+<tr><th>Check</th><th>What to Verify</th></tr>
+<tr><td>☐ Page count</td><td>Open PDF in any reader. Verify correct number of pages. Must be even number (KDP prints double-sided).</td></tr>
+<tr><td>☐ Margins</td><td>Zoom to 100%. Verify all text/lines are inside margins. Nothing closer than 0.5" to any edge, 0.625"–0.75" from inside/gutter edge.</td></tr>
+<tr><td>☐ Text readability</td><td>All text at 10pt minimum. Headers 14–18pt. Line spacing 1.2–1.5. Serif font for body text (Georgia, Garamond). Sans-serif for headers (Arial, Outfit).</td></tr>
+<tr><td>☐ No bleed content</td><td>No lines, boxes, or images touching the page edge. White border visible on all four sides of every page.</td></tr>
+<tr><td>☐ Front matter present</td><td>Title page → Copyright → Belongs To / Profile → How to Use → then content begins.</td></tr>
+<tr><td>☐ Consistent styling</td><td>Same fonts, line weights, header styles across all pages. Headers aligned. Tables uniform.</td></tr>
+<tr><td>☐ KDP Previewer</td><td>After uploading to KDP, ALWAYS use the Launch Previewer to check every page. It flags margin violations and image issues.</td></tr>
+</table>
+</div></div>
+
+<!-- PRODUCTION ORDER -->
+<div class="sec"><div class="sec-h"><span class="num pa">ORDER</span><h2>📋 Production Order — Which Book to Build First</h2></div><div class="sec-b">
+<table class="tbl">
+<tr><th>Order</th><th>Book</th><th>Why This Sequence</th><th>Est. Production Time</th></tr>
+<tr><td class="g"><strong>1st</strong></td><td>New Dad Year One Journal</td><td>Most complex interior (12 unique monthly sections). Building this first teaches you every Canva technique. Plus: emotionally meaningful to you as a dad of toddlers.</td><td>4–6 hours</td></tr>
+<tr><td><strong>2nd</strong></td><td>Half Marathon Training Log</td><td>Simpler repeating structure (weekly logs). Uses skills from Book 1. Your running niche expertise makes prompts easy to write.</td><td>2–3 hours</td></tr>
+<tr><td><strong>3rd</strong></td><td>E-Commerce Launch Planner</td><td>Your strongest competitive advantage (no quality competitor exists). Larger format (8.5×11) — learn the bigger layout.</td><td>4–5 hours</td></tr>
+<tr><td><strong>4th</strong></td><td>Family Budget Tracker</td><td>Table-heavy layout. Reuses skills from Books 1–3.</td><td>3–4 hours</td></tr>
+<tr><td>5th–8th</td><td>Walking Log, Order Tracker, Letters, Social Media</td><td>All use patterns learned from Books 1–4. Production speed increases significantly — budget 2–3 hours each.</td><td>2–3 hours each</td></tr>
+</table>
+
+<div class="callout co-g"><strong>Total estimated production time for all 8 interiors: ~25–35 hours.</strong> At your Standard Week pace (5 hours), that's 5–7 weeks to produce all 8 interiors. BUT: you don't need all 8 to start earning. Publish Book 1 as soon as it's done (with cover from K2.2), then produce Books 2–8 while Book 1 is already earning.</div>
+</div></div>
+
+<!-- DELIVERABLES -->
+<div class="sec"><div class="sec-h"><h2>📦 K2.1 Deliverables</h2></div><div class="sec-b">
+<div style="display:grid;gap:5px">
+<div class="pillar"><span>✅</span><span>KDP print specs: trim sizes (6×9" and 8.5×11"), margins, gutter, no-bleed setup for all 8 books</span></div>
+<div class="pillar"><span>✅</span><span>Complete Canva interior creation workflow: 6-step process from custom size to PDF Print export</span></div>
+<div class="pillar"><span>✅</span><span>Page-by-page interior specs for all 8 books: every section, page type, layout, and content prompt defined</span></div>
+<div class="pillar"><span>✅</span><span>Book 1 (New Dad Journal): 120-page spec with 12 unique monthly sections, milestone checklists, guided prompts, photo pages</span></div>
+<div class="pillar"><span>✅</span><span>Book 2 (E-Commerce Planner): 130-page 90-day workbook with 3 phases, weekly planning, marketing, revenue dashboards</span></div>
+<div class="pillar"><span>✅</span><span>Book 7 (Dad's Letters): 30 unique letter prompts from "The Day You Were Born" to "The Letter I'll Read at Your Wedding"</span></div>
+<div class="pillar"><span>✅</span><span>PDF export settings + 7-point quality checklist including KDP Previewer validation</span></div>
+<div class="pillar"><span>✅</span><span>Production order: Book 1 first (teaches all skills), then 2, 3, 4 in sequence, 5–8 at speed</span></div>
+</div>
+</div></div>
+
+</div>
+<div class="foot">K2.1 — Interior Template Library · KDP Publishing Empire · March 2026</div>
+</body></html>

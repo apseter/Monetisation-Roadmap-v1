@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0"><title>I1.2 — Visual Identity & Feed Aesthetic</title>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;700&family=Sora:wght@400;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#0c0612;--card:#140e1e;--card2:#1c1429;--border:#2a1f3d;--t1:#f4f0fa;--t2:#c4bdd4;--t3:#8a7fa0;--pink:#e84393;--pink-bg:#e8439310;--violet:#6c5ce7;--violet-bg:#6c5ce710;--orange:#fdcb6e;--orange-bg:#fdcb6e10;--green:#00b894;--green-bg:#00b89410;--red:#ff7675;--grad:linear-gradient(135deg,#e84393,#6c5ce7,#00b894)}
+*{margin:0;padding:0;box-sizing:border-box}
+body{background:var(--bg);color:var(--t2);font-family:'DM Sans',sans-serif;line-height:1.65;-webkit-font-smoothing:antialiased}
+.hdr{position:relative;padding:40px 24px 32px;text-align:center;overflow:hidden}
+.hdr::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 70% 50% at 50% 0%,#e8439308,transparent),radial-gradient(ellipse 50% 40% at 25% 80%,#6c5ce706,transparent)}
+.hdr>*{position:relative}
+.tag{font-size:10px;font-family:'JetBrains Mono',monospace;text-transform:uppercase;letter-spacing:.25em;margin-bottom:8px;background:var(--grad);-webkit-background-clip:text;-webkit-text-fill-color:transparent}
+h1{font-family:'Sora',sans-serif;font-size:clamp(22px,4vw,32px);font-weight:800;color:var(--t1);line-height:1.15;margin-bottom:4px}
+.sub{font-size:13px;color:var(--t3);max-width:620px;margin:0 auto}
+.ct{max-width:900px;margin:0 auto;padding:20px 16px}
+.sec{background:var(--card);border:1px solid var(--border);border-radius:12px;margin-bottom:14px;overflow:hidden}
+.sec-h{padding:14px 20px;border-bottom:1px solid var(--border);display:flex;align-items:center;gap:10px;flex-wrap:wrap}
+.sec-h h2{font-family:'Sora',sans-serif;font-size:14px;font-weight:700;color:var(--t1)}
+.num{font-size:9px;font-family:'JetBrains Mono',monospace;padding:3px 10px;border-radius:20px;font-weight:700}
+.np{background:var(--pink-bg);color:var(--pink)}.nv{background:var(--violet-bg);color:var(--violet)}.ng{background:var(--green-bg);color:var(--green)}.no{background:var(--orange-bg);color:var(--orange)}.nr{background:#ff767510;color:var(--red)}
+.sec-b{padding:16px 20px}
+.d{font-size:12px;color:var(--t3);line-height:1.65;margin-bottom:10px}.d strong{color:var(--t1)}
+.tbl{width:100%;border-collapse:collapse;margin:12px 0;font-size:11px}
+.tbl th{background:var(--card2);color:var(--t3);padding:9px 10px;text-align:left;font-family:'JetBrains Mono',monospace;font-size:9px;text-transform:uppercase;letter-spacing:.04em;border:1px solid var(--border)}
+.tbl td{padding:9px 10px;border:1px solid var(--border);color:var(--t2);vertical-align:top}.tbl tr:nth-child(even) td{background:#0c061288}
+.g{color:var(--green);font-weight:600}.pk{color:var(--pink);font-weight:600}.v{color:var(--violet);font-weight:600}
+.callout{padding:16px;border-radius:8px;font-size:12px;line-height:1.65;margin:12px 0}
+.co-p{background:var(--pink-bg);border:1px solid #e8439322;color:#fab1d0}
+.co-v{background:var(--violet-bg);border:1px solid #6c5ce722;color:#b8b0e8}
+.co-g{background:var(--green-bg);border:1px solid #00b89422;color:#7ee8d0}
+.co-o{background:var(--orange-bg);border:1px solid #fdcb6e22;color:#fde6a8}
+.co-r{background:#ff767508;border:1px solid #ff767522;color:#ffb0ae}
+.callout strong{color:var(--t1)}
+.swatch{display:inline-block;width:24px;height:24px;border-radius:4px;border:1px solid var(--border);vertical-align:middle;margin-right:4px}
+.grid-mock{display:grid;grid-template-columns:repeat(3,1fr);gap:3px;max-width:330px;margin:12px auto;border-radius:8px;overflow:hidden}
+.grid-cell{aspect-ratio:3/4;display:flex;align-items:center;justify-content:center;font-size:8px;font-family:'JetBrains Mono',monospace;color:#fff;text-align:center;padding:4px;line-height:1.2}
+.pillar{display:flex;align-items:flex-start;gap:8px;padding:9px 12px;background:var(--green-bg);border:1px solid #00b89418;border-radius:6px;margin-bottom:5px}
+.pillar span:first-child{color:var(--green);font-size:11px;font-family:'JetBrains Mono',monospace;min-width:16px;flex-shrink:0;padding-top:1px}
+.pillar span:last-child{font-size:11px;color:var(--t2);line-height:1.5}
+.template-card{background:var(--card2);border:1px solid var(--border);border-radius:8px;padding:16px;margin:10px 0}
+.template-card h4{font-size:13px;font-weight:700;color:var(--t1);margin-bottom:6px}
+.foot{text-align:center;padding:30px 20px;font-size:10px;color:#4a3f60;font-family:'JetBrains Mono',monospace;border-top:1px solid var(--border);margin-top:30px}
+</style></head><body>
+
+<div class="hdr">
+<div class="tag">I1.2 — Visual Identity & Feed Aesthetic</div>
+<h1>The Forgotten Front — Instagram Visual System</h1>
+<div class="sub">2026 format specs · Color system · 4 Canva templates · Grid strategy · First 9 posts plan · Reel cover system</div>
+</div>
+<div class="ct">
+
+<!-- 2026 FORMAT SPECS -->
+<div class="sec"><div class="sec-h"><span class="num nr">SPECS</span><h2>2026 Instagram Format Specifications</h2></div><div class="sec-b">
+
+<div class="d"><strong>Instagram shifted to a taller 3:4 grid preview in late 2025. Your content must be designed for this new vertical format while staying readable in the feed. Here are the exact dimensions:</strong></div>
+
+<table class="tbl">
+<tr><th>Format</th><th>Dimensions</th><th>Aspect Ratio</th><th>Notes</th></tr>
+<tr><td><strong>Feed posts</strong></td><td>1080 × 1350 px</td><td>4:5</td><td>The standard for feed posts and carousels. Taller than old 1:1 square — more screen real estate.</td></tr>
+<tr><td><strong>Grid preview</strong></td><td>Cropped to 3:4</td><td>3:4</td><td>The grid now shows a taller preview. Keep all key text/visuals in the center square area for safety.</td></tr>
+<tr><td><strong>Reels</strong></td><td>1080 × 1920 px</td><td>9:16</td><td>Full vertical screen. Same as YouTube Shorts — your cross-posts are already the right size.</td></tr>
+<tr><td><strong>Reel covers</strong></td><td>1080 × 1920 px</td><td>9:16 (designed), 3:4 (grid crop)</td><td>Design at 9:16 but keep title text centered in the middle 1080×1350 area — that's what the grid shows.</td></tr>
+<tr><td><strong>Stories</strong></td><td>1080 × 1920 px</td><td>9:16</td><td>Leave 250px free at top and bottom for Instagram's UI overlays (username bar, reply bar).</td></tr>
+<tr><td><strong>Carousel slides</strong></td><td>1080 × 1350 px</td><td>4:5</td><td>All slides same size. Vertical format dominates screen in feed. Max 20 slides per carousel.</td></tr>
+<tr><td><strong>Highlight covers</strong></td><td>1080 × 1920 px</td><td>9:16 (only center circle visible)</td><td>Design icon in center — Instagram crops to a small circle for the highlight preview.</td></tr>
+</table>
+
+<div class="callout co-r"><strong>The safe zone rule:</strong> Instagram's new 3:4 grid crops the top and bottom of your 4:5 posts. Always keep titles, faces, and key visuals in the CENTER of your image. If it's readable in a 1:1 square crop, it'll work in both the old and new grid formats.</div>
+</div></div>
+
+<!-- COLOR SYSTEM FOR INSTAGRAM -->
+<div class="sec"><div class="sec-h"><span class="num np">COLORS</span><h2>The Forgotten Front — Instagram Color System</h2></div><div class="sec-b">
+
+<div class="d"><strong>Your YouTube brand from Y1.3 translates directly to Instagram. These 6 colors define every visual on your page:</strong></div>
+
+<table class="tbl">
+<tr><th>Color</th><th>Hex</th><th>Name</th><th>Usage on Instagram</th></tr>
+<tr><td><span class="swatch" style="background:#0A0A0A"></span></td><td>#0A0A0A</td><td>Blackout</td><td>Primary background for Reel covers, carousel slides, feed posts. The foundation of your dark aesthetic.</td></tr>
+<tr><td><span class="swatch" style="background:#1C1917"></span></td><td>#1C1917</td><td>Bunker</td><td>Secondary background for text cards, Story backgrounds, carousel alternate slides.</td></tr>
+<tr><td><span class="swatch" style="background:#D97706"></span></td><td>#D97706</td><td>Amber Signal</td><td>Primary accent on all content. Titles, accent bars, highlight covers, CTA text. Your signature color.</td></tr>
+<tr><td><span class="swatch" style="background:#DC2626"></span></td><td>#DC2626</td><td>Alert Red</td><td>Badge labels ("UNTOLD", "FORGOTTEN"), urgent callouts, high-emotion content markers.</td></tr>
+<tr><td><span class="swatch" style="background:#FAFAF9"></span></td><td>#FAFAF9</td><td>Dispatch White</td><td>Body text on dark backgrounds. Title text on Reel covers. Never pure #FFFFFF — slightly warm.</td></tr>
+<tr><td><span class="swatch" style="background:#78716C"></span></td><td>#78716C</td><td>Foxhole Grey</td><td>Subtitles, secondary text, dates, attribution lines. Hierarchy below white.</td></tr>
+</table>
+
+<div class="callout co-p"><strong>Why this dark palette works on Instagram:</strong> Instagram's 2026 default is a light UI. Dark content pops in the feed because it creates instant contrast — your posts look like "holes" of darkness in a bright feed, drawing the eye. The same reason dark YouTube thumbnails outperform light ones applies to Instagram: contrast = attention.</div>
+</div></div>
+
+<!-- TYPOGRAPHY FOR INSTAGRAM -->
+<div class="sec"><div class="sec-h"><span class="num nv">FONTS</span><h2>Typography System — 3 Fonts, Clear Hierarchy</h2></div><div class="sec-b">
+
+<table class="tbl">
+<tr><th>Font</th><th>Role</th><th>Where It's Used</th><th>Canva Availability</th></tr>
+<tr><td><strong>Oswald Bold</strong></td><td>Headlines / Titles</td><td>Reel covers, carousel hook slides, feed post titles. ALL CAPS. Large. Commanding.</td><td class="g">Available in Canva (free)</td></tr>
+<tr><td><strong>Libre Baskerville Italic</strong></td><td>Subtitles / Quotes</td><td>Carousel subtexts, quote cards, Story fact overlays. Elegant, editorial feel.</td><td class="g">Available in Canva (free)</td></tr>
+<tr><td><strong>Special Elite</strong></td><td>Labels / Stamps</td><td>"DECLASSIFIED" stamps, "OPERATION" labels, archival-style text overlays.</td><td class="g">Available in Canva (free)</td></tr>
+</table>
+
+<div class="d" style="margin-top:8px"><strong>Hierarchy rule:</strong> Oswald is always the BIGGEST text. Libre Baskerville is always smaller, below Oswald. Special Elite is only for decorative labels. Never mix more than 2 fonts on a single slide or cover.</div>
+</div></div>
+
+<!-- 4 CANVA TEMPLATES -->
+<div class="sec"><div class="sec-h"><span class="num ng">TEMPLATES</span><h2>4 Canva Templates — Build Once, Reuse Forever</h2></div><div class="sec-b">
+
+<div class="d"><strong>Create these 4 templates in Canva. Every Instagram post you ever make will be a duplicate-and-edit of one of these. Total setup time: ~45 minutes.</strong></div>
+
+<!-- Template 1: Reel Cover -->
+<div class="template-card">
+<h4>Template 1: Reel Cover (for all cross-posted YouTube Shorts)</h4>
+<table class="tbl">
+<tr><th>Spec</th><th>Details</th></tr>
+<tr><td><strong>Canva size</strong></td><td>1080 × 1920 px (9:16)</td></tr>
+<tr><td><strong>Background</strong></td><td>Blackout (#0A0A0A) full canvas</td></tr>
+<tr><td><strong>Layout</strong></td><td>Title text centered in the MIDDLE 1080×1350 zone (this is the grid-visible area). Above and below that zone are "overflow" areas only visible in the Reels tab.</td></tr>
+<tr><td><strong>Title</strong></td><td>Oswald Bold, Dispatch White (#FAFAF9), ALL CAPS, 2-4 words maximum. Font size: 72-96pt. Centered horizontally and vertically within the safe zone.</td></tr>
+<tr><td><strong>Badge</strong></td><td>Top area: red (#DC2626) rectangle badge with "UNTOLD" / "FORGOTTEN" / "CLASSIFIED" in white, same as YouTube thumbnail badges.</td></tr>
+<tr><td><strong>Accent bar</strong></td><td>Amber (#D97706) horizontal line, 4px thick, below the title text. Spans ~60% of width. Centered.</td></tr>
+<tr><td><strong>Subtitle</strong></td><td>Optional: Libre Baskerville Italic, Foxhole Grey (#78716C), small text below the accent bar. Video topic context.</td></tr>
+<tr><td><strong>Bottom branding</strong></td><td>"THE FORGOTTEN FRONT" in Special Elite, amber (#D97706), 20% opacity, bottom of safe zone. Subtle watermark.</td></tr>
+</table>
+<div class="callout co-v"><strong>This is essentially your YouTube thumbnail adapted for vertical format.</strong> Same fonts, same colors, same badges. A viewer who sees your YouTube thumbnail AND your Instagram Reel cover should instantly know they're from the same channel. Brand consistency across platforms is how you build recognition.</div>
+</div>
+
+<!-- Template 2: Carousel -->
+<div class="template-card">
+<h4>Template 2: Carousel Slides (for "5 Things You Didn't Know" deep dives)</h4>
+<table class="tbl">
+<tr><th>Spec</th><th>Details</th></tr>
+<tr><td><strong>Canva size</strong></td><td>1080 × 1350 px (4:5) — all slides same size</td></tr>
+<tr><td><strong>Slide 1 (Hook)</strong></td><td>Blackout background. Oswald Bold title, white, ALL CAPS: "5 THINGS YOU DIDN'T KNOW ABOUT [TOPIC]". Amber accent bar below. Red badge "UNTOLD" top-left. This slide must stop the scroll — maximum contrast, maximum text size.</td></tr>
+<tr><td><strong>Slides 2-6 (Facts)</strong></td><td>Bunker (#1C1917) background. Numbered fact (Oswald Bold, amber, large: "01"). Fact text (Libre Baskerville, white, 24-28pt). Archival image as background with 70% dark overlay — or no image, pure typography on dark background. One fact per slide.</td></tr>
+<tr><td><strong>Slide 7 (Summary)</strong></td><td>Blackout background. "DID YOU KNOW ALL 5?" in Oswald Bold, amber. Brief recap or "Which one surprised you most?" engagement prompt.</td></tr>
+<tr><td><strong>Slide 8 (CTA)</strong></td><td>Blackout background. "FOLLOW @theforgottenfront" in Oswald Bold, white. "For the stories they never taught you." in Libre Baskerville Italic, grey. Your logo centered above.</td></tr>
+<tr><td><strong>Consistency</strong></td><td>Every slide has amber accent bar at bottom (4px, full width). Every slide has "THE FORGOTTEN FRONT" watermark in Special Elite, amber, 15% opacity, bottom-right corner.</td></tr>
+</table>
+<div class="callout co-g"><strong>Carousel performance in 2026:</strong> Carousels generate the highest saves-per-reach ratio of any format. Each swipe = dwell time signal to the algorithm. 5-8 slides is the sweet spot. The CTA slide drives follows from non-followers who discover your carousel via Explore.</div>
+</div>
+
+<!-- Template 3: Fact Card -->
+<div class="template-card">
+<h4>Template 3: Single Fact Card (for standalone feed posts)</h4>
+<table class="tbl">
+<tr><th>Spec</th><th>Details</th></tr>
+<tr><td><strong>Canva size</strong></td><td>1080 × 1350 px (4:5)</td></tr>
+<tr><td><strong>Background</strong></td><td>Option A: Archival image with 65% dark overlay. Option B: Pure Blackout (#0A0A0A) for text-only.</td></tr>
+<tr><td><strong>Layout</strong></td><td>Centered text block. Quote or fact in Libre Baskerville Italic, Dispatch White, 28-36pt. Attribution or context below in Foxhole Grey.</td></tr>
+<tr><td><strong>Badge</strong></td><td>Optional: "DID YOU KNOW?" or "HISTORY FACT" in Special Elite, amber, top of card.</td></tr>
+<tr><td><strong>Accent</strong></td><td>Amber bar at bottom. "THE FORGOTTEN FRONT" watermark.</td></tr>
+<tr><td><strong>Use case</strong></td><td>Quick engagement posts between Reels and carousels. Takes 2 minutes to make. High save potential — people bookmark facts.</td></tr>
+</table>
+</div>
+
+<!-- Template 4: Story Template -->
+<div class="template-card">
+<h4>Template 4: Story Template (for daily Stories)</h4>
+<table class="tbl">
+<tr><th>Spec</th><th>Details</th></tr>
+<tr><td><strong>Canva size</strong></td><td>1080 × 1920 px (9:16)</td></tr>
+<tr><td><strong>Safe zones</strong></td><td>Keep all text between Y:250px and Y:1670px. Top 250px is covered by username/close button. Bottom 250px is covered by reply bar.</td></tr>
+<tr><td><strong>Background</strong></td><td>Bunker (#1C1917) or archival image with dark overlay.</td></tr>
+<tr><td><strong>Fact Story variant</strong></td><td>"DID YOU KNOW?" in Special Elite amber at top of safe zone. Fact text in Libre Baskerville white, centered. Source attribution in grey at bottom of safe zone.</td></tr>
+<tr><td><strong>Poll Story variant</strong></td><td>Question in Oswald Bold white. Leave center space for Instagram's poll/quiz sticker. Instagram's native interactive stickers drive massive engagement signals.</td></tr>
+<tr><td><strong>Teaser Story variant</strong></td><td>"NEW VIDEO" badge in red. Video title in Oswald Bold white. "Watch now — link in bio" with arrow pointing up (to the swipe-up area). Archival image from the video as background.</td></tr>
+</table>
+</div>
+
+<div class="callout co-o"><strong>Template setup time: ~45 minutes total.</strong> Create all 4 in one Canva session. Save each as a separate Canva design. To use: duplicate → swap text/images → export. Per-post production time drops to 3-7 minutes once templates exist.</div>
+</div></div>
+
+<!-- GRID STRATEGY -->
+<div class="sec"><div class="sec-h"><span class="num np">GRID</span><h2>Grid Aesthetic Strategy — The "Dark Archive" Look</h2></div><div class="sec-b">
+
+<div class="d"><strong>Your grid is your storefront. When someone lands on your profile, they scan the top 9 posts in ~3 seconds to decide whether to follow. Here's how to make those 3 seconds count:</strong></div>
+
+<table class="tbl">
+<tr><th>Principle</th><th>How You Apply It</th></tr>
+<tr><td><strong>Dark-dominant grid</strong></td><td>90%+ of your posts have dark backgrounds (#0A0A0A or #1C1917). This creates a striking, cohesive "dark archive" aesthetic that's instantly recognizable and signals "serious history content" to visitors.</td></tr>
+<tr><td><strong>Amber pops of color</strong></td><td>Amber (#D97706) appears on every post as accent bars, title highlights, or badges. When a visitor sees your grid, they see a field of dark with consistent amber touches — unmistakably branded.</td></tr>
+<tr><td><strong>Mix content types in the grid</strong></td><td>Alternate Reels, carousels, and fact cards. Never post 3 Reels in a row (they all look similar in the grid). The visual variety of Reel covers vs. carousel hooks vs. text cards creates a dynamic, professional grid.</td></tr>
+<tr><td><strong>Reel covers are designed, not random frames</strong></td><td>Every Reel gets a custom cover image (Template 1) — never a random video frame. Random frames create a messy, amateur grid. Designed covers create a curated, intentional look.</td></tr>
+<tr><td><strong>Text readability at grid size</strong></td><td>When viewing the grid, each post title should be readable. This means BIG text (2-4 words max on Reel covers and carousel hooks). If you can't read it in the grid, simplify.</td></tr>
+</table>
+
+<div class="d" style="margin-top:12px"><strong>Your grid mockup — how the first 9 posts should look:</strong></div>
+
+<div class="grid-mock">
+<div class="grid-cell" style="background:linear-gradient(180deg,#0a0a0a,#1C1917)"><span style="color:#D97706;font-weight:700;font-size:9px">REEL<br>2.5 MILLION<br>FORGOTTEN</span></div>
+<div class="grid-cell" style="background:#0a0a0a"><span style="color:#fff;font-weight:700;font-size:8px">CAROUSEL<br>5 THINGS<br>ABOUT IMPHAL</span></div>
+<div class="grid-cell" style="background:#1C1917"><span style="color:#D97706;font-size:8px">FACT CARD<br><span style="color:#fafaf9;font-size:7px">"87,000 soldiers died..."</span></span></div>
+<div class="grid-cell" style="background:linear-gradient(180deg,#0a0a0a,#292524)"><span style="color:#DC2626;font-weight:700;font-size:8px">REEL<br><span style="color:#fff">GHOST<br>ARMY</span></span></div>
+<div class="grid-cell" style="background:#0a0a0a"><span style="color:#fff;font-weight:700;font-size:8px">CAROUSEL<br><span style="color:#D97706">WHY DID THEY<br>SURRENDER?</span></span></div>
+<div class="grid-cell" style="background:linear-gradient(180deg,#1C1917,#0a0a0a)"><span style="color:#D97706;font-weight:700;font-size:9px">REEL<br>THE SPY<br>PRINCESS</span></div>
+<div class="grid-cell" style="background:#1C1917"><span style="color:#D97706;font-size:8px">FACT CARD<br><span style="color:#fafaf9;font-size:7px">"The largest<br>volunteer army..."</span></span></div>
+<div class="grid-cell" style="background:linear-gradient(180deg,#0a0a0a,#1C1917)"><span style="color:#fff;font-weight:700;font-size:8px">REEL<br><span style="color:#D97706">OPERATION<br>MINCEMEAT</span></span></div>
+<div class="grid-cell" style="background:#0a0a0a"><span style="color:#fff;font-weight:700;font-size:8px">CAROUSEL<br>THE INA<br>INDIANS vs<br>INDIANS</span></div>
+</div>
+
+<div class="d" style="text-align:center;margin-top:4px"><strong>Pattern: Reel → Carousel → Fact Card (repeat).</strong> This creates visual rhythm across the grid — each row of 3 has variety while maintaining the dark + amber brand consistency.</div>
+</div></div>
+
+<!-- FIRST 9 POSTS PLAN -->
+<div class="sec"><div class="sec-h"><span class="num ng">LAUNCH</span><h2>First 9 Posts — Your Profile's "Storefront"</h2></div><div class="sec-b">
+
+<div class="d"><strong>These are the first 9 posts you publish. They fill the visible grid when someone visits your profile. Each post should be excellent — these are your "shop window."</strong></div>
+
+<table class="tbl">
+<tr><th>#</th><th>Type</th><th>Content</th><th>Source</th><th>Template</th></tr>
+<tr><td>1</td><td class="pk">Reel</td><td>Your Video #1 Short: "87,000 Indian soldiers died in WW2 — nobody remembers"</td><td>Y3.1 Video #1 Shorts</td><td>Template 1 (Reel Cover)</td></tr>
+<tr><td>2</td><td class="v">Carousel</td><td>"5 Things You Didn't Know About the Indian Army in WW2" — facts from Video #1 research</td><td>Y3.1 Video #1 research</td><td>Template 2 (Carousel)</td></tr>
+<tr><td>3</td><td style="color:var(--orange);font-weight:600">Fact Card</td><td>"The largest volunteer army in history: 2.5 million Indians served in WW2." — single powerful stat</td><td>Y3.1 Video #1 script</td><td>Template 3 (Fact Card)</td></tr>
+<tr><td>4</td><td class="pk">Reel</td><td>Video #1 Short #2: "The largest volunteer army in history"</td><td>Y3.1 Video #1 Shorts</td><td>Template 1</td></tr>
+<tr><td>5</td><td class="v">Carousel</td><td>"The Battle of Imphal: The Fight That Saved India" — 6 slides from Video #2</td><td>Y3.1 Video #2 research</td><td>Template 2</td></tr>
+<tr><td>6</td><td class="pk">Reel</td><td>Video #2 Short: "Japan almost invaded India in 1944"</td><td>Y3.1 Video #2 Shorts</td><td>Template 1</td></tr>
+<tr><td>7</td><td style="color:var(--orange);font-weight:600">Fact Card</td><td>"In 1944, 150,000 Japanese soldiers marched toward a city most of the world had never heard of."</td><td>Y3.1 Video #2 hook</td><td>Template 3</td></tr>
+<tr><td>8</td><td class="pk">Reel</td><td>Video #3 Short: "WW2's strangest military unit: inflatable tanks"</td><td>Y3.1 Video #3 Shorts</td><td>Template 1</td></tr>
+<tr><td>9</td><td class="v">Carousel</td><td>"The Ghost Army: How Fake Tanks Fooled Hitler" — 5 slides from Video #3</td><td>Y3.1 Video #3 research</td><td>Template 2</td></tr>
+</table>
+
+<div class="callout co-g"><strong>All 9 posts come from content you're already creating for YouTube Videos #1-3.</strong> Zero additional research. The Reels are your Shorts cross-posted. The carousels are your video research reformatted into slides. The fact cards are individual lines from your scripts turned into graphics. This is the 1→7 repurposing framework from the Y2/Y3 Gap Analysis in action.</div>
+</div></div>
+
+<!-- POSTING RHYTHM -->
+<div class="sec"><div class="sec-h"><span class="num no">RHYTHM</span><h2>Weekly Posting Rhythm</h2></div><div class="sec-b">
+
+<table class="tbl">
+<tr><th>Day</th><th>Content</th><th>Format</th><th>Time</th></tr>
+<tr><td><strong>Monday</strong></td><td>Fact Card (from this week's YouTube video research)</td><td>Feed post (Template 3)</td><td>5 min</td></tr>
+<tr><td><strong>Tuesday</strong></td><td>Reel #1 (cross-posted YouTube Short — same day as YouTube upload)</td><td>Reel (Template 1 cover)</td><td>3 min</td></tr>
+<tr><td><strong>Wednesday</strong></td><td>Carousel (deep dive from this week's video topic)</td><td>Carousel (Template 2)</td><td>10 min</td></tr>
+<tr><td><strong>Thursday</strong></td><td>Reel #2 (second YouTube Short for the week)</td><td>Reel (Template 1 cover)</td><td>3 min</td></tr>
+<tr><td><strong>Friday</strong></td><td>Reel #3 (third YouTube Short for the week)</td><td>Reel (Template 1 cover)</td><td>3 min</td></tr>
+<tr><td><strong>Saturday</strong></td><td>Carousel or Fact Card (optional — only if you have surplus content)</td><td>Feed post</td><td>5-10 min</td></tr>
+<tr><td><strong>Daily</strong></td><td>2-3 Stories (behind-the-scenes, polls, video teasers)</td><td>Stories (Template 4)</td><td>3 min</td></tr>
+<tr><td colspan="2" style="font-weight:700;color:var(--pink)">TOTAL WEEKLY</td><td colspan="2" style="font-weight:700;color:var(--pink)">~35-45 min (content creation + scheduling)</td></tr>
+</table>
+
+<div class="callout co-v"><strong>Best posting times for educational/history content (Instagram data):</strong> Weekdays 11AM-1PM and 7PM-9PM in your target audience's timezone. Since your audience is split US + South Asia, posting at 7-9 PM Pakistan time (9-11 AM EST) hits both audiences reasonably well. Schedule everything in advance using Meta Business Suite (free).</div>
+</div></div>
+
+<!-- PINNED POSTS -->
+<div class="sec"><div class="sec-h"><span class="num nv">PIN</span><h2>Pinned Posts — Your Top 3 Grid Positions</h2></div><div class="sec-b">
+
+<div class="d"><strong>Instagram lets you pin up to 3 posts to the top of your grid. These are the first things new visitors see. Use them strategically:</strong></div>
+
+<table class="tbl">
+<tr><th>Pin Position</th><th>What to Pin</th><th>When to Update</th></tr>
+<tr><td><strong>Pin 1 (left)</strong></td><td>Your best-performing Reel — the one with the highest views/engagement. Let the algorithm's vote of confidence be the first thing visitors see.</td><td>Monthly — swap to your current top performer</td></tr>
+<tr><td><strong>Pin 2 (center)</strong></td><td>Your best carousel — the one with highest saves. Carousels demonstrate the depth and quality of your content.</td><td>Monthly — swap to current best</td></tr>
+<tr><td><strong>Pin 3 (right)</strong></td><td>"About" or "Start Here" post — a single image explaining what the channel is about with a CTA to follow. Acts as a static channel trailer.</td><td>Rarely — only update if your channel focus shifts</td></tr>
+</table>
+
+<div class="d" style="margin-top:8px"><strong>Don't pin anything until you have 12+ posts.</strong> You need enough content for the grid to look full below the pinned row. Pinning too early with only 3-4 posts makes the profile look empty.</div>
+</div></div>
+
+<!-- ALT TEXT & ACCESSIBILITY -->
+<div class="sec"><div class="sec-h"><span class="num ng">SEO</span><h2>Alt Text & Visual SEO — Every Post</h2></div><div class="sec-b">
+
+<div class="d"><strong>Instagram's AI reads your images to categorize content. Alt text helps both accessibility AND search discovery. Add it to every post:</strong></div>
+
+<table class="tbl">
+<tr><th>Where</th><th>How</th><th>Example</th></tr>
+<tr><td><strong>Alt text on feed posts</strong></td><td>When posting → Advanced settings → Write Alt Text. Describe the image using niche keywords naturally.</td><td>"Archival photograph of Indian soldiers marching through Burma jungle during World War 2, 1944. Military history."</td></tr>
+<tr><td><strong>Reel cover text</strong></td><td>Instagram's AI reads on-screen text in Reels for topic categorization. Your title text on Reel covers serves double duty: visual hook + algorithm keyword signal.</td><td>Title text "2.5 MILLION FORGOTTEN" tells the algorithm this Reel is about military history and forgotten soldiers.</td></tr>
+<tr><td><strong>Reel audio</strong></td><td>Instagram transcribes your voiceover audio and uses it for content categorization and search. Clear, keyword-rich narration helps discovery.</td><td>Your military history narration naturally contains keywords the algorithm needs.</td></tr>
+<tr><td><strong>Caption keywords</strong></td><td>Instagram's search indexes caption text. Use natural language with niche terms in every caption.</td><td>"The Indian Army in WW2 was the largest volunteer force in history — 2.5 million soldiers who fought across Burma, Italy, and North Africa..."</td></tr>
+</table>
+</div></div>
+
+<!-- SETUP WORKFLOW -->
+<div class="sec"><div class="sec-h"><span class="num ng">SETUP</span><h2>One-Time Setup Workflow — 45 Minutes</h2></div><div class="sec-b">
+
+<table class="tbl">
+<tr><th>Step</th><th>Action</th><th>Time</th></tr>
+<tr><td>1</td><td><strong>Create Reel Cover template</strong> in Canva (1080×1920). Dark background, Oswald title placeholder, badge, amber bar, watermark. Save as "TFF Reel Cover Template".</td><td>10 min</td></tr>
+<tr><td>2</td><td><strong>Create Carousel template</strong> in Canva (1080×1350, multi-page). Hook slide + 5 fact slides + summary + CTA. Save as "TFF Carousel Template".</td><td>15 min</td></tr>
+<tr><td>3</td><td><strong>Create Fact Card template</strong> in Canva (1080×1350). Dark background, centered text area, badge, amber bar. Save as "TFF Fact Card Template".</td><td>5 min</td></tr>
+<tr><td>4</td><td><strong>Create Story template</strong> in Canva (1080×1920). 3 variants (fact, poll, teaser) as separate pages in one design. Save as "TFF Story Templates".</td><td>10 min</td></tr>
+<tr><td>5</td><td><strong>Create 5 Highlight covers</strong> in Canva (1080×1920). Dark background + amber icon for each: About, Latest, Facts, Research, Books. Export as PNG.</td><td>5 min</td></tr>
+<tr><td colspan="2" style="font-weight:700;color:var(--green)">TOTAL ONE-TIME SETUP</td><td style="font-weight:700;color:var(--green)">~45 min</td></tr>
+</table>
+
+<div class="callout co-g"><strong>After this 45-minute setup, every future Instagram post takes 3-10 minutes.</strong> Duplicate template → swap text → swap image → export → schedule. The templates do the heavy lifting. You just supply the content — which is already coming from your YouTube production pipeline.</div>
+</div></div>
+
+<!-- DELIVERABLES -->
+<div class="sec"><div class="sec-h"><h2>📦 I1.2 Deliverables</h2></div><div class="sec-b">
+<div style="display:grid;gap:5px">
+<div class="pillar"><span>✅</span><span>2026 Instagram format specifications: feed (1080×1350), Reels (1080×1920), grid preview (3:4 crop), Stories, carousel slides — with safe zone rules</span></div>
+<div class="pillar"><span>✅</span><span>6-color system translated from YouTube brand (Y1.3): Blackout, Bunker, Amber Signal, Alert Red, Dispatch White, Foxhole Grey — with Instagram-specific usage notes</span></div>
+<div class="pillar"><span>✅</span><span>3-font typography hierarchy: Oswald Bold (titles), Libre Baskerville Italic (subtitles), Special Elite (labels) — all free in Canva</span></div>
+<div class="pillar"><span>✅</span><span>4 Canva templates fully specified: Reel Cover, Carousel (8-slide system), Fact Card, Story (3 variants) — element-by-element design specs</span></div>
+<div class="pillar"><span>✅</span><span>"Dark Archive" grid aesthetic strategy: dark-dominant palette, amber accent pops, Reel/Carousel/Fact Card posting pattern for visual rhythm</span></div>
+<div class="pillar"><span>✅</span><span>First 9 posts fully planned with content, source document, and template assignment — all sourced from existing YouTube Videos #1-3</span></div>
+<div class="pillar"><span>✅</span><span>Weekly posting rhythm: 5 Reels + 1-2 carousels + 1 fact card + daily Stories = ~35-45 min/week total</span></div>
+<div class="pillar"><span>✅</span><span>Pinned posts strategy for top 3 grid positions with update cadence</span></div>
+<div class="pillar"><span>✅</span><span>Alt text & visual SEO guide: alt text, caption keywords, Reel audio indexing, on-screen text signals</span></div>
+<div class="pillar"><span>✅</span><span>One-time setup workflow: 45 minutes to create all 4 templates + 5 highlight covers in Canva</span></div>
+</div>
+
+<div class="callout co-g" style="margin-top:14px"><strong>I1.2 COMPLETE.</strong> Combined with I1.1 (Profile Optimization), your Instagram page can be fully set up and visually branded in under 80 minutes. Next up: I1.3 (Hashtag & Instagram SEO Strategy) — the discovery system that gets your content in front of military history fans who've never heard of you.</div>
+</div></div>
+
+</div>
+<div class="foot">I1.2 — Visual Identity & Feed Aesthetic · The Forgotten Front · Instagram Track · March 2026</div>
+</body></html>

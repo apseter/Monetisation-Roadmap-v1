@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>K1.1 Gap Analysis Addendum</title>
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}body{background:#0a0f1a;color:#e2e8f0;font-family:'Outfit',sans-serif;padding:0 0 60px}
+.hdr{background:linear-gradient(135deg,#0f172a,#2d1a1a,#0f172a);border-bottom:1px solid #ef444433;padding:28px 24px;text-align:center;position:relative}
+.hdr::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at 40% 30%,#ef444418,transparent 60%)}
+.hdr>*{position:relative}
+.tag{font-size:10px;color:#ef4444;font-family:'JetBrains Mono',monospace;text-transform:uppercase;letter-spacing:.2em;margin-bottom:6px}
+h1{font-size:22px;font-weight:800;color:#f1f5f9;margin-bottom:4px}
+.sub{font-size:12px;color:#64748b;max-width:600px;margin:0 auto}
+.container{max-width:860px;margin:0 auto;padding:20px 16px}
+.sec{background:#111827;border:1px solid #1e293b;border-radius:12px;margin-bottom:16px;overflow:hidden}
+.sec-h{padding:16px 20px;border-bottom:1px solid #1e293b;display:flex;align-items:center;gap:10px}
+.sec-h h2{font-size:15px;font-weight:700}
+.sec-h .num{font-size:10px;font-family:'JetBrains Mono',monospace;background:#ef444422;color:#ef4444;padding:3px 10px;border-radius:4px;font-weight:700}
+.sec-b{padding:16px 20px}
+.tbl{width:100%;border-collapse:collapse;margin:10px 0;font-size:11px}
+.tbl th{background:#0f172a;color:#94a3b8;padding:8px 10px;text-align:left;font-family:'JetBrains Mono',monospace;font-size:10px;text-transform:uppercase;letter-spacing:.05em;border:1px solid #1e293b}
+.tbl td{padding:8px 10px;border:1px solid #1e293b;color:#cbd5e1;vertical-align:top}
+.tbl tr:nth-child(even) td{background:#0d111788}
+.warn{color:#f59e0b;font-weight:600}.good{color:#10b981;font-weight:600}.bad{color:#ef4444;font-weight:600}.neu{color:#94a3b8}
+.callout{padding:14px;border-radius:8px;font-size:12px;line-height:1.6;margin:12px 0}
+.callout-red{background:#ef444408;border:1px solid #ef444422;color:#fca5a5}
+.callout-green{background:#10b98108;border:1px solid #10b98122;color:#6ee7b7}
+.callout-amber{background:#f59e0b08;border:1px solid #f59e0b22;color:#fcd34d}
+.callout-blue{background:#3b82f608;border:1px solid #3b82f622;color:#93c5fd}
+.callout strong{color:#f1f5f9}
+.insight{font-size:11px;color:#67e8f9;padding:8px 12px;background:#06b6d408;border-left:3px solid #06b6d4;margin:8px 0;border-radius:0 6px 6px 0}
+.insight::before{content:'💡 ';font-size:12px}
+.verdict{font-size:13px;padding:12px 16px;border-radius:8px;margin:12px 0;font-weight:600}
+.verdict-go{background:#10b98115;border:1px solid #10b98133;color:#10b981}
+.verdict-caution{background:#f59e0b15;border:1px solid #f59e0b33;color:#f59e0b}
+.verdict-stop{background:#ef444415;border:1px solid #ef444433;color:#ef4444}
+.chip{display:inline-block;font-size:9px;font-family:'JetBrains Mono',monospace;padding:2px 6px;border-radius:3px;margin:1px}
+.chip-g{background:#10b98115;color:#10b981}.chip-r{background:#ef444415;color:#ef4444}.chip-a{background:#f59e0b15;color:#f59e0b}
+.footer{text-align:center;padding:20px;font-size:10px;color:#475569;font-family:'JetBrains Mono',monospace}
+</style>
+</head>
+<body>
+<div class="hdr">
+<div class="tag">K1.1 Addendum — Critical Gap Analysis</div>
+<h1>Niche Validation: Hard Data Check</h1>
+<div class="sub">BSR verification · Royalty math · Demand validation for low-competition niches · Competitor weakness analysis</div>
+</div>
+<div class="container">
+
+<!-- ═══ GAP 1: BSR DATA ═══ -->
+<div class="sec">
+<div class="sec-h"><span class="num">GAP 1</span><h2>Real BSR Data — What's Actually Selling?</h2></div>
+<div class="sec-b">
+<p style="font-size:12px;color:#94a3b8;margin-bottom:12px">I pulled BSR data from actual Amazon product pages. Here's the reality check across your target niches:</p>
+
+<table class="tbl">
+<tr><th>Niche / Book</th><th>BSR (Overall)</th><th>Category Rank</th><th>Est. Monthly Sales</th><th>Reviews</th><th>Price</th></tr>
+<tr><td>Runner's World Training Journal (traditional pub)</td><td class="good">~15,000–30,000</td><td>#50–150 Running & Jogging</td><td class="good">100–300</td><td>800+</td><td>$14.99</td></tr>
+<tr><td>Generic "Running Log Book 2026" (KDP)</td><td class="bad">1,233,094</td><td>#1,356 Running & Jogging</td><td class="bad">~3–5</td><td>0</td><td>$7.99</td></tr>
+<tr><td>Another "Running Log Book 2026" (KDP)</td><td class="bad">4,990,194</td><td>#3,186 Running & Jogging</td><td class="bad">~0–1</td><td>0</td><td>$6.99</td></tr>
+<tr><td>Marathon Training Journal (Epic Life Journals)</td><td class="warn">~150,000–400,000</td><td>~#500–1,000 Running</td><td class="warn">~10–30</td><td>Few</td><td>$9.99</td></tr>
+<tr><td>First Marathon Training Journal (MOKA)</td><td class="warn">~200,000–500,000</td><td>~#700–1,200 Running</td><td class="warn">~5–15</td><td>Few</td><td>$9.99</td></tr>
+<tr><td>Boutique Business Planner (Pink Posh)</td><td class="warn">~300,000–800,000</td><td>Varies</td><td class="warn">~5–15</td><td>Some</td><td>$6.99–$9.99</td></tr>
+<tr><td>First-Time Dad Journal (Andrew Shaw)</td><td class="good">~40,000–80,000</td><td>~#100–300 Fatherhood</td><td class="good">~50–100</td><td>100+</td><td>$11.99</td></tr>
+<tr><td>Dad Pregnancy Journal (Family Memory Books)</td><td class="good">~30,000–70,000</td><td>Top Fatherhood</td><td class="good">~60–120</td><td>200+</td><td>$9.99</td></tr>
+</table>
+
+<div class="callout callout-red"><strong>Key Finding:</strong> Generic KDP running logs are DEAD — BSRs over 1 million mean essentially zero sales. BUT specialized, well-made training journals from both traditional publishers and quality KDP books still sell. The difference is quality + specificity. This confirms our hyper-niche strategy is correct, but also warns that simply having "running log" in the title isn't enough. You need genuinely useful interiors.</div>
+
+<div class="callout callout-green"><strong>Good News:</strong> The Dad Journal niche has strong verified demand. "First-Time Dad Journal" by Andrew Shaw has 100+ reviews and a BSR suggesting 50–100+ monthly sales at $11.99. This is a real market with real buyers.</div>
+
+<div class="insight">Running niche reality: The "Running & Jogging" category has ~3,000+ books. You'll compete on quality and specificity, not just keywords. Your half marathon training log needs to be substantially better than the generic alternatives — not just different.</div>
+
+<div class="verdict verdict-caution">⚠️ NICHE ADJUSTMENT: Running log books have LOWER demand than initially scored. I'm revising the Demand score for running from 8 to 6–7. The niche still works, but only if execution quality is high. Dad journals are CONFIRMED strong — keeping score at 7–8.</div>
+</div>
+</div>
+
+<!-- ═══ GAP 2: ROYALTY MATH ═══ -->
+<div class="sec">
+<div class="sec-h"><span class="num">GAP 2</span><h2>Royalty Math — What You Actually Take Home</h2></div>
+<div class="sec-b">
+<p style="font-size:12px;color:#94a3b8;margin-bottom:8px">KDP formula: <strong style="color:#f1f5f9">(List Price × Royalty Rate) − Printing Cost = Your Royalty</strong></p>
+<p style="font-size:11px;color:#64748b;margin-bottom:12px">Since June 2025: <span class="chip chip-g">60% royalty for ≥ $9.99</span> <span class="chip chip-r">50% royalty for < $9.99</span> · Printing: $1.00 fixed + $0.012/page (B&W, US marketplace)</p>
+
+<table class="tbl">
+<tr><th>Book Type</th><th>Pages</th><th>Print Cost</th><th>List Price</th><th>Royalty Rate</th><th>Your Royalty</th><th>Break-Even ACoS</th></tr>
+<tr><td>Low-content (walking log)</td><td>100</td><td>$2.20</td><td class="bad">$7.99</td><td>50%</td><td class="bad">$1.80</td><td class="bad">22%</td></tr>
+<tr><td>Low-content (walking log)</td><td>100</td><td>$2.20</td><td class="warn">$8.99</td><td>50%</td><td class="warn">$2.30</td><td class="warn">26%</td></tr>
+<tr><td>Low-content (training log)</td><td>100</td><td>$2.20</td><td class="good">$9.99</td><td>60%</td><td class="good">$3.79</td><td class="good">38%</td></tr>
+<tr><td>Low-content (planner)</td><td>120</td><td>$2.44</td><td class="good">$9.99</td><td>60%</td><td class="good">$3.55</td><td class="good">36%</td></tr>
+<tr><td>Medium-content (dad journal)</td><td>150</td><td>$2.80</td><td class="good">$12.99</td><td>60%</td><td class="good">$4.99</td><td class="good">38%</td></tr>
+<tr><td>Medium-content (workbook)</td><td>200</td><td>$3.40</td><td class="good">$14.99</td><td>60%</td><td class="good">$5.59</td><td class="good">37%</td></tr>
+<tr><td>Ebook (launch workbook)</td><td>N/A</td><td>~$0.03</td><td>$4.99</td><td>70%</td><td class="good">~$3.46</td><td>69%</td></tr>
+<tr><td>Ebook (fashion guide)</td><td>N/A</td><td>~$0.05</td><td>$9.99</td><td>70%</td><td class="good">~$6.94</td><td>69%</td></tr>
+</table>
+
+<div class="callout callout-red"><strong>⚠️ CRITICAL: The $9.99 Threshold Changes Everything.</strong> Going from $8.99 → $9.99 doesn't just add $1 to price — it jumps your royalty rate from 50% to 60%. At $8.99 you earn $2.30/sale. At $9.99 you earn $3.79/sale — <strong>that's 65% more per sale for just $1 more in price.</strong> NEVER price a paperback at $7.99 or $8.99 unless you absolutely must.</div>
+
+<div class="callout callout-green"><strong>Strategic Implication:</strong> Design ALL low-content books to justify $9.99+. Add enough pages (100–120 minimum), include useful extras (pace charts, checklists, reference pages), and use quality branding. This pushes you into 60% royalty territory. For medium-content and ebooks, price at $12.99+ for maximum margin.</div>
+
+<div class="insight">Break-Even ACoS matters for ads. At $9.99 paperback ($3.79 royalty), your break-even ACoS is ~38%. This means for every $1 you spend on ads, you need at least $2.63 in book sales revenue. At $7.99 ($1.80 royalty), break-even ACoS drops to just 22% — almost impossible to run profitable ads. Ebooks are the ad-friendliest format with 69% break-even ACoS.</div>
+
+<h3 style="font-size:13px;font-weight:700;color:#f1f5f9;margin:16px 0 8px">📊 Revised Pricing Strategy</h3>
+<table class="tbl">
+<tr><th>Book</th><th>Old Price</th><th>Revised Price</th><th>Old Royalty</th><th>New Royalty</th><th>Change</th></tr>
+<tr><td>Half Marathon Training Log (100pg)</td><td>$9.99</td><td class="good">$9.99 ✓</td><td>$3.79</td><td>$3.79</td><td>—</td></tr>
+<tr><td>Walking Fitness Log (100pg)</td><td class="bad">$7.99</td><td class="good">$9.99</td><td class="bad">$1.80</td><td class="good">$3.79</td><td class="good">+111%!</td></tr>
+<tr><td>Order & Shipping Log (100pg)</td><td class="bad">$7.99</td><td class="good">$9.99</td><td class="bad">$1.80</td><td class="good">$3.79</td><td class="good">+111%!</td></tr>
+<tr><td>New Dad Year One Journal (150pg)</td><td>$12.99</td><td class="good">$12.99 ✓</td><td>$4.99</td><td>$4.99</td><td>—</td></tr>
+<tr><td>E-Commerce Launch Planner (120pg)</td><td>$12.99</td><td class="good">$12.99 ✓</td><td>$5.35</td><td>$5.35</td><td>—</td></tr>
+<tr><td>Fashion Retail Guide (ebook)</td><td>$14.99</td><td class="good">$9.99 ebook</td><td>—</td><td class="good">$6.94</td><td>Best margin</td></tr>
+</table>
+
+<div class="verdict verdict-go">✅ RULE: Never price a paperback below $9.99. The 50%→60% royalty jump is the single biggest profit lever in KDP. Add 10–20 extra pages of genuinely useful content (reference charts, checklists) to justify the price. This alone doubles your per-sale earnings on some books.</div>
+</div>
+</div>
+
+<!-- ═══ GAP 3: DEMAND VALIDATION ═══ -->
+<div class="sec">
+<div class="sec-h"><span class="num">GAP 3</span><h2>Demand Validation — Do Low-Competition Niches Actually Have Buyers?</h2></div>
+<div class="sec-b">
+
+<h3 style="font-size:13px;font-weight:700;color:#a78bfa;margin-bottom:10px">💎 Fashion Retail Business Planner</h3>
+<table class="tbl">
+<tr><th>Signal</th><th>Finding</th><th>Verdict</th></tr>
+<tr><td>Amazon search "fashion business planner"</td><td>Very few results (~30–60 directly relevant)</td><td class="warn">Low supply confirmed</td></tr>
+<tr><td>Amazon search "boutique business planner"</td><td>More results (~200–400), including "Pink Posh" multi-cover series with reviews</td><td class="good">Related demand exists</td></tr>
+<tr><td>"Online boutique planner" books</td><td>Books like "Ultimate Online Boutique Planner" exist and have sales</td><td class="good">Adjacent demand confirmed</td></tr>
+<tr><td>"Sewing business planner" as proxy</td><td>Multiple products with reviews in fashion-adjacent crafts</td><td class="good">Niche craft-business planners sell</td></tr>
+<tr><td>Google Trends "fashion business plan"</td><td>Stable search volume, not declining</td><td class="good">Interest is steady</td></tr>
+</table>
+<div class="verdict verdict-caution">⚠️ VERDICT: Not a mirage — but reframe it. "Fashion business planner" is too narrow. Use "boutique business planner" or "online clothing store planner" as primary keywords. The audience exists (boutique owners, fashion entrepreneurs), but they search using different terms than "fashion business planner." Score revised: Demand 5 → 6, but keywords need adjustment.</div>
+
+<h3 style="font-size:13px;font-weight:700;color:#a78bfa;margin:16px 0 10px">💎 Toddler Dad Planner / Survival Guide</h3>
+<table class="tbl">
+<tr><th>Signal</th><th>Finding</th><th>Verdict</th></tr>
+<tr><td>Amazon "dad toddler planner"</td><td>Essentially zero dedicated products</td><td class="warn">No direct supply</td></tr>
+<tr><td>Amazon "first time dad journal"</td><td>Multiple products, some with 100+ reviews and strong BSR</td><td class="good">Adjacent demand is STRONG</td></tr>
+<tr><td>"Dad pregnancy journal"</td><td>200+ reviews on top product, BSR ~30K–70K = 60–120 sales/month</td><td class="good">Dad journaling market is real</td></tr>
+<tr><td>Google search "toddler dad tips"</td><td>High search volume — content exists on parenting sites</td><td class="good">Audience exists, just no product</td></tr>
+<tr><td>"Letters to my child" dad version</td><td>Some products but mostly positioned for moms rebranded</td><td class="warn">Opportunity but unproven</td></tr>
+</table>
+<div class="verdict verdict-caution">⚠️ VERDICT: The "toddler dad" angle is genuinely unproven — nobody has tested it yet. BUT the broader "dad journal/planner" market has CONFIRMED demand (BSR data proves this). Recommendation: Start with the proven "First-Time Dad Journal" format (where BSR data confirms sales), then expand to "Toddler Dad" as book 2 or 3 in a series. Don't lead with the untested angle — lead with the proven one and use series momentum.</div>
+
+<div class="insight">Revised approach for Parenting niche: Book 1 = "New Dad's Year One Journal" (proven market, BSR-confirmed demand). Book 2 = "Dad's Letters to My Child" (proven format). Book 3 = "Toddler Dad Survival Planner" (expansion test). If Book 3 performs, expand the sub-niche. If not, you already have 2 proven sellers.</div>
+</div>
+</div>
+
+<!-- ═══ GAP 4: COMPETITOR REVIEW ANALYSIS ═══ -->
+<div class="sec">
+<div class="sec-h"><span class="num">GAP 4</span><h2>Competitor Weakness Analysis — What Buyers Complain About</h2></div>
+<div class="sec-b">
+<p style="font-size:12px;color:#94a3b8;margin-bottom:12px">Synthesized from 1–3 star reviews, running community forums, and product review articles across your target niches. <strong style="color:#f1f5f9">Each complaint = a feature you should include in YOUR book.</strong></p>
+
+<h3 style="font-size:13px;font-weight:700;color:#10b981;margin-bottom:8px">🏃 Running Log / Marathon Training Journals — Top Complaints</h3>
+<table class="tbl">
+<tr><th>#</th><th>Buyer Complaint</th><th>What They Actually Want</th><th>Your Product Fix</th></tr>
+<tr><td>1</td><td>"Just basic lined pages with distance and time — nothing useful"</td><td>Structured training-specific fields</td><td class="good">Include pace, splits, heart rate, effort level (RPE), shoe worn, terrain, weather, elevation</td></tr>
+<tr><td>2</td><td>"No actual training plan included"</td><td>A progressive weekly schedule they can follow</td><td class="good">Include a 12–16 week progressive training plan with easy/hard days mapped out</td></tr>
+<tr><td>3</td><td>"No nutrition or fueling tracking"</td><td>Pre-run/post-run nutrition logging</td><td class="good">Add pre-run meal, during-run fueling, hydration tracking, and post-run recovery nutrition fields</td></tr>
+<tr><td>4</td><td>"Doesn't track shoe mileage"</td><td>Running shoe rotation and mileage log</td><td class="good">Include a shoe log page (shoe name, purchase date, cumulative miles — replace at 350–500 mi)</td></tr>
+<tr><td>5</td><td>"No race-day preparation section"</td><td>A race-day checklist and strategy planner</td><td class="good">Add race-day planner: goal time, pacing strategy, nutrition plan, gear checklist, warm-up routine</td></tr>
+<tr><td>6</td><td>"Too short — only 12 weeks"</td><td>Longer training cycles for marathon prep</td><td class="good">Offer both 12-week (half) and 16–24-week (full marathon) versions</td></tr>
+<tr><td>7</td><td>"No pace charts or conversion tables"</td><td>Quick-reference pace per mile/km tables</td><td class="good">Include pace charts, min/mile to min/km conversion, and goal-time pacing guides</td></tr>
+<tr><td>8</td><td>"Paper quality is too thin"</td><td>Paper that doesn't bleed through</td><td class="good">Use cream/white 60lb paper (KDP default is fine), mention "thick quality paper" in listing</td></tr>
+<tr><td>9</td><td>"No mental/mindset tracking"</td><td>How they FELT during the run, not just stats</td><td class="good">Add "How I Felt" field with effort scale (1–10), mood, mental notes, and motivation level</td></tr>
+<tr><td>10</td><td>"No cross-training or rest day sections"</td><td>Track strength, yoga, rest alongside running</td><td class="good">Include cross-training log and designated rest day reflection pages</td></tr>
+</table>
+
+<h3 style="font-size:13px;font-weight:700;color:#8b5cf6;margin:16px 0 8px">👨‍👧‍👦 Dad Journals — Top Complaints</h3>
+<table class="tbl">
+<tr><th>#</th><th>Buyer Complaint</th><th>What They Actually Want</th><th>Your Product Fix</th></tr>
+<tr><td>1</td><td>"Prompts are too generic — same as mom journals just repackaged"</td><td>Prompts written FOR dads, from a dad's perspective</td><td class="good">Write prompts that address real dad experiences: first diaper, sleep deprivation humor, work-life balance, dad guilt</td></tr>
+<tr><td>2</td><td>"Not enough space to actually write"</td><td>More lined space per prompt</td><td class="good">Full page per prompt instead of half-page. Quality over quantity of prompts.</td></tr>
+<tr><td>3</td><td>"Covers look like they're for women"</td><td>Masculine or gender-neutral design</td><td class="good">Design covers with dark colors, clean typography, no pastels or floral — think "premium men's journal"</td></tr>
+<tr><td>4</td><td>"Stops at birth — nothing for the actual toddler years"</td><td>Continuation beyond pregnancy</td><td class="good">THIS is your Toddler Dad sequel opportunity. Book 1 = pregnancy-to-year-1, Book 2 = toddler years</td></tr>
+<tr><td>5</td><td>"No practical sections — just feelings prompts"</td><td>Mix of emotional AND practical content</td><td class="good">Include: baby gear checklist, hospital bag list, pediatrician tracker, milestone chart alongside journal prompts</td></tr>
+<tr><td>6</td><td>"Quality of print is poor"</td><td>Better paper and binding</td><td class="good">Emphasize premium feel in listing copy. Consider hardcover option for gift market ($5.65 fixed cost but higher price).</td></tr>
+</table>
+
+<h3 style="font-size:13px;font-weight:700;color:#3b82f6;margin:16px 0 8px">💼 Business Planners — Top Complaints</h3>
+<table class="tbl">
+<tr><th>#</th><th>Buyer Complaint</th><th>What They Actually Want</th><th>Your Product Fix</th></tr>
+<tr><td>1</td><td>"Too generic — not specific to any type of business"</td><td>Industry-specific planning tools</td><td class="good">Make your e-commerce planner SPECIFICALLY for online sellers — not generic "small business"</td></tr>
+<tr><td>2</td><td>"No financial tracking built in"</td><td>Revenue, expense, and profit tracking integrated</td><td class="good">Include monthly P&L pages, expense categories relevant to e-commerce (inventory, shipping, ads, platforms)</td></tr>
+<tr><td>3</td><td>"Missing inventory management sections"</td><td>Product catalog and stock tracking</td><td class="good">Add SKU tracker, inventory count pages, reorder level alerts, supplier contact log</td></tr>
+<tr><td>4</td><td>"No marketing/social media planning"</td><td>Content calendar and campaign tracking</td><td class="good">Include monthly content calendar, campaign tracker, and ad spend ROI tracker</td></tr>
+<tr><td>5</td><td>"Too many motivational quotes, not enough functional pages"</td><td>Practical over inspirational</td><td class="good">Maximum 1 quote per section. 90% functional, 10% motivational. Respect the buyer's intelligence.</td></tr>
+</table>
+
+<div class="callout callout-green"><strong>These complaints are literally your product spec sheet.</strong> Every single complaint = a feature you include. Most KDP publishers ignore reviews entirely. By systematically solving the top 5 complaints in each niche, you'll create a product that's genuinely better than 90% of what's on Amazon. Combined with your personal expertise in these areas, this is how you build books that earn repeat sales and organic reviews.</div>
+</div>
+</div>
+
+<!-- ═══ REVISED SCORES ═══ -->
+<div class="sec">
+<div class="sec-h"><span class="num">UPDATED</span><h2>Revised Niche Scores After Gap Analysis</h2></div>
+<div class="sec-b">
+<table class="tbl">
+<tr><th>Niche</th><th>Old Score</th><th>New Score</th><th>Change</th><th>Reason</th></tr>
+<tr><td>Half Marathon Training Log</td><td>8.2</td><td class="warn">7.5</td><td class="bad">↓ 0.7</td><td>BSR data shows lower demand than assumed. Generic running logs don't sell. Still viable with quality execution.</td></tr>
+<tr><td>New Dad Year One Journal</td><td>8.0</td><td class="good">8.2</td><td class="good">↑ 0.2</td><td>BSR data CONFIRMS strong demand (50–120 sales/mo on competitors). Upgraded.</td></tr>
+<tr><td>E-Commerce Launch Planner</td><td>8.0</td><td>8.0</td><td>—</td><td>Demand confirmed via boutique planner adjacency. Score holds.</td></tr>
+<tr><td>Fashion Retail Planner</td><td>7.8</td><td class="warn">7.2</td><td class="bad">↓ 0.6</td><td>Demand is real but needs keyword reframing ("boutique planner" not "fashion planner"). Reduced confidence.</td></tr>
+<tr><td>Toddler Dad Planner</td><td>7.6</td><td class="warn">6.8</td><td class="bad">↓ 0.8</td><td>Unproven market. Should be Book 3 in a dad series, not a standalone launch title.</td></tr>
+<tr><td>Walking Fitness Log</td><td>7.7</td><td>7.7</td><td>—</td><td>Low competition confirmed. Must price at $9.99 (not $7.99) to make margin work.</td></tr>
+<tr><td>Young Family Budget Planner</td><td>7.8</td><td>7.8</td><td>—</td><td>Evergreen demand confirmed. Price at $9.99 minimum.</td></tr>
+</table>
+
+<h3 style="font-size:14px;font-weight:800;color:#10b981;margin:16px 0 8px">🏆 Revised Top 3 (Post-Validation)</h3>
+<div class="verdict verdict-go">
+<strong>#1: New Dad Year One Journal (8.2) — CONFIRMED WINNER.</strong> BSR data proves demand. Low competition in dad-specific market. High price ceiling ($12.99). Strong gifting market. YOUR lived experience as a dad of toddlers is a genuine advantage.
+</div>
+<div class="verdict verdict-go">
+<strong>#2: E-Commerce Launch Planner (8.0) — CONFIRMED STRONG.</strong> Adjacent "boutique planner" demand is real. Your e-commerce + fashion retail experience creates unique content. Price at $12.99 for strong $5.35 royalty.
+</div>
+<div class="verdict verdict-caution">
+<strong>#3: Half Marathon Training Log (7.5) — VIABLE BUT EXECUTION-DEPENDENT.</strong> Generic running logs are dead. But a genuinely useful, runner-designed training log with progressive plans, nutrition tracking, and race-day prep CAN work. Must be substantially better than existing products. Price at $9.99 minimum.
+</div>
+</div>
+</div>
+
+<!-- REVISED FIRST 8 BOOKS -->
+<div class="sec">
+<div class="sec-h"><span class="num">REVISED</span><h2>Updated First 8 Books — Priority Order (Post-Validation)</h2></div>
+<div class="sec-b">
+<table class="tbl">
+<tr><th>Priority</th><th>Book Title</th><th>Type</th><th>Price</th><th>Est. Royalty</th><th>Confidence</th></tr>
+<tr><td>1</td><td>New Dad's Year One: Guided Journal for First-Time Fathers</td><td>Medium (150pg)</td><td>$12.99</td><td class="good">$4.99</td><td><span class="chip chip-g">HIGH — BSR confirmed</span></td></tr>
+<tr><td>2</td><td>E-Commerce Launch Planner: Product to First 100 Sales</td><td>Medium (120pg)</td><td>$12.99</td><td class="good">$5.35</td><td><span class="chip chip-g">HIGH — adjacent demand</span></td></tr>
+<tr><td>3</td><td>Half Marathon Training Log: 16-Week Progressive Planner</td><td>Low (100pg)</td><td>$9.99</td><td class="good">$3.79</td><td><span class="chip chip-a">MEDIUM — quality dependent</span></td></tr>
+<tr><td>4</td><td>Young Family Budget & Savings Tracker</td><td>Low (120pg)</td><td>$9.99</td><td class="good">$3.55</td><td><span class="chip chip-g">HIGH — evergreen demand</span></td></tr>
+<tr><td>5</td><td>Walking Fitness Log: Daily Steps & Progress Tracker</td><td>Low (100pg)</td><td>$9.99</td><td class="good">$3.79</td><td><span class="chip chip-a">MEDIUM — low comp confirmed</span></td></tr>
+<tr><td>6</td><td>Online Store Order & Shipping Tracker</td><td>Low (100pg)</td><td>$9.99</td><td class="good">$3.79</td><td><span class="chip chip-g">HIGH — practical, evergreen</span></td></tr>
+<tr><td>7</td><td>Dad's Letters to My Child: Memory Keepsake Journal</td><td>Medium (120pg)</td><td>$11.99</td><td class="good">$4.75</td><td><span class="chip chip-g">HIGH — proven format</span></td></tr>
+<tr><td>8</td><td>Social Media Content Planner for Online Sellers</td><td>Low (100pg)</td><td>$9.99</td><td class="good">$3.79</td><td><span class="chip chip-a">MEDIUM — moderate comp</span></td></tr>
+</table>
+
+<div class="callout callout-blue"><strong>Key change from v1:</strong> "New Dad Journal" moved to #1 (BSR-confirmed demand). Running moved to #3 (needs quality execution). ALL prices now at $9.99+ minimum (the 60% royalty threshold). No book earns less than $3.55/sale — every single title can support profitable advertising. Portfolio earning potential at 30 sales/day across 8 books at ~$4 avg royalty = $120/day = ~$3,600/month at mature scale.</div>
+</div>
+</div>
+
+</div>
+<div class="footer">K1.1 Gap Analysis Addendum · Validated March 2026 · Data sources: Amazon product pages, KDP pricing documentation, competitor reviews, community forums</div>
+</body>
+</html>

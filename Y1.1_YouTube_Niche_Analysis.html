@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0"><title>Y1.1 — Niche Selection & CPM Revenue Analysis</title>
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}body{background:#0a0f1a;color:#e2e8f0;font-family:'Outfit',sans-serif;padding:0 0 60px}
+.hdr{background:linear-gradient(135deg,#0f172a,#1a1033,#0f172a);border-bottom:1px solid #6366f133;padding:28px 24px;text-align:center;position:relative}.hdr::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at 40% 30%,#6366f118,transparent 60%)}.hdr>*{position:relative}
+.tag{font-size:10px;color:#6366f1;font-family:'JetBrains Mono',monospace;text-transform:uppercase;letter-spacing:.2em;margin-bottom:6px}
+h1{font-size:22px;font-weight:800;color:#f1f5f9;margin-bottom:4px}
+.sub{font-size:12px;color:#64748b;max-width:650px;margin:0 auto}
+.ct{max-width:880px;margin:0 auto;padding:20px 16px}
+.sec{background:#111827;border:1px solid #1e293b;border-radius:12px;margin-bottom:14px;overflow:hidden}
+.sec-h{padding:14px 18px;border-bottom:1px solid #1e293b;display:flex;align-items:center;gap:8px;flex-wrap:wrap}
+.sec-h h2{font-size:14px;font-weight:700}
+.num{font-size:9px;font-family:'JetBrains Mono',monospace;padding:2px 8px;border-radius:4px;font-weight:700}
+.pg{background:#10b98115;color:#10b981}.pb{background:#3b82f615;color:#60a5fa}.pa{background:#f59e0b15;color:#f59e0b}.pp{background:#8b5cf615;color:#a78bfa}.pr{background:#ef444415;color:#ef4444}.pi{background:#6366f115;color:#818cf8}
+.sec-b{padding:14px 18px}
+.n{background:#0a0f1a;border:1px solid #1e293b;border-radius:10px;padding:14px;margin-bottom:10px}
+.n h3{font-size:13px;font-weight:700;color:#f1f5f9;margin-bottom:6px;display:flex;flex-wrap:wrap;gap:6px;align-items:center}
+.p{font-size:8px;font-family:'JetBrains Mono',monospace;padding:2px 6px;border-radius:3px;font-weight:600}
+.sc{display:flex;gap:4px;flex-wrap:wrap;margin-bottom:6px}
+.sc span{font-size:9px;font-family:'JetBrains Mono',monospace;padding:2px 6px;border-radius:3px;background:#1e293b;color:#94a3b8}
+.sc .hi{background:#10b98112;color:#10b981}.sc .md{background:#f59e0b12;color:#f59e0b}.sc .lo{background:#ef444412;color:#ef4444}
+.bar{height:5px;background:#1e293b;border-radius:3px;margin:6px 0 8px;overflow:hidden}.bar-fill{height:100%;border-radius:3px}
+.d{font-size:11px;color:#94a3b8;line-height:1.6;margin-bottom:8px}
+.why{font-size:11px;color:#67e8f9;line-height:1.5;padding:8px 12px;background:#06b6d408;border:1px solid #06b6d422;border-radius:8px;margin-bottom:8px}
+.why::before{content:'🎯 WHY YOU: ';font-weight:700;color:#22d3ee}
+.rev{font-size:10px;font-family:'JetBrains Mono',monospace;padding:8px 12px;background:#10b98108;border:1px solid #10b98118;border-radius:6px;color:#6ee7b7;margin-bottom:6px}
+.tbl{width:100%;border-collapse:collapse;margin:10px 0;font-size:10px}
+.tbl th{background:#0f172a;color:#94a3b8;padding:6px 8px;text-align:left;font-family:'JetBrains Mono',monospace;font-size:9px;text-transform:uppercase;border:1px solid #1e293b}
+.tbl td{padding:6px 8px;border:1px solid #1e293b;color:#cbd5e1;vertical-align:top}.tbl tr:nth-child(even) td{background:#0d111788}
+.g{color:#10b981;font-weight:600}.r{color:#ef4444;font-weight:600}.a{color:#f59e0b;font-weight:600}
+.rec{background:linear-gradient(135deg,#111827,#1a1033);border:2px solid #6366f144;border-radius:12px;padding:18px;margin:14px 0}
+.rec h3{font-size:15px;font-weight:800;color:#818cf8;margin-bottom:6px}
+.rec p{font-size:12px;color:#94a3b8;line-height:1.6}.rec strong{color:#e2e8f0}
+.callout{padding:12px;border-radius:8px;font-size:11px;line-height:1.6;margin:10px 0}
+.co-g{background:#10b98108;border:1px solid #10b98122;color:#6ee7b7}
+.co-r{background:#ef444408;border:1px solid #ef444422;color:#fca5a5}
+.co-b{background:#3b82f608;border:1px solid #3b82f622;color:#93c5fd}
+.co-a{background:#f59e0b08;border:1px solid #f59e0b22;color:#fcd34d}
+.callout strong{color:#f1f5f9}
+.foot{text-align:center;padding:20px;font-size:10px;color:#475569;font-family:'JetBrains Mono',monospace}
+</style></head><body>
+<div class="hdr"><div class="tag">Y1.1 — Niche Selection & CPM Revenue Analysis</div><h1>YouTube Niche Evaluation: Data-Driven Decision</h1><div class="sub">8 sub-niches evaluated · CPM/RPM data from 2025–2026 creator reports · Faceless feasibility scored · Competition + growth analysis · Your knowledge mapped</div></div>
+<div class="ct">
+
+<!-- ══════════════ KEY INSIGHT ══════════════ -->
+<div class="callout co-b"><strong>The CPM reality check:</strong> <strong>A finance channel earning $30 CPM generates 10x more revenue per view than a gaming channel at $3 CPM.</strong> Niche selection is the single highest-leverage decision in YouTube. The same 100,000 views could earn you $165 (gaming) or $1,650 (finance). Your three interest areas — True Crime ($8–12 RPM), Running/Fitness ($4–8 RPM), and Parenting ($3–6 RPM) — have very different revenue ceilings. Let the data guide the decision.</div>
+
+<!-- ══════════════ SCORING MATRIX ══════════════ -->
+<div class="sec"><div class="sec-h"><span class="num pi">DATA</span><h2>📊 YouTube Niche Scoring Matrix — Your 8 Sub-Niches</h2></div><div class="sec-b">
+
+<table class="tbl">
+<tr><th>#</th><th>Sub-Niche</th><th>CPM<br>Range</th><th>RPM<br>(Your Take)</th><th>Faceless<br>Feasibility</th><th>Competition<br>(Inverse)</th><th>Growth<br>Trend</th><th>Your<br>Knowledge</th><th>SCORE<br>/10</th><th>Verdict</th></tr>
+<tr><td>1</td><td>True Crime & Unsolved Mysteries</td><td>$8–$15</td><td class="g">$8–$12</td><td class="g">10/10</td><td class="a">5/10</td><td class="g">8x</td><td class="a">7/10</td><td class="g"><strong>8.4</strong></td><td class="g">★★ BEST BET</td></tr>
+<tr><td>2</td><td>Historical Mysteries & Dark Events</td><td>$7–$14</td><td class="g">$7–$11</td><td class="g">10/10</td><td class="g">7/10</td><td class="g">10x</td><td class="g">8/10</td><td class="g"><strong>8.5</strong></td><td class="g">★★ BEST BET</td></tr>
+<tr><td>3</td><td>True Crime × History Hybrid (Unique)</td><td>$8–$15</td><td class="g">$8–$12</td><td class="g">10/10</td><td class="g">8/10</td><td class="g">12x</td><td class="g">8/10</td><td class="g"><strong>8.8</strong></td><td class="g">★★★ TOP PICK</td></tr>
+<tr><td>4</td><td>Marathon/Running Documentary-Style</td><td>$4–$8</td><td class="a">$3–$6</td><td class="a">7/10</td><td class="g">8/10</td><td class="a">4x</td><td class="g">10/10</td><td class="a"><strong>6.8</strong></td><td>NICHE PLAY</td></tr>
+<tr><td>5</td><td>Fitness Explainers & Science</td><td>$5–$10</td><td class="a">$4–$8</td><td class="a">7/10</td><td class="r">3/10</td><td class="a">5x</td><td class="a">7/10</td><td class="a"><strong>5.9</strong></td><td class="r">TOO COMPETITIVE</td></tr>
+<tr><td>6</td><td>Dad Life / Parenting Tips</td><td>$3–$7</td><td class="r">$2–$5</td><td class="r">4/10</td><td class="a">5/10</td><td class="a">4x</td><td class="g">9/10</td><td class="a"><strong>5.5</strong></td><td class="r">LOW CPM</td></tr>
+<tr><td>7</td><td>Walking / Hiking Adventures</td><td>$3–$7</td><td class="r">$2–$5</td><td class="a">6/10</td><td class="a">6/10</td><td class="a">5x</td><td class="g">9/10</td><td class="a"><strong>5.8</strong></td><td>SECONDARY</td></tr>
+<tr><td>8</td><td>Crime Psychology / Criminal Minds</td><td>$7–$13</td><td class="g">$6–$10</td><td class="g">9/10</td><td class="a">6/10</td><td class="g">8x</td><td class="a">6/10</td><td class="g"><strong>7.5</strong></td><td class="a">EXPANSION</td></tr>
+</table>
+
+<div class="callout co-a"><strong>Scoring weights:</strong> CPM/Revenue Potential (25%), Faceless Feasibility (20%), Competition Inverse (15%), Growth Trend (15%), Your Knowledge (25%). Knowledge is weighted high because it determines content quality and sustainability — but CPM is equally weighted because revenue ceiling matters.</div>
+</div></div>
+
+<!-- ══════════════ #1 PICK ══════════════ -->
+<div class="sec"><div class="sec-h"><span class="num pg">NICHE #1</span><h2>🏆 Recommended: True Crime × History Hybrid Channel</h2></div><div class="sec-b">
+
+<div class="rec"><h3>★★★ "Untold History" — Historical True Crime & Dark Mysteries (Score: 8.8/10)</h3>
+<p>This is the sweet spot where your two strongest YouTube interests — history and true crime — merge into a sub-niche with <strong>lower competition than pure true crime but the same premium CPM rates.</strong></p></div>
+
+<div class="d"><strong>The concept:</strong> A faceless channel that covers historical crimes, unsolved mysteries from the past, dark events in history, and the psychology behind historical villains. Think "What really happened to..." + "The untold story of..." + "History's most mysterious..." — combining the narrative pull of true crime with the educational depth of history content.</div>
+
+<h3 style="font-size:13px;color:#10b981;margin:12px 0 8px">Why This Hybrid Beats Pure True Crime or Pure History</h3>
+<table class="tbl">
+<tr><th>Factor</th><th>Pure True Crime</th><th>Pure History</th><th>History × Crime Hybrid</th></tr>
+<tr><td>CPM Range</td><td>$8–$15</td><td>$6–$12</td><td class="g">$8–$15 (crime advertisers)</td></tr>
+<tr><td>RPM (Your Take)</td><td>$8–$12</td><td>$5–$9</td><td class="g">$8–$12</td></tr>
+<tr><td>Competition</td><td class="r">HIGH — thousands of channels</td><td class="a">MEDIUM — many channels</td><td class="g">LOW — few quality channels in intersection</td></tr>
+<tr><td>Faceless Feasibility</td><td class="g">Perfect — narration + footage</td><td class="g">Perfect — narration + footage</td><td class="g">Perfect — narration + archival footage</td></tr>
+<tr><td>Content Longevity</td><td class="a">Medium — cases get covered</td><td class="g">Evergreen — history doesn't change</td><td class="g">Evergreen — centuries of untold stories</td></tr>
+<tr><td>Content Depth</td><td class="a">Often shallow/clickbait</td><td class="g">Deep, educational</td><td class="g">Deep + suspenseful = maximum retention</td></tr>
+<tr><td>Audience Overlap</td><td>Crime fans</td><td>History buffs</td><td class="g">BOTH audiences + curious general viewers</td></tr>
+<tr><td>Growth Rate (2026)</td><td>8x</td><td>6x</td><td class="g">10–12x (emerging category)</td></tr>
+<tr><td>Example Channels</td><td>JCS Criminal Psychology, That Chapter</td><td>Kings and Generals, History Matters</td><td class="g">Dark Past, Fern (3D crime docs), Stories to Remember</td></tr>
+</table>
+
+<div class="why">You have genuine interest in BOTH history and true crime. This intersection means you can research deeper, tell richer stories, and sustain content creation for years without burning out. Pure true crime can be emotionally draining — the historical distance gives you creative breathing room while keeping the suspense that drives views and retention.</div>
+
+<h3 style="font-size:13px;color:#60a5fa;margin:12px 0 8px">Revenue Projections (Conservative)</h3>
+<div class="rev">
+At $9 RPM average (mid-range for crime/history) and building to 100K views/month by month 6:<br>
+<strong>Month 3:</strong> ~10K views/mo → $90/mo ad revenue<br>
+<strong>Month 6:</strong> ~100K views/mo → $900/mo ad revenue<br>
+<strong>Month 12:</strong> ~500K views/mo → $4,500/mo ad revenue + affiliates + sponsorships<br>
+<strong>Monetization threshold (1K subs + 4K watch hrs):</strong> Estimated month 3–5 with consistent uploads
+</div>
+
+<h3 style="font-size:13px;color:#f59e0b;margin:12px 0 8px">Content Pillar Ideas (8 Recurring Categories)</h3>
+<table class="tbl">
+<tr><th>Pillar</th><th>Format</th><th>Example Topics</th><th>Video Length</th></tr>
+<tr><td><strong>Unsolved Historical Mysteries</strong></td><td>Deep-dive documentary</td><td>Who was Jack the Ripper? The Voynich Manuscript. The Princes in the Tower.</td><td>15–25 min</td></tr>
+<tr><td><strong>History's Darkest Crimes</strong></td><td>True crime narrative</td><td>The real Bluebeard. Victorian serial killers. Ancient world's most notorious criminals.</td><td>12–20 min</td></tr>
+<tr><td><strong>"What Really Happened To..."</strong></td><td>Investigative style</td><td>Lost colonies. Disappeared ships. Vanished civilizations. Missing expeditions.</td><td>15–25 min</td></tr>
+<tr><td><strong>Criminal Psychology Through History</strong></td><td>Analysis / explainer</td><td>Why did they do it? Psychology of historical tyrants. Mind of ancient assassins.</td><td>10–18 min</td></tr>
+<tr><td><strong>Dark Chapters of War</strong></td><td>Documentary</td><td>War crimes, espionage stories, resistance movements, untold battle stories.</td><td>15–25 min</td></tr>
+<tr><td><strong>Cold Cases Across Centuries</strong></td><td>Case file format</td><td>Unsolved from every era. Medieval murders. Renaissance poisonings. Victorian mysteries.</td><td>12–20 min</td></tr>
+<tr><td><strong>The Psychology of Evil</strong></td><td>Deep analysis</td><td>What makes people commit atrocities? Historical experiments in cruelty. Mob psychology.</td><td>15–20 min</td></tr>
+<tr><td><strong>Shorts: "Did You Know?"</strong></td><td>60-sec fact bomb</td><td>Quick shocking historical facts. "The craziest trial in history." One-minute mysteries.</td><td>30–60 sec</td></tr>
+</table>
+
+<div class="callout co-g"><strong>Production advantage:</strong> Historical content uses archival images, paintings, maps, and public domain footage — all FREE. No need for stock video subscriptions. Combine with AI-generated narration and subtle motion graphics (Ken Burns effect on images) for a professional look at near-zero cost.</div>
+</div></div>
+
+<!-- ══════════════ COMPARISON TABLE ══════════════ -->
+<div class="sec"><div class="sec-h"><span class="num pa">COMPARE</span><h2>📊 Why NOT Running or Parenting for YouTube?</h2></div><div class="sec-b">
+<div class="d">Your running and parenting knowledge is valuable — but YouTube monetization data shows they're not optimal for a <strong>faceless, monetization-focused</strong> channel. Here's the honest comparison:</div>
+
+<table class="tbl">
+<tr><th>Factor</th><th>🏆 History × True Crime</th><th>🏃 Running / Marathon</th><th>👨‍👧‍👦 Dad Life / Parenting</th></tr>
+<tr><td>CPM Range</td><td class="g">$8–$15</td><td class="a">$4–$8</td><td class="r">$3–$7</td></tr>
+<tr><td>RPM (Your Take)</td><td class="g">$8–$12</td><td class="a">$3–$6</td><td class="r">$2–$5</td></tr>
+<tr><td>100K views revenue</td><td class="g">~$900</td><td class="a">~$450</td><td class="r">~$350</td></tr>
+<tr><td>Faceless Feasibility</td><td class="g">Perfect (10/10)</td><td class="a">Challenging (7/10) — running footage expects a person</td><td class="r">Very hard (4/10) — parenting is inherently personal</td></tr>
+<tr><td>Competition</td><td class="g">Medium (hybrid = low)</td><td class="a">Medium-High</td><td class="r">Very High (saturated)</td></tr>
+<tr><td>Average Watch Time</td><td class="g">15–25 min (suspense keeps viewers)</td><td class="a">8–15 min</td><td class="r">5–10 min</td></tr>
+<tr><td>Viral Potential</td><td class="g">High — mysteries drive curiosity clicks</td><td class="a">Low — niche audience</td><td class="a">Medium — relatable but crowded</td></tr>
+<tr><td>Sustainability</td><td class="g">Infinite — centuries of stories</td><td class="a">Limited — how many running topics?</td><td class="a">Limited — kids grow up</td></tr>
+</table>
+
+<div class="callout co-a"><strong>Important nuance:</strong> Running and parenting are excellent for your KDP books (where personal knowledge matters more than CPM). But for YouTube, where revenue scales with views × CPM, the History × True Crime hybrid generates 2–3x more revenue per view AND is better suited to faceless production. <strong>Use the right medium for each niche:</strong> KDP for running/dad content, YouTube for history/crime content.</div>
+
+<div class="callout co-b"><strong>Cross-promotion opportunity:</strong> Your YouTube channel can drive traffic to your KDP books. A "Dark History" YouTube channel with 100K subscribers gives you an audience to promote related books: "Historical Mystery Workbook," "True Crime Discussion Journal," etc. This creates a content flywheel between your YouTube and KDP businesses.</div>
+</div></div>
+
+<!-- ══════════════ FACELESS PRODUCTION ══════════════ -->
+<div class="sec"><div class="sec-h"><span class="num pb">PRODUCTION</span><h2>🎬 Faceless Production Feasibility</h2></div><div class="sec-b">
+
+<table class="tbl">
+<tr><th>Production Element</th><th>Tool</th><th>Cost</th><th>Notes</th></tr>
+<tr><td><strong>Scripts</strong></td><td>Claude / ChatGPT + your research</td><td>Free / $20</td><td>AI drafts, you add unique angles and accuracy</td></tr>
+<tr><td><strong>Voiceover</strong></td><td>ElevenLabs</td><td>$11–$22/mo</td><td>Consistent AI voice. Or your own voice (you said "mostly faceless" — your real voice adds authenticity)</td></tr>
+<tr><td><strong>Visuals</strong></td><td>Public domain images, Wikimedia Commons, Pexels</td><td>Free</td><td>Historical images, paintings, maps, archival photos — all free for history content</td></tr>
+<tr><td><strong>Motion Graphics</strong></td><td>Canva (animations) + CapCut</td><td>Free</td><td>Ken Burns effect on images, text overlays, timeline graphics</td></tr>
+<tr><td><strong>Video Editing</strong></td><td>CapCut (free) or DaVinci Resolve (free)</td><td>Free</td><td>CapCut is easiest for beginners, DaVinci for advanced</td></tr>
+<tr><td><strong>Background Music</strong></td><td>YouTube Audio Library</td><td>Free</td><td>Dark, suspenseful, cinematic tracks available free</td></tr>
+<tr><td><strong>Thumbnails</strong></td><td>Canva Free</td><td>Free</td><td>Bold text + dramatic image + mystery hook</td></tr>
+<tr><td><strong>Total Monthly Cost</strong></td><td colspan="3" class="g"><strong>$0–$22/month</strong> (free if using your own voice)</td></tr>
+</table>
+
+<div class="callout co-g"><strong>Production recommendation:</strong> Consider using YOUR voice instead of AI for narration. You said you'd consider showing face occasionally — even just using your real voice (without face) adds authenticity and avoids YouTube's 2025 "synthetic content" disclosure requirements. It also differentiates you from the flood of AI-voiced channels. Script with AI → narrate yourself → edit with free tools = best quality at lowest cost.</div>
+</div></div>
+
+<!-- ══════════════ REALISTIC TIMELINE ══════════════ -->
+<div class="sec"><div class="sec-h"><span class="num pa">TIMELINE</span><h2>⏱️ Realistic Growth & Revenue Timeline</h2></div><div class="sec-b">
+
+<table class="tbl">
+<tr><th>Phase</th><th>Period</th><th>Videos</th><th>Subscribers</th><th>Monthly Views</th><th>Revenue</th><th>Focus</th></tr>
+<tr><td class="r">Pre-Revenue</td><td>Months 1–3</td><td>20–30</td><td>100–500</td><td>5K–20K</td><td>$0</td><td>Pipeline building, finding format, getting reps</td></tr>
+<tr><td class="a">Early Traction</td><td>Months 3–6</td><td>40–60 total</td><td>500–2K</td><td>20K–100K</td><td>$0–$500</td><td>Monetization threshold, first ad revenue</td></tr>
+<tr><td class="g">Growth</td><td>Months 6–12</td><td>80–120 total</td><td>2K–10K</td><td>100K–500K</td><td>$500–$4,500</td><td>Algorithm traction, affiliates, first sponsor inquiry</td></tr>
+<tr><td class="g">Scale</td><td>Months 12–18</td><td>150+ total</td><td>10K–50K</td><td>500K–2M</td><td>$2K–$10K+</td><td>Multi-revenue streams, brand deals, channel as asset</td></tr>
+</table>
+
+<div class="callout co-r"><strong>Honest expectation:</strong> Most well-executed faceless channels take 6–12 months to reach the monetization threshold. Initial payouts are typically $50–$500/month, scaling to $500–$5,000/month by months 12–18 for channels that find their format. This is a LONG-TERM asset play, not a quick income stream. Your KDP business should generate revenue first — YouTube compounds over time.</div>
+
+<div class="callout co-g"><strong>The asset value:</strong> A YouTube channel with 50K subscribers earning $3K/month is worth approximately $50K–$100K as a sellable asset (12–36x monthly profit). Unlike KDP books, a YouTube channel appreciates in value as your back-catalog of videos continues generating views for years.</div>
+</div></div>
+
+<!-- ══════════════ FINAL RECOMMENDATION ══════════════ -->
+<div class="sec"><div class="sec-h"><span class="num pg">DECISION</span><h2>✅ Y1.1 Final Niche Selection</h2></div><div class="sec-b">
+
+<div class="rec"><h3>Primary Niche: Historical True Crime & Dark Mysteries</h3>
+<p><strong>Score: 8.8/10</strong> — Highest-scoring niche across all factors. Combines your genuine interest in both history and true crime into a sub-niche with premium CPM ($8–$15), perfect faceless feasibility, lower competition than pure true crime, infinite content supply (centuries of stories), and strong audience retention (suspense + education). Production cost: $0–$22/month.</p>
+<p style="margin-top:10px"><strong>Channel positioning:</strong> "The untold stories history tried to forget." Documentary-style, well-researched, suspenseful narration with archival imagery. Position as the premium, thoughtful alternative to clickbait true crime channels.</p>
+<p style="margin-top:10px"><strong>Content mix:</strong> 70% long-form (12–25 min deep-dives), 30% Shorts (historical fact bombs). Publish 2 long-form + 4–5 Shorts per week.</p></div>
+
+<h3 style="font-size:13px;color:#f59e0b;margin:12px 0 8px">8 Content Pillars Defined</h3>
+<div style="display:grid;gap:5px">
+<div style="display:flex;align-items:center;gap:8px;padding:8px 10px;background:#10b98108;border:1px solid #10b98118;border-radius:6px"><span style="color:#10b981;font-size:10px;font-family:'JetBrains Mono',monospace;min-width:16px">1</span><span style="font-size:11px;color:#cbd5e1">Unsolved Historical Mysteries</span></div>
+<div style="display:flex;align-items:center;gap:8px;padding:8px 10px;background:#10b98108;border:1px solid #10b98118;border-radius:6px"><span style="color:#10b981;font-size:10px;font-family:'JetBrains Mono',monospace;min-width:16px">2</span><span style="font-size:11px;color:#cbd5e1">History's Darkest Crimes</span></div>
+<div style="display:flex;align-items:center;gap:8px;padding:8px 10px;background:#10b98108;border:1px solid #10b98118;border-radius:6px"><span style="color:#10b981;font-size:10px;font-family:'JetBrains Mono',monospace;min-width:16px">3</span><span style="font-size:11px;color:#cbd5e1">"What Really Happened To..." (Disappearances & Lost Histories)</span></div>
+<div style="display:flex;align-items:center;gap:8px;padding:8px 10px;background:#10b98108;border:1px solid #10b98118;border-radius:6px"><span style="color:#10b981;font-size:10px;font-family:'JetBrains Mono',monospace;min-width:16px">4</span><span style="font-size:11px;color:#cbd5e1">Criminal Psychology Through History</span></div>
+<div style="display:flex;align-items:center;gap:8px;padding:8px 10px;background:#10b98108;border:1px solid #10b98118;border-radius:6px"><span style="color:#10b981;font-size:10px;font-family:'JetBrains Mono',monospace;min-width:16px">5</span><span style="font-size:11px;color:#cbd5e1">Dark Chapters of War & Espionage</span></div>
+<div style="display:flex;align-items:center;gap:8px;padding:8px 10px;background:#10b98108;border:1px solid #10b98118;border-radius:6px"><span style="color:#10b981;font-size:10px;font-family:'JetBrains Mono',monospace;min-width:16px">6</span><span style="font-size:11px;color:#cbd5e1">Cold Cases Across Centuries</span></div>
+<div style="display:flex;align-items:center;gap:8px;padding:8px 10px;background:#10b98108;border:1px solid #10b98118;border-radius:6px"><span style="color:#10b981;font-size:10px;font-family:'JetBrains Mono',monospace;min-width:16px">7</span><span style="font-size:11px;color:#cbd5e1">The Psychology of Evil (Historical Analysis)</span></div>
+<div style="display:flex;align-items:center;gap:8px;padding:8px 10px;background:#10b98108;border:1px solid #10b98118;border-radius:6px"><span style="color:#10b981;font-size:10px;font-family:'JetBrains Mono',monospace;min-width:16px">8</span><span style="font-size:11px;color:#cbd5e1">Shorts: "Did You Know?" Historical Crime Facts</span></div>
+</div>
+
+<h3 style="font-size:13px;color:#60a5fa;margin:14px 0 8px">KDP × YouTube Synergy Map</h3>
+<div class="callout co-b"><strong>Your two tracks reinforce each other:</strong><br><br>
+<strong>KDP Track</strong> (running, dad, business books) earns revenue from Month 1–2, funds YouTube production costs, and teaches you marketing/ads skills you'll reuse on YouTube.<br><br>
+<strong>YouTube Track</strong> (history × crime) builds a growing audience asset, earns higher revenue per view over time, and can eventually promote KDP products: "True Crime Discussion Journal," "History Mystery Workbook," or even your business/running books to a loyal subscriber base.<br><br>
+<strong>By Month 6:</strong> KDP generates $300–800/mo passive. YouTube is approaching monetization. By Month 12: both tracks are generating revenue, and the YouTube channel has become an appreciating asset worth $10K–$50K+.</div>
+</div></div>
+
+<!-- ══════════════ DELIVERABLES ══════════════ -->
+<div class="sec"><div class="sec-h"><h2>📦 Y1.1 Deliverables</h2></div><div class="sec-b">
+<div style="display:grid;gap:5px">
+<div style="display:flex;align-items:center;gap:8px;padding:8px 10px;background:#10b98108;border:1px solid #10b98118;border-radius:6px"><span style="color:#10b981">✅</span><span style="font-size:11px;color:#cbd5e1">8 sub-niches evaluated with CPM/RPM data, competition, growth, and faceless feasibility scores</span></div>
+<div style="display:flex;align-items:center;gap:8px;padding:8px 10px;background:#10b98108;border:1px solid #10b98118;border-radius:6px"><span style="color:#10b981">✅</span><span style="font-size:11px;color:#cbd5e1">Primary niche selected: Historical True Crime & Dark Mysteries (Score 8.8/10)</span></div>
+<div style="display:flex;align-items:center;gap:8px;padding:8px 10px;background:#10b98108;border:1px solid #10b98118;border-radius:6px"><span style="color:#10b981">✅</span><span style="font-size:11px;color:#cbd5e1">8 content pillars defined with format, example topics, and video length guidelines</span></div>
+<div style="display:flex;align-items:center;gap:8px;padding:8px 10px;background:#10b98108;border:1px solid #10b98118;border-radius:6px"><span style="color:#10b981">✅</span><span style="font-size:11px;color:#cbd5e1">Revenue projections: conservative timeline from $0 to $4,500/mo over 12 months</span></div>
+<div style="display:flex;align-items:center;gap:8px;padding:8px 10px;background:#10b98108;border:1px solid #10b98118;border-radius:6px"><span style="color:#10b981">✅</span><span style="font-size:11px;color:#cbd5e1">Production stack: $0–$22/month using free tools + optional ElevenLabs</span></div>
+<div style="display:flex;align-items:center;gap:8px;padding:8px 10px;background:#10b98108;border:1px solid #10b98118;border-radius:6px"><span style="color:#10b981">✅</span><span style="font-size:11px;color:#cbd5e1">KDP × YouTube synergy strategy mapped for cross-promotion</span></div>
+<div style="display:flex;align-items:center;gap:8px;padding:8px 10px;background:#10b98108;border:1px solid #10b98118;border-radius:6px"><span style="color:#10b981">✅</span><span style="font-size:11px;color:#cbd5e1">Honest comparison: why running and parenting are better for KDP, not YouTube</span></div>
+</div>
+</div></div>
+
+</div>
+<div class="foot">Y1.1 — Niche Selection & CPM Revenue Analysis · AI-Automated YouTube Empire GTM · March 2026</div>
+</body></html>

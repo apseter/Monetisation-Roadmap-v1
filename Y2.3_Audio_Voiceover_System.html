@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0"><title>Y2.3 — Audio/Voiceover System</title>
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;700&family=Oswald:wght@500;700&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}body{background:#0a0a0a;color:#e2e8f0;font-family:'Outfit',sans-serif;padding:0 0 60px}
+.hdr{background:linear-gradient(135deg,#0a0a0a,#1a1008,#0a0a0a);border-bottom:1px solid #d9770633;padding:28px 24px;text-align:center;position:relative}.hdr::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at 40% 30%,#d9770618,transparent 60%)}.hdr>*{position:relative}
+.tag{font-size:10px;color:#d97706;font-family:'JetBrains Mono',monospace;text-transform:uppercase;letter-spacing:.2em;margin-bottom:6px}
+h1{font-family:'Oswald',sans-serif;font-size:24px;font-weight:700;color:#fafaf9;letter-spacing:.05em;text-transform:uppercase;margin-bottom:4px}
+.sub{font-size:12px;color:#78716c;max-width:650px;margin:0 auto}
+.ct{max-width:880px;margin:0 auto;padding:20px 16px}
+.sec{background:#111111;border:1px solid #292524;border-radius:2px;margin-bottom:14px;overflow:hidden}
+.sec-h{padding:14px 18px;border-bottom:1px solid #292524;display:flex;align-items:center;gap:8px;flex-wrap:wrap}
+.sec-h h2{font-size:14px;font-weight:700;font-family:'Oswald',sans-serif;text-transform:uppercase;letter-spacing:.05em}
+.num{font-size:9px;font-family:'JetBrains Mono',monospace;padding:2px 8px;border-radius:2px;font-weight:700}
+.ng{background:#d9770615;color:#d97706}.nb{background:#3b82f615;color:#60a5fa}.ngr{background:#16a34a15;color:#16a34a}
+.sec-b{padding:14px 18px}
+.d{font-size:11px;color:#a8a29e;line-height:1.6;margin-bottom:8px}.d strong{color:#e7e5e4}
+.tbl{width:100%;border-collapse:collapse;margin:10px 0;font-size:10px}
+.tbl th{background:#1c1917;color:#a8a29e;padding:7px 8px;text-align:left;font-family:'JetBrains Mono',monospace;font-size:9px;text-transform:uppercase;border:1px solid #292524}
+.tbl td{padding:7px 8px;border:1px solid #292524;color:#d6d3d1;vertical-align:top}.tbl tr:nth-child(even) td{background:#0d0d0d}
+.g{color:#16a34a;font-weight:600}.a{color:#d97706;font-weight:600}.r{color:#dc2626;font-weight:600}
+.callout{padding:14px;border-radius:2px;font-size:12px;line-height:1.6;margin:10px 0}
+.co-g{background:#16a34a08;border:1px solid #16a34a22;color:#86efac}
+.co-a{background:#d9770608;border:1px solid #d9770622;color:#fcd34d}
+.co-b{background:#3b82f608;border:1px solid #3b82f622;color:#93c5fd}
+.co-r{background:#dc262608;border:1px solid #dc262622;color:#fca5a5}
+.callout strong{color:#fafaf9}
+.pillar{display:flex;align-items:flex-start;gap:8px;padding:8px 10px;background:#16a34a08;border:1px solid #16a34a18;border-radius:2px;margin-bottom:4px}
+.pillar span:first-child{color:#16a34a;font-size:10px;font-family:'JetBrains Mono',monospace;min-width:16px;flex-shrink:0;padding-top:2px}
+.pillar span:last-child{font-size:11px;color:#d6d3d1;line-height:1.5}
+.step-box{background:#0a0a0a;border:1px solid #292524;border-radius:2px;padding:14px;margin:8px 0}
+.step-box h4{font-family:'Oswald',sans-serif;font-size:12px;color:#d97706;text-transform:uppercase;letter-spacing:.05em;margin-bottom:8px}
+.foot{text-align:center;padding:20px;font-size:10px;color:#44403c;font-family:'JetBrains Mono',monospace}
+</style></head><body>
+<div class="hdr"><div class="tag">Y2.3 — Audio/Voiceover System</div><h1>THE FORGOTTEN FRONT — AUDIO SYSTEM</h1><div class="sub">Recording setup · Audacity mastering chain · Narration performance guide · Music strategy · AI voice backup plan</div></div>
+<div class="ct">
+
+<!-- HARDWARE -->
+<div class="sec"><div class="sec-h"><span class="num ng">HARDWARE</span><h2>Recording Setup — Budget-Friendly, Professional Results</h2></div><div class="sec-b">
+
+<table class="tbl">
+<tr><th>Item</th><th>Recommendation</th><th>Cost</th><th>Why</th></tr>
+<tr><td><strong>USB Microphone</strong></td><td>Fifine K669 / Fifine T669 / Maono AU-A04 / Any USB condenser mic</td><td>$20–$40</td><td>USB condenser mics plug directly into your laptop — no audio interface needed. At this price point, any branded USB condenser mic produces quality suitable for YouTube narration. The difference between a $25 mic and a $200 mic is much smaller than people think — technique and post-processing matter more.</td></tr>
+<tr><td><strong>Pop filter</strong></td><td>Any mesh pop filter or DIY (stretched fabric over a frame)</td><td>$3–$8</td><td>Eliminates plosives ("P" and "B" sounds that create a harsh pop). Place between your mouth and the mic. If you can't buy one, a sock over the mic works in a pinch.</td></tr>
+<tr><td><strong>Headphones</strong></td><td>Any wired headphones/earbuds you already own</td><td>$0</td><td>You need to monitor your audio while editing. Any headphones work. Wired preferred over Bluetooth (no latency).</td></tr>
+<tr><td><strong>Recording space</strong></td><td>Quietest room in your house. Closet with clothes is ideal (natural sound dampening).</td><td>$0</td><td>Soft surfaces absorb echo. Avoid rooms with hard floors, bare walls, or windows facing traffic. Record at night when ambient noise is lowest.</td></tr>
+</table>
+
+<div class="callout co-a"><strong>Total hardware investment: $23–$48 (one-time).</strong> This is your only cash outlay for the entire YouTube audio system. Everything else is free software.</div>
+
+<div class="d" style="margin-top:10px"><strong>Mic technique — get this right and post-processing becomes easy:</strong></div>
+<table class="tbl">
+<tr><th>Rule</th><th>Details</th><th>Why</th></tr>
+<tr><td>Distance</td><td>6–8 inches (15–20 cm) from mouth to mic</td><td>Too close = bass-heavy, popping. Too far = thin, echoey, noisy.</td></tr>
+<tr><td>Angle</td><td>Speak slightly off-axis (15–30° to the side of the mic, not directly into it)</td><td>Reduces plosives and breath noise without losing clarity.</td></tr>
+<tr><td>Gain level</td><td>Set input gain so your voice peaks between -12 dB and -6 dB in Audacity's meter</td><td>Leaves headroom for loud moments. Prevents clipping (distortion). You can always boost volume in post — you can never fix clipping.</td></tr>
+<tr><td>Room tone</td><td>Before every recording session, record 5–10 seconds of complete silence</td><td>This "noise profile" is used by Audacity's Noise Reduction to identify and remove background noise. Essential step.</td></tr>
+<tr><td>Consistency</td><td>Same mic position, same room, same time of day for every recording</td><td>Ensures all your videos sound consistent. Listeners notice when audio quality changes between videos.</td></tr>
+</table>
+</div></div>
+
+<!-- AUDACITY MASTERING CHAIN -->
+<div class="sec"><div class="sec-h"><span class="num nb">MASTERING</span><h2>The 7-Step Audacity Mastering Chain — Do This Every Time</h2></div><div class="sec-b">
+
+<div class="d"><strong>This is the exact processing chain that turns a raw mic recording into professional-sounding narration. Follow these 7 steps IN ORDER — the sequence matters.</strong></div>
+
+<div class="step-box">
+<h4>Step 1: Noise Reduction (remove background hum/hiss)</h4>
+<table class="tbl">
+<tr><th>Action</th><th>How</th></tr>
+<tr><td>Get noise profile</td><td>Select 3–5 seconds of the silent "room tone" you recorded at the start → Effect → Noise Reduction → <strong>"Get Noise Profile"</strong></td></tr>
+<tr><td>Apply reduction</td><td>Select All (Ctrl+A) → Effect → Noise Reduction → Settings: <strong>Noise Reduction: 12 dB, Sensitivity: 6, Frequency Smoothing: 3</strong> → Preview → OK</td></tr>
+</table>
+<div class="d">If voice sounds "underwater" or robotic after applying, reduce the dB value to 8–10. Less is more — a tiny hiss is better than a robotic voice.</div>
+</div>
+
+<div class="step-box">
+<h4>Step 2: Normalize (bring to standard volume)</h4>
+<table class="tbl">
+<tr><th>Action</th><th>How</th></tr>
+<tr><td>Normalize</td><td>Select All (Ctrl+A) → Effect → Volume and Compression → <strong>Normalize</strong> → Peak amplitude: <strong>-1.0 dB</strong> → Check "Remove DC offset" → OK</td></tr>
+</table>
+<div class="d">This brings your audio to a consistent baseline volume. The loudest peak will sit at -1 dB, leaving headroom.</div>
+</div>
+
+<div class="step-box">
+<h4>Step 3: EQ — High-Pass Filter (remove low rumble)</h4>
+<table class="tbl">
+<tr><th>Action</th><th>How</th></tr>
+<tr><td>Cut low frequencies</td><td>Select All → Effect → <strong>Filter Curve EQ</strong> → Add a point at 80 Hz → drag everything below 80 Hz down to -24 dB (creates a steep roll-off) → OK</td></tr>
+</table>
+<div class="d">Removes low-frequency rumble: traffic, AC hum, mic handling noise. Frequencies below 80 Hz don't contain useful voice information for narration.</div>
+</div>
+
+<div class="step-box">
+<h4>Step 4: EQ — Presence Boost (add clarity)</h4>
+<table class="tbl">
+<tr><th>Action</th><th>How</th></tr>
+<tr><td>Boost presence</td><td>Select All → Effect → <strong>Filter Curve EQ</strong> → Add a gentle boost of <strong>+2 to +4 dB around 3–5 kHz</strong> → Preview → adjust to taste → OK</td></tr>
+</table>
+<div class="d">This is the "intelligibility" range of the human voice. A subtle boost here makes your narration cut through background music clearly. Don't overdo it — +2 dB is often enough. If your voice sounds harsh or sibilant, reduce or skip this step.</div>
+</div>
+
+<div class="step-box">
+<h4>Step 5: Compression (even out volume)</h4>
+<table class="tbl">
+<tr><th>Action</th><th>How</th></tr>
+<tr><td>Compress dynamics</td><td>Select All → Effect → Volume and Compression → <strong>Compressor</strong> → Settings: <strong>Threshold: -18 dB, Ratio: 3:1, Attack: 0.10 sec, Release: 1.0 sec</strong> → Check "Make-up gain for 0 dB after compressing" → OK</td></tr>
+</table>
+<div class="d">Compression makes quiet words louder and loud words quieter — giving your voice a consistent, professional volume throughout. This is the single most impactful processing step for narration quality.</div>
+</div>
+
+<div class="step-box">
+<h4>Step 6: Second Normalize (final volume)</h4>
+<table class="tbl">
+<tr><th>Action</th><th>How</th></tr>
+<tr><td>Final normalize</td><td>Select All → Effect → Volume and Compression → <strong>Normalize</strong> → Peak amplitude: <strong>-1.0 dB</strong> → OK</td></tr>
+</table>
+<div class="d">Compression may have changed the overall volume. This second normalize ensures consistent peak levels for the final export.</div>
+</div>
+
+<div class="step-box">
+<h4>Step 7: Limiter (prevent clipping)</h4>
+<table class="tbl">
+<tr><th>Action</th><th>How</th></tr>
+<tr><td>Apply hard limiter</td><td>Select All → Effect → Volume and Compression → <strong>Limiter</strong> → Type: <strong>Hard Limit</strong>, dB limit: <strong>-0.5 dB</strong> → OK</td></tr>
+</table>
+<div class="d">Safety net — prevents any accidental peaks from clipping. Ensures your audio never distorts even on sensitive playback systems.</div>
+</div>
+
+<div class="callout co-g"><strong>Time for full chain: 5–7 minutes.</strong> Once you've done this 3–4 times, it becomes muscle memory. You can save each effect's settings as a preset in Audacity (Manage → Save Preset) so you apply them with one click. The entire chain can also be applied as a Macro (Tools → Macros → New) for one-click batch processing.</div>
+
+<div class="callout co-b"><strong>Audacity Macro setup (optional but saves 3 min/video):</strong> Tools → Macros → New → name it "TFF Voiceover" → Insert steps in order: Noise Reduction, Normalize, Filter Curve EQ (high-pass), Filter Curve EQ (presence), Compressor, Normalize, Limiter. Save. Now for every recording: select all → Tools → Apply Macro → TFF Voiceover. One click, done.</div>
+
+<div class="d" style="margin-top:8px"><strong>Export settings:</strong></div>
+<table class="tbl">
+<tr><th>For Editing in CapCut</th><th>For Backup/Archive</th></tr>
+<tr><td>File → Export → Export as WAV (16-bit PCM). Highest quality. Larger file size but zero compression artifacts.</td><td>File → Export → Export as MP3 (320kbps). Smaller file. Good for backup copies and sharing.</td></tr>
+</table>
+</div></div>
+
+<!-- NARRATION PERFORMANCE -->
+<div class="sec"><div class="sec-h"><span class="num ng">PERFORMANCE</span><h2>Narration Performance Guide — How to Sound Like a Documentary Host</h2></div><div class="sec-b">
+
+<div class="d"><strong>Great audio quality means nothing if the delivery is flat. Here's how to perform your narration like a professional documentary narrator.</strong></div>
+
+<table class="tbl">
+<tr><th>Technique</th><th>What to Do</th><th>When to Use</th></tr>
+<tr><td><strong>Documentary pace</strong></td><td>Speak at ~130–140 words per minute. This is noticeably slower than conversational speech (~170 wpm). Pause 1–2 seconds between paragraphs. Let sentences breathe.</td><td>Your default pace for all narration. Practice by timing yourself reading 140 words and aiming for exactly 60 seconds.</td></tr>
+<tr><td><strong>Emphasis through silence</strong></td><td>Before a key fact or number, pause for 1 full second. Then deliver the line. Then pause again. "...(pause)...87,000 soldiers...(pause)...never came home."</td><td>Statistics, shocking facts, emotional reveals. Silence is the most powerful tool in audio.</td></tr>
+<tr><td><strong>Volume dynamics</strong></td><td>Don't narrate at one volume. Get louder during tension and climax. Drop to near-whisper for emotional or reflective moments. Let your voice reflect the emotion of the content.</td><td>Map to your emotion labels from Y2.1: SHOCK = measured/deliberate, TENSION = rising energy, SADNESS = quiet/slow, REFLECTION = calm/steady.</td></tr>
+<tr><td><strong>Emphasis words</strong></td><td>In your script, underline or bold the ONE word in each sentence that carries the meaning. Hit that word slightly harder in delivery. "87,000 soldiers died fighting for an empire that <u>forgot</u> their names."</td><td>Every sentence. Practice reading with emphasis on different words to hear how meaning changes.</td></tr>
+<tr><td><strong>Breath control</strong></td><td>Take a breath BEFORE you start speaking, not mid-sentence. If a sentence is too long to say in one breath, shorten it in the script. Gasping mid-sentence sounds amateur.</td><td>Always. Edit your script to eliminate sentences longer than ~20 words — they're too long for comfortable single-breath delivery.</td></tr>
+<tr><td><strong>Re-recording</strong></td><td>If you flub a line, pause 2 seconds, then re-read the ENTIRE sentence from the beginning. Don't try to patch mid-word. In editing, you'll cut the flubbed version and keep the clean one.</td><td>Whenever you make a mistake. This is faster than trying to edit a partial re-read to match.</td></tr>
+<tr><td><strong>Warm up</strong></td><td>Before every recording session, read one paragraph of your script out loud at full volume 2–3 times. This warms your vocal cords and sets the pace/tone for the session.</td><td>First 2 minutes of every recording session. Cold reads sound noticeably worse than warmed-up reads.</td></tr>
+</table>
+
+<div class="callout co-a"><strong>The accent advantage:</strong> Your South Asian accent is a FEATURE, not a bug. When narrating stories about Indian soldiers in WW2, a voice that sounds like it belongs to the culture being discussed is inherently more authentic than a generic American or British narrator. Focus on clarity and pacing — never try to change or hide your accent. The audience will find it distinctive and trustworthy.</div>
+</div></div>
+
+<!-- MUSIC STRATEGY -->
+<div class="sec"><div class="sec-h"><span class="num nb">MUSIC</span><h2>Background Music Strategy</h2></div><div class="sec-b">
+
+<table class="tbl">
+<tr><th>Rule</th><th>Details</th></tr>
+<tr><td><strong>Volume level</strong></td><td>Background music sits at <strong>10–15% of voiceover volume</strong> in CapCut. The viewer should never consciously notice the music — it should create a mood without competing with your voice. If someone says "nice music" they heard it too loudly.</td></tr>
+<tr><td><strong>Music ducking</strong></td><td>In CapCut, reduce music volume during narration-heavy sections. Slightly raise music volume during visual-only moments (pauses between narration, black screens, map transitions). This creates a natural breathing rhythm.</td></tr>
+<tr><td><strong>One track per video</strong></td><td>Use ONE continuous music track per video. Changing tracks mid-video is jarring and amateurish. Choose a track that works for the overall mood, then use volume changes to modulate intensity.</td></tr>
+<tr><td><strong>Mood matching</strong></td><td>YouTube Audio Library search terms for The Forgotten Front: "dark ambient", "cinematic suspense", "somber piano", "tension documentary", "military drums", "melancholy strings".</td></tr>
+<tr><td><strong>Music at start/end</strong></td><td>Bring music in BEFORE voiceover starts (first 2–3 seconds). Let music continue for 2–3 seconds AFTER your sign-off ends. This creates professional "breathing room" around your narration.</td></tr>
+<tr><td><strong>Build a music library</strong></td><td>Download 15–20 tracks. Create TWO folders: "YouTube Only" (YouTube Audio Library tracks) and "Cross-Platform Safe" (Pixabay Music tracks — pixabay.com/music/). Use Cross-Platform folder for any Shorts that will be cross-posted to TikTok/Instagram. YouTube Audio Library tracks are NOT all licensed for other platforms.</td></tr>
+</table>
+
+<div class="d" style="margin-top:8px"><strong>Recommended YouTube Audio Library tracks to search for:</strong></div>
+<table class="tbl">
+<tr><th>Mood</th><th>Search Terms</th><th>Use For</th></tr>
+<tr><td>Dark/suspenseful</td><td>"Dark", "Suspense", "Tension"</td><td>Espionage content, dossier-style videos, cold opens</td></tr>
+<tr><td>Somber/reflective</td><td>"Somber", "Melancholy", "Piano", "Sad"</td><td>"The Forgotten" moments, aftermath sections, sign-off</td></tr>
+<tr><td>Epic/cinematic</td><td>"Epic", "Cinematic", "Dramatic", "Orchestral"</td><td>Battle climax, rising action, strategic analysis</td></tr>
+<tr><td>Ambient/atmospheric</td><td>"Ambient", "Atmospheric", "Drone"</td><td>Context sections, map narration, background tone-setting</td></tr>
+</table>
+</div></div>
+
+<!-- AI VOICE BACKUP -->
+<div class="sec"><div class="sec-h"><span class="num ng">PLAN B</span><h2>AI Voice Backup — ElevenLabs (If Needed)</h2></div><div class="sec-b">
+
+<div class="d"><strong>Your primary plan is your own voice. But if the Voice Test (Gap Analysis) reveals issues you can't resolve, here's your ready-to-go Plan B.</strong></div>
+
+<table class="tbl">
+<tr><th>Scenario</th><th>Solution</th><th>Cost</th></tr>
+<tr><td>Own voice works but you want AI for Shorts only</td><td>ElevenLabs Starter plan. Generate Shorts narration while using your voice for long-form. Maintains brand consistency on your main content.</td><td>$11/mo</td></tr>
+<tr><td>Own voice not competitive after Voice Test</td><td>ElevenLabs voice cloning. Upload 2 minutes of your best narration → clone your voice → generate all narration from text. Sounds like you but polished.</td><td>$11/mo</td></tr>
+<tr><td>Want fully AI-generated voice</td><td>ElevenLabs pre-made voices. Select a deep, serious male narrator voice. Use consistently across all videos.</td><td>$11/mo</td></tr>
+</table>
+
+<div class="callout co-r"><strong>YouTube synthetic content disclosure (2025+ rule):</strong> YouTube requires creators to disclose when videos contain realistic AI-generated voices depicting real people or events. For AI narration on a documentary channel, disclosure is recommended but not strictly required since you're not impersonating a real person. However, transparency builds trust — consider adding "AI-assisted narration" in your video description if using ElevenLabs.</div>
+
+<div class="callout co-g"><strong>Recommendation: Don't jump to AI voice until you've genuinely tried your own voice for 5+ videos.</strong> Your narration WILL improve dramatically between Video 1 and Video 5. Most people sound awkward on their first recording and natural by their fifth. Give yourself that runway before deciding AI is necessary.</div>
+</div></div>
+
+<!-- AUDIO QUALITY CHECKLIST -->
+<div class="sec"><div class="sec-h"><span class="num ngr">QC</span><h2>Audio Quality Checklist (Before Exporting)</h2></div><div class="sec-b">
+<table class="tbl">
+<tr><th>Check</th><th>What to Verify</th></tr>
+<tr><td>☐ Noise floor</td><td>Play a silent section — is there audible hiss or hum? If yes, re-run noise reduction (lower dB value).</td></tr>
+<tr><td>☐ Clipping</td><td>Look at the waveform — are there any flat-topped peaks? If yes, redo with lower input gain and re-record.</td></tr>
+<tr><td>☐ Consistent volume</td><td>Skip to 3 random points in the recording. Does your voice sound the same volume at each? Compression should handle this.</td></tr>
+<tr><td>☐ Clarity</td><td>Put on headphones. Can you clearly understand every word? No mumbling, no buried consonants?</td></tr>
+<tr><td>☐ Plosives</td><td>Listen for harsh "P" and "B" pops. If present, re-record those sentences with the pop filter angled differently.</td></tr>
+<tr><td>☐ Mouth sounds</td><td>Listen for excessive lip smacking, clicks, or saliva sounds between words. Hydrate before recording. Edit out prominent clicks.</td></tr>
+<tr><td>☐ Room echo</td><td>Does your voice sound like it's in a bathroom? If yes, add soft materials around your recording space (blankets, pillows, clothes).</td></tr>
+<tr><td>☐ Breath removal</td><td>Loud breaths between sentences should be manually reduced (select the breath → Effect → Amplify → -15 dB). Don't delete breaths entirely — some are natural. Just quiet them.</td></tr>
+<tr><td>☐ Pacing</td><td>Play back at 1× speed. Does it sound too rushed or too slow? Target ~140 wpm documentary pace.</td></tr>
+<tr><td>☐ Export format</td><td>WAV for CapCut editing. MP3 (320kbps) for backup.</td></tr>
+</table>
+</div></div>
+
+<!-- COMMON PROBLEMS -->
+<div class="sec"><div class="sec-h"><span class="num nb">FIXES</span><h2>Common Audio Problems & Fixes</h2></div><div class="sec-b">
+<table class="tbl">
+<tr><th>Problem</th><th>Cause</th><th>Fix</th></tr>
+<tr><td>Voice sounds thin/tinny</td><td>Too far from mic, or mic gain too low</td><td>Move closer to mic (6 inches). Increase input gain. Add slight EQ boost at 120–200 Hz for warmth.</td></tr>
+<tr><td>Voice sounds boomy/muddy</td><td>Too close to mic (proximity effect), or room resonance</td><td>Move back to 8 inches. Apply stronger high-pass filter (cut below 100 Hz instead of 80 Hz). Reduce EQ at 200–400 Hz by -2 to -3 dB.</td></tr>
+<tr><td>Background hiss/hum</td><td>Noisy environment, cheap mic, electrical interference</td><td>Re-run Noise Reduction. Record at night. Move mic away from laptop fans and power supplies. Use a USB extension cable to separate mic from laptop.</td></tr>
+<tr><td>Voice sounds robotic after noise reduction</td><td>Noise Reduction dB value too high</td><td>Redo with lower settings: try 6–8 dB instead of 12 dB. Accept a tiny hiss — it's better than robotic artifacts.</td></tr>
+<tr><td>Volume jumps between sentences</td><td>Inconsistent mic distance during recording</td><td>Use a mic stand (or stack of books) to fix mic position. Don't hold mic in hand. Apply compression with lower threshold (-20 dB).</td></tr>
+<tr><td>Echo/reverb</td><td>Hard surfaces in recording room</td><td>Record in a closet with clothes. Drape a blanket over yourself and the mic ("blanket fort" technique — professional voice actors do this). Add soft furnishings around recording spot.</td></tr>
+<tr><td>Harsh "S" sounds (sibilance)</td><td>Mic picking up sibilance, or too much high-end EQ</td><td>Reduce presence boost (Step 4 of mastering chain). Try angling mic slightly more off-axis. If persistent, apply EQ cut of -2 dB at 6–8 kHz.</td></tr>
+</table>
+</div></div>
+
+<!-- RECORDING SESSION SOP -->
+<div class="sec"><div class="sec-h"><span class="num ng">SESSION</span><h2>Recording Session SOP — 20 Minutes Per Video</h2></div><div class="sec-b">
+<table class="tbl">
+<tr><th>Minute</th><th>Action</th></tr>
+<tr><td>0:00</td><td><strong>Setup:</strong> Position mic on stand. Open Audacity. Set recording to Mono, 44.1 kHz, 16-bit. Check input gain peaks at -12 to -6 dB.</td></tr>
+<tr><td>0:02</td><td><strong>Room tone:</strong> Hit Record. Sit silently for 5 seconds. This captures your noise profile for Step 1 of mastering chain.</td></tr>
+<tr><td>0:03</td><td><strong>Warm-up:</strong> Read the first paragraph of your script out loud 2× at full volume. This isn't recorded for use — it's vocal warm-up.</td></tr>
+<tr><td>0:05</td><td><strong>Full read:</strong> Start reading the script. Documentary pace (~140 wpm). When you flub a line: pause 2 seconds, then re-read the entire sentence. Don't stop recording between sections — edit later.</td></tr>
+<tr><td>0:17</td><td><strong>Done reading.</strong> Stop recording. Total narration time for a 15-min video (~2,100 words at 140 wpm) = about 15 minutes of reading + 2–3 minutes for re-reads = ~17 minutes of raw audio.</td></tr>
+<tr><td>0:17</td><td><strong>Quick edit:</strong> Delete flubbed takes (keep clean re-reads). Remove long silences. Don't process yet — save the raw file as backup.</td></tr>
+<tr><td>0:20</td><td><strong>Mastering chain:</strong> Apply the 7-step chain. Export as WAV. Done. File goes to TheForgottenFront/Audio/TFF-[number]-voiceover.wav</td></tr>
+</table>
+
+<div class="callout co-g"><strong>Total recording + processing time: 20 minutes per video.</strong> This matches the Y1.4 production pipeline estimate. By Video 5, you'll do this in 15 minutes. By Video 10, the mastering chain is automatic (Audacity Macro) and the whole session takes 12 minutes.</div>
+</div></div>
+
+<!-- DELIVERABLES -->
+<div class="sec"><div class="sec-h"><h2>📦 Y2.3 Deliverables</h2></div><div class="sec-b">
+<div style="display:grid;gap:5px">
+<div class="pillar"><span>✅</span><span>Hardware setup: mic recommendation ($20–40), pop filter, recording space optimization — total investment $23–48 one-time</span></div>
+<div class="pillar"><span>✅</span><span>5 mic technique rules: distance, angle, gain, room tone, consistency</span></div>
+<div class="pillar"><span>✅</span><span>7-step Audacity mastering chain with exact settings: Noise Reduction → Normalize → High-Pass EQ → Presence EQ → Compression → Normalize → Limiter</span></div>
+<div class="pillar"><span>✅</span><span>Audacity Macro setup instructions for one-click batch processing</span></div>
+<div class="pillar"><span>✅</span><span>Narration performance guide: 7 techniques including documentary pace, emphasis through silence, volume dynamics, breath control</span></div>
+<div class="pillar"><span>✅</span><span>Background music strategy: volume rules, ducking, mood matching, pre-built library of search terms</span></div>
+<div class="pillar"><span>✅</span><span>AI voice backup plan (ElevenLabs): 3 scenarios with costs and YouTube disclosure requirements</span></div>
+<div class="pillar"><span>✅</span><span>10-point audio quality checklist for pre-export validation</span></div>
+<div class="pillar"><span>✅</span><span>7 common audio problems with diagnostic causes and specific fixes</span></div>
+<div class="pillar"><span>✅</span><span>Complete recording session SOP: 20 minutes from setup to exported WAV</span></div>
+</div>
+</div></div>
+
+</div>
+<div class="foot">Y2.3 — Audio/Voiceover System · The Forgotten Front · March 2026</div>
+</body></html>

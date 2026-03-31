@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0"><title>I1.4 — Cross-Platform Sync System</title>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;700&family=Sora:wght@400;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#0c0612;--card:#140e1e;--card2:#1c1429;--border:#2a1f3d;--t1:#f4f0fa;--t2:#c4bdd4;--t3:#8a7fa0;--pink:#e84393;--pink-bg:#e8439310;--violet:#6c5ce7;--violet-bg:#6c5ce710;--orange:#fdcb6e;--orange-bg:#fdcb6e10;--green:#00b894;--green-bg:#00b89410;--red:#ff7675;--grad:linear-gradient(135deg,#e84393,#6c5ce7,#00b894)}
+*{margin:0;padding:0;box-sizing:border-box}body{background:var(--bg);color:var(--t2);font-family:'DM Sans',sans-serif;line-height:1.65;-webkit-font-smoothing:antialiased}
+.hdr{position:relative;padding:40px 24px 32px;text-align:center;overflow:hidden}.hdr::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 70% 50% at 50% 0%,#6c5ce708,transparent)}.hdr>*{position:relative}
+.tag{font-size:10px;font-family:'JetBrains Mono',monospace;text-transform:uppercase;letter-spacing:.25em;margin-bottom:8px;background:var(--grad);-webkit-background-clip:text;-webkit-text-fill-color:transparent}
+h1{font-family:'Sora',sans-serif;font-size:clamp(22px,4vw,32px);font-weight:800;color:var(--t1);line-height:1.15;margin-bottom:4px}
+.sub{font-size:13px;color:var(--t3);max-width:620px;margin:0 auto}
+.ct{max-width:900px;margin:0 auto;padding:20px 16px}
+.sec{background:var(--card);border:1px solid var(--border);border-radius:12px;margin-bottom:14px;overflow:hidden}
+.sec-h{padding:14px 20px;border-bottom:1px solid var(--border);display:flex;align-items:center;gap:10px;flex-wrap:wrap}
+.sec-h h2{font-family:'Sora',sans-serif;font-size:14px;font-weight:700;color:var(--t1)}
+.num{font-size:9px;font-family:'JetBrains Mono',monospace;padding:3px 10px;border-radius:20px;font-weight:700}
+.np{background:var(--pink-bg);color:var(--pink)}.nv{background:var(--violet-bg);color:var(--violet)}.ng{background:var(--green-bg);color:var(--green)}.no{background:var(--orange-bg);color:var(--orange)}.nr{background:#ff767510;color:var(--red)}
+.sec-b{padding:16px 20px}
+.d{font-size:12px;color:var(--t3);line-height:1.65;margin-bottom:10px}.d strong{color:var(--t1)}
+.tbl{width:100%;border-collapse:collapse;margin:12px 0;font-size:11px}
+.tbl th{background:var(--card2);color:var(--t3);padding:9px 10px;text-align:left;font-family:'JetBrains Mono',monospace;font-size:9px;text-transform:uppercase;letter-spacing:.04em;border:1px solid var(--border)}
+.tbl td{padding:9px 10px;border:1px solid var(--border);color:var(--t2);vertical-align:top}.tbl tr:nth-child(even) td{background:#0c061288}
+.g{color:var(--green);font-weight:600}.pk{color:var(--pink);font-weight:600}.v{color:var(--violet);font-weight:600}
+.callout{padding:16px;border-radius:8px;font-size:12px;line-height:1.65;margin:12px 0}
+.co-p{background:var(--pink-bg);border:1px solid #e8439322;color:#fab1d0}
+.co-v{background:var(--violet-bg);border:1px solid #6c5ce722;color:#b8b0e8}
+.co-g{background:var(--green-bg);border:1px solid #00b89422;color:#7ee8d0}
+.co-o{background:var(--orange-bg);border:1px solid #fdcb6e22;color:#fde6a8}
+.callout strong{color:var(--t1)}
+.flow{display:flex;align-items:center;gap:8px;flex-wrap:wrap;justify-content:center;margin:16px 0}
+.flow-box{padding:10px 16px;border-radius:8px;font-size:11px;font-weight:700;text-align:center;min-width:100px}
+.flow-arrow{color:var(--t3);font-size:16px}
+.pillar{display:flex;align-items:flex-start;gap:8px;padding:9px 12px;background:var(--green-bg);border:1px solid #00b89418;border-radius:6px;margin-bottom:5px}
+.pillar span:first-child{color:var(--green);font-size:11px;font-family:'JetBrains Mono',monospace;min-width:16px;flex-shrink:0;padding-top:1px}
+.pillar span:last-child{font-size:11px;color:var(--t2);line-height:1.5}
+.foot{text-align:center;padding:30px 20px;font-size:10px;color:#4a3f60;font-family:'JetBrains Mono',monospace;border-top:1px solid var(--border);margin-top:30px}
+</style></head><body>
+
+<div class="hdr">
+<div class="tag">I1.4 — Cross-Platform Sync System</div>
+<h1>One Video → 5 Platforms</h1>
+<div class="sub">YouTube ↔ Instagram ↔ TikTok distribution pipeline · Scheduling tools · Format conversion · Timing sync · Weekly batch workflow</div>
+</div>
+<div class="ct">
+
+<!-- THE CONTENT FLOW -->
+<div class="sec"><div class="sec-h"><span class="num nv">FLOW</span><h2>The Master Content Flow — How Everything Connects</h2></div><div class="sec-b">
+
+<div class="d"><strong>Every piece of content starts with YouTube production. From there, it splits into 7+ formats across 5 platforms — all from the same research, the same voiceover, the same images. Zero additional content creation.</strong></div>
+
+<div class="flow">
+<div class="flow-box" style="background:#d9770620;color:#d97706;border:1px solid #d9770640">🎬 YOUTUBE<br>Long-form video</div>
+<div class="flow-arrow">→</div>
+<div class="flow-box" style="background:#d9770620;color:#d97706;border:1px solid #d9770640">🎬 YT SHORTS<br>3 Shorts extracted</div>
+<div class="flow-arrow">→</div>
+<div class="flow-box" style="background:#e8439320;color:#e84393;border:1px solid #e8439340">📱 IG REELS<br>Cross-post Shorts</div>
+</div>
+<div class="flow">
+<div class="flow-box" style="background:#d9770620;color:#d97706;border:1px solid #d9770640">🎬 VIDEO<br>RESEARCH</div>
+<div class="flow-arrow">→</div>
+<div class="flow-box" style="background:#e8439320;color:#e84393;border:1px solid #e8439340">📱 IG CAROUSEL<br>5-8 slides from research</div>
+<div class="flow-arrow">+</div>
+<div class="flow-box" style="background:#e8439320;color:#e84393;border:1px solid #e8439340">📱 IG FACT CARD<br>1 stat from script</div>
+</div>
+<div class="flow">
+<div class="flow-box" style="background:#e8439320;color:#e84393;border:1px solid #e8439340">📱 IG REELS</div>
+<div class="flow-arrow">→</div>
+<div class="flow-box" style="background:#00000040;color:#eee;border:1px solid #ffffff30">🎵 TIKTOK<br>Same video, native captions</div>
+<div class="flow-arrow">→</div>
+<div class="flow-box" style="background:#1da1f220;color:#1da1f2;border:1px solid #1da1f240">🐦 TWITTER/X<br>Thread from script</div>
+</div>
+
+<div class="callout co-v"><strong>The economics:</strong> 1 YouTube video (~3.5 hrs production) generates: 1 long-form + 3 Shorts + 3 Reels + 1 carousel + 1 fact card + 3 TikToks + 1 Twitter thread = <strong>13 pieces of content across 5 platforms</strong>. Your additional time for distribution beyond YouTube: ~45 minutes. That's a 13:1 content multiplier for ~20% additional effort.</div>
+</div></div>
+
+<!-- STEP-BY-STEP CROSS-POST WORKFLOW -->
+<div class="sec"><div class="sec-h"><span class="num ng">WORKFLOW</span><h2>Step-by-Step Cross-Platform Distribution Workflow</h2></div><div class="sec-b">
+
+<div class="d"><strong>Follow this workflow every time you publish a YouTube video. Total distribution time: ~45 minutes per video across all platforms.</strong></div>
+
+<table class="tbl">
+<tr><th>Step</th><th>Action</th><th>Platform</th><th>Tool</th><th>Time</th></tr>
+<tr><td colspan="5" style="background:var(--card2);color:#d97706;font-weight:700;text-align:center;font-size:10px">YOUTUBE (already done during production)</td></tr>
+<tr><td>1</td><td>Upload long-form video to YouTube with full SEO metadata (Y3.3)</td><td>YouTube</td><td>YouTube Studio</td><td>Done</td></tr>
+<tr><td>2</td><td>Upload 3 YouTube Shorts from batch production</td><td>YouTube</td><td>YouTube Studio</td><td>Done</td></tr>
+<tr><td colspan="5" style="background:var(--card2);color:#e84393;font-weight:700;text-align:center;font-size:10px">INSTAGRAM (distribution day — same day as YouTube upload)</td></tr>
+<tr><td>3</td><td><strong>Export Shorts from CapCut</strong> at 1080×1920 without watermark. DO NOT download from YouTube — the YouTube watermark reduces Instagram reach.</td><td>—</td><td>CapCut</td><td>1 min</td></tr>
+<tr><td>4</td><td><strong>Create Reel covers</strong> in Canva for each Short. Duplicate I1.2 Reel Cover template → swap title text → export as JPEG.</td><td>—</td><td>Canva</td><td>5 min</td></tr>
+<tr><td>5</td><td><strong>Write Instagram captions</strong> for each Reel. Use I1.3 caption template: hook + context + engagement prompt + CTA + hashtags. Different caption from YouTube description.</td><td>—</td><td>Notes app</td><td>5 min</td></tr>
+<tr><td>6</td><td><strong>Schedule Reels</strong> in Meta Business Suite. Upload video + custom cover + caption. Set publish time. Schedule 1 Reel per day (spread the 3 Shorts across 3 days).</td><td>Instagram</td><td>Meta Business Suite (free)</td><td>5 min</td></tr>
+<tr><td>7</td><td><strong>Create carousel</strong> from video research. Duplicate I1.2 Carousel template in Canva → fill 5-8 slides with facts from this video → export slides → schedule in Meta Business Suite.</td><td>Instagram</td><td>Canva + Meta BS</td><td>12 min</td></tr>
+<tr><td>8</td><td><strong>Create fact card</strong> from the single most powerful stat in your video. Duplicate I1.2 Fact Card template → swap text → schedule.</td><td>Instagram</td><td>Canva + Meta BS</td><td>3 min</td></tr>
+<tr><td colspan="5" style="background:var(--card2);color:#eee;font-weight:700;text-align:center;font-size:10px">TIKTOK (same session as Instagram)</td></tr>
+<tr><td>9</td><td><strong>Upload same Short videos to TikTok.</strong> Use the CapCut exports (not YouTube downloads). Add TikTok-native captions via TikTok's built-in caption tool. Add 4-6 TikTok hashtags: #MilitaryHistory #WW2 #History #LearnOnTikTok #ForgottenHistory + 1 topic-specific.</td><td>TikTok</td><td>TikTok app</td><td>5 min</td></tr>
+<tr><td colspan="5" style="background:var(--card2);color:#1da1f2;font-weight:700;text-align:center;font-size:10px">TWITTER/X (optional — once per week)</td></tr>
+<tr><td>10</td><td><strong>Write thread</strong> from video script: 5-8 tweets condensing key facts. Final tweet: "Full documentary on our YouTube channel: [link]." Schedule via Twitter's built-in scheduler.</td><td>Twitter/X</td><td>Twitter/X</td><td>8 min</td></tr>
+<tr><td colspan="4" style="font-weight:700;color:var(--green)">TOTAL DISTRIBUTION TIME (beyond YouTube production)</td><td style="font-weight:700;color:var(--green)">~45 min</td></tr>
+</table>
+</div></div>
+
+<!-- SCHEDULING TOOL -->
+<div class="sec"><div class="sec-h"><span class="num np">TOOLS</span><h2>Free Scheduling Tools — Your Distribution Stack</h2></div><div class="sec-b">
+
+<table class="tbl">
+<tr><th>Platform</th><th>Scheduling Tool</th><th>Free Tier</th><th>What You Schedule</th></tr>
+<tr><td><strong>Instagram (Reels + Feed + Stories)</strong></td><td class="pk">Meta Business Suite</td><td class="g">Unlimited — completely free. Official Meta tool.</td><td>All Reels, carousels, fact cards, and Stories. Full scheduling with custom cover images and hashtags. This is your primary scheduling tool.</td></tr>
+<tr><td><strong>YouTube</strong></td><td>YouTube Studio</td><td class="g">Free — built into YouTube</td><td>Long-form videos and Shorts. Schedule upload time in advance.</td></tr>
+<tr><td><strong>TikTok</strong></td><td>TikTok app (built-in scheduler)</td><td class="g">Free — allows scheduling up to 10 days ahead</td><td>All TikTok videos. Schedule directly in the app during upload.</td></tr>
+<tr><td><strong>Twitter/X</strong></td><td>Twitter/X (built-in scheduler)</td><td class="g">Free — schedule tweets and threads</td><td>Weekly thread from your best video of the week.</td></tr>
+</table>
+
+<div class="callout co-g"><strong>Total cost: $0/month.</strong> Every platform has a free built-in scheduler. You do NOT need Later, Hootsuite, Buffer, or any paid tool. Meta Business Suite alone handles all your Instagram scheduling with full feature access — it's Meta's own product. Save your $50-150/month budget for other things.</div>
+</div></div>
+
+<!-- TIMING SYNC -->
+<div class="sec"><div class="sec-h"><span class="num no">TIMING</span><h2>Cross-Platform Publishing Schedule</h2></div><div class="sec-b">
+
+<div class="d"><strong>Don't publish the same content on all platforms simultaneously. Stagger releases for maximum reach and to avoid platform penalties for duplicate content detection.</strong></div>
+
+<table class="tbl">
+<tr><th>Day</th><th>YouTube</th><th>Instagram</th><th>TikTok</th><th>Twitter/X</th></tr>
+<tr><td><strong>Tuesday</strong></td><td class="v">Long-form Video A published (3 PM EST / 12 AM PKT+1)</td><td class="pk">Reel #1 from Video A (7 PM PKT)</td><td>TikTok #1 from Video A (9 PM PKT)</td><td>—</td></tr>
+<tr><td><strong>Wednesday</strong></td><td>Short #1 from Video A</td><td class="pk">Carousel from Video A research + Stories</td><td>TikTok #2</td><td>—</td></tr>
+<tr><td><strong>Thursday</strong></td><td class="v">Long-form Video B published (if Full Week)</td><td class="pk">Reel #2 + Fact Card</td><td>TikTok #3</td><td>—</td></tr>
+<tr><td><strong>Friday</strong></td><td>Short #2, Short #3</td><td class="pk">Reel #3 + Stories</td><td>—</td><td style="color:#1da1f2;font-weight:600">Thread from best video this week</td></tr>
+<tr><td><strong>Sat/Sun</strong></td><td>—</td><td class="pk">Stories (behind-the-scenes, polls)</td><td>—</td><td>—</td></tr>
+</table>
+
+<div class="callout co-o"><strong>Key timing rules:</strong><br>
+• <strong>YouTube first, always.</strong> Your long-form video is the "source" — publish it before any derivative content hits other platforms.<br>
+• <strong>Instagram Reels: 2-4 hours after YouTube Short.</strong> Not simultaneous. Gives YouTube's algorithm time to index your Short first.<br>
+• <strong>TikTok: same day as Instagram Reel</strong> or next day. TikTok's algorithm is independent — no conflict with Instagram timing.<br>
+• <strong>Never post the exact same caption</strong> on Instagram and TikTok. Different platforms = different audiences = different captions. Reuse the video, rewrite the text.</div>
+</div></div>
+
+<!-- FORMAT CONVERSION RULES -->
+<div class="sec"><div class="sec-h"><span class="num nv">FORMATS</span><h2>Format Conversion Rules — What Changes Per Platform</h2></div><div class="sec-b">
+
+<table class="tbl">
+<tr><th>Element</th><th>YouTube Shorts</th><th>Instagram Reels</th><th>TikTok</th></tr>
+<tr><td><strong>Video file</strong></td><td>Export from CapCut at 1080×1920</td><td>Same file from CapCut (NOT downloaded from YouTube — watermark kills reach)</td><td>Same file from CapCut</td></tr>
+<tr><td><strong>Captions/subtitles</strong></td><td>CapCut auto-captions in video</td><td>Keep CapCut captions OR add Instagram-native captions (slightly better performance)</td><td>Remove CapCut captions → use TikTok's built-in caption tool (native format performs better)</td></tr>
+<tr><td><strong>Music</strong></td><td>YouTube Audio Library track embedded</td><td>Same track IF from Pixabay Music (cross-platform safe). If from YouTube Audio Library → may need to swap to Pixabay track for Instagram.</td><td>Same rule as Instagram — use Pixabay Music for cross-platform safety.</td></tr>
+<tr><td><strong>Cover image</strong></td><td>YouTube auto-selects or you choose frame</td><td>Custom Canva cover (I1.2 Reel Cover template) — critical for grid aesthetic</td><td>TikTok auto-selects cover frame. Less important for grid.</td></tr>
+<tr><td><strong>Caption text</strong></td><td>Title + description per Y3.3</td><td>I1.3 caption template with keywords + 3-5 hashtags</td><td>Hook sentence + "Full story on YouTube" + 4-6 TikTok hashtags</td></tr>
+<tr><td><strong>Hashtags</strong></td><td>In description, not title</td><td>3-5 from I1.3 pre-built sets, end of caption</td><td>4-6 including #LearnOnTikTok and topic tags</td></tr>
+<tr><td><strong>CTA</strong></td><td>"Subscribe for more"</td><td>"Follow @theforgottenfront"</td><td>"Full story on our YouTube — link in bio"</td></tr>
+</table>
+
+<div class="callout co-r"><strong>The watermark rule is critical.</strong> If you download a video from YouTube, it has a YouTube Shorts watermark. Instagram and TikTok both reduce reach for content with competitor watermarks. ALWAYS export directly from CapCut for Instagram and TikTok. Keep the original CapCut project files organized so you can re-export any time.</div>
+</div></div>
+
+<!-- BATCH WORKFLOW -->
+<div class="sec"><div class="sec-h"><span class="num ng">BATCH</span><h2>Weekly Batch Session — 45 Minutes Every Tuesday</h2></div><div class="sec-b">
+
+<div class="d"><strong>Do all cross-platform distribution in one concentrated session. This is more efficient than posting ad-hoc throughout the week. Here's the batch workflow:</strong></div>
+
+<table class="tbl">
+<tr><th>Block</th><th>Task</th><th>Time</th></tr>
+<tr><td style="color:var(--pink);font-weight:700">Block 1: Reels</td><td>Export 3 Shorts from CapCut (no watermark). Create 3 Reel covers in Canva. Write 3 Instagram captions. Schedule all 3 Reels in Meta Business Suite for Tue/Wed/Fri.</td><td>15 min</td></tr>
+<tr><td style="color:var(--violet);font-weight:700">Block 2: Carousel + Card</td><td>Duplicate carousel template → fill 5-8 slides from this week's video research → export. Duplicate fact card template → add the week's best stat. Schedule both in Meta Business Suite.</td><td>15 min</td></tr>
+<tr><td style="font-weight:700">Block 3: TikTok</td><td>Upload same 3 videos to TikTok. Add TikTok-native captions. Write TikTok-specific captions with hashtags. Schedule for Wed/Thu/Fri.</td><td>8 min</td></tr>
+<tr><td style="color:#1da1f2;font-weight:700">Block 4: Twitter (optional)</td><td>Write 5-8 tweet thread from video script. Schedule for Friday.</td><td>7 min</td></tr>
+<tr><td colspan="2" style="font-weight:700;color:var(--green)">TOTAL WEEKLY BATCH</td><td style="font-weight:700;color:var(--green)">~45 min</td></tr>
+</table>
+
+<div class="callout co-g"><strong>When to batch:</strong> Tuesday afternoon/evening, right after uploading your YouTube video. You're already in "this week's content" headspace. The video research is fresh. The script facts are top of mind. Batching everything in one session prevents context-switching throughout the week and ensures you never forget to cross-post.</div>
+</div></div>
+
+<!-- FILE ORGANIZATION -->
+<div class="sec"><div class="sec-h"><span class="num no">FILES</span><h2>File Organization for Cross-Platform Content</h2></div><div class="sec-b">
+
+<div class="d"><strong>Keep your exports organized so you can always find the right file for the right platform:</strong></div>
+
+<div style="background:var(--card2);border:1px solid var(--border);border-radius:8px;padding:14px;font-size:11px;font-family:'JetBrains Mono',monospace;color:var(--t2);line-height:1.8;white-space:pre;overflow-x:auto">TheForgottenFront/
+├── Exports/
+│   ├── YouTube/
+│   │   ├── TFF-001-FULL.mp4          <span style="color:var(--t3)"># Long-form video</span>
+│   │   ├── TFF-001-SHORT-1.mp4       <span style="color:var(--t3)"># YouTube Short</span>
+│   │   ├── TFF-001-SHORT-2.mp4
+│   │   └── TFF-001-SHORT-3.mp4
+│   ├── Instagram/
+│   │   ├── TFF-001-REEL-1.mp4        <span style="color:var(--t3)"># Same video, no watermark</span>
+│   │   ├── TFF-001-REEL-1-COVER.jpg  <span style="color:var(--t3)"># Custom Canva cover</span>
+│   │   ├── TFF-001-CAROUSEL/         <span style="color:var(--t3)"># Carousel slides folder</span>
+│   │   └── TFF-001-FACTCARD.jpg
+│   └── TikTok/
+│       ├── TFF-001-TT-1.mp4          <span style="color:var(--t3)"># Same video, for TikTok</span>
+│       ├── TFF-001-TT-2.mp4
+│       └── TFF-001-TT-3.mp4
+├── Thumbnails/                        <span style="color:var(--t3)"># YouTube thumbnails</span>
+├── Scripts/                           <span style="color:var(--t3)"># Video scripts</span>
+└── Brand/                             <span style="color:var(--t3)"># Logo, fonts, color ref</span></div>
+
+<div class="d" style="margin-top:10px"><strong>Pro tip:</strong> The Instagram and TikTok folders can contain the SAME video files — just organize them separately so you can quickly find the right file when uploading. The video export from CapCut goes into all 3 folders (or use the same file if your system supports it).</div>
+</div></div>
+
+<!-- ANALYTICS SYNC -->
+<div class="sec"><div class="sec-h"><span class="num np">ANALYTICS</span><h2>Cross-Platform Performance Tracking</h2></div><div class="sec-b">
+
+<div class="d"><strong>Track performance across all platforms weekly to identify which platform drives the most growth and where to focus your effort:</strong></div>
+
+<table class="tbl">
+<tr><th>Metric</th><th>YouTube Studio</th><th>Instagram Insights</th><th>TikTok Analytics</th><th>What It Tells You</th></tr>
+<tr><td><strong>Views per Short/Reel</strong></td><td>Analytics → Content → Shorts</td><td>Insights → Content → Reels</td><td>Analytics → Content</td><td>Which platform gives the same content more reach? If TikTok consistently outperforms Instagram for the same video, increase TikTok investment.</td></tr>
+<tr><td><strong>Follower/sub growth</strong></td><td>Analytics → Audience</td><td>Insights → Total Followers</td><td>Analytics → Followers</td><td>Which platform converts views into follows best? This is your most valuable platform.</td></tr>
+<tr><td><strong>Traffic to YouTube</strong></td><td>Analytics → Traffic Sources → External</td><td>Bio link clicks (Insights → Activity)</td><td>Bio link clicks</td><td>The whole point of Instagram and TikTok is driving YouTube subscribers. Track how many actually click through.</td></tr>
+<tr><td><strong>Best content type</strong></td><td>Shorts vs long-form views</td><td>Reels vs Carousels vs Fact Cards</td><td>Video performance ranking</td><td>Which format drives engagement per platform? Carousels might crush on Instagram while Reels crush on TikTok.</td></tr>
+</table>
+
+<div class="callout co-p"><strong>Weekly 5-minute review:</strong> Every Sunday, open YouTube Studio + Instagram Insights + TikTok Analytics. Write down: (1) Best performing content this week, (2) Which platform grew fastest, (3) One thing to try differently next week. This takes 5 minutes and prevents you from wasting time on platforms that aren't working. Data-driven decisions, not gut feelings.</div>
+</div></div>
+
+<!-- PLATFORM-SPECIFIC DIFFERENCES -->
+<div class="sec"><div class="sec-h"><span class="num nv">DIFFERENCES</span><h2>Platform Personality — What Works Where</h2></div><div class="sec-b">
+
+<table class="tbl">
+<tr><th>Trait</th><th>YouTube</th><th>Instagram</th><th>TikTok</th></tr>
+<tr><td><strong>Content style</strong></td><td>Educational, documentary, in-depth. Viewers want to learn.</td><td>Visual, saveable, shareable. Viewers want to feel informed.</td><td>Hook-heavy, fast-paced, surprising. Viewers want to be shocked/entertained.</td></tr>
+<tr><td><strong>Hook speed</strong></td><td>15 seconds to grab attention</td><td>3 seconds (scroll speed)</td><td>0.5 seconds (swipe speed)</td></tr>
+<tr><td><strong>Algorithm signal</strong></td><td>Watch time & retention %</td><td>Saves & shares (DMs)</td><td>Completion rate & shares</td></tr>
+<tr><td><strong>Caption style</strong></td><td>SEO-focused description, 200+ words</td><td>Conversational, keyword-rich, 50-200 words with CTA</td><td>Short, punchy, 1-3 sentences. Emoji-friendly.</td></tr>
+<tr><td><strong>Audience age</strong></td><td>25-45 (education/documentary)</td><td>18-35 (visual-first users)</td><td>16-30 (trend-driven, fast)</td></tr>
+<tr><td><strong>Your focus</strong></td><td class="v">PRIMARY — revenue engine, long-form depth</td><td class="pk">SECONDARY — brand building, saves, KDP sales funnel</td><td>TERTIARY — reach amplifier, funnel to YouTube</td></tr>
+</table>
+
+<div class="callout co-v"><strong>Priority ranking:</strong> YouTube (70% of your effort) → Instagram (20%) → TikTok (8%) → Twitter (2%). If you're ever short on time, YouTube videos are non-negotiable. Instagram Reels are the second priority. TikTok and Twitter are "nice to have" and can be skipped during Minimum Weeks without significant impact.</div>
+</div></div>
+
+<!-- DELIVERABLES -->
+<div class="sec"><div class="sec-h"><h2>📦 I1.4 Deliverables — PROJECT I1 COMPLETE ✓</h2></div><div class="sec-b">
+<div style="display:grid;gap:5px">
+<div class="pillar"><span>✅</span><span>Master content flow diagram: 1 YouTube video → 13 pieces of content across 5 platforms in ~45 min additional effort</span></div>
+<div class="pillar"><span>✅</span><span>10-step cross-platform distribution workflow with exact actions, tools, and time per step</span></div>
+<div class="pillar"><span>✅</span><span>Free scheduling tool stack: Meta Business Suite (Instagram), YouTube Studio, TikTok scheduler, Twitter scheduler — $0/month total</span></div>
+<div class="pillar"><span>✅</span><span>Cross-platform publishing schedule: staggered timing to avoid duplicate content penalties (YouTube first → Instagram 2-4 hrs later → TikTok same day)</span></div>
+<div class="pillar"><span>✅</span><span>Format conversion rules: what changes per platform (captions, covers, music, hashtags, CTAs) with the critical watermark rule</span></div>
+<div class="pillar"><span>✅</span><span>Weekly 45-minute batch workflow: 4 blocks (Reels → Carousel+Card → TikTok → Twitter) — do everything in one session</span></div>
+<div class="pillar"><span>✅</span><span>File organization structure for cross-platform exports with naming conventions</span></div>
+<div class="pillar"><span>✅</span><span>Cross-platform analytics tracking: 4 metrics across 3 platforms with 5-minute weekly review process</span></div>
+<div class="pillar"><span>✅</span><span>Platform personality guide: content style, hook speed, algorithm signals, audience age, and priority ranking per platform</span></div>
+</div>
+
+<div class="callout co-g" style="margin-top:14px"><strong style="font-size:14px">🏆 PROJECT I1: INSTAGRAM FOUNDATION — COMPLETE</strong><br><br>
+All 4 subprojects delivered:<br>
+✓ I1.1 — Profile Optimization & Bio Engineering<br>
+✓ I1.2 — Visual Identity & Feed Aesthetic<br>
+✓ I1.3 — Hashtag & Instagram SEO Strategy<br>
+✓ I1.4 — Cross-Platform Sync System<br><br>
+<strong>Your Instagram page can be fully set up and publishing content within 2 hours using these 4 guides.</strong> The cross-platform system means every YouTube video you produce automatically generates a week's worth of Instagram and TikTok content for ~45 minutes of additional work.<br><br>
+Next: I2 (Content Engine & Growth) — but this should be built AFTER you've published your first 3-5 YouTube videos and have real content flowing through the cross-platform pipeline.</div>
+</div></div>
+
+</div>
+<div class="foot">I1.4 — Cross-Platform Sync System · The Forgotten Front · Instagram Track · March 2026</div>
+</body></html>
