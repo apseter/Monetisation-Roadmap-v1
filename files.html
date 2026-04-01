@@ -1,0 +1,172 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>All Files — Trail Shorts GTM</title>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#0a0f1a;--surface:#111827;--surface2:#1a2234;--border:#2a3444;--text:#e2e8f0;--text-dim:#94a3b8;--accent:#38bdf8;--accent2:#818cf8;--green:#34d399;--yellow:#fbbf24;--red:#f87171;--orange:#fb923c}
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:'DM Sans',sans-serif;background:var(--bg);color:var(--text);line-height:1.7}
+a{color:var(--accent);text-decoration:none;transition:color .2s}a:hover{color:var(--accent2)}
+.container{max-width:1100px;margin:0 auto;padding:0 32px}
+nav{background:var(--surface);border-bottom:1px solid var(--border);padding:16px 0;position:sticky;top:0;z-index:100;backdrop-filter:blur(12px)}
+nav .container{display:flex;justify-content:space-between;align-items:center}
+nav .logo{font-family:'Space Mono',monospace;font-weight:700;font-size:16px;color:var(--accent)}
+nav .links{display:flex;gap:20px;font-size:14px}
+nav .links a{color:var(--text-dim)}nav .links a:hover{color:var(--accent)}
+.hero{padding:60px 0 40px;border-bottom:1px solid var(--border)}
+.hero h1{font-family:'Space Mono',monospace;font-size:clamp(28px,4vw,44px);font-weight:700;letter-spacing:-1px;background:linear-gradient(135deg,var(--accent),var(--accent2));-webkit-background-clip:text;-webkit-text-fill-color:transparent;margin-bottom:8px}
+.hero p{color:var(--text-dim);font-size:16px;max-width:700px}
+.stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(120px,1fr));gap:12px;margin:32px 0}
+.stat{background:var(--surface);border:1px solid var(--border);border-radius:10px;padding:16px;text-align:center}
+.stat-n{font-family:'Space Mono',monospace;font-size:28px;font-weight:700;color:var(--accent)}
+.stat-l{font-size:11px;color:var(--text-dim);text-transform:uppercase;letter-spacing:1px;margin-top:2px}
+.section{padding:40px 0}
+.section h2{font-family:'Space Mono',monospace;font-size:22px;color:var(--accent);margin-bottom:20px;padding-bottom:10px;border-bottom:1px solid var(--border)}
+.card-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:16px}
+a.card{display:block;background:var(--surface);border:1px solid var(--border);border-radius:10px;padding:20px;transition:all .2s;text-decoration:none;color:inherit}
+a.card:hover{border-color:var(--accent);transform:translateY(-2px);box-shadow:0 8px 24px rgba(56,189,248,.08)}
+.card-badge{font-family:'Space Mono',monospace;font-size:11px;font-weight:700;padding:3px 8px;border-radius:5px;display:inline-block;margin-bottom:8px}
+.b-green{background:rgba(52,211,153,.15);color:var(--green)}
+.b-blue{background:rgba(56,189,248,.15);color:var(--accent)}
+.b-purple{background:rgba(129,140,248,.15);color:var(--accent2)}
+.b-red{background:rgba(248,113,113,.15);color:var(--red)}
+.card h3{font-size:17px;font-weight:600;margin-bottom:6px}
+.card p{font-size:13px;color:var(--text-dim);line-height:1.5}
+.card .meta{font-family:'Space Mono',monospace;font-size:11px;color:var(--accent);margin-top:8px}
+.file-list{margin-top:16px}
+a.file-row{display:flex;align-items:center;gap:12px;padding:12px 16px;background:var(--surface);border:1px solid var(--border);border-radius:8px;margin-bottom:6px;transition:all .2s;text-decoration:none;color:inherit}
+a.file-row:hover{border-color:var(--accent);background:var(--surface2)}
+.file-icon{width:32px;height:32px;border-radius:6px;display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:700;flex-shrink:0}
+.fi-md{background:rgba(56,189,248,.15);color:var(--accent)}
+.fi-xlsx{background:rgba(52,211,153,.15);color:var(--green)}
+.fi-docx{background:rgba(129,140,248,.15);color:var(--accent2)}
+.file-info{flex:1}
+.file-info h4{font-size:14px;font-weight:600}
+.file-info p{font-size:12px;color:var(--text-dim)}
+.file-words{font-family:'Space Mono',monospace;font-size:11px;color:var(--accent)}
+.dl-tag{font-size:11px;color:var(--accent);opacity:.6}
+table{width:100%;border-collapse:collapse;font-size:13px;margin:16px 0}
+th{text-align:left;padding:10px 12px;background:var(--surface2);color:var(--text-dim);font-size:11px;text-transform:uppercase;letter-spacing:1px;border-bottom:1px solid var(--border)}
+td{padding:10px 12px;border-bottom:1px solid var(--border)}
+tr:hover{background:var(--surface2)}
+.sev-c{color:var(--red);font-weight:700}.sev-h{color:var(--orange);font-weight:600}.sev-m{color:var(--yellow)}.sev-l{color:var(--green)}
+.st-f{color:var(--green);font-weight:700}.st-o{color:var(--red);font-weight:600}.st-a{color:var(--text-dim)}.st-d{color:var(--yellow)}
+.task-list{margin:16px 0}
+.task-day{background:var(--surface);border:1px solid var(--border);border-radius:8px;margin-bottom:8px;overflow:hidden}
+.task-day-header{padding:12px 16px;background:var(--surface2);font-weight:600;font-size:14px;cursor:pointer;display:flex;justify-content:space-between;align-items:center}
+.task-day-header:hover{background:var(--border)}
+.task-day-body{padding:12px 16px;display:none;font-size:13px;color:var(--text-dim);line-height:1.8}
+.task-day-body.show{display:block}
+.task-day-body li{margin-bottom:4px;list-style:none}
+.task-day-body li::before{content:'☐ ';color:var(--accent)}
+.back{display:inline-flex;align-items:center;gap:6px;font-size:13px;color:var(--text-dim);margin-bottom:24px}
+.back:hover{color:var(--accent)}
+footer{text-align:center;padding:40px 32px;color:var(--text-dim);font-size:12px;border-top:1px solid var(--border);margin-top:40px}
+@media(max-width:768px){.card-grid{grid-template-columns:1fr}.stats{grid-template-columns:repeat(2,1fr)}.container{padding:0 16px}nav .links{gap:12px;font-size:12px}}
+</style></head><body><nav><div class="container"><a href="index.html" class="logo">TRAIL SHORTS GTM</a>
+<div class="links"><a href="index.html">Home</a><a href="tracker.html">Tracker</a><a href="tasks.html">Day-by-Day</a><a href="gaps.html">Gap Analysis</a><a href="files.html">All Files</a></div></div></nav><div class="container"><a href="index.html" class="back">← Back</a><div class="hero"><h1>All Project Files</h1><p>Every document in the GTM project — click any file to download</p></div><div class="section"><h2>Master Documents</h2><div class="file-list"><a class="file-row" href="files/Modular_Trail_Shorts_GTM_Package_v4.zip" download>
+<div class="file-icon fi-docx">ZIP</div>
+<div class="file-info"><h4>Complete GTM Package (ZIP)</h4><p>All 37 files in organised folders</p><span class="file-words">557 KB</span></div>
+<span class="dl-tag">Download →</span></a><a class="file-row" href="files/Modular_Shorts_GTM_Master_Tracker.xlsx" download>
+<div class="file-icon fi-xlsx">XLSX</div>
+<div class="file-info"><h4>GTM Master Tracker</h4><p>14-sheet tracker: Dashboard, Gap Register, P0-P10</p></div>
+<span class="dl-tag">Download →</span></a><a class="file-row" href="files/Founders_Playbook.docx" download>
+<div class="file-icon fi-docx">DOCX</div>
+<div class="file-info"><h4>Founder's Playbook</h4><p>10-page executive summary</p></div>
+<span class="dl-tag">Download →</span></a><a class="file-row" href="files/Founders_Day_by_Day_Action_Sheet.md" download>
+<div class="file-icon fi-md">MD</div>
+<div class="file-info"><h4>Day-by-Day Action Sheet</h4><p>177-day task sequence</p><span class="file-words">3,200+</span></div>
+<span class="dl-tag">Download →</span></a></div></div><div class="section"><h2>P0: Market Research</h2><div class="file-list"><a class="file-row" href="files/P0A_Running_Shorts_Market_Intelligence.xlsx" download>
+<div class="file-icon fi-xlsx">XLSX</div>
+<div class="file-info"><h4>P0A: Market Intelligence</h4><p>Competitive pricing database, feature audit, Amazon BSR</p></div>
+<span class="dl-tag">Download →</span></a><a class="file-row" href="files/P0B_P0C_Consumer_Pain_Points_and_Teardown.xlsx" download>
+<div class="file-icon fi-xlsx">XLSX</div>
+<div class="file-info"><h4>P0B/C: Pain Points & Teardown</h4><p>Pain point taxonomy, competitor teardown</p></div>
+<span class="dl-tag">Download →</span></a><a class="file-row" href="files/P0D_Target_Customer_Interviews_Complete_Program.md" download>
+<div class="file-icon fi-md">MD</div>
+<div class="file-info"><h4>P0D: Customer Interviews</h4><p>Interview programme with scripts</p><span class="file-words">4,800+</span></div>
+<span class="dl-tag">Download →</span></a><a class="file-row" href="files/P0E_Social_Concept_Testing_PreOrder_Validation.md" download>
+<div class="file-icon fi-md">MD</div>
+<div class="file-info"><h4>P0E: Concept Testing</h4><p>Pre-order validation, Reddit/IG testing</p><span class="file-words">6,200+</span></div>
+<span class="dl-tag">Download →</span></a><a class="file-row" href="files/P0F_Research_Synthesis_GoNoGo_Decision.md" download>
+<div class="file-icon fi-md">MD</div>
+<div class="file-info"><h4>P0F: Go/No-Go Synthesis</h4><p>Structured go/no-go decision</p><span class="file-words">5,000+</span></div>
+<span class="dl-tag">Download →</span></a><a class="file-row" href="files/P0G_EU_Market_Entry_Research.md" download>
+<div class="file-icon fi-md">MD</div>
+<div class="file-info"><h4>P0G: EU Market Entry</h4><p>France/EU market, regulations, IOSS</p><span class="file-words">6,200+</span></div>
+<span class="dl-tag">Download →</span></a><a class="file-row" href="files/P0H_Operational_Readiness_Checklist.md" download>
+<div class="file-icon fi-md">MD</div>
+<div class="file-info"><h4>P0H: Readiness Checklist</h4><p>75-task operational readiness</p><span class="file-words">1,800+</span></div>
+<span class="dl-tag">Download →</span></a><a class="file-row" href="files/P0_Master_Audit_Gap_Tracker.xlsx" download>
+<div class="file-icon fi-xlsx">XLSX</div>
+<div class="file-info"><h4>P0: Gap Tracker</h4><p>Gap tracking across 8 subprojects</p></div>
+<span class="dl-tag">Download →</span></a></div></div><div class="section"><h2>P1: Brand Development</h2><div class="file-list"><a class="file-row" href="files/P1A_Brand_Name_Candidates.md" download>
+<div class="file-icon fi-md">MD</div>
+<div class="file-info"><h4>P1A: Brand Names + Selection</h4><p>50 names, SMILE scores, selection framework</p><span class="file-words">2,400+</span></div>
+<span class="dl-tag">Download →</span></a><a class="file-row" href="files/P1C_UK_Ltd_Formation_Guide.md" download>
+<div class="file-icon fi-md">MD</div>
+<div class="file-info"><h4>P1C: UK Ltd Formation</h4><p>Companies House, Wise Business, VAT</p><span class="file-words">1,500</span></div>
+<span class="dl-tag">Download →</span></a><a class="file-row" href="files/P1D_Designer_Brief.md" download>
+<div class="file-icon fi-md">MD</div>
+<div class="file-info"><h4>P1D: Designer Brief</h4><p>Logo, colour palette, typography</p><span class="file-words">1,200+</span></div>
+<span class="dl-tag">Download →</span></a><a class="file-row" href="files/P1E_Shopify_Product_Copy_Config.md" download>
+<div class="file-icon fi-md">MD</div>
+<div class="file-info"><h4>P1E: Shopify Product Copy</h4><p>Product descriptions, homepage copy</p><span class="file-words">2,200+</span></div>
+<span class="dl-tag">Download →</span></a><a class="file-row" href="files/P1F_Content_Strategy_Execution.md" download>
+<div class="file-icon fi-md">MD</div>
+<div class="file-info"><h4>P1F: Content Strategy</h4><p>12-week calendar, 60+ post ideas</p><span class="file-words">2,800+</span></div>
+<span class="dl-tag">Download →</span></a><a class="file-row" href="files/P1F_Blog_Posts_Complete.md" download>
+<div class="file-icon fi-md">MD</div>
+<div class="file-info"><h4>P1F: 5 SEO Blog Posts</h4><p>5 ready-to-publish blog posts</p><span class="file-words">8,500+</span></div>
+<span class="dl-tag">Download →</span></a><a class="file-row" href="files/P1G_Legal_Compliance_Templates.md" download>
+<div class="file-icon fi-md">MD</div>
+<div class="file-info"><h4>P1G: Legal Templates</h4><p>Returns, T&Cs, privacy policy, REACH letter</p><span class="file-words">1,600+</span></div>
+<span class="dl-tag">Download →</span></a><a class="file-row" href="files/P1_Brand_Development_Complete_Playbook.docx" download>
+<div class="file-icon fi-docx">DOCX</div>
+<div class="file-info"><h4>P1: Brand Playbook</h4><p>Complete brand playbook</p><span class="file-words">4,000+</span></div>
+<span class="dl-tag">Download →</span></a><a class="file-row" href="files/P1_Master_Tracker.xlsx" download>
+<div class="file-icon fi-xlsx">XLSX</div>
+<div class="file-info"><h4>P1: Master Tracker</h4><p>63 tasks across 7 subprojects</p></div>
+<span class="dl-tag">Download →</span></a></div></div><div class="section"><h2>P2: Product Development</h2><div class="file-list"><a class="file-row" href="files/P2A_Product_Development_Manufacturing.md" download>
+<div class="file-icon fi-md">MD</div>
+<div class="file-info"><h4>P2A: Manufacturing Blueprint</h4><p>Phased hybrid strategy, snap engineering, BOM, QC + factory scoring addendum</p><span class="file-words">5,284</span></div>
+<span class="dl-tag">Download →</span></a><a class="file-row" href="files/P2B_Fabric_Sourcing_Procurement.md" download>
+<div class="file-icon fi-md">MD</div>
+<div class="file-info"><h4>P2B: Fabric Sourcing</h4><p>Alibaba sourcing, C0 DWR, supplier matrix, 5 quality gates</p><span class="file-words">3,036</span></div>
+<span class="dl-tag">Download →</span></a><a class="file-row" href="files/P2C_Sampling_Fit_Testing_Production.md" download>
+<div class="file-icon fi-md">MD</div>
+<div class="file-info"><h4>P2C: Sampling & Production</h4><p>Tech pack, grading, 22-26 week buffered timeline, Snap Gate</p><span class="file-words">4,875</span></div>
+<span class="dl-tag">Download →</span></a></div></div><div class="section"><h2>P3: Supply Chain</h2><div class="file-list"><a class="file-row" href="files/P3A_Supply_Chain_Fulfillment.md" download>
+<div class="file-icon fi-md">MD</div>
+<div class="file-info"><h4>P3A: Supply Chain & Fulfillment</h4><p>Air freight, DCTS, Evri/RM, self-fulfill → 3PL, returns</p><span class="file-words">3,083</span></div>
+<span class="dl-tag">Download →</span></a></div></div><div class="section"><h2>P4: Pricing & Financial</h2><div class="file-list"><a class="file-row" href="files/P4A_Pricing_Financial_Modeling.md" download>
+<div class="file-icon fi-md">MD</div>
+<div class="file-info"><h4>P4A: Pricing & Financial Model</h4><p>Bundle pricing, UK/EU economics, break-even, Y1 projections + wholesale</p><span class="file-words">3,504</span></div>
+<span class="dl-tag">Download →</span></a><a class="file-row" href="files/P4B_Sensitivity_Analysis.md" download>
+<div class="file-icon fi-md">MD</div>
+<div class="file-info"><h4>P4B: Sensitivity Analysis</h4><p>12 variables stress-tested, combined scenarios, tornado chart</p><span class="file-words">3,885</span></div>
+<span class="dl-tag">Download →</span></a></div></div><div class="section"><h2>P5: Digital Marketing</h2><div class="file-list"><a class="file-row" href="files/P5A_Digital_Marketing_Customer_Acquisition.md" download>
+<div class="file-icon fi-md">MD</div>
+<div class="file-info"><h4>P5A: Marketing Playbook</h4><p>Waitlist, IG/TikTok/Strava, seeding, SEO, paid ads, Klaviyo, France + events/wholesale</p><span class="file-words">5,330</span></div>
+<span class="dl-tag">Download →</span></a></div></div><div class="section"><h2>P6+P10: Operations & CX</h2><div class="file-list"><a class="file-row" href="files/P6A_Post_Launch_Operations.md" download>
+<div class="file-icon fi-md">MD</div>
+<div class="file-info"><h4>P6A: Post-Launch Operations</h4><p>CS, fulfillment, returns, reviews, feedback loop, reorder, 90-day calendar</p><span class="file-words">7,860</span></div>
+<span class="dl-tag">Download →</span></a><a class="file-row" href="files/P10A_Customer_Experience_Retention.md" download>
+<div class="file-icon fi-md">MD</div>
+<div class="file-info"><h4>P10A: Customer Experience</h4><p>CX journey, unboxing, cross-sell, loyalty, NPS, win-back, Year 2</p><span class="file-words">5,171</span></div>
+<span class="dl-tag">Download →</span></a></div></div><div class="section"><h2>P7: Financial Operations</h2><div class="file-list"><a class="file-row" href="files/P7A_Financial_Operations_Cash_Flow.md" download>
+<div class="file-icon fi-md">MD</div>
+<div class="file-info"><h4>P7A: Financial Operations</h4><p>Wise, Xero, VAT, PVA, cash flow forecast, working capital + capital assessment</p><span class="file-words">4,658</span></div>
+<span class="dl-tag">Download →</span></a></div></div><div class="section"><h2>P8: Tech Infrastructure</h2><div class="file-list"><a class="file-row" href="files/P8A_Tech_Infrastructure_Analytics.md" download>
+<div class="file-icon fi-md">MD</div>
+<div class="file-info"><h4>P8A: Tech Infrastructure</h4><p>Shopify config, 12 apps, GA4, CAPI, Clarity, UTMs, speed, mobile, launch checklist</p><span class="file-words">5,169</span></div>
+<span class="dl-tag">Download →</span></a></div></div><div class="section"><h2>P9: Legal & Compliance</h2><div class="file-list"><a class="file-row" href="files/P9A_Legal_Compliance_Risk.md" download>
+<div class="file-icon fi-md">MD</div>
+<div class="file-info"><h4>P9A: Legal & Compliance</h4><p>Consumer Rights, GPSR, textile labels, REACH, PFAS, GDPR, ASA, IP, France, risk register</p><span class="file-words">5,246</span></div>
+<span class="dl-tag">Download →</span></a></div></div><div class="section"><h2>GAPS: Gap Analysis</h2><div class="file-list"><a class="file-row" href="files/Critical_Gap_Fixes_B01_B15_D01.md" download>
+<div class="file-icon fi-md">MD</div>
+<div class="file-info"><h4>Gap Fixes: B01, B15, D01</h4><p>Capital assessment, customer validation, brand name selection</p><span class="file-words">2,568</span></div>
+<span class="dl-tag">Download →</span></a><a class="file-row" href="files/Critical_Gap_Fixes_A05_A15_A01.md" download>
+<div class="file-icon fi-md">MD</div>
+<div class="file-info"><h4>Gap Fixes: A05, A15, A01</h4><p>Sampling buffer, revenue diversification, supply chain verification</p><span class="file-words">4,363</span></div>
+<span class="dl-tag">Download →</span></a></div></div></div><footer>Modular-Liner Trail Running Shorts — D2C Brand GTM Project | March 2026 | Confidential<br>
+<a href="files/Modular_Trail_Shorts_GTM_Package_v4.zip" download>Download Complete Package (v4 ZIP)</a></footer></body></html>
