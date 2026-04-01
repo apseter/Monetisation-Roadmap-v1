@@ -4,516 +4,941 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Founder's Task Tracker — The Forgotten Front</title>
-<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&family=Outfit:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;600;700&family=Outfit:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
 <style>
 *{margin:0;padding:0;box-sizing:border-box}
-:root{
---bg:#0A0A0F;--surface:#12121A;--card:#1A1A25;--border:#2A2A3A;
---text:#E8E8F0;--muted:#8888A0;--dim:#555570;
---green:#10B981;--green-bg:#0D2818;--green-glow:rgba(16,185,129,.15);
---amber:#F59E0B;--amber-bg:#2D1F00;--amber-glow:rgba(245,158,11,.15);
---pink:#EC4899;--pink-bg:#2D0A1F;--pink-glow:rgba(236,72,153,.15);
---blue:#3B82F6;--blue-bg:#0A1628;--blue-glow:rgba(59,130,246,.15);
---done-bg:#0A1F0A;--done-border:#1A4A1A;
-}
-body{background:var(--bg);color:var(--text);font-family:'Outfit',sans-serif;line-height:1.5;min-height:100vh}
-.grain{position:fixed;inset:0;pointer-events:none;opacity:.03;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E")}
-
-/* ── Header ── */
-.header{padding:24px 32px;background:var(--surface);border-bottom:1px solid var(--border);position:sticky;top:0;z-index:100;backdrop-filter:blur(20px)}
-.header-top{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:16px}
-.header h1{font-size:1.6rem;font-weight:800;letter-spacing:-.5px;background:linear-gradient(135deg,#fff,#aaa);-webkit-background-clip:text;-webkit-text-fill-color:transparent}
-.header h1 span{font-weight:300;opacity:.6}
-
-/* ── Stats Bar ── */
-.stats-bar{display:flex;gap:12px;flex-wrap:wrap;margin-top:16px}
-.stat{background:var(--card);border:1px solid var(--border);border-radius:10px;padding:10px 16px;display:flex;align-items:center;gap:8px;font-size:.85rem}
-.stat .num{font-family:'JetBrains Mono',monospace;font-weight:700;font-size:1.1rem}
-.stat.total .num{color:var(--blue)}
-.stat.done .num{color:var(--green)}
-.stat.pct .num{color:var(--amber)}
-.stat.time .num{color:var(--pink)}
-.progress-bar-outer{flex:1;min-width:200px;background:var(--card);border:1px solid var(--border);border-radius:10px;padding:10px 16px;display:flex;align-items:center;gap:12px}
-.progress-track{flex:1;height:8px;background:#1A1A2A;border-radius:4px;overflow:hidden}
-.progress-fill{height:100%;background:linear-gradient(90deg,var(--green),var(--amber));border-radius:4px;transition:width .6s ease}
-.progress-label{font-family:'JetBrains Mono',monospace;font-weight:700;font-size:.9rem;color:var(--green);min-width:42px;text-align:right}
-
-/* ── Filters ── */
-.filters{display:flex;gap:10px;flex-wrap:wrap;padding:16px 32px;background:var(--surface);border-bottom:1px solid var(--border)}
-.filter-group{display:flex;align-items:center;gap:6px}
-.filter-group label{font-size:.75rem;text-transform:uppercase;letter-spacing:1px;color:var(--muted);font-weight:600}
-select{background:var(--card);color:var(--text);border:1px solid var(--border);border-radius:8px;padding:6px 12px;font-family:'Outfit',sans-serif;font-size:.85rem;cursor:pointer;outline:none}
-select:focus{border-color:var(--blue)}
-.filter-btn{background:var(--card);color:var(--muted);border:1px solid var(--border);border-radius:8px;padding:6px 14px;font-size:.8rem;cursor:pointer;font-family:'Outfit',sans-serif;transition:all .2s}
-.filter-btn:hover{border-color:var(--text);color:var(--text)}
-.filter-btn.active{background:var(--blue);color:#fff;border-color:var(--blue)}
-.search-box{background:var(--card);color:var(--text);border:1px solid var(--border);border-radius:8px;padding:6px 12px;font-family:'Outfit',sans-serif;font-size:.85rem;outline:none;width:200px}
-.search-box:focus{border-color:var(--blue)}
-.search-box::placeholder{color:var(--dim)}
-
-/* ── Day Sections ── */
-.content{padding:24px 32px;max-width:1400px;margin:0 auto}
-.day-section{margin-bottom:24px}
-.day-header{display:flex;align-items:center;gap:12px;margin-bottom:12px;padding:8px 0;border-bottom:1px solid var(--border)}
-.day-badge{background:linear-gradient(135deg,var(--blue),#6366F1);color:#fff;font-family:'JetBrains Mono',monospace;font-weight:700;font-size:.85rem;padding:4px 12px;border-radius:6px;letter-spacing:1px}
-.day-title{font-weight:600;font-size:1rem;color:var(--muted)}
-.day-progress{margin-left:auto;font-family:'JetBrains Mono',monospace;font-size:.8rem;color:var(--dim)}
-.day-progress .done-count{color:var(--green)}
-
-/* ── Task Cards ── */
-.task-card{background:var(--card);border:1px solid var(--border);border-radius:12px;padding:16px 20px;margin-bottom:8px;display:grid;grid-template-columns:36px 1fr auto;gap:12px;align-items:start;transition:all .3s ease;cursor:pointer;position:relative;overflow:hidden}
-.task-card::before{content:'';position:absolute;left:0;top:0;bottom:0;width:3px;border-radius:3px 0 0 3px}
-.task-card[data-track="KDP"]{border-left:none}.task-card[data-track="KDP"]::before{background:var(--green)}
-.task-card[data-track="YOUTUBE"]{border-left:none}.task-card[data-track="YOUTUBE"]::before{background:var(--amber)}
-.task-card[data-track="INSTAGRAM"]{border-left:none}.task-card[data-track="INSTAGRAM"]::before{background:var(--pink)}
-.task-card[data-track="SETUP"]{border-left:none}.task-card[data-track="SETUP"]::before{background:var(--blue)}
-.task-card[data-track="ALL"]{border-left:none}.task-card[data-track="ALL"]::before{background:var(--blue)}
-.task-card[data-track="YOUTUBE/IG"]{border-left:none}.task-card[data-track="YOUTUBE/IG"]::before{background:var(--amber)}
-
-.task-card:hover{border-color:#3A3A5A;transform:translateY(-1px)}
-.task-card.completed{background:var(--done-bg);border-color:var(--done-border);opacity:.7}
-.task-card.completed .task-name{text-decoration:line-through;opacity:.6}
-
-/* Checkbox */
-.check-wrap{display:flex;align-items:flex-start;padding-top:2px}
-.check{width:22px;height:22px;border:2px solid var(--dim);border-radius:6px;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:all .2s;flex-shrink:0}
-.check:hover{border-color:var(--green)}
-.task-card.completed .check{background:var(--green);border-color:var(--green)}
-.check svg{opacity:0;transition:opacity .2s}
-.task-card.completed .check svg{opacity:1}
-
-/* Task Content */
-.task-content{min-width:0}
-.task-meta{display:flex;gap:8px;align-items:center;margin-bottom:4px;flex-wrap:wrap}
-.track-badge{font-size:.65rem;font-weight:700;letter-spacing:1px;text-transform:uppercase;padding:2px 8px;border-radius:4px}
-.track-badge.KDP{background:var(--green-bg);color:var(--green);border:1px solid #1A4A2A}
-.track-badge.YOUTUBE{background:var(--amber-bg);color:var(--amber);border:1px solid #4A3A0A}
-.track-badge.INSTAGRAM{background:var(--pink-bg);color:var(--pink);border:1px solid #4A1A3A}
-.track-badge.SETUP,.track-badge.ALL{background:var(--blue-bg);color:var(--blue);border:1px solid #1A2A4A}
-.track-badge.YOUTUBE\/IG{background:var(--amber-bg);color:var(--amber);border:1px solid #4A3A0A}
-.proj-badge{font-size:.7rem;color:var(--muted);font-family:'JetBrains Mono',monospace}
-.task-name{font-weight:600;font-size:.95rem;margin-bottom:6px;color:#fff}
-.task-detail{font-size:.82rem;color:var(--muted);line-height:1.6;display:none;margin-top:8px;padding:10px 12px;background:rgba(0,0,0,.3);border-radius:8px;border:1px solid var(--border)}
-.task-card.expanded .task-detail{display:block}
-.task-deliverable{font-size:.78rem;color:var(--dim);margin-top:4px;font-style:italic}
-.task-deliverable strong{color:var(--green);font-style:normal}
-
-/* Task Right */
-.task-right{display:flex;flex-direction:column;align-items:flex-end;gap:4px;white-space:nowrap}
-.time-est{font-family:'JetBrains Mono',monospace;font-size:.8rem;color:var(--amber);background:var(--amber-bg);padding:2px 8px;border-radius:4px}
-.dep-tag{font-size:.7rem;color:var(--dim)}
-
-/* Expand arrow */
-.expand-arrow{font-size:.7rem;color:var(--dim);transition:transform .2s}
-.task-card.expanded .expand-arrow{transform:rotate(180deg)}
-
-/* ── Milestone markers ── */
-.milestone{background:linear-gradient(135deg,rgba(16,185,129,.1),rgba(245,158,11,.1));border:1px solid rgba(16,185,129,.3);border-radius:12px;padding:12px 20px;margin-bottom:8px;text-align:center;font-weight:700;font-size:.95rem;color:var(--green)}
-.milestone .emoji{font-size:1.2rem}
-
-/* ── Footer ── */
-.footer{padding:24px 32px;text-align:center;color:var(--dim);font-size:.8rem;border-top:1px solid var(--border);margin-top:40px}
-
-/* ── Reset button ── */
-.reset-btn{background:transparent;color:var(--dim);border:1px solid var(--border);border-radius:8px;padding:6px 14px;font-size:.75rem;cursor:pointer;font-family:'Outfit',sans-serif;transition:all .2s}
-.reset-btn:hover{border-color:#f44;color:#f44}
-
-/* ── Responsive ── */
-@media(max-width:768px){
-.header,.filters,.content{padding-left:16px;padding-right:16px}
-.task-card{grid-template-columns:30px 1fr;gap:8px}
-.task-right{grid-column:2;flex-direction:row;align-items:center}
-.stats-bar{flex-direction:column}
-.search-box{width:100%}
-}
+:root{--bg:#0A0A0A;--surface:#111318;--card:#161B22;--border:#21262D;--text:#E6EDF3;--muted:#8B949E;--dim:#484F58;--kdp:#10B981;--kdp-bg:#0D2818;--kdp-head:#064E3B;--yt:#F59E0B;--yt-bg:#2D1F00;--yt-head:#78350F;--ig:#E84393;--ig-bg:#2D0A1F;--ig-head:#831843;--setup:#4DA6FF;--setup-bg:#0A1628;--setup-head:#1E3A5F;--review:#A78BFA;--review-bg:#1A0D2E;--review-head:#4C1D95;--done:#10B981;--pending:#F59E0B}
+body{font-family:'Outfit',sans-serif;background:var(--bg);color:var(--text);line-height:1.5}
+.container{max-width:1400px;margin:0 auto;padding:16px}
+.hero{text-align:center;padding:40px 20px 30px;position:relative;overflow:hidden}
+.hero::before{content:'';position:absolute;top:0;left:0;right:0;bottom:0;background:radial-gradient(ellipse at center,rgba(245,158,11,0.08) 0%,transparent 70%)}
+.hero h1{font-family:'Oswald',sans-serif;font-size:clamp(1.8rem,4vw,2.8rem);font-weight:700;letter-spacing:2px;text-transform:uppercase;background:linear-gradient(135deg,#F59E0B,#E84393,#4DA6FF);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+.hero .sub{color:var(--muted);font-size:0.95rem;margin-top:8px}
+.progress-bar-outer{background:var(--card);border:1px solid var(--border);border-radius:12px;padding:20px 24px;margin:20px 0}
+.progress-header{display:flex;justify-content:space-between;align-items:center;margin-bottom:12px;flex-wrap:wrap;gap:8px}
+.progress-header h2{font-family:'Oswald',sans-serif;font-size:1.3rem;letter-spacing:1px}
+.progress-stats{display:flex;gap:20px;flex-wrap:wrap}
+.stat{text-align:center}.stat-val{font-family:'JetBrains Mono',monospace;font-size:1.4rem;font-weight:600}.stat-label{font-size:0.7rem;color:var(--muted);text-transform:uppercase;letter-spacing:1px}
+.bar-track{height:10px;background:var(--border);border-radius:5px;overflow:hidden}
+.bar-fill{height:100%;border-radius:5px;transition:width 0.6s ease;background:linear-gradient(90deg,#10B981,#F59E0B,#E84393)}
+.stream-progress{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:12px;margin-top:16px}
+.sp-card{background:var(--surface);border:1px solid var(--border);border-radius:8px;padding:12px 16px;display:flex;align-items:center;gap:12px}
+.sp-icon{width:36px;height:36px;border-radius:8px;display:flex;align-items:center;justify-content:center;font-size:1.1rem;flex-shrink:0}
+.sp-info{flex:1;min-width:0}.sp-info h4{font-size:0.85rem;font-weight:500}.sp-info .sp-bar{height:5px;background:var(--border);border-radius:3px;margin-top:4px;overflow:hidden}.sp-info .sp-bar-fill{height:100%;border-radius:3px;transition:width 0.4s}
+.sp-pct{font-family:'JetBrains Mono',monospace;font-size:0.85rem;font-weight:500}
+.filters{background:var(--card);border:1px solid var(--border);border-radius:12px;padding:16px 20px;margin:16px 0;display:flex;flex-wrap:wrap;gap:10px;align-items:center}
+.filter-group{display:flex;gap:6px;flex-wrap:wrap;align-items:center}
+.filter-group label{font-size:0.75rem;color:var(--muted);text-transform:uppercase;letter-spacing:1px;margin-right:4px}
+.fbtn{padding:6px 14px;border-radius:6px;border:1px solid var(--border);background:var(--surface);color:var(--muted);font-family:'Outfit',sans-serif;font-size:0.82rem;cursor:pointer;transition:all 0.2s}
+.fbtn:hover{border-color:var(--dim);color:var(--text)}
+.fbtn.active{color:#fff;border-color:transparent}
+.fbtn.active[data-f="ALL"]{background:linear-gradient(135deg,#F59E0B,#E84393);color:#000}
+.fbtn.active[data-f="KDP"]{background:var(--kdp);color:#000}
+.fbtn.active[data-f="YOUTUBE"]{background:var(--yt);color:#000}
+.fbtn.active[data-f="INSTAGRAM"]{background:var(--ig);color:#000}
+.fbtn.active[data-f="SETUP"]{background:var(--setup);color:#000}
+.fbtn.active[data-f="REVIEW"]{background:var(--review);color:#000}
+.filter-sep{width:1px;height:28px;background:var(--border)}
+.search-box{flex:1;min-width:180px}
+.search-box input{width:100%;padding:7px 12px;border-radius:6px;border:1px solid var(--border);background:var(--surface);color:var(--text);font-family:'Outfit',sans-serif;font-size:0.85rem;outline:none}
+.search-box input:focus{border-color:var(--yt)}
+.status-btns .fbtn.active[data-s="all"]{background:var(--dim);color:#fff}
+.status-btns .fbtn.active[data-s="pending"]{background:var(--pending);color:#000}
+.status-btns .fbtn.active[data-s="done"]{background:var(--done);color:#000}
+.day-group{margin:20px 0}
+.day-header{display:flex;align-items:center;gap:12px;padding:10px 16px;background:var(--card);border:1px solid var(--border);border-radius:10px;cursor:pointer;user-select:none;transition:background 0.2s}
+.day-header:hover{background:var(--surface)}
+.day-num{font-family:'Oswald',sans-serif;font-size:1.6rem;font-weight:700;width:60px;text-align:center;background:linear-gradient(135deg,#F59E0B 0%,#E84393 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+.day-meta{flex:1}.day-meta h3{font-size:1rem;font-weight:500}
+.day-tags{display:flex;gap:6px;margin-top:2px;flex-wrap:wrap}
+.day-tag{font-size:0.65rem;padding:2px 8px;border-radius:4px;text-transform:uppercase;letter-spacing:0.5px;font-weight:600}
+.day-tag.kdp{background:var(--kdp-bg);color:var(--kdp);border:1px solid var(--kdp-head)}
+.day-tag.youtube{background:var(--yt-bg);color:var(--yt);border:1px solid var(--yt-head)}
+.day-tag.instagram{background:var(--ig-bg);color:var(--ig);border:1px solid var(--ig-head)}
+.day-tag.setup{background:var(--setup-bg);color:var(--setup);border:1px solid var(--setup-head)}
+.day-tag.review{background:var(--review-bg);color:var(--review);border:1px solid var(--review-head)}
+.day-progress{display:flex;align-items:center;gap:8px}
+.day-pct{font-family:'JetBrains Mono',monospace;font-size:0.85rem;color:var(--muted)}
+.day-time{font-size:0.75rem;color:var(--dim);font-family:'JetBrains Mono',monospace}
+.chevron{color:var(--dim);transition:transform 0.3s;font-size:1.2rem}
+.day-group.open .chevron{transform:rotate(90deg)}
+.task-list{display:none;padding:8px 0}
+.day-group.open .task-list{display:block}
+.task-card{background:var(--surface);border:1px solid var(--border);border-radius:10px;padding:14px 18px;margin:6px 0;display:flex;gap:14px;transition:all 0.2s;position:relative;overflow:hidden}
+.task-card::before{content:'';position:absolute;left:0;top:0;bottom:0;width:4px;border-radius:4px 0 0 4px}
+.task-card.stream-KDP::before{background:var(--kdp)}.task-card.stream-YOUTUBE::before{background:var(--yt)}.task-card.stream-INSTAGRAM::before{background:var(--ig)}.task-card.stream-SETUP::before{background:var(--setup)}.task-card.stream-REVIEW::before{background:var(--review)}
+.task-card.completed{opacity:0.5}.task-card.completed .task-title{text-decoration:line-through}
+.task-check{flex-shrink:0;margin-top:2px}
+.task-check input{width:20px;height:20px;cursor:pointer;accent-color:var(--done)}
+.task-body{flex:1;min-width:0}
+.task-top{display:flex;align-items:flex-start;gap:8px;justify-content:space-between;flex-wrap:wrap}
+.task-title{font-weight:600;font-size:0.95rem}
+.task-badges{display:flex;gap:6px;flex-shrink:0;flex-wrap:wrap}
+.badge{font-size:0.65rem;padding:2px 8px;border-radius:4px;font-weight:600;letter-spacing:0.5px;text-transform:uppercase}
+.badge-proj{background:var(--card);color:var(--muted);border:1px solid var(--border)}
+.badge-time{background:var(--card);color:var(--yt);border:1px solid var(--yt-head)}
+.task-detail{font-size:0.82rem;color:var(--muted);margin-top:8px;line-height:1.6}
+.task-detail.collapsed{max-height:48px;overflow:hidden;position:relative}
+.task-detail.collapsed::after{content:'';position:absolute;bottom:0;left:0;right:0;height:20px;background:linear-gradient(transparent,var(--surface))}
+.toggle-detail{font-size:0.75rem;color:var(--yt);cursor:pointer;margin-top:4px;display:inline-block;border:none;background:none;font-family:'Outfit',sans-serif}
+.task-footer{display:flex;gap:12px;margin-top:8px;flex-wrap:wrap;align-items:center}
+.task-del{font-size:0.7rem;color:var(--dim)}.task-dep{font-size:0.7rem;color:var(--dim);font-style:italic}
+.milestone{border:1px solid var(--yt)!important;box-shadow:0 0 20px rgba(245,158,11,0.08)}
+.downloads{background:var(--card);border:1px solid var(--border);border-radius:12px;padding:20px 24px;margin:20px 0}
+.downloads h2{font-family:'Oswald',sans-serif;font-size:1.2rem;letter-spacing:1px;margin-bottom:12px}
+.dl-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:10px}
+.dl-card{display:flex;align-items:center;gap:12px;padding:12px 16px;background:var(--surface);border:1px solid var(--border);border-radius:8px;text-decoration:none;color:var(--text);transition:all 0.2s}
+.dl-card:hover{border-color:var(--yt);transform:translateY(-1px)}
+.dl-icon{width:40px;height:40px;border-radius:8px;display:flex;align-items:center;justify-content:center;font-size:0.75rem;font-weight:700;color:#fff;flex-shrink:0}
+.dl-info h4{font-size:0.85rem;font-weight:500}.dl-info p{font-size:0.7rem;color:var(--muted)}
+.back-link{text-align:center;padding:30px;color:var(--yt);text-decoration:none;font-size:0.9rem;display:block}.back-link:hover{text-decoration:underline}
+.reset-btn{padding:6px 14px;border-radius:6px;border:1px solid #DC2626;background:transparent;color:#DC2626;font-family:'Outfit',sans-serif;font-size:0.75rem;cursor:pointer;margin-left:auto}
+.reset-btn:hover{background:#DC2626;color:#fff}
+@media(max-width:768px){.container{padding:8px}.filters{flex-direction:column;align-items:stretch}.filter-sep{display:none}.task-card{flex-direction:column;gap:8px}.day-header{flex-wrap:wrap}.progress-stats{gap:12px}}
 </style>
 </head>
 <body>
-<div class="grain"></div>
-
-<div class="header">
-<div class="header-top">
-<h1>FOUNDER'S TASK TRACKER <span>— 30-Day Sprint</span></h1>
-<div style="display:flex;gap:8px;align-items:center">
-<a href="index.html" style="color:var(--blue);text-decoration:none;font-size:.85rem">← Back to Portal</a>
-<button class="reset-btn" onclick="resetProgress()">Reset Progress</button>
-</div>
-</div>
-<div class="stats-bar">
-<div class="stat total"><span>Tasks:</span><span class="num" id="totalCount">0</span></div>
-<div class="stat done"><span>Done:</span><span class="num" id="doneCount">0</span></div>
-<div class="stat pct"><span>Complete:</span><span class="num" id="pctComplete">0%</span></div>
-<div class="stat time"><span>Time Left:</span><span class="num" id="timeLeft">0h</span></div>
+<div class="container">
+<div class="hero"><h1>Founder's 30-Day Task Tracker</h1><div class="sub">KDP Publishing · YouTube Channel · Instagram — Interactive day-by-day task tracking with progress</div></div>
 <div class="progress-bar-outer">
-<div class="progress-track"><div class="progress-fill" id="progressFill" style="width:0%"></div></div>
-<span class="progress-label" id="progressLabel">0%</span>
+<div class="progress-header"><h2>Overall Progress</h2><div class="progress-stats"><div class="stat"><div class="stat-val" id="completedCount">0</div><div class="stat-label">Done</div></div><div class="stat"><div class="stat-val" id="totalCount">0</div><div class="stat-label">Total</div></div><div class="stat"><div class="stat-val" id="pctComplete">0%</div><div class="stat-label">Complete</div></div><div class="stat"><div class="stat-val" id="timeRemaining">0h</div><div class="stat-label">Time Left</div></div></div></div>
+<div class="bar-track"><div class="bar-fill" id="mainBar" style="width:0%"></div></div>
+<div class="stream-progress" id="streamProgress"></div>
 </div>
+<div class="filters">
+<div class="filter-group"><label>Stream:</label><button class="fbtn active" data-f="ALL" onclick="setFilter('ALL')">All</button><button class="fbtn" data-f="SETUP" onclick="setFilter('SETUP')">Setup</button><button class="fbtn" data-f="KDP" onclick="setFilter('KDP')">KDP</button><button class="fbtn" data-f="YOUTUBE" onclick="setFilter('YOUTUBE')">YouTube</button><button class="fbtn" data-f="INSTAGRAM" onclick="setFilter('INSTAGRAM')">Instagram</button><button class="fbtn" data-f="REVIEW" onclick="setFilter('REVIEW')">Review</button></div>
+<div class="filter-sep"></div>
+<div class="filter-group status-btns"><label>Status:</label><button class="fbtn active" data-s="all" onclick="setStatus('all')">All</button><button class="fbtn" data-s="pending" onclick="setStatus('pending')">Pending</button><button class="fbtn" data-s="done" onclick="setStatus('done')">Done</button></div>
+<div class="filter-sep"></div>
+<div class="search-box"><input type="text" id="searchInput" placeholder="Search tasks..." oninput="renderTasks()"></div>
+<button class="reset-btn" onclick="if(confirm('Reset ALL progress? This cannot be undone.')){localStorage.removeItem('tff_tasks');completedTasks={};renderTasks();}">Reset Progress</button>
 </div>
-</div>
-
-<div class="filters" id="filterBar">
-<div class="filter-group">
-<label>Track</label>
-<select id="filterTrack"><option value="ALL">All Tracks</option><option value="SETUP">Setup</option><option value="KDP">KDP</option><option value="YOUTUBE">YouTube</option><option value="INSTAGRAM">Instagram</option><option value="REVIEW">Reviews</option></select>
-</div>
-<div class="filter-group">
-<label>Project</label>
-<select id="filterProject"><option value="ALL">All Projects</option></select>
-</div>
-<div class="filter-group">
-<label>Status</label>
-<select id="filterStatus"><option value="ALL">All</option><option value="TODO">To Do</option><option value="DONE">Done</option></select>
-</div>
-<div class="filter-group">
-<label>Day</label>
-<select id="filterDay"><option value="ALL">All Days</option></select>
-</div>
-<div class="filter-group">
-<label>Search</label>
-<input type="text" class="search-box" id="searchBox" placeholder="Search tasks...">
-</div>
-<button class="filter-btn" id="showMilestonesBtn" onclick="toggleMilestones()">🏆 Milestones</button>
-</div>
-
-<div class="content" id="taskContainer"></div>
-
-<div class="footer">
-The Forgotten Front — Monetization Roadmap v1 &nbsp;|&nbsp; 30 Documents &nbsp;|&nbsp; 23/60 Subprojects Complete &nbsp;|&nbsp; Task data persisted in browser localStorage
-</div>
-
-<script>
-// ═══════════════════════════════════════
-// TASK DATA — All 40+ tasks from the Founder's 30-Day Sprint
-// ═══════════════════════════════════════
-const TASKS = [
-// Day 1 — SETUP
-{day:1,track:"SETUP",proj:"—",subp:"—",name:"Create KDP account",detail:"Go to kdp.amazon.com → Sign in with Amazon → Complete account setup → Start W-8BEN tax interview (Pakistan → 0% withholding if treaty applies) → Add bank/payment details. You'll need: passport, bank account IBAN, address.",time:"20 min",deliverable:"KDP account active",dep:"None"},
-{day:1,track:"SETUP",proj:"—",subp:"—",name:"Create Canva account",detail:"Sign up at canva.com (free tier). Upload brand fonts: Oswald (titles), Libre Baskerville (subtitles), Special Elite (stamps), Outfit (body), Playfair Display (KDP Dad niche), Bebas Neue (KDP Running niche). Create brand kit with 6 YouTube colors + 3 KDP color schemes.",time:"15 min",deliverable:"Canva account with fonts",dep:"None"},
-{day:1,track:"SETUP",proj:"—",subp:"—",name:"Create YouTube channel",detail:"Sign into YouTube → Create channel → Set handle to @TheForgottenFront → Upload profile picture (TFF logo from Y1.3) → Upload banner image → Fill About section with channel description from Y1.3 → Add links to future Instagram/website → Set channel country → Enable monetization eligibility notifications.",time:"15 min",deliverable:"YouTube channel live",dep:"None"},
-{day:1,track:"SETUP",proj:"—",subp:"—",name:"Create Instagram account",detail:"Download Instagram → Create account @theforgottenfront → Switch to Professional Creator account → Set category 'Education' → Write bio (Version A from I1.1) → Upload profile picture (same TFF logo) → Add YouTube channel link in bio → Enable search engine indexing in Privacy settings → Ensure account is Public.",time:"10 min",deliverable:"Instagram profile live",dep:"I1.1 guide"},
-{day:1,track:"SETUP",proj:"—",subp:"—",name:"Register handles on other platforms",detail:"Create @TheForgottenFront on: TikTok, Twitter/X, Threads. Create theforgottenfront@gmail.com (dedicated brand email). Add this email as Instagram contact button. Claim handles even if you won't use platforms immediately.",time:"15 min",deliverable:"All handles claimed",dep:"None"},
-{day:1,track:"SETUP",proj:"—",subp:"—",name:"Install production tools",detail:"Install Audacity (free, audacityteam.org) for voiceover recording. Install CapCut (free, desktop version) for video editing. Create folder structure on computer: TheForgottenFront/ → Scripts/, Assets/, Audio/, Exports/, Thumbnails/, Instagram/, TikTok/, Brand/. Download YouTube Audio Library tracks for background music.",time:"15 min",deliverable:"Tools installed + folders ready",dep:"None"},
-{day:1,track:"SETUP",proj:"—",subp:"—",name:"Create link-in-bio page",detail:"Sign up at beacons.ai → Create page for @theforgottenfront → Add links: YouTube channel (with ?sub_confirmation=1), 'About The Forgotten Front' → Customize colors: dark background #0A0A0A, amber accents #D97706 → Copy Beacons URL → Update Instagram bio with Beacons link.",time:"10 min",deliverable:"Beacons page live",dep:"Instagram account"},
-
-// Day 2
-{day:2,track:"KDP",proj:"K2",subp:"K2.3",name:"Book 1 interior — structure setup",detail:"Open Canva → Custom Size 6×9 inches (432×648px) → Create title page: 'The New Dad Journal: Your First Year of Fatherhood' in Playfair Display, navy (#1E3A5F) on cream (#FDF8F0) → Copyright page with pen name from K1.3 → Table of contents (12 monthly sections + 4 bonus sections) → Introduction page (500 words, warm tone, from new dad to new dad).",time:"45 min",deliverable:"Book 1 pages 1-6",dep:"KDP account + Canva"},
-{day:2,track:"KDP",proj:"K2",subp:"K2.3",name:"Book 1 interior — Months 1-4",detail:"Build each monthly section per K2.1 specs: Monthly milestone checklist (8-10 items per month like 'First smile', 'First roll over'), Guided journal prompts (5 per month: 'What surprised you most this month?', 'A moment you want to remember forever'), Photo spot placeholder (framed empty space with 'Paste photo here'), Sleep tracker grid (7×4 weekly grid), Feeding log template. Use cream background, navy text, amber (#D97706) accent lines.",time:"60 min",deliverable:"Book 1 pages 7-46",dep:"Day 2 structure"},
-{day:2,track:"INSTAGRAM",proj:"I1",subp:"I1.2",name:"Create 5 Story Highlight covers",detail:"Open Canva → 1080×1920px → Dark background #0A0A0A → For each cover: place a simple amber (#D97706) line icon centered (search Canva Icons for: book, play button, lightbulb, magnifying glass, stack of books) → Export 5 images as PNG → Upload each as an Instagram Story → Add to respective Highlights: ABOUT, LATEST, FACTS, RESEARCH, BOOKS.",time:"10 min",deliverable:"5 branded Highlight covers",dep:"Instagram account"},
-
-// Day 3
-{day:3,track:"KDP",proj:"K2",subp:"K2.3",name:"Book 1 interior — Months 5-12",detail:"Continue building monthly sections for Months 5-12. Each month follows same template: milestone checklist + journal prompts + photo spot + trackers. Adjust milestones per age (Month 5: sitting up, Month 8: crawling, Month 10: first words, Month 12: first steps). Add 'Daddy\\'s Favorites This Month' reflection box to each month. Maintain consistent formatting.",time:"90 min",deliverable:"Book 1 pages 47-110",dep:"Day 2 pages"},
-{day:3,track:"KDP",proj:"K2",subp:"K2.3",name:"Book 1 interior — bonus sections + final",detail:"Build 4 bonus sections: 'Letter to My Baby' (2 lined pages), 'Emergency Contacts' (structured form), 'Baby\\'s Firsts Tracker' (2-page checklist of 50+ firsts), 'Notes & Memories' (10 lined pages). Add back matter: blank page + 'More journals at [Amazon author page URL]'. Final count: ~120 pages. Review entire interior for consistency.",time:"40 min",deliverable:"Book 1 interior complete",dep:"Day 3 months"},
-{day:3,track:"INSTAGRAM",proj:"I1",subp:"I1.2",name:"Create 4 Instagram Canva templates",detail:"Build per I1.2 specs: Template 1 — Reel Cover (1080×1920, dark bg, Oswald title, red badge, amber bar, watermark). Template 2 — Carousel (1080×1350, 8-page: hook+5 facts+summary+CTA). Template 3 — Fact Card (1080×1350, dark bg, Libre Baskerville quote, amber accent). Template 4 — Story (1080×1920, 3 variants: fact/poll/teaser with safe zones marked). Save each as separate Canva design.",time:"45 min",deliverable:"4 reusable Canva templates",dep:"I1.2 guide"},
-
-// Day 4
-{day:4,track:"KDP",proj:"K2",subp:"K2.3",name:"Book 1 cover — front design",detail:"Go to kdp.amazon.com/cover-calculator → Input: 6×9 trim, 120 pages, B&W interior, white paper → Download cover template PDF with spine measurements → Open Canva Custom Size matching template dimensions → Design front cover per K2.2 Dad Niche blueprint: cream background #FDF8F0, navy title in Playfair Display Bold, amber rule line, subtitle in Outfit Light, pen name at bottom. Keep text within safe margins (0.25\" from trim).",time:"30 min",deliverable:"Front cover designed",dep:"Book 1 interior"},
-{day:4,track:"KDP",proj:"K2",subp:"K2.3",name:"Book 1 cover — spine + back + export",detail:"Design spine: navy background, book title in Playfair Display (calculate font size from K2.2 spine calculator: 120 pages × 0.002252\" = 0.27\" spine width → use 7-8pt font). Design back cover: cream background, 150-word description, barcode placement zone (bottom right, DO NOT place any content there), pen name, 'Printed in USA'. Export full cover as PDF Print (flatten, no crops). Export ebook cover separately as 2560×1600 JPEG.",time:"30 min",deliverable:"Complete cover PDF + ebook cover",dep:"Front cover"},
-{day:4,track:"KDP",proj:"K2",subp:"K2.3",name:"Book 1 interior — final review + export",detail:"Review entire Book 1 interior in Canva: check all margins are safe (0.5\" inner, 0.25\" outer for 6×9), verify page count is even, check font consistency across all pages, ensure no text touches edges, verify cream background is uniform. Export as PDF Print (highest quality, flatten). Check exported PDF: open in PDF viewer, scroll through every page, verify nothing is cut off.",time:"20 min",deliverable:"Book 1 interior PDF ready",dep:"Book 1 complete"},
-
-// Day 5 — MILESTONE: Book 1 Published
-{day:5,track:"KDP",proj:"K2",subp:"K2.4",name:"🎉 PUBLISH Book 1 on Amazon KDP",detail:"Log into KDP → Paperback → Create: Title 'The New Dad Journal', subtitle 'A Guided First-Year Journal for New Fathers', pen name from K1.3, description (use K1.4 template: benefit-driven, 4000 chars max, HTML bold allowed), 7 backend keywords from K1.4 (e.g., 'new dad gift journal first year fatherhood'), select 3 BISAC categories from K1.4 mapping. Upload interior PDF + cover PDF. Set trim 6×9, no bleed, white paper, B&W ink. Price: $12.99 (60% royalty = $5.09/copy). Enable expanded distribution. Preview entire book in KDP previewer — check every page. Submit.",time:"40 min",deliverable:"Book 1 submitted to KDP review",dep:"Cover + interior PDFs",milestone:true},
-{day:5,track:"KDP",proj:"K2",subp:"K2.4",name:"Book 1 — ebook version setup",detail:"In KDP dashboard → Create Kindle eBook for same title. Upload ebook cover (2560×1600). For interior: export Canva pages as high-quality images → convert to reflowable format using Kindle Create (free tool) OR upload as fixed-layout PDF. Set ebook price $4.99 (70% royalty in most territories). Link paperback and ebook editions. Submit.",time:"25 min",deliverable:"Ebook submitted to KDP",dep:"Book 1 paperback submitted"},
-{day:5,track:"INSTAGRAM",proj:"I1",subp:"I1.1",name:"Create 'ABOUT' highlight Stories",detail:"Create 3-5 Stories for your ABOUT highlight: Story 1 — 'What is The Forgotten Front?' (dark background, Oswald title, 2-line explanation). Story 2 — 'What you\\'ll learn here' (list: untold battles, forgotten soldiers, secret operations). Story 3 — 'New stories every Tuesday & Thursday' (posting schedule). Story 4 — 'Full documentaries on YouTube ↓' (with link sticker to channel). Post each as Story → Add all to ABOUT highlight.",time:"15 min",deliverable:"ABOUT highlight populated",dep:"IG templates + account"},
-
-// Day 6
-{day:6,track:"YOUTUBE",proj:"Y2",subp:"Y2.1",name:"Video #1 — research phase",detail:"Topic: 'The 2.5 Million Soldiers History Forgot — India in WW2'. Use Claude prompt from Y2.1: Research the role of Indian soldiers in World War 2. Include: total numbers, key theaters (Burma, North Africa, Italy, Middle East), major battles (Imphal, Kohima, Monte Cassino), casualties, political context (independence movement vs war service), post-war treatment. Compile 15-20 key facts. Identify 3 emotional hooks. Note all statistics with sources for accuracy.",time:"45 min",deliverable:"Research document with 15+ facts",dep:"None"},
-{day:6,track:"YOUTUBE",proj:"Y2",subp:"Y2.1",name:"Video #1 — script writing",detail:"Write full script (~2,100 words for 12-15 min video) using Y2.1 3-Act Structure: Act 1 HOOK (first 30 seconds — the shocking stat: '2.5 million men volunteered...'), Act 2 BODY (chronological narrative: recruitment → training → Burma campaign → Imphal/Kohima → Italy → aftermath), Act 3 CLOSE (emotional landing: 'They fought for an empire that wouldn\\'t free them'). Add [VISUAL CUE] markers every 15-20 seconds. Rewrite 40-60% in your own voice — remove AI-sounding phrases.",time:"60 min",deliverable:"Complete video script with visual cues",dep:"Research document"},
-{day:6,track:"YOUTUBE",proj:"Y2",subp:"Y2.2",name:"Video #1 — visual asset collection",detail:"Download 20+ archival images from copyright-safe sources per Y2.2: Imperial War Museum (iwm.org.uk — Crown Copyright, free for editorial use), Library of Congress (loc.gov/pictures — PD), Wikimedia Commons (search 'Indian Army WW2' — verify PD tag), National Archives of India. Download 2-3 maps (Burma campaign, Imphal region). Save all in TheForgottenFront/Assets/V001/ with descriptive filenames.",time:"30 min",deliverable:"20+ archival images + maps",dep:"Script (visual needs)"},
-{day:6,track:"YOUTUBE",proj:"Y3",subp:"Y3.3",name:"Video #1 — keyword research",detail:"YouTube autocomplete: type 'Indian army WW2' and note all suggestions. Type 'forgotten soldiers', 'Imphal battle', 'India World War 2'. Use TubeBuddy/VidIQ free tier to check search volume and competition for top 10 keyword phrases. Select: primary keyword for title, 5 tags, 3 hashtags. Draft title using Y3.3 formula.",time:"15 min",deliverable:"Primary keyword + 5 tags + draft title",dep:"None"},
-
-// Day 7
-{day:7,track:"YOUTUBE",proj:"Y2",subp:"Y2.3",name:"Video #1 — voiceover recording",detail:"Set up USB mic per Y2.3 (if no USB mic yet: use phone with voice recorder app — hold 6 inches from mouth, quiet room, no echo). Record in Audacity: set sample rate 44100Hz, mono. Read script naturally — conversational, not newscaster. Pause 2 seconds between sections for editing. Do 2 full takes. Apply Y2.3 7-step mastering chain: noise reduction → normalize → compress → EQ (cut below 80Hz, boost 2-4kHz) → normalize again → limiter → export as WAV.",time:"45 min",deliverable:"Mastered voiceover WAV file",dep:"Script + Audacity"},
-{day:7,track:"YOUTUBE",proj:"Y2",subp:"Y2.2",name:"Video #1 — video editing",detail:"Open CapCut → Import voiceover + all visual assets. Build timeline: voiceover as primary audio track → layer images with Ken Burns effect (slow zoom/pan, 4-6 seconds per image) → add maps with animated arrows for troop movements → add text overlays for key stats/names/dates (Oswald Bold, white on dark overlay) → add background music from Pixabay Music (cinematic/documentary, volume at 15-20% of voice) → create outro sequence (subscribe + next video teaser). Target: clean 12-15 minute video.",time:"90 min",deliverable:"Complete video MP4 file",dep:"Voiceover + visual assets"},
-{day:7,track:"YOUTUBE",proj:"Y2",subp:"Y2.4",name:"Video #1 — thumbnail creation",detail:"Open Canva → 1280×720px → Use Template A 'The Reveal' from Y2.4: dramatic archival image (Indian soldiers marching) as background with 40% dark overlay → large Oswald Bold text: '2.5 MILLION FORGOTTEN' in white → red badge 'UNTOLD' top-left → amber accent bar → channel watermark. Export as PNG. Check: is text readable at thumbnail size? Does it create curiosity? Would YOU click this?",time:"15 min",deliverable:"Thumbnail PNG file",dep:"Visual assets"},
-{day:7,track:"INSTAGRAM",proj:"I1",subp:"I1.1",name:"Post 3 warm-up Stories",detail:"Create and post 3 Stories using Story template from I1.2: 1) Archival photo + 'Stories begin next week' text, 2) Poll: 'Do you know how many Indian soldiers fought in WW2?' with options, 3) 'Follow for untold military history' CTA. These warm up the account before first feed post.",time:"10 min",deliverable:"3 Stories posted",dep:"IG templates"},
-
-// Day 8 — MILESTONE: Video #1 Published
-{day:8,track:"YOUTUBE",proj:"Y3",subp:"Y3.1",name:"🎉 PUBLISH Video #1 on YouTube",detail:"Upload to YouTube Studio: select video file → add thumbnail → Title (from Day 6 keyword research) → Description (use Y3.3 template: hook paragraph, timestamps, 'About This Channel', social links, hashtags) → Tags (from keyword research) → Category: Education → Language: English → End screen (subscribe button + next video placeholder) → Cards → Visibility: Public → Publish. Pin comment: engagement question from script.",time:"20 min",deliverable:"Video #1 LIVE on YouTube",dep:"Video file + thumbnail",milestone:true},
-{day:8,track:"YOUTUBE",proj:"Y3",subp:"Y3.1",name:"Video #1 — create 3 Shorts",detail:"From Video #1, extract 3 Shorts: Short 1: the hook stat ('2.5 million soldiers...'), Short 2: most dramatic fact ('At Imphal, they held the line...'), Short 3: emotional close ('They fought for freedom — just not their own'). Each Short: 30-60 seconds, vertical 1080×1920 in CapCut, auto-captions ON, hook in first 0.5 seconds, Pixabay Music background. Export 3 files WITHOUT YouTube watermark.",time:"30 min",deliverable:"3 Short MP4 files",dep:"Video #1 published"},
-{day:8,track:"YOUTUBE",proj:"Y3",subp:"Y3.1",name:"Upload 3 Shorts to YouTube",detail:"Upload each Short to YouTube Studio: vertical format auto-detected → add #Shorts tag → write unique title for each (not same as long-form) → add description with channel link → category Education → Publish all 3. Space them: upload 1 now, schedule other 2 for Days 9 and 10.",time:"10 min",deliverable:"3 Shorts live/scheduled",dep:"3 Short files"},
-{day:8,track:"INSTAGRAM",proj:"I1",subp:"I1.4",name:"Cross-post Reel #1 + first feed content",detail:"Take Short #1 export from CapCut (no watermark!) → Create Reel cover in Canva (duplicate Template 1, swap title text) → Open Meta Business Suite → Upload video + custom cover → Write Instagram caption using I1.3 template (hook + context + CTA + 3-5 hashtags from Set 1) → Schedule for 7 PM PKT. THIS IS YOUR FIRST INSTAGRAM FEED POST.",time:"10 min",deliverable:"First Instagram Reel published",dep:"Short #1 + IG templates"},
-{day:8,track:"YOUTUBE",proj:"Y3",subp:"Y3.4",name:"Video #1 — promotion sprint",detail:"Share Video #1 to: r/IndianHistory, r/MilitaryHistory, r/history (write genuine 3-sentence intro, don't spam). Share to 2 Facebook groups (Military History, WW2 History). Write 1 Quora answer to a related question with natural link. Post video link to Twitter/X with 3-sentence hook. Reply to EVERY comment on the YouTube video within first 24 hours.",time:"20 min",deliverable:"Video shared to 5+ communities",dep:"Video #1 live"},
-
-// Day 9
-{day:9,track:"INSTAGRAM",proj:"I1",subp:"I1.4",name:"Instagram content blitz — Carousel + Reel + Fact Card",detail:"Carousel: Duplicate Template 2 → '5 Things You Didn\\'t Know About the Indian Army in WW2' → Fill 5 fact slides from Video #1 research → Hook slide: large text, dark bg → CTA slide: 'Follow @theforgottenfront' → Schedule. Reel #2: Upload Short #2 with Canva cover → caption + hashtags Set 1 → schedule. Fact Card: Duplicate Template 3 → big stat → schedule. Also upload Short #2 to TikTok with TikTok-native captions.",time:"25 min",deliverable:"Carousel + Reel + Fact Card scheduled",dep:"Shorts + templates + research"},
-{day:9,track:"KDP",proj:"K2",subp:"K2.3",name:"Check Book 1 KDP status + order proof",detail:"Log into KDP dashboard. Book 1 should show 'In Review' or 'Live'. If Live: order author proof copy (takes 3-7 days to arrive — check physical quality). If 'Action Required': read the notification carefully, fix the issue (usually margin or image resolution), resubmit. Check listing on Amazon: search your exact title, verify it appears, check how the cover thumbnail looks.",time:"10 min",deliverable:"Book 1 status confirmed",dep:"Book 1 submitted"},
-{day:9,track:"YOUTUBE",proj:"Y3",subp:"Y3.4",name:"Reply to all Video #1 comments",detail:"Check YouTube Studio → Comments. Reply to every single comment on Video #1. Be genuine, ask follow-up questions, heart good comments. This signals engagement to the algorithm. Check Reddit/Facebook posts for any responses and reply there too.",time:"10 min",deliverable:"All comments replied to",dep:"Video #1 promotion"},
-
-// Day 10
-{day:10,track:"YOUTUBE",proj:"Y2",subp:"Y2.1",name:"Video #2 — research + script",detail:"Topic: 'The Battle That Saved India — Imphal 1944'. Research: Japanese Operation U-Go, Subhas Chandra Bose and INA, British-Indian defense, the siege, Kohima tennis court battle, the turning point, Japanese retreat and casualties (over 50,000 dead), significance for Indian independence. Write ~2,000 word script using 3-Act Structure. [VISUAL CUE] markers throughout. Self-edit: remove repetition, tighten pacing, strengthen hook.",time:"90 min",deliverable:"Video #2 script complete",dep:"None"},
-{day:10,track:"YOUTUBE",proj:"Y2",subp:"Y2.2",name:"Video #2 — visual assets",detail:"Download 15-20 images: Imphal battlefield photos, Japanese army Burma, INA soldiers, Kohima War Cemetery, maps of the Imphal Plain. Sources: IWM, Australian War Memorial (good Burma campaign photos), Wikimedia. Create custom map in Canva showing Japanese advance routes toward Imphal.",time:"25 min",deliverable:"15+ archival images + custom map",dep:"Script (visual needs)"},
-{day:10,track:"INSTAGRAM",proj:"I1",subp:"I1.4",name:"Cross-post Reel #3 + daily Stories",detail:"Upload Short #3 as Instagram Reel with custom cover and I1.3 caption template. Post 2 Stories: archival photo with 'Did you know?' text overlay + poll ('Have you heard of the Battle of Imphal?'). Upload Short #3 to TikTok.",time:"10 min",deliverable:"Reel #3 + 2 Stories",dep:"Short #3"},
-
-// Day 11
-{day:11,track:"YOUTUBE",proj:"Y2",subp:"Y2.3",name:"Video #2 — record + master voiceover",detail:"Record Video #2 voiceover in Audacity. Apply Y2.3 mastering chain. Review: is pacing better than Video #1? Did you reduce 'um' and 'ah'? Is the emotional beat at the climax (Japanese retreat) hitting hard enough? Re-record the hook if needed — the first 15 seconds determine if people stay.",time:"40 min",deliverable:"Mastered voiceover #2",dep:"Script #2 + Audacity"},
-{day:11,track:"YOUTUBE",proj:"Y2",subp:"Y2.2",name:"Video #2 — edit in CapCut",detail:"Build Video #2 timeline in CapCut: voiceover → images with Ken Burns → custom maps with animated arrows (Japanese advance toward Imphal, then retreat) → text overlays for names/dates/stats → background music (more intense than V1 — this is a battle story) → outro. Aim for 12-15 minutes. Export 1080p MP4.",time:"80 min",deliverable:"Complete Video #2 MP4",dep:"Voiceover + assets"},
-{day:11,track:"YOUTUBE",proj:"Y2",subp:"Y2.4",name:"Video #2 — thumbnail",detail:"Canva 1280×720 → dramatic Imphal battlefield image → text 'THE BATTLE THAT SAVED INDIA' Oswald Bold → red 'FORGOTTEN' badge → amber bar. Test: readable at small size? Creates curiosity?",time:"12 min",deliverable:"Thumbnail #2 PNG",dep:"Visual assets"},
-
-// Day 12
-{day:12,track:"YOUTUBE",proj:"Y3",subp:"Y3.1",name:"PUBLISH Video #2 + Shorts batch",detail:"Upload Video #2 → full Y3.3 metadata template → thumbnail → end screens → publish. Create 3 Shorts from Video #2 in CapCut (battle moments, shocking stats, emotional conclusion). Upload 1 Short now, schedule other 2 for Days 13-14. Promote: Reddit + Facebook groups + Quora.",time:"45 min",deliverable:"Video #2 + 3 Shorts live/scheduled",dep:"Video #2 file"},
-{day:12,track:"KDP",proj:"K2",subp:"K2.3",name:"Start Book 2 — E-Commerce Planner interior",detail:"Begin Book 2 (E-Commerce Business Planner, $12.99) in Canva 6×9. Build structure: title page → copyright → TOC → sections per K2.1 specs: Business Model Canvas (2 pages), Revenue Tracker (monthly, quarterly tables), Inventory Management templates, Marketing Calendar (12 months), Social Media Content Planner, Order Fulfillment Checklist, Supplier Contact Sheet, Financial Dashboard (monthly P&L), Goal Setting framework. Dark navy backgrounds, emerald accents, Oswald titles.",time:"60 min",deliverable:"Book 2 first 50 pages",dep:"K2.1 specs"},
-{day:12,track:"INSTAGRAM",proj:"I1",subp:"I1.4",name:"Cross-post Video #2 Shorts + carousel",detail:"Upload V2 Short #1 as Instagram Reel + Canva cover + caption + hashtags. Create Carousel: '5 Things About the Battle of Imphal' using V2 research → schedule. Upload to TikTok. Post 2 Stories: video teaser + quiz sticker.",time:"20 min",deliverable:"Reel + carousel + TikTok + Stories",dep:"V2 Shorts + templates"},
-
-// Day 13
-{day:13,track:"KDP",proj:"K2",subp:"K2.3",name:"Book 2 — complete interior + cover + submit",detail:"Finish remaining Book 2 pages (50-100 pages remaining). Design cover per K2.2 Business Niche blueprint: dark navy background, emerald accent bars, Oswald Bold title, Outfit subtitle. Download KDP cover template for Book 2 page count. Design full cover (front + spine + back). Export interior PDF + cover PDF. Submit to KDP: title, subtitle, pen name #2 from K1.3, 7 keywords from K1.4, 3 categories, price $12.99.",time:"90 min",deliverable:"Book 2 submitted to KDP",dep:"K2.1 + K2.2 specs"},
-{day:13,track:"INSTAGRAM",proj:"I1",subp:"I1.4",name:"Continue daily rhythm",detail:"Cross-post V2 Short #2 as Reel. Post Fact Card from Video #2. 2 Stories (behind-the-scenes: show archival photos you found during research). Engage: comment thoughtfully on 10 military history pages.",time:"15 min",deliverable:"Reel + Fact Card + Stories + engagement",dep:"Templates + V2 research"},
-
-// Day 14
-{day:14,track:"INSTAGRAM",proj:"I1",subp:"I1.4",name:"Week 2 Instagram review + engagement push",detail:"Review Instagram Insights: which post got most saves? Most shares? Most profile visits? Note best hashtag set. Reply to all comments and DMs. Cross-post V2 Short #3 as Reel. Post 2 Stories with polls. Visit 10 history pages → leave genuine comments.",time:"20 min",deliverable:"Week 2 analytics reviewed + engagement",dep:"2 weeks of content"},
-{day:14,track:"YOUTUBE",proj:"Y3",subp:"Y3.4",name:"Week 2 YouTube analytics review",detail:"Open YouTube Studio → Analytics: check Video #1 CTR (aim >4%), average view duration (aim >40%), traffic sources. Check Video #2 same metrics. Which performed better? Why? Reply to all new comments. Check Shorts performance. Write down: 1 thing to improve, 1 thing working well.",time:"15 min",deliverable:"Analytics snapshot documented",dep:"2 videos live"},
-{day:14,track:"KDP",proj:"K2",subp:"K2.3",name:"Check Book 1 & 2 status",detail:"Check KDP dashboard: Book 1 should be live and potentially have sales data. Book 2 should be in review. If Book 1 has any sales: celebrate. If zero sales: normal for first 2 weeks. Check listing quality: is description displaying correctly? Are categories right?",time:"5 min",deliverable:"Status check complete",dep:"Books submitted"},
-
-// Days 15-16
-{day:15,track:"YOUTUBE",proj:"Y2",subp:"Y2.1",name:"Video #3 — research + script + assets",detail:"Topic: 'The Ghost Army — How Fake Tanks Won WW2'. Research: 23rd Headquarters Special Troops, inflatable tanks, sound trucks, radio deception, Operation Fortitude, specific missions in France/Germany, personnel (artists, radio operators, sound engineers), post-war secrecy (classified until 1996). Write 2,000-word script. Download 15+ images: inflatable tanks, dummy vehicles, Ghost Army soldiers, mission maps.",time:"90 min",deliverable:"Script #3 + 15 images",dep:"None"},
-{day:16,track:"YOUTUBE",proj:"Y2",subp:"Y2.2",name:"Video #3 — full production (record → edit → thumb)",detail:"Record voiceover. Master in Audacity. Edit full video in CapCut (this should be getting faster with practice — aim for 70 min edit). Create thumbnail: inflatable tank image + 'FAKE TANKS WON WW2' text + 'CLASSIFIED' red badge. Export everything.",time:"120 min",deliverable:"Video #3 complete (MP4 + thumb)",dep:"Script + assets"},
-
-// Day 17
-{day:17,track:"YOUTUBE",proj:"Y3",subp:"Y3.1",name:"PUBLISH Video #3 + Shorts + promotion",detail:"Upload Video #3 with full metadata. Create and upload 3 Shorts. Promote to Reddit (r/MilitaryHistory, r/todayilearned — Ghost Army is perfect for TIL), Facebook groups, 1 Quora answer. This is your most 'viral potential' topic — inflatable tanks are inherently shareable.",time:"40 min",deliverable:"Video #3 + 3 Shorts live",dep:"Video #3 file"},
-{day:17,track:"INSTAGRAM",proj:"I1",subp:"I1.4",name:"Video #3 Instagram + TikTok distribution",detail:"Carousel: '5 Things About the Ghost Army' (inflatable tanks make incredible carousel content). Cross-post best Short as Reel. Fact Card. TikTok: upload all 3 Shorts. Twitter: 5-tweet thread about the Ghost Army.",time:"25 min",deliverable:"Carousel + Reel + Fact Card + TikTok + Twitter",dep:"V3 Shorts + templates"},
-
-// Days 18-19
-{day:18,track:"KDP",proj:"K2",subp:"K2.3",name:"Build Book 3 — Half Marathon Training Log",detail:"Book 3 (Half Marathon Training Log, $9.99) in Canva 6×9. Per K2.1 specs: 16-week training plan structure, weekly log pages (day, distance, time, pace, heart rate, notes), race day preparation checklist, nutrition tracking, injury log, personal records page, race route planning, 10K → half marathon bridge program. Red/charcoal/orange color scheme, Bebas Neue titles. Build complete interior (~110 pages).",time:"90 min",deliverable:"Book 3 interior complete",dep:"K2.1 specs"},
-{day:19,track:"KDP",proj:"K2",subp:"K2.3",name:"Book 3 — cover + submit + start Book 4",detail:"Design Book 3 cover per K2.2 Running Niche blueprint: red/charcoal/orange, Bebas Neue Bold title, dynamic feel. Submit to KDP with keywords from K1.4. Begin Book 4 (Family Budget Tracker, $12.99): build interior with monthly budget sheets, expense categories, savings goals, debt payoff tracker, 52-week savings challenge.",time:"90 min",deliverable:"Book 3 submitted + Book 4 started",dep:"Book 3 interior"},
-
-// Day 20-21
-{day:20,track:"KDP",proj:"K2",subp:"K2.3",name:"Finish Book 4 + submit",detail:"Complete Book 4 interior. Design cover (Business Niche scheme). Export and submit to KDP. You now have 4 books published or in review.",time:"60 min",deliverable:"Book 4 submitted — 4 books total",dep:"Book 4 interior"},
-{day:20,track:"ALL",proj:"—",subp:"—",name:"Week 3 analytics review — all 3 tracks",detail:"YouTube Studio: compare V1/V2/V3 CTR, view duration, subs gained per video. Instagram Insights: follower count, best post, saves rate. KDP dashboard: any sales? Check all 3 platforms. Write down: top performing content per platform, what to adjust, what to double down on. This is your first real data-driven review.",time:"20 min",deliverable:"Full analytics review documented",dep:"3 weeks of content"},
-{day:21,track:"INSTAGRAM",proj:"I1",subp:"I1.4",name:"Instagram engagement + Stories + Reels",detail:"Continue daily rhythm: cross-post latest YouTube Short as Reel, 2-3 Stories (mix of facts, polls, behind-the-scenes), thoughtful engagement on 10 history pages. By now you should have 15+ posts on your grid. If follower count is below 100: increase Reel frequency to 1/day, engage more aggressively with community.",time:"15 min",deliverable:"Daily Instagram maintained",dep:"Ongoing"},
-
-// Days 22-24
-{day:22,track:"YOUTUBE",proj:"Y2",subp:"Y2.1",name:"Video #4 — research + script",detail:"Topic: 'Why 80,000 Soldiers Surrendered — The Fall of Singapore 1942'. Research: Japanese invasion of Malaya, bicycle blitzkrieg, battle of Singapore, Percival's surrender (largest British surrender in history), 80,000 POWs, treatment of POWs, Changi prison, strategic failures, Churchill's 'worst disaster'.",time:"60 min",deliverable:"Script #4 complete",dep:"None"},
-{day:23,track:"YOUTUBE",proj:"Y2",subp:"Y2.2",name:"Video #4 — full production + publish",detail:"Record, edit, thumbnail, upload, shorts batch, promote. By Video #4, your workflow should be significantly faster — target 3 hours total production. Cross-post to Instagram (Reel + Carousel) and TikTok.",time:"180 min",deliverable:"Video #4 + 3 Shorts live",dep:"Script + assets"},
-{day:24,track:"YOUTUBE",proj:"Y2",subp:"Y2.1",name:"Video #5 — begin production",detail:"Topic: 'The Spy Princess — Noor Inayat Khan'. Research: SOE, Noor's background (Indian-American-French), training, deployment to occupied France, radio operations, betrayal, capture, Dachau. This is your espionage pillar (15% of content) — different tone from battle stories. More personal, intimate narration.",time:"60 min",deliverable:"Script #5 started",dep:"None"},
-
-// Days 25-27
-{day:25,track:"YOUTUBE",proj:"Y2",subp:"Y2.1",name:"Video #5 — complete production + publish",detail:"Finish script, record, edit, thumbnail, publish, shorts, promote. Cross-post to Instagram + TikTok. 5 videos live on YouTube — you're past the 'quit zone'.",time:"180 min",deliverable:"Video #5 + 3 Shorts live (5 total videos)",dep:"Script + assets",milestone:true},
-{day:26,track:"INSTAGRAM",proj:"I1",subp:"I1.4",name:"First collab attempt",detail:"Identify 3 military history Instagram pages with 5K-20K followers. DM each with a genuine collab proposal: share what you cover, offer to create a carousel for co-posting. Don't be pushy. 1 in 3 acceptance rate is great.",time:"15 min",deliverable:"3 collab DMs sent",dep:"15+ IG posts live"},
-
-// Days 28-30
-{day:28,track:"ALL",proj:"—",subp:"—",name:"Month 1 comprehensive review — YouTube",detail:"Full YouTube audit: total views across all videos, total subscribers, best performing video (by views AND by retention%), best performing Short, CTR per video, traffic sources breakdown (search vs browse vs external), audience demographics. Compare against Achievement Matrix: which scenario are you in? Write 3 things to improve in Month 2.",time:"20 min",deliverable:"YouTube Month 1 report",dep:"5 videos + 12 Shorts"},
-{day:29,track:"ALL",proj:"—",subp:"—",name:"Month 1 comprehensive review — KDP + Instagram",detail:"KDP: total sales across 4 books, which book sold most, any reviews yet, keyword ranking check (search your title on Amazon — where does it appear?). Instagram: follower count, total reach, best post type (Reel vs Carousel vs Fact Card), saves rate, non-follower reach %. Compare all against Achievement Matrix scenarios. Plan Month 2 adjustments.",time:"20 min",deliverable:"KDP + Instagram Month 1 report",dep:"4 books + 20 IG posts"},
-{day:30,track:"ALL",proj:"—",subp:"—",name:"🎉 Month 2 planning + milestone celebration",detail:"Based on Month 1 data: plan next 4 video topics (Videos 6-9). Plan KDP Books 5-6 (which niches from K1.1?). Set Instagram Month 2 targets. Update link-in-bio with KDP book links. Review: are you on track for Probable scenario? If yes: maintain pace. If below: what's the bottleneck? If above: can you increase cadence? CELEBRATE: You have 5 YouTube videos, 4 KDP books, 20+ Instagram posts, and a real online business.",time:"30 min",deliverable:"Month 2 plan documented",dep:"Month 1 review complete",milestone:true},
-];
-
-// ═══════════════════════════════════════
-// MILESTONES
-// ═══════════════════════════════════════
-const MILESTONES = {
-5: {text:"🎉 MILESTONE: Book 1 Published on Amazon KDP!", color:"var(--green)"},
-8: {text:"🎉 MILESTONE: Video #1 + First Instagram Reel LIVE!", color:"var(--amber)"},
-25: {text:"🎉 MILESTONE: 5 Videos Published — Past the Quit Zone!", color:"var(--amber)"},
-30: {text:"🏆 MONTH 1 COMPLETE: 5 Videos • 4 Books • 20+ IG Posts • Real Business!", color:"var(--pink)"}
-};
-
-// ═══════════════════════════════════════
-// STATE
-// ═══════════════════════════════════════
-let completedTasks = {};
-let showMilestones = true;
-
-function loadState(){
-try { completedTasks = JSON.parse(localStorage.getItem('tff_tasks_v1') || '{}'); } catch(e){ completedTasks = {}; }
-}
-function saveState(){
-localStorage.setItem('tff_tasks_v1', JSON.stringify(completedTasks));
-}
-function taskId(t,i){ return `d${t.day}_${i}`; }
-
-// ═══════════════════════════════════════
-// RENDERING
-// ═══════════════════════════════════════
-function render(){
-const container = document.getElementById('taskContainer');
-const trackFilter = document.getElementById('filterTrack').value;
-const projFilter = document.getElementById('filterProject').value;
-const statusFilter = document.getElementById('filterStatus').value;
-const dayFilter = document.getElementById('filterDay').value;
-const search = document.getElementById('searchBox').value.toLowerCase();
-
-let filtered = TASKS.filter((t,i)=>{
-const id = taskId(t,i);
-const done = !!completedTasks[id];
-if(trackFilter !== 'ALL'){
-if(trackFilter === 'REVIEW'){ if(t.track !== 'ALL' && t.track !== 'YOUTUBE/IG') return false; }
-else if(t.track !== trackFilter && !(trackFilter === 'YOUTUBE' && t.track === 'YOUTUBE/IG')) return false;
-}
-if(projFilter !== 'ALL' && t.proj !== projFilter) return false;
-if(statusFilter === 'TODO' && done) return false;
-if(statusFilter === 'DONE' && !done) return false;
-if(dayFilter !== 'ALL' && t.day !== parseInt(dayFilter)) return false;
-if(search && !t.name.toLowerCase().includes(search) && !t.detail.toLowerCase().includes(search) && !t.track.toLowerCase().includes(search) && !t.proj.toLowerCase().includes(search)) return false;
-return true;
-});
-
-// Group by day
-const days = {};
-filtered.forEach((t,origIdx)=>{
-const globalIdx = TASKS.indexOf(t);
-if(!days[t.day]) days[t.day] = [];
-days[t.day].push({...t, globalIdx});
-});
-
-let html = '';
-const sortedDays = Object.keys(days).map(Number).sort((a,b)=>a-b);
-
-sortedDays.forEach(day=>{
-const tasksInDay = days[day];
-const doneInDay = tasksInDay.filter(t=>completedTasks[taskId(t,t.globalIdx)]).length;
-const totalInDay = tasksInDay.length;
-
-// Milestone before day
-if(showMilestones && MILESTONES[day]){
-html += `<div class="milestone" style="border-color:${MILESTONES[day].color}"><span class="emoji"></span> ${MILESTONES[day].text}</div>`;
-}
-
-html += `<div class="day-section">`;
-html += `<div class="day-header">
-<span class="day-badge">DAY ${day}</span>
-<span class="day-title">${getDayLabel(day)}</span>
-<span class="day-progress"><span class="done-count">${doneInDay}</span>/${totalInDay} tasks</span>
-</div>`;
-
-tasksInDay.forEach(t=>{
-const id = taskId(t, t.globalIdx);
-const done = !!completedTasks[id];
-const trackClass = t.track.replace('/','\\/');
-html += `<div class="task-card ${done?'completed':''}" data-track="${t.track}" data-id="${id}" onclick="toggleExpand(this,event)">
-<div class="check-wrap"><div class="check" onclick="toggleTask('${id}',event)">
-<svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M2.5 7L5.5 10L11.5 4" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+<div class="downloads"><h2>Downloadable Spreadsheets</h2><div class="dl-grid">
+<a class="dl-card" href="Founders_Task_Sheet.xlsx" download><div class="dl-icon" style="background:#1E3A5F">XLSX</div><div class="dl-info"><h4>Founder's 30-Day Task Sheet</h4><p>Complete day-by-day task list in Excel format</p></div></a>
+<a class="dl-card" href="K1.1_Niche_Scoring_Matrix.xlsx" download><div class="dl-icon" style="background:#064E3B">XLSX</div><div class="dl-info"><h4>Niche Scoring Matrix</h4><p>Weighted scoring for all 18 KDP sub-niches</p></div></a>
+<a class="dl-card" href="K1.3_KDP_Tracker_Template.xlsx" download><div class="dl-icon" style="background:#064E3B">XLSX</div><div class="dl-info"><h4>KDP Sales Tracker</h4><p>Track sales, royalties, and BSR across all books</p></div></a>
 </div></div>
-<div class="task-content">
-<div class="task-meta">
-<span class="track-badge ${t.track}">${t.track}</span>
-${t.proj !== '—' ? `<span class="proj-badge">${t.proj} › ${t.subp}</span>` : ''}
-<span class="expand-arrow">▼</span>
+<div id="taskContainer"></div>
+<a class="back-link" href="index.html">Back to Master Portal</a>
 </div>
-<div class="task-name">${t.name}</div>
-<div class="task-deliverable"><strong>→</strong> ${t.deliverable}</div>
-<div class="task-detail">${t.detail}${t.dep !== 'None' ? `<br><br><strong style="color:var(--dim)">Depends on:</strong> ${t.dep}` : ''}</div>
-</div>
-<div class="task-right">
-<span class="time-est">${t.time}</span>
-</div>
-</div>`;
-});
-html += `</div>`;
-});
+<script>
 
-if(sortedDays.length === 0){
-html = `<div style="text-align:center;padding:60px 20px;color:var(--dim)">
-<div style="font-size:2rem;margin-bottom:12px">🔍</div>
-<div style="font-size:1.1rem">No tasks match your filters</div>
-<div style="margin-top:8px;font-size:.85rem">Try adjusting the filters above</div>
-</div>`;
+const TASKS = [
+{
+"day": 1,
+"stream": "SETUP",
+"proj": "\u2014",
+"sub": "\u2014",
+"title": "Create KDP account",
+"detail": "Go to kdp.amazon.com. Sign in with Amazon. Complete account setup. Start W-8BEN tax interview (Pakistan, 0% withholding if treaty applies). Add bank/payment details (IBAN, bank name, SWIFT). You will need: passport or CNIC, bank account number, full address. Allow 24-48h for verification.",
+"time": 20,
+"del": "KDP account active",
+"dep": "None",
+"milestone": false
+},
+{
+"day": 1,
+"stream": "SETUP",
+"proj": "\u2014",
+"sub": "\u2014",
+"title": "Create Canva account + brand kit",
+"detail": "Sign up at canva.com (free tier). Upload brand fonts: Oswald, Libre Baskerville, Special Elite, Outfit, Playfair Display, Bebas Neue. Create brand kit with 6 YouTube colors (#0A0A0A, #D97706, #DC2626, #F5F5DC, #1A1A2E, #C9B037) + 3 KDP color palettes (Navy/Cream/Amber for Dad, Navy/Emerald/Silver for Business, Red/Charcoal/Orange for Running).",
+"time": 15,
+"del": "Canva account with fonts and colors",
+"dep": "None",
+"milestone": false
+},
+{
+"day": 1,
+"stream": "SETUP",
+"proj": "\u2014",
+"sub": "\u2014",
+"title": "Create YouTube channel",
+"detail": "Sign into YouTube. Create channel. Set handle to @TheForgottenFront. Upload profile picture (TFF compass rose logo from Y1.3). Upload banner image (2560x1440, tagline: Untold Stories from History Battlefields). Fill About section with channel description from Y1.3. Add links. Set country to Pakistan. Enable monetization notifications.",
+"time": 15,
+"del": "YouTube channel live",
+"dep": "None",
+"milestone": false
+},
+{
+"day": 1,
+"stream": "SETUP",
+"proj": "\u2014",
+"sub": "\u2014",
+"title": "Create Instagram creator account",
+"detail": "Download Instagram. Create account @theforgottenfront. Switch to Professional Creator account (Settings, Account, Switch to Professional). Set category Education. Write bio (Version A from I1.1). Upload TFF profile picture. Add YouTube channel link. Enable search engine indexing. Ensure account is Public.",
+"time": 10,
+"del": "Instagram profile live",
+"dep": "I1.1 guide",
+"milestone": false
+},
+{
+"day": 1,
+"stream": "SETUP",
+"proj": "\u2014",
+"sub": "\u2014",
+"title": "Register handles on all platforms",
+"detail": "Create @TheForgottenFront on: TikTok, Twitter/X, Threads. Create theforgottenfront@gmail.com (dedicated brand email). Add as Instagram contact button. Claim handles even if you wont use platforms immediately to prevent squatting.",
+"time": 15,
+"del": "All handles claimed + brand email",
+"dep": "None",
+"milestone": false
+},
+{
+"day": 1,
+"stream": "SETUP",
+"proj": "\u2014",
+"sub": "\u2014",
+"title": "Install production tools + folder structure",
+"detail": "Install Audacity (free, audacityteam.org) for voiceover. Install CapCut desktop (capcut.com) for video editing. Create folder structure: TheForgottenFront/ with subfolders Scripts/, Assets/, Audio/, Exports/, Thumbnails/, Instagram/, TikTok/, Brand/, KDP/. Download 10 background music tracks from Pixabay Music (cinematic documentary, war dramatic, epic orchestral).",
+"time": 15,
+"del": "Tools installed + folders ready",
+"dep": "None",
+"milestone": false
+},
+{
+"day": 1,
+"stream": "SETUP",
+"proj": "\u2014",
+"sub": "\u2014",
+"title": "Create Beacons link-in-bio page",
+"detail": "Sign up at beacons.ai. Create page for @theforgottenfront. Add links: YouTube channel (append ?sub_confirmation=1), About The Forgotten Front, placeholder for Our Books on Amazon. Customize: dark background #0A0A0A, amber accents #D97706, outlined buttons. Copy Beacons URL into Instagram bio. Test on mobile.",
+"time": 10,
+"del": "Beacons link-in-bio page live",
+"dep": "Instagram account",
+"milestone": false
+},
+{
+"day": 2,
+"stream": "KDP",
+"proj": "K2",
+"sub": "K2.3",
+"title": "Book 1 interior \u2014 title page, copyright, TOC, intro",
+"detail": "Open Canva. Custom Size 6x9 inches. Page 1: Title page with The New Dad Journal in Playfair Display Bold, cream #FDF8F0 background, navy #1E3A5F text. Page 2: Copyright page with pen name. Pages 3-4: Table of contents (12 monthly sections + 4 bonus sections). Pages 5-6: Introduction (500 words, warm tone, from one new dad to another).",
+"time": 45,
+"del": "Book 1 pages 1-6",
+"dep": "KDP + Canva accounts",
+"milestone": false
+},
+{
+"day": 2,
+"stream": "KDP",
+"proj": "K2",
+"sub": "K2.3",
+"title": "Book 1 \u2014 build Month 1-4 sections",
+"detail": "Each monthly section per K2.1 specs: Monthly milestone checklist (8-10 items), 5 guided journal prompts, photo spot placeholder, sleep tracker grid (7x4), feeding log template. Month 1: first smile, umbilical cord. Month 2: tracks objects, coos. Month 3: laughs, grasps toys. Month 4: reaches, sits with support. Use cream background, navy text, amber accent lines.",
+"time": 60,
+"del": "Book 1 pages 7-46 (Months 1-4)",
+"dep": "Title pages complete",
+"milestone": false
+},
+{
+"day": 2,
+"stream": "INSTAGRAM",
+"proj": "I1",
+"sub": "I1.2",
+"title": "Create 5 Story Highlight covers",
+"detail": "Canva 1080x1920px. Dark background #0A0A0A. For each: simple amber (#D97706) line icon centered. ABOUT (book icon), LATEST (play button), FACTS (lightbulb), RESEARCH (magnifying glass), BOOKS (stack of books). Export 5 PNGs. Upload each as Instagram Story. Add to Highlights: ABOUT, LATEST, FACTS, RESEARCH, BOOKS.",
+"time": 10,
+"del": "5 branded Highlight covers",
+"dep": "Instagram account",
+"milestone": false
+},
+{
+"day": 3,
+"stream": "KDP",
+"proj": "K2",
+"sub": "K2.3",
+"title": "Book 1 \u2014 build Month 5-12 sections",
+"detail": "Continue monthly sections with age-appropriate milestones. Month 5: sits with support, recognizes name. Month 6: starts solids, babbles. Month 8: crawling, pulls to stand. Month 10: stands alone, points. Month 12: walks, 3-5 words. Add Daddys Favorites This Month reflection box. Maintain exact same formatting as Months 1-4.",
+"time": 90,
+"del": "Book 1 pages 47-110 (Months 5-12)",
+"dep": "Months 1-4 complete",
+"milestone": false
+},
+{
+"day": 3,
+"stream": "KDP",
+"proj": "K2",
+"sub": "K2.3",
+"title": "Book 1 \u2014 bonus sections + final assembly",
+"detail": "Build 4 bonus sections: Letter to My Baby (2 lined pages), Emergency Contacts (structured form), Babys Firsts Tracker (50+ firsts checklist), Notes and Memories (10 lined pages). Back matter: blank page + More journals link. Target ~120 pages (even number required). Review: consistent fonts, safe margins, uniform backgrounds.",
+"time": 40,
+"del": "Book 1 interior complete (~120 pages)",
+"dep": "Months 5-12",
+"milestone": true
+},
+{
+"day": 3,
+"stream": "INSTAGRAM",
+"proj": "I1",
+"sub": "I1.2",
+"title": "Create 4 reusable Canva templates",
+"detail": "Template 1 REEL COVER (1080x1920): dark gradient, Oswald title, red badge, amber bar, watermark. Template 2 CAROUSEL (1080x1350, 8 pages): hook slide, 5 fact slides, summary, CTA. Template 3 FACT CARD (1080x1350): dark bg, Libre Baskerville quote, amber accents. Template 4 STORY (1080x1920, 3 variants): fact overlay, poll, video teaser. Save each as separate Canva design.",
+"time": 45,
+"del": "4 reusable Canva templates",
+"dep": "I1.2 guide",
+"milestone": false
+},
+{
+"day": 4,
+"stream": "KDP",
+"proj": "K2",
+"sub": "K2.3",
+"title": "Book 1 cover \u2014 front design",
+"detail": "Go to kdp.amazon.com/cover-calculator. Input: 6x9 trim, 120 pages, B/W interior, white paper. Download cover template PDF. Open Canva with matching dimensions. Design front cover per K2.2 Dad Niche blueprint: cream #FDF8F0, Playfair Display Bold title, Outfit Light subtitle, amber rule line, pen name at bottom. Keep text within 0.25in safe margins.",
+"time": 30,
+"del": "Front cover designed",
+"dep": "Book 1 interior complete",
+"milestone": false
+},
+{
+"day": 4,
+"stream": "KDP",
+"proj": "K2",
+"sub": "K2.3",
+"title": "Book 1 cover \u2014 spine + back + export",
+"detail": "Spine: Navy background, title in Playfair Display 7-8pt (spine width ~0.27in for 120 pages). Back cover: cream background, 150-word description, barcode zone empty (bottom-right, 2x1.2in). Export full cover as PDF Print (flatten). Export ebook front cover separately as 2560x1600 JPEG.",
+"time": 30,
+"del": "Complete cover PDF + ebook cover",
+"dep": "Front cover",
+"milestone": false
+},
+{
+"day": 4,
+"stream": "KDP",
+"proj": "K2",
+"sub": "K2.3",
+"title": "Book 1 interior \u2014 final QA + PDF export",
+"detail": "Full quality review: check all margins (0.5in inner, 0.25in outer), verify even page count, font consistency, uniform cream background, no text touching edges. Export as PDF Print highest quality. Open exported PDF in viewer, scroll every page checking for artifacts or cutoffs.",
+"time": 20,
+"del": "Book 1 interior PDF ready",
+"dep": "Interior + cover done",
+"milestone": false
+},
+{
+"day": 5,
+"stream": "KDP",
+"proj": "K2",
+"sub": "K2.4",
+"title": "PUBLISH Book 1 on Amazon KDP",
+"detail": "Log into KDP. Create Paperback. Title: The New Dad Journal. Subtitle, pen name, description (4000 chars, HTML bold allowed), 7 backend keywords from K1.4, 3 BISAC categories. Upload interior PDF + cover PDF. Set: 6x9, no bleed, white paper, B/W ink. Price: $12.99 (60% royalty = $5.09/copy). Enable expanded distribution. Preview every page in KDP previewer. Submit.",
+"time": 40,
+"del": "Book 1 submitted to KDP review",
+"dep": "Cover + interior PDFs",
+"milestone": true
+},
+{
+"day": 5,
+"stream": "KDP",
+"proj": "K2",
+"sub": "K2.4",
+"title": "Book 1 \u2014 ebook version setup",
+"detail": "Create Kindle eBook for same title. Upload ebook cover (2560x1600). Export interior pages as images, assemble in Kindle Create (free tool). Set ebook price $4.99 (70% royalty). Enable KDP Select for Kindle Unlimited reads. Link to paperback edition. Submit.",
+"time": 25,
+"del": "Ebook submitted to KDP",
+"dep": "Paperback submitted",
+"milestone": false
+},
+{
+"day": 5,
+"stream": "INSTAGRAM",
+"proj": "I1",
+"sub": "I1.1",
+"title": "Populate ABOUT highlight with Stories",
+"detail": "Create 4 Stories: What is The Forgotten Front, What youll learn here (battles, soldiers, operations), New videos every Tuesday and Thursday, Full documentaries on YouTube (link sticker). Post each as Story, add all to ABOUT highlight.",
+"time": 15,
+"del": "ABOUT highlight populated",
+"dep": "IG templates + account",
+"milestone": false
+},
+{
+"day": 6,
+"stream": "YOUTUBE",
+"proj": "Y2",
+"sub": "Y2.1",
+"title": "Video #1 \u2014 deep research phase",
+"detail": "Topic: The 2.5 Million Soldiers History Forgot \u2014 India in WW2. Compile: total numbers (2.5M volunteers, largest volunteer army), casualties (87K killed, 34K wounded, 67K POWs), key theaters (Burma, North Africa, Italy), major battles (Imphal, Kohima, Monte Cassino, El Alamein), political context (independence movement vs war service, INA under Bose), post-war treatment. Identify 3 emotional hooks. Source everything.",
+"time": 45,
+"del": "Research doc with 20+ sourced facts",
+"dep": "None",
+"milestone": false
+},
+{
+"day": 6,
+"stream": "YOUTUBE",
+"proj": "Y2",
+"sub": "Y2.1",
+"title": "Video #1 \u2014 write full script",
+"detail": "Write ~2100 words for 12-15 min using Y2.1 3-Act Structure. Act 1 HOOK (first 30 sec): the shocking stat. Act 2 BODY: chronological narrative through recruitment, campaigns, Imphal/Kohima, INA paradox. Act 3 CLOSE: emotional landing about fighting for freedom they didnt have. Add [VISUAL CUE] markers every 15-20 seconds. Self-edit: rewrite 40-60% in your own voice, remove AI phrases.",
+"time": 60,
+"del": "Complete 2100-word script",
+"dep": "Research document",
+"milestone": false
+},
+{
+"day": 6,
+"stream": "YOUTUBE",
+"proj": "Y2",
+"sub": "Y2.2",
+"title": "Video #1 \u2014 download visual assets",
+"detail": "Download 20+ archival images from: Imperial War Museum (iwm.org.uk, Crown Copyright free for editorial), Library of Congress (loc.gov/pictures, PD), Wikimedia Commons (verify PD tag), National Archives India. Download 2-3 maps (Burma campaign, Imphal region). Save in Assets/V001/ with descriptive filenames.",
+"time": 30,
+"del": "20+ images + 3 maps",
+"dep": "Script (to know visual needs)",
+"milestone": false
+},
+{
+"day": 6,
+"stream": "YOUTUBE",
+"proj": "Y3",
+"sub": "Y3.3",
+"title": "Video #1 \u2014 keyword research",
+"detail": "YouTube autocomplete: type India army WW2 and note suggestions. Repeat for forgotten soldiers, Imphal battle, India World War 2. Use TubeBuddy/VidIQ free tier to check search volume. Select: primary keyword for title, 5 tags, 3 hashtags. Draft title using Y3.3 formula (e.g., The 2.5 Million Soldiers History Forgot | India in WW2).",
+"time": 15,
+"del": "Primary keyword + 5 tags + title",
+"dep": "None",
+"milestone": false
+},
+{
+"day": 7,
+"stream": "YOUTUBE",
+"proj": "Y2",
+"sub": "Y2.3",
+"title": "Video #1 \u2014 record + master voiceover",
+"detail": "Set up USB mic 6-8 inches from mouth (or use phone voice recorder). Open Audacity: 44100Hz, Mono. Read script naturally, pause 2 sec between sections. Do 2 takes. Apply Y2.3 mastering: noise reduction, normalize, compress (threshold -18dB, ratio 3:1), EQ (cut <80Hz, boost 2-4kHz), normalize, limiter, export WAV.",
+"time": 45,
+"del": "Mastered voiceover WAV",
+"dep": "Script + Audacity",
+"milestone": false
+},
+{
+"day": 7,
+"stream": "YOUTUBE",
+"proj": "Y2",
+"sub": "Y2.2",
+"title": "Video #1 \u2014 full video edit in CapCut",
+"detail": "Open CapCut, 1080p 30fps. Import voiceover + assets. Build timeline: voiceover base, images with Ken Burns (slow zoom 100-110%, 4-6 sec each), maps with animated arrows, text overlays (Oswald Bold, dark rectangle overlay), background music at 15-20% of voice volume, crossfade transitions, outro (subscribe + next video teaser). Target: 12-15 minutes. Export 1080p MP4.",
+"time": 90,
+"del": "Complete Video #1 MP4",
+"dep": "Voiceover + assets",
+"milestone": false
+},
+{
+"day": 7,
+"stream": "YOUTUBE",
+"proj": "Y2",
+"sub": "Y2.4",
+"title": "Video #1 \u2014 create thumbnail",
+"detail": "Canva 1280x720. Template A The Reveal from Y2.4: dramatic archival image background, 40% dark overlay, large Oswald Bold text 2.5 MILLION FORGOTTEN in white, red badge UNTOLD top-left, amber accent bar, channel watermark. Export PNG. Check: readable at thumbnail size? Creates curiosity?",
+"time": 15,
+"del": "Thumbnail PNG",
+"dep": "Visual assets",
+"milestone": false
+},
+{
+"day": 7,
+"stream": "INSTAGRAM",
+"proj": "I1",
+"sub": "I1.4",
+"title": "Post 3 warm-up Stories",
+"detail": "Create 3 Stories: archival photo + Stories begin next week text, Poll (Do you know how many Indian soldiers fought in WW2), Follow for untold military history CTA. These warm up the account and signal activity to Instagrams algorithm before first feed post.",
+"time": 10,
+"del": "3 Stories posted",
+"dep": "IG templates",
+"milestone": false
+},
+{
+"day": 8,
+"stream": "YOUTUBE",
+"proj": "Y3",
+"sub": "Y3.1",
+"title": "PUBLISH Video #1 on YouTube",
+"detail": "Upload to YouTube Studio. Add thumbnail. Title from keyword research. Description: Y3.3 template (hook, timestamps, About This Channel, social links, hashtags). Tags. Category: Education. End screen (subscribe + best for viewer). Publish PUBLIC. Pin engagement question comment.",
+"time": 20,
+"del": "Video #1 LIVE on YouTube",
+"dep": "Video + thumbnail ready",
+"milestone": true
+},
+{
+"day": 8,
+"stream": "YOUTUBE",
+"proj": "Y3",
+"sub": "Y3.1",
+"title": "Create 3 YouTube Shorts from Video #1",
+"detail": "CapCut vertical 1080x1920. Short 1: hook stat (2.5 million soldiers). Short 2: dramatic battle moment (Imphal). Short 3: emotional close (fought for freedom, not their own). Each 30-60 sec, auto-captions ON, music at 20%. Export WITHOUT watermark.",
+"time": 30,
+"del": "3 Short MP4 files",
+"dep": "Video #1 published",
+"milestone": false
+},
+{
+"day": 8,
+"stream": "YOUTUBE",
+"proj": "Y3",
+"sub": "Y3.1",
+"title": "Upload Shorts \u2014 stagger over 3 days",
+"detail": "Upload Short #1 now with #Shorts tag + unique title. Schedule Short #2 for Day 9, Short #3 for Day 10. Staggering keeps channel active in algorithm daily.",
+"time": 10,
+"del": "Short #1 live, #2-3 scheduled",
+"dep": "3 Shorts created",
+"milestone": false
+},
+{
+"day": 8,
+"stream": "INSTAGRAM",
+"proj": "I1",
+"sub": "I1.4",
+"title": "Cross-post first Reel \u2014 FIRST IG FEED POST",
+"detail": "Take Short #1 (NO watermark). Create Reel cover in Canva (Template 1). Upload via Meta Business Suite. Caption: I1.3 template with hook + context + CTA + 3-5 hashtags from Set 1. Schedule for 7 PM PKT. THIS IS YOUR FIRST INSTAGRAM FEED POST.",
+"time": 10,
+"del": "First Instagram Reel published",
+"dep": "Short #1 + templates",
+"milestone": true
+},
+{
+"day": 8,
+"stream": "YOUTUBE",
+"proj": "Y3",
+"sub": "Y3.4",
+"title": "Video #1 \u2014 promotion sprint",
+"detail": "Share to: Reddit r/IndianHistory (genuine 3-sentence intro), r/MilitaryHistory, r/history. 2 Facebook groups (Military History, WW2 History). 1 Quora answer with natural link. Twitter/X with hook. Reply to EVERY comment on YouTube within 24 hours.",
+"time": 20,
+"del": "Video shared to 5+ communities",
+"dep": "Video #1 live",
+"milestone": false
+},
+{
+"day": 9,
+"stream": "INSTAGRAM",
+"proj": "I1",
+"sub": "I1.4",
+"title": "Instagram content blitz \u2014 Carousel + Reel + Fact Card",
+"detail": "Carousel: 5 Things You Didnt Know About India in WW2 (8 slides from Template 2). Reel #2: upload Short #2 + cover. Fact Card: 2.5 million Indians served, largest volunteer army. Also upload Short #2 to TikTok. Schedule all via Meta Business Suite.",
+"time": 25,
+"del": "Carousel + Reel + Fact Card scheduled",
+"dep": "Shorts + templates",
+"milestone": false
+},
+{
+"day": 9,
+"stream": "KDP",
+"proj": "K2",
+"sub": "K2.4",
+"title": "Check Book 1 KDP status + order proof",
+"detail": "Log into KDP dashboard. Check status (In Review or Live). If Live: order author proof copy (3-7 days shipping). Search your title on Amazon, verify listing appears. If Action Required: read notification, fix issue, resubmit.",
+"time": 10,
+"del": "Book 1 status confirmed",
+"dep": "Book 1 submitted",
+"milestone": false
+},
+{
+"day": 9,
+"stream": "YOUTUBE",
+"proj": "Y3",
+"sub": "Y3.4",
+"title": "Reply to all Video #1 comments",
+"detail": "Check YouTube Studio Comments tab. Reply to every comment genuinely. Heart good comments. Check Reddit and Facebook posts for responses. Note which platform drove most views (Analytics, Traffic Sources, External).",
+"time": 10,
+"del": "All comments replied to",
+"dep": "V1 promotion",
+"milestone": false
+},
+{
+"day": 10,
+"stream": "YOUTUBE",
+"proj": "Y2",
+"sub": "Y2.1",
+"title": "Video #2 \u2014 research + script (Battle of Imphal)",
+"detail": "Topic: The Battle That Saved India - Imphal 1944. Research: Japanese Operation U-Go, Bose and INA, British-Indian defense under Slim, siege of Imphal, Kohima tennis court battle, monsoon turning point, Japanese retreat (50,000+ dead), significance for Indian independence. Write ~2000 word script, 3-Act structure.",
+"time": 90,
+"del": "Video #2 script complete",
+"dep": "None",
+"milestone": false
+},
+{
+"day": 10,
+"stream": "YOUTUBE",
+"proj": "Y2",
+"sub": "Y2.2",
+"title": "Video #2 \u2014 collect visual assets",
+"detail": "Download 15-20 images: Imphal battlefield, Japanese Burma, INA soldiers, Kohima War Cemetery, maps. Sources: IWM, Australian War Memorial, Wikimedia. Create custom map in Canva showing Japanese advance routes. Save in Assets/V002/.",
+"time": 25,
+"del": "15+ images + custom map",
+"dep": "Script (visual needs)",
+"milestone": false
+},
+{
+"day": 10,
+"stream": "INSTAGRAM",
+"proj": "I1",
+"sub": "I1.4",
+"title": "Cross-post Reel #3 + Stories",
+"detail": "Upload Short #3 as Instagram Reel with cover + caption + hashtag Set 1. Post 2 Stories: Did you know fact overlay + Poll about Battle of Imphal. Upload Short #3 to TikTok. Check Insights on first 3 posts.",
+"time": 10,
+"del": "Reel #3 + 2 Stories + TikTok",
+"dep": "Short #3",
+"milestone": false
+},
+{
+"day": 11,
+"stream": "YOUTUBE",
+"proj": "Y2",
+"sub": "Y2.3",
+"title": "Video #2 \u2014 record + master voiceover",
+"detail": "Record Video #2 voiceover in Audacity. Apply Y2.3 mastering chain. Self-assessment: Better pacing than V1? More conversational? Strong emotional climax at Japanese retreat? Re-record the hook if needed (first 15 seconds determine 60% of retention).",
+"time": 40,
+"del": "Mastered voiceover #2",
+"dep": "Script #2 + Audacity",
+"milestone": false
+},
+{
+"day": 11,
+"stream": "YOUTUBE",
+"proj": "Y2",
+"sub": "Y2.2",
+"title": "Video #2 \u2014 full edit in CapCut",
+"detail": "Build timeline: voiceover, images with Ken Burns, custom maps with animated arrows (Japanese advance then retreat), text overlays, more intense background music (battle story). Edit time target: 70 min (down from 90). Export 1080p MP4, 12-15 minutes.",
+"time": 80,
+"del": "Complete Video #2 MP4",
+"dep": "Voiceover + assets",
+"milestone": false
+},
+{
+"day": 11,
+"stream": "YOUTUBE",
+"proj": "Y2",
+"sub": "Y2.4",
+"title": "Video #2 \u2014 thumbnail",
+"detail": "Canva 1280x720. Dramatic Imphal image or Kohima War Cemetery, 40% overlay, THE BATTLE THAT SAVED INDIA in Oswald Bold, red badge 1944, amber bar. Check visual consistency with V1 thumbnail.",
+"time": 12,
+"del": "Thumbnail #2 PNG",
+"dep": "Visual assets",
+"milestone": false
+},
+{
+"day": 12,
+"stream": "YOUTUBE",
+"proj": "Y3",
+"sub": "Y3.1",
+"title": "PUBLISH Video #2 + Shorts batch",
+"detail": "Upload V2 with full metadata, thumbnail, end screens. Create 3 Shorts from V2. Upload Short #1 now, schedule #2-3 for Days 13-14. Promote to Reddit, Facebook groups, Quora. Reply to all V1 comments since Day 9.",
+"time": 45,
+"del": "Video #2 + 3 Shorts live/scheduled",
+"dep": "V2 MP4 + thumbnail",
+"milestone": true
+},
+{
+"day": 12,
+"stream": "KDP",
+"proj": "K2",
+"sub": "K2.3",
+"title": "Start Book 2 \u2014 E-Commerce Planner",
+"detail": "Book 2 ($12.99) in Canva 6x9. Build: Business Model Canvas (2 pages), Monthly Revenue Tracker, Quarterly P/L, Inventory Management, Marketing Calendar, Social Media Planner, Order Fulfillment Checklist, Supplier Contact Sheet, Financial Dashboard. Dark navy #1E293B, emerald #059669 accents, Oswald titles.",
+"time": 60,
+"del": "Book 2 first 50+ pages",
+"dep": "K2.1 specs",
+"milestone": false
+},
+{
+"day": 12,
+"stream": "INSTAGRAM",
+"proj": "I1",
+"sub": "I1.4",
+"title": "Cross-post V2 content",
+"detail": "Upload V2 Short #1 as Reel + cover + caption + hashtags. Create Carousel: 5 Facts About the Battle of Imphal. Upload to TikTok. Post 2 Stories: video teaser + quiz sticker. Check: are Reels or Carousels performing better?",
+"time": 20,
+"del": "Reel + Carousel + Stories + TikTok",
+"dep": "V2 Shorts + templates",
+"milestone": false
+},
+{
+"day": 13,
+"stream": "KDP",
+"proj": "K2",
+"sub": "K2.3",
+"title": "Book 2 \u2014 complete + cover + submit",
+"detail": "Finish Book 2: Goal Setting, Financial Dashboard, Year-End Review. Total ~100-120 pages. Design cover (K2.2 Business blueprint: navy/emerald, Oswald title). Download KDP cover template. Design full cover. Export PDFs. Submit to KDP with business keywords, $12.99.",
+"time": 90,
+"del": "Book 2 submitted to KDP",
+"dep": "Book 2 started",
+"milestone": true
+},
+{
+"day": 13,
+"stream": "INSTAGRAM",
+"proj": "I1",
+"sub": "I1.4",
+"title": "Daily Instagram + engagement push",
+"detail": "Cross-post V2 Short #2 as Reel. Post Fact Card from V2 research. 2 behind-the-scenes Stories. Engage: comment thoughtfully on 10 military history pages (NOT generic comments - ask questions, add facts).",
+"time": 15,
+"del": "Reel + Fact Card + Stories + engagement",
+"dep": "Templates + V2 research",
+"milestone": false
+},
+{
+"day": 14,
+"stream": "REVIEW",
+"proj": "ALL",
+"sub": "\u2014",
+"title": "Week 2 Instagram analytics review",
+"detail": "Instagram Insights: followers gained, total reach, best post type (Reel vs Carousel vs Fact Card), saves rate (aim >2%), shares, non-follower reach % (aim >50%). Reply to all comments/DMs. Cross-post V2 Short #3. Engage on 10 pages. DECISION: adjust posting mix based on data.",
+"time": 20,
+"del": "Week 2 IG analytics documented",
+"dep": "2 weeks of content",
+"milestone": false
+},
+{
+"day": 14,
+"stream": "REVIEW",
+"proj": "ALL",
+"sub": "\u2014",
+"title": "Week 2 YouTube analytics review",
+"detail": "YouTube Studio Analytics: V1 CTR (aim >4%), average view duration (aim >40%), traffic sources, audience retention graph (where do drops happen?). Compare V1 vs V2. Check Shorts: views, sub conversions. Write: 1 improve, 1 working, best content piece.",
+"time": 15,
+"del": "YouTube Week 2 analytics snapshot",
+"dep": "2 videos live",
+"milestone": false
+},
+{
+"day": 14,
+"stream": "KDP",
+"proj": "K2",
+"sub": "\u2014",
+"title": "Check Book 1 and 2 KDP status",
+"detail": "KDP dashboard: Book 1 should be Live, check sales report. Even 0 sales normal at this stage. Book 2: should be In Review. If proof copy arrived: review physical quality.",
+"time": 5,
+"del": "KDP status + first sales check",
+"dep": "Both books submitted",
+"milestone": false
+},
+{
+"day": 15,
+"stream": "YOUTUBE",
+"proj": "Y2",
+"sub": "Y2.1",
+"title": "Video #3 \u2014 research + script + assets (Ghost Army)",
+"detail": "Topic: The Ghost Army - How Fake Tanks Won WW2. Research: 23rd HQ Special Troops, inflatable tanks, sound trucks, radio deception, Operation Fortitude, specific missions, personnel (artists who became famous postwar), classified until 1996. Write 2000-word script. Download 15+ images from Ghost Army Legacy Project (ghostarmy.org), National Archives, Wikimedia.",
+"time": 90,
+"del": "Script #3 + 15+ images",
+"dep": "None",
+"milestone": false
+},
+{
+"day": 16,
+"stream": "YOUTUBE",
+"proj": "Y2",
+"sub": "Y2.2",
+"title": "Video #3 \u2014 full production (record, edit, thumbnail)",
+"detail": "Record voiceover (more natural by now). Master in Audacity. Edit in CapCut (target 70 min edit). Great visuals: inflatable tanks, before/after deceptions, maps. Thumbnail: inflatable tank image + FAKE TANKS WON WW2 + CLASSIFIED red badge. Export all.",
+"time": 120,
+"del": "Video #3 complete (MP4 + thumb)",
+"dep": "Script #3 + assets",
+"milestone": false
+},
+{
+"day": 17,
+"stream": "YOUTUBE",
+"proj": "Y3",
+"sub": "Y3.1",
+"title": "PUBLISH Video #3 + Shorts + big promotion",
+"detail": "Upload V3 with full metadata. Create 3 Shorts. BIGGER PROMOTION: Reddit r/todayilearned (Ghost Army perfect for TIL), r/interestingasfuck, r/MilitaryHistory, Facebook groups, 2 Quora answers. Twitter: 5-tweet thread with images.",
+"time": 40,
+"del": "Video #3 + 3 Shorts + wide promotion",
+"dep": "V3 complete",
+"milestone": true
+},
+{
+"day": 17,
+"stream": "INSTAGRAM",
+"proj": "I1",
+"sub": "I1.4",
+"title": "V3 Instagram + TikTok distribution",
+"detail": "Carousel: 5 Facts About the Ghost Army (inflatable tanks = amazing visual content). Reel from best Short. Fact Card about Ghost Army secrecy. TikTok: all 3 Shorts (Ghost Army tends to go viral). Twitter: thread with images.",
+"time": 25,
+"del": "Carousel + Reel + Fact Card + TikTok + Twitter",
+"dep": "V3 Shorts + templates",
+"milestone": false
+},
+{
+"day": 18,
+"stream": "KDP",
+"proj": "K2",
+"sub": "K2.3",
+"title": "Build Book 3 \u2014 Half Marathon Training Log",
+"detail": "Book 3 ($9.99) in Canva 6x9. Per K2.1: 16-week training plan, weekly log pages (distance, time, pace, HR, notes), race day prep checklist, nutrition tracking, injury log, personal records, route planning, 10K to half marathon bridge program. Red/charcoal/orange scheme, Bebas Neue titles. Target ~110 pages.",
+"time": 90,
+"del": "Book 3 interior complete",
+"dep": "K2.1 specs",
+"milestone": false
+},
+{
+"day": 19,
+"stream": "KDP",
+"proj": "K2",
+"sub": "K2.3",
+"title": "Book 3 cover + submit, start Book 4",
+"detail": "Design Book 3 cover (K2.2 Running blueprint: red/charcoal/orange, Bebas Neue, dynamic feel). Submit to KDP. Start Book 4 (Family Budget Tracker, $12.99): monthly budget sheets, expense categories, savings goals, debt payoff tracker, 52-week savings challenge.",
+"time": 90,
+"del": "Book 3 submitted + Book 4 started",
+"dep": "Book 3 interior",
+"milestone": false
+},
+{
+"day": 20,
+"stream": "KDP",
+"proj": "K2",
+"sub": "K2.3",
+"title": "Finish Book 4 + cover + submit",
+"detail": "Complete Book 4 interior: Annual Financial Summary, Net Worth Tracker, Investment Tracker, Emergency Fund Progress. Design cover (business scheme). Submit to KDP. 4 BOOKS NOW ON AMAZON.",
+"time": 60,
+"del": "Book 4 submitted \u2014 4 books total",
+"dep": "Book 4 started",
+"milestone": true
+},
+{
+"day": 20,
+"stream": "REVIEW",
+"proj": "ALL",
+"sub": "\u2014",
+"title": "Week 3 analytics review \u2014 all platforms",
+"detail": "YouTube: compare V1/V2/V3 metrics (CTR, retention, subs/video). Best topic? Instagram: follower count, best post type, saves rate, hashtag performance. KDP: any sales? Which title? Compare against Achievement Matrix scenarios. Plan adjustments.",
+"time": 20,
+"del": "Week 3 cross-platform review",
+"dep": "3 weeks of content",
+"milestone": false
+},
+{
+"day": 21,
+"stream": "INSTAGRAM",
+"proj": "I1",
+"sub": "\u2014",
+"title": "Instagram engagement + grid assessment",
+"detail": "Continue daily rhythm: Reel + Stories. Check 9-post grid aesthetics (Dark Archive from I1.2 working?). If under 100 followers: increase to 1 Reel/day, engage on 20 pages/day instead of 10, try collab.",
+"time": 15,
+"del": "Daily IG maintained + grid assessed",
+"dep": "Ongoing",
+"milestone": false
+},
+{
+"day": 22,
+"stream": "YOUTUBE",
+"proj": "Y2",
+"sub": "Y2.1",
+"title": "Video #4 \u2014 research + script (Fall of Singapore)",
+"detail": "Topic: Why 80,000 Soldiers Surrendered - The Fall of Singapore 1942. Research: Japanese bicycle blitzkrieg, impregnable fortress myth, British failures, Yamashitas bluff, Percivals surrender (largest British surrender ever), 80,000+ POWs, Changi prison, Burma Railway, Churchill worst disaster quote. Write 2000-word script.",
+"time": 60,
+"del": "Script #4 complete",
+"dep": "None",
+"milestone": false
+},
+{
+"day": 23,
+"stream": "YOUTUBE",
+"proj": "Y2",
+"sub": "Y2.2",
+"title": "Video #4 \u2014 full production + publish",
+"detail": "Record, master, edit, thumbnail, upload with metadata, create 3 Shorts, upload/schedule, promote. Target: 3 hours total production (down from 4+ for V1). Cross-post to Instagram (Reel + Carousel) and TikTok.",
+"time": 180,
+"del": "Video #4 + 3 Shorts live + IG/TikTok",
+"dep": "Script #4 + assets",
+"milestone": false
+},
+{
+"day": 24,
+"stream": "YOUTUBE",
+"proj": "Y2",
+"sub": "Y2.1",
+"title": "Video #5 \u2014 script (The Spy Princess, Noor Inayat Khan)",
+"detail": "ESPIONAGE pillar (15% content mix). Research: Noors background (Indian-American-French, descendant of Tipu Sultan), SOE recruitment, wireless operator training, deployed to occupied Paris 1943, only radio operator left, betrayed, captured by Gestapo, Pforzheim prison, executed at Dachau 1944. George Cross, Croix de Guerre. Different tone: personal, intimate narration.",
+"time": 60,
+"del": "Script #5 complete",
+"dep": "None",
+"milestone": false
+},
+{
+"day": 25,
+"stream": "YOUTUBE",
+"proj": "Y2",
+"sub": "Y2.2",
+"title": "Video #5 \u2014 complete production + publish",
+"detail": "Record (intimate tone for character story). Edit (portrait photos, European locations, atmospheric strings/piano music). Thumbnail (Noors photo + THE SPY PRINCESS + TOP SECRET badge). Publish. Shorts. Promote. Cross-post IG + TikTok. 5 VIDEOS LIVE \u2014 past the quit zone.",
+"time": 180,
+"del": "Video #5 + 3 Shorts \u2014 5 total videos",
+"dep": "Script #5",
+"milestone": true
+},
+{
+"day": 26,
+"stream": "INSTAGRAM",
+"proj": "I1",
+"sub": "I1.4",
+"title": "First collaboration attempt",
+"detail": "Identify 3 military history IG pages with 5K-20K followers. DM each with personalized collab proposal: reference their specific content, offer to create a carousel for co-posting. 1 in 3 acceptance rate is great. Building relationships even if declined.",
+"time": 15,
+"del": "3 collab DMs sent",
+"dep": "15+ IG posts live",
+"milestone": false
+},
+{
+"day": 28,
+"stream": "REVIEW",
+"proj": "ALL",
+"sub": "\u2014",
+"title": "Month 1 review \u2014 YouTube deep dive",
+"detail": "Full audit: total views (all 5 videos + 12+ Shorts), total subs, best video by views AND retention, best Short, overall CTR, traffic sources, demographics, watch time hours. Compare vs Achievement Matrix. Write 3 specific Month 2 improvements.",
+"time": 20,
+"del": "YouTube Month 1 audit",
+"dep": "5 videos + 12+ Shorts",
+"milestone": false
+},
+{
+"day": 29,
+"stream": "REVIEW",
+"proj": "ALL",
+"sub": "\u2014",
+"title": "Month 1 review \u2014 KDP + Instagram",
+"detail": "KDP: total sales across 4 books, best seller, reviews, keyword rankings. IG: follower count (target 50-200), total reach, best content type, saves rate, Reel plays avg, best hashtag set, collab responses. Compare all vs Achievement Matrix. Identify strongest and weakest track.",
+"time": 20,
+"del": "KDP + IG Month 1 audit",
+"dep": "4 books + 20+ IG posts",
+"milestone": false
+},
+{
+"day": 30,
+"stream": "REVIEW",
+"proj": "ALL",
+"sub": "\u2014",
+"title": "Month 2 planning + CELEBRATE",
+"detail": "Plan next 4-6 video topics (V6-10 from Y3.1). Plan KDP Books 5-6. Set IG Month 2 targets. Update Beacons with book links. Review: on track for Probable scenario ($300-1K/month by Month 6)? CELEBRATE: 5 YouTube videos, 15+ Shorts, 4 Amazon books, 20+ Instagram posts, TikTok + Twitter presence. You built a real online business in 30 days.",
+"time": 30,
+"del": "Month 2 plan + celebration",
+"dep": "Month 1 review",
+"milestone": true
 }
+];
+let currentFilter='ALL',currentStatus='all',completedTasks={};
+function loadProgress(){try{completedTasks=JSON.parse(localStorage.getItem('tff_tasks')||'{}')}catch(e){completedTasks={}}}
+function saveProgress(){try{localStorage.setItem('tff_tasks',JSON.stringify(completedTasks))}catch(e){}}
+function getTaskId(t,i){return 'd'+t.day+'_'+i}
+function setFilter(f){currentFilter=f;document.querySelectorAll('.filter-group:first-child .fbtn').forEach(b=>b.classList.toggle('active',b.dataset.f===f));renderTasks()}
+function setStatus(s){currentStatus=s;document.querySelectorAll('.status-btns .fbtn').forEach(b=>b.classList.toggle('active',b.dataset.s===s));renderTasks()}
+function toggleTask(id){if(completedTasks[id])delete completedTasks[id];else completedTasks[id]=Date.now();saveProgress();updateProgress();const c=document.querySelector('[data-tid="'+id+'"]');if(c){c.classList.toggle('completed',!!completedTasks[id]);c.querySelector('input').checked=!!completedTasks[id]}}
+function toggleDay(d){const g=document.getElementById('day-'+d);if(g)g.classList.toggle('open')}
+function toggleDetail(btn){const det=btn.previousElementSibling;if(det.classList.contains('collapsed')){det.classList.remove('collapsed');btn.textContent='Less detail'}else{det.classList.add('collapsed');btn.textContent='More detail'}}
+function getFilteredTasks(){const s=(document.getElementById('searchInput')||{}).value||'';const sl=s.toLowerCase();return TASKS.filter((t,i)=>{const st=t.stream==='ALL'?'REVIEW':t.stream;if(currentFilter!=='ALL'&&st!==currentFilter)return false;const id=getTaskId(t,i);const done=!!completedTasks[id];if(currentStatus==='done'&&!done)return false;if(currentStatus==='pending'&&done)return false;if(sl&&!t.title.toLowerCase().includes(sl)&&!t.detail.toLowerCase().includes(sl)&&!t.proj.toLowerCase().includes(sl))return false;return true})}
+function updateProgress(){const total=TASKS.length;const completed=TASKS.filter((t,i)=>completedTasks[getTaskId(t,i)]).length;const pct=total?Math.round(completed/total*100):0;const timeLeft=TASKS.filter((t,i)=>!completedTasks[getTaskId(t,i)]).reduce((s,t)=>s+t.time,0);document.getElementById('completedCount').textContent=completed;document.getElementById('totalCount').textContent=total;document.getElementById('pctComplete').textContent=pct+'%';document.getElementById('timeRemaining').textContent=Math.round(timeLeft/60)+'h';document.getElementById('mainBar').style.width=pct+'%';
+const streams=[{id:'SETUP',label:'Setup',color:'var(--setup)',icon:'gear'},{id:'KDP',label:'KDP Publishing',color:'var(--kdp)',icon:'book'},{id:'YOUTUBE',label:'YouTube',color:'var(--yt)',icon:'play'},{id:'INSTAGRAM',label:'Instagram',color:'var(--ig)',icon:'cam'},{id:'REVIEW',label:'Review',color:'var(--review)',icon:'chart'}];
+const icons={'gear':'&#9881;','book':'&#128218;','play':'&#9654;','cam':'&#128247;','chart':'&#128202;'};
+const sp=document.getElementById('streamProgress');sp.innerHTML=streams.map(s=>{const st=TASKS.filter(t=>(t.stream==='ALL'?'REVIEW':t.stream)===s.id);const sd=st.filter(t=>completedTasks[getTaskId(t,TASKS.indexOf(t))]).length;const spct=st.length?Math.round(sd/st.length*100):0;return '<div class="sp-card"><div class="sp-icon" style="background:'+s.color+'20;color:'+s.color+'">'+icons[s.icon]+'</div><div class="sp-info"><h4>'+s.label+'</h4><div class="sp-bar"><div class="sp-bar-fill" style="width:'+spct+'%;background:'+s.color+'"></div></div></div><div class="sp-pct" style="color:'+s.color+'">'+sd+'/'+st.length+'</div></div>'}).join('')}
+function renderTasks(){const filtered=getFilteredTasks();const days={};filtered.forEach(t=>{if(!days[t.day])days[t.day]=[];days[t.day].push(t)});const container=document.getElementById('taskContainer');let html='';
+const dayLabels={1:'Foundation Setup',2:'Book 1 Sprint',3:'Book 1 Sprint',4:'Book 1 Sprint',5:'Book 1 Publish Day',6:'Video #1 Research',7:'Video #1 Production',8:'Video #1 Publish Day',9:'Content Distribution',10:'Video #2 Research',11:'Video #2 Production',12:'Video #2 Publish + Book 2',13:'Book 2 Publish',14:'Week 2 Review',15:'Video #3 Research',16:'Video #3 Production',17:'Video #3 Publish (Viral Push)',18:'Book 3 Sprint',19:'Book 3-4 Sprint',20:'Book 4 Publish + Review',21:'Instagram Growth',22:'Video #4 Research',23:'Video #4 Publish',24:'Video #5 Research',25:'Video #5 Publish',26:'Collab Outreach',28:'Month 1 YouTube Review',29:'Month 1 KDP+IG Review',30:'Month 2 Planning + Celebrate'};
+Object.keys(days).sort((a,b)=>a-b).forEach(day=>{const dt=days[day];const streams=[...new Set(dt.map(t=>t.stream==='ALL'?'review':t.stream.toLowerCase()))];const totalTime=dt.reduce((s,t)=>s+t.time,0);const doneCt=dt.filter(t=>completedTasks[getTaskId(t,TASKS.indexOf(t))]).length;const allDone=doneCt===dt.length;html+='<div class="day-group'+(allDone?'':' open')+'" id="day-'+day+'"><div class="day-header" onclick="toggleDay('+day+')"><div class="day-num">DAY '+day+'</div><div class="day-meta"><h3>'+(dayLabels[day]||'Sprint')+'</h3><div class="day-tags">'+streams.map(s=>'<span class="day-tag '+s+'">'+s.toUpperCase()+'</span>').join('')+'</div></div><div class="day-progress"><div class="day-pct">'+doneCt+'/'+dt.length+'</div><div class="day-time">'+(totalTime>=60?Math.floor(totalTime/60)+'h '+totalTime%60+'m':totalTime+'m')+'</div></div><span class="chevron">&#9654;</span></div><div class="task-list">';
+dt.forEach(t=>{const idx=TASKS.indexOf(t);const tid=getTaskId(t,idx);const done=!!completedTasks[tid];const stream=t.stream==='ALL'?'REVIEW':t.stream;html+='<div class="task-card stream-'+stream+(done?' completed':'')+(t.milestone?' milestone':'')+'" data-tid="'+tid+'"><div class="task-check"><input type="checkbox" '+(done?'checked':'')+' onchange="toggleTask(\''+tid+'\')"></div><div class="task-body"><div class="task-top"><span class="task-title">'+t.title+'</span><div class="task-badges">'+(t.proj!=='\u2014'?'<span class="badge badge-proj">'+t.proj+(t.sub!=='\u2014'?' / '+t.sub:'')+'</span>':'')+'<span class="badge badge-time">'+t.time+' min</span></div></div><div class="task-detail collapsed">'+t.detail+'</div><button class="toggle-detail" onclick="toggleDetail(this)">More detail</button><div class="task-footer"><span class="task-del">&#128230; '+t.del+'</span>'+(t.dep!=='None'?'<span class="task-dep">&#9889; Needs: '+t.dep+'</span>':'')+'</div></div></div>'});
+html+='</div></div>'});
+if(!filtered.length)html='<div style="text-align:center;padding:60px;color:var(--muted)">No tasks match your current filters.</div>';container.innerHTML=html;updateProgress()}
+loadProgress();renderTasks();
 
-container.innerHTML = html;
-updateStats();
-}
-
-function getDayLabel(day){
-const labels = {
-1:"Setup & Foundation",2:"KDP Book 1 Build",3:"KDP Interior + IG Templates",
-4:"Book 1 Cover Design",5:"Book 1 Publish Day",6:"Video #1 Research & Script",
-7:"Video #1 Production",8:"Video #1 Launch Day",9:"Content Distribution",
-10:"Video #2 Script + Assets",11:"Video #2 Production",12:"Video #2 Launch + Book 2",
-13:"Book 2 Submit + IG",14:"Week 2 Review",15:"Video #3 Research",
-16:"Video #3 Production",17:"Video #3 Launch",18:"Book 3 Build",
-19:"Book 3 Submit + Book 4 Start",20:"Book 4 Submit + Week 3 Review",
-21:"Instagram Maintenance",22:"Video #4 Script",23:"Video #4 Full Pipeline",
-24:"Video #5 Begin",25:"Video #5 Complete — 5 Videos!",26:"Instagram Collab Outreach",
-28:"Month 1 YouTube Review",29:"Month 1 KDP + IG Review",30:"Month 2 Planning + Celebrate"
-};
-return labels[day] || `Day ${day} Tasks`;
-}
-
-function toggleTask(id, e){
-e.stopPropagation();
-if(completedTasks[id]) delete completedTasks[id];
-else completedTasks[id] = Date.now();
-saveState();
-render();
-}
-
-function toggleExpand(card, e){
-if(e.target.closest('.check')) return;
-card.classList.toggle('expanded');
-}
-
-function updateStats(){
-const total = TASKS.length;
-const done = Object.keys(completedTasks).length;
-const pct = total > 0 ? Math.round((done/total)*100) : 0;
-const totalMins = TASKS.reduce((sum,t)=>{
-const m = parseInt(t.time);
-return sum + (isNaN(m)?0:m);
-},0);
-const doneMins = TASKS.reduce((sum,t,i)=>{
-if(completedTasks[taskId(t,i)]){
-const m = parseInt(t.time);
-return sum + (isNaN(m)?0:m);
-}
-return sum;
-},0);
-const leftMins = totalMins - doneMins;
-const leftHrs = Math.round(leftMins/60);
-
-document.getElementById('totalCount').textContent = total;
-document.getElementById('doneCount').textContent = done;
-document.getElementById('pctComplete').textContent = pct + '%';
-document.getElementById('timeLeft').textContent = leftHrs + 'h';
-document.getElementById('progressFill').style.width = pct + '%';
-document.getElementById('progressLabel').textContent = pct + '%';
-}
-
-function toggleMilestones(){
-showMilestones = !showMilestones;
-document.getElementById('showMilestonesBtn').classList.toggle('active', showMilestones);
-render();
-}
-
-function resetProgress(){
-if(confirm('Reset ALL progress? This cannot be undone.')){
-completedTasks = {};
-saveState();
-render();
-}
-}
-
-// ═══════════════════════════════════════
-// POPULATE FILTERS
-// ═══════════════════════════════════════
-function populateFilters(){
-const projects = [...new Set(TASKS.map(t=>t.proj).filter(p=>p!=='—'))].sort();
-const projSelect = document.getElementById('filterProject');
-projects.forEach(p=>{
-const opt = document.createElement('option');
-opt.value = p; opt.textContent = p;
-projSelect.appendChild(opt);
-});
-
-const days = [...new Set(TASKS.map(t=>t.day))].sort((a,b)=>a-b);
-const daySelect = document.getElementById('filterDay');
-days.forEach(d=>{
-const opt = document.createElement('option');
-opt.value = d; opt.textContent = `Day ${d}`;
-daySelect.appendChild(opt);
-});
-}
-
-// ═══════════════════════════════════════
-// INIT
-// ═══════════════════════════════════════
-loadState();
-populateFilters();
-render();
-
-document.getElementById('filterTrack').addEventListener('change', render);
-document.getElementById('filterProject').addEventListener('change', render);
-document.getElementById('filterStatus').addEventListener('change', render);
-document.getElementById('filterDay').addEventListener('change', render);
-document.getElementById('searchBox').addEventListener('input', render);
-document.getElementById('showMilestonesBtn').classList.add('active');
 </script>
 </body>
 </html>
